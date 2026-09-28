@@ -1,0 +1,329 @@
+/*
+ * Bahasa visual pixel dari aplikasi (ADR-015, palet ADR-016, penekanan
+ * ADR-020 di repo arkariz/Saldough). Nilai warna disalin dari
+ * app_colors_extension.dart; jangan menambah warna di luar token ini.
+ */
+
+@font-face {
+  font-family: 'Space Grotesk';
+  src: url('/fonts/SpaceGrotesk-Variable.woff2') format('woff2');
+  font-weight: 300 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  src: url('/fonts/PlusJakartaSans-Variable.woff2') format('woff2');
+  font-weight: 200 800;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Space Mono';
+  src: url('/fonts/SpaceMono-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: light;
+  --bg: #fff8f5;
+  --bg-sunk: #faf2ee;
+  --card: #ffffff;
+  --edge: #1e1b19;
+  --text: #1e1b19;
+  --muted: #57534e;
+  --divider: rgb(30 27 25 / 0.14);
+  --accent: #c2410c;
+  --on-accent: #ffffff;
+  --income: #15803d;
+  --income-fill: #16a34a;
+  --expense: #b91c1c;
+  --expense-fill: #dc2626;
+  --transfer: #1d4ed8;
+  --pending: #a16207;
+  --tint-accent: #fdf0e8;
+  --tint-income: #dcf2e3;
+  --tint-pending: #f6ecd6;
+  --band: #1e1b19;
+  --on-band: #f2ece7;
+  --on-band-muted: #c9c1b9;
+
+  --font-display: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  --font-body: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'Space Mono', ui-monospace, 'SFMono-Regular', monospace;
+
+  --border: 2px solid var(--edge);
+  --shadow: 4px 4px 0 var(--edge);
+  --shadow-lg: 6px 6px 0 var(--edge);
+  --radius: 6px;
+  --gutter: clamp(16px, 4vw, 32px);
+  --max: 1160px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    color-scheme: dark;
+    --bg: #231f1b;
+    --bg-sunk: #1c1916;
+    --card: #2d2823;
+    --edge: #8a7d6e;
+    --text: #f2ece7;
+    --muted: #a8a29e;
+    --divider: rgb(242 236 231 / 0.18);
+    --accent: #f46b1c;
+    --on-accent: #14120f;
+    --income: #22c55e;
+    --income-fill: #22c55e;
+    --expense: #f87171;
+    --expense-fill: #f87171;
+    --transfer: #60a5fa;
+    --pending: #f59e0b;
+    --tint-accent: #3d2618;
+    --tint-income: #1f3a28;
+    --tint-pending: #43341a;
+    --band: #14120f;
+    --on-band: #f2ece7;
+    --on-band-muted: #a8a29e;
+  }
+}
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #231f1b;
+  --bg-sunk: #1c1916;
+  --card: #2d2823;
+  --edge: #8a7d6e;
+  --text: #f2ece7;
+  --muted: #a8a29e;
+  --divider: rgb(242 236 231 / 0.18);
+  --accent: #f46b1c;
+  --on-accent: #14120f;
+  --income: #22c55e;
+  --income-fill: #22c55e;
+  --expense: #f87171;
+  --expense-fill: #f87171;
+  --transfer: #60a5fa;
+  --pending: #f59e0b;
+  --tint-accent: #3d2618;
+  --tint-income: #1f3a28;
+  --tint-pending: #43341a;
+  --band: #14120f;
+  --on-band: #f2ece7;
+  --on-band-muted: #a8a29e;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 88px;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  margin: 0;
+  text-wrap: balance;
+}
+h1 {
+  font-size: clamp(2.25rem, 5.4vw, 4rem);
+  font-weight: 700;
+}
+h2 {
+  font-size: clamp(1.75rem, 3.6vw, 2.75rem);
+  font-weight: 700;
+}
+h3 {
+  font-size: 1.375rem;
+  font-weight: 600;
+}
+p {
+  margin: 0;
+  text-wrap: pretty;
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.wrap {
+  width: 100%;
+  max-width: var(--max);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.section {
+  padding-block: clamp(64px, 10vw, 128px);
+}
+
+/* Label mikro: Space Mono kapital, minimal 12px (ADR-020 §2). */
+.label {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+  display: inline-block;
+}
+
+.lead {
+  font-size: clamp(1.0625rem, 1.6vw, 1.25rem);
+  color: var(--muted);
+  max-width: 60ch;
+}
+
+.card {
+  background: var(--card);
+  border: var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* Tiga tingkat tombol (ADR-020 §1). Satu .btn-primary per layar. */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 0 24px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.0625rem;
+  text-decoration: none;
+  border: var(--border);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition:
+    transform 120ms ease,
+    box-shadow 120ms ease;
+}
+.btn-primary {
+  background: var(--accent);
+  color: var(--on-accent);
+  box-shadow: var(--shadow);
+}
+.btn-primary:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-lg);
+}
+.btn-primary:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0 0 0 var(--edge);
+}
+.btn-secondary {
+  background: var(--card);
+  color: var(--text);
+}
+.btn-secondary:hover {
+  background: var(--bg-sunk);
+}
+.btn[aria-disabled='true'] {
+  background: var(--bg-sunk);
+  color: var(--muted);
+  box-shadow: none;
+  cursor: not-allowed;
+  border-style: dashed;
+}
+.link-tertiary {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+.pixel {
+  image-rendering: pixelated;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.skip {
+  position: absolute;
+  left: 16px;
+  top: -64px;
+  z-index: 100;
+  padding: 12px 16px;
+  background: var(--accent);
+  color: var(--on-accent);
+  font-weight: 700;
+  border: var(--border);
+}
+.skip:focus {
+  top: 16px;
+}
+
+.check-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+.check-list li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+.check-list li::before {
+  content: '';
+  flex: none;
+  width: 18px;
+  height: 18px;
+  margin-top: 4px;
+  background: var(--income-fill);
+  border: var(--border);
+  border-radius: 2px;
+  box-shadow: inset 0 0 0 3px var(--card);
+}

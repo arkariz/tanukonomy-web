@@ -1,0 +1,77 @@
+---
+import Legal from '../../layouts/Legal.astro';
+import { CONTACT_EMAIL } from '../../config';
+---
+
+<Legal
+  lang="en"
+  page="privacy"
+  title="Privacy Policy"
+  description="Tanukonomy collects no personal data. Every financial record is stored only on your device, with no account and no server."
+>
+  <p class="lede">
+    <strong>In short:</strong> Tanukonomy does not collect, send, or store your personal data on any server. Everything you
+    record stays on your device.
+  </p>
+
+  <p>
+    This policy explains how the Tanukonomy app (“the app”) and the tanukonomy.app website (“the site”) handle information.
+    “We” means the developer of Tanukonomy.
+  </p>
+
+  <h2>1. Data you record in the app</h2>
+  <p>
+    The app stores the data you enter yourself: wallets and balances, transactions (amount, date, category, note), budgets,
+    freelance projects and hours, and app settings. This data:
+  </p>
+  <ul>
+    <li>is stored <strong>only in your device’s local storage</strong>;</li>
+    <li>is never sent to our servers or third parties, because the app has no server;</li>
+    <li>cannot be viewed, restored, or deleted remotely by us.</li>
+  </ul>
+
+  <h2>2. What we don’t collect</h2>
+  <ul>
+    <li>There is no account, so we don’t ask for your name, email, or phone number.</li>
+    <li>There is no connection to banks, e-wallets, or payment services, and we never ask for passwords.</li>
+    <li>There are no ads, third-party analytics, or trackers in the app.</li>
+    <li>There is no access to your location, contacts, camera, or microphone.</li>
+  </ul>
+
+  <h2>3. Deleting your data</h2>
+  <p>
+    Because your data lives only on your device, you are fully in control. Uninstalling the app, or clearing its data in
+    Android settings, permanently deletes all records. We keep no copy, so deleted data cannot be recovered by us.
+  </p>
+
+  <h2>4. Device backups</h2>
+  <p>
+    If your operating system’s built-in backup (such as Google backup on Android) is turned on, the system may include app
+    data in your backup. Those backups are managed by the operating system provider under their policies, not by us.
+  </p>
+
+  <h2>5. Closed beta</h2>
+  <p>
+    To join the closed beta, you join a Google Group and the Google Play testing program with your Google account. Both are
+    run by Google. As the group manager, we can see members’ email addresses; we use them only to grant beta access and do
+    not share them. Feedback you send by email or through Google Play is used only to improve the app.
+  </p>
+
+  <h2>6. This site</h2>
+  <p>
+    This site uses no cookies, forms, or analytics. The hosting provider may log standard technical data such as IP address
+    and browser type for security and operations, under their own policies.
+  </p>
+
+  <h2>7. Children</h2>
+  <p>The app is not directed at children under 13 and does not collect data from anyone, including children.</p>
+
+  <h2>8. Changes to this policy</h2>
+  <p>
+    If the app later adds a feature that changes how data is handled (such as sync), we will update this page and its
+    effective date before that feature becomes available.
+  </p>
+
+  <h2>9. Contact</h2>
+  <p>Privacy questions can be sent to <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>
+</Legal>

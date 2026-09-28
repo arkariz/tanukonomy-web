@@ -1,0 +1,82 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { APP_NAME, SITE_URL } from '../config';
+import { type Lang, type PageKey, htmlLang, ogLocale, otherLang, path, t } from '../i18n';
+
+interface Props {
+  lang: Lang;
+  page: PageKey;
+  title: string;
+  description: string;
+  jsonLd?: object[];
+}
+
+const { lang, page, title, description, jsonLd = [] } = Astro.props;
+const d = t(lang);
+const canonical = new URL(path(page, lang), SITE_URL).href;
+const alternate = new URL(path(page, otherLang(lang)), SITE_URL).href;
+const idUrl = new URL(path(page, 'id'), SITE_URL).href;
+const ogImage = new URL(`/og/og-${lang}.png`, SITE_URL).href;
+
+const org = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: APP_NAME,
+  url: SITE_URL,
+  logo: new URL('/icon-512.png', SITE_URL).href,
+};
+---
+
+<!doctype html>
+<html lang={htmlLang(lang)}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang={htmlLang(lang)} href={canonical} />
+    <link rel="alternate" hreflang={htmlLang(otherLang(lang))} href={alternate} />
+    <link rel="alternate" hreflang="x-default" href={idUrl} />
+
+    <meta name="theme-color" content="#fff8f5" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#231f1b" media="(prefers-color-scheme: dark)" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/icon-192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <link rel="preload" href="/fonts/SpaceGrotesk-Variable.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/PlusJakartaSans-Variable.woff2" as="font" type="font/woff2" crossorigin />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={APP_NAME} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content={ogLocale(lang)} />
+    <meta property="og:locale:alternate" content={ogLocale(otherLang(lang))} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={d.meta.ogAlt} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    {[org, ...jsonLd].map((data) => <script type="application/ld+json" set:html={JSON.stringify(data)} />)}
+  </head>
+  <body>
+    <a class="skip" href="#isi">{d.nav.skip}</a>
+    <Header lang={lang} page={page} />
+    <main id="isi">
+      <slot />
+    </main>
+    <Footer lang={lang} page={page} />
+  </body>
+</html>

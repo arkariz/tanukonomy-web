@@ -1,0 +1,82 @@
+---
+import Legal from '../layouts/Legal.astro';
+import { CONTACT_EMAIL } from '../config';
+---
+
+<Legal
+  lang="id"
+  page="terms"
+  title="Syarat dan Ketentuan"
+  description="Syarat penggunaan aplikasi Tanukonomy, termasuk selama masa uji coba tertutup."
+>
+  <p class="lede">
+    Dengan memasang atau memakai Tanukonomy, kamu menyetujui syarat berikut. Kalau tidak setuju, mohon jangan memakai
+    aplikasinya.
+  </p>
+
+  <h2>1. Apa itu Tanukonomy</h2>
+  <p>
+    Tanukonomy adalah aplikasi untuk <strong>mencatat</strong> keuangan pribadi: dompet, transaksi, anggaran, dan jam kerja
+    freelance. Aplikasi tidak memindahkan uang, tidak melakukan pembayaran, tidak terhubung ke bank, dan bukan layanan
+    keuangan, perbankan, atau investasi.
+  </p>
+
+  <h2>2. Bukan nasihat keuangan</h2>
+  <p>
+    Angka dan ringkasan di aplikasi dihitung dari data yang kamu masukkan. Aplikasi tidak memberi nasihat keuangan, pajak,
+    atau hukum. Keputusan keuanganmu sepenuhnya tanggung jawabmu.
+  </p>
+
+  <h2>3. Tanggung jawab atas data</h2>
+  <p>
+    Karena data hanya tersimpan di perangkatmu (lihat <a href="/privasi/">Kebijakan Privasi</a>), kamu bertanggung jawab
+    menjaga perangkat dan datanya. Kami tidak dapat memulihkan data yang hilang karena perangkat rusak, hilang, direset,
+    atau aplikasinya dihapus.
+  </p>
+
+  <h2>4. Masa uji coba</h2>
+  <p>Selama uji coba tertutup:</p>
+  <ul>
+    <li>aplikasi masih dalam pengembangan dan mungkin memuat kesalahan, termasuk kesalahan tampilan atau perhitungan;</li>
+    <li>fitur dapat berubah, ditambah, atau dihapus tanpa pemberitahuan;</li>
+    <li>pembaruan dapat mengubah atau, dalam kasus terburuk, menghapus data uji coba;</li>
+    <li>akses uji coba dapat diakhiri kapan saja.</li>
+  </ul>
+  <p>Mohon jangan menjadikan aplikasi versi uji coba satu-satunya catatan keuangan yang penting bagimu.</p>
+
+  <h2>5. Masukan</h2>
+  <p>
+    Masukan, saran, dan laporan masalah yang kamu kirim boleh kami pakai untuk memperbaiki Tanukonomy tanpa kewajiban
+    apa pun kepadamu.
+  </p>
+
+  <h2>6. Penggunaan yang wajar</h2>
+  <p>
+    Kamu setuju untuk tidak merekayasa balik, mendistribusikan ulang, atau menjual aplikasi, kecuali sejauh diizinkan oleh
+    hukum yang berlaku.
+  </p>
+
+  <h2>7. Hak kekayaan intelektual</h2>
+  <p>
+    Nama, logo, maskot tanuki, ilustrasi, dan kode Tanukonomy adalah milik pengembangnya. Font di situs dan aplikasi
+    dipakai di bawah SIL Open Font License.
+  </p>
+
+  <h2>8. Tanpa jaminan dan batas tanggung jawab</h2>
+  <p>
+    Aplikasi disediakan "sebagaimana adanya" tanpa jaminan apa pun. Sejauh diizinkan hukum, kami tidak bertanggung jawab
+    atas kerugian yang timbul dari pemakaian atau ketidakmampuan memakai aplikasi, termasuk kehilangan data.
+  </p>
+
+  <h2>9. Perubahan syarat</h2>
+  <p>
+    Kami dapat memperbarui syarat ini. Versi terbaru selalu ada di halaman ini beserta tanggal berlakunya. Terus memakai
+    aplikasi sesudah perubahan berarti kamu menyetujui syarat yang baru.
+  </p>
+
+  <h2>10. Hukum yang berlaku</h2>
+  <p>Syarat ini diatur oleh hukum Republik Indonesia.</p>
+
+  <h2>11. Kontak</h2>
+  <p>Pertanyaan tentang syarat ini dapat dikirim ke <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>
+</Legal>

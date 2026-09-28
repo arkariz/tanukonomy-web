@@ -1,0 +1,81 @@
+---
+import Legal from '../layouts/Legal.astro';
+import { CONTACT_EMAIL } from '../config';
+---
+
+<Legal
+  lang="id"
+  page="privacy"
+  title="Kebijakan Privasi"
+  description="Tanukonomy tidak mengumpulkan data pribadi. Semua catatan keuangan disimpan hanya di perangkatmu, tanpa akun dan tanpa server."
+>
+  <p class="lede">
+    <strong>Ringkasnya:</strong> Tanukonomy tidak mengumpulkan, mengirim, atau menyimpan data pribadimu di server mana pun.
+    Semua yang kamu catat tetap di perangkatmu.
+  </p>
+
+  <p>
+    Kebijakan ini menjelaskan bagaimana aplikasi Tanukonomy ("aplikasi") dan situs tanukonomy.app ("situs") menangani
+    informasi. "Kami" berarti pengembang Tanukonomy.
+  </p>
+
+  <h2>1. Data yang kamu catat di aplikasi</h2>
+  <p>
+    Aplikasi menyimpan data yang kamu masukkan sendiri, yaitu dompet dan saldonya, transaksi (nominal, tanggal, kategori,
+    catatan), anggaran, proyek dan jam kerja freelance, serta pengaturan aplikasi. Data ini:
+  </p>
+  <ul>
+    <li>disimpan <strong>hanya di penyimpanan lokal perangkatmu</strong>;</li>
+    <li>tidak pernah dikirim ke server kami atau pihak ketiga, karena aplikasi tidak memiliki server;</li>
+    <li>tidak dapat kami lihat, pulihkan, atau hapus dari jarak jauh.</li>
+  </ul>
+
+  <h2>2. Yang tidak kami kumpulkan</h2>
+  <ul>
+    <li>Tidak ada akun, jadi kami tidak meminta nama, email, atau nomor telepon.</li>
+    <li>Tidak ada sambungan ke bank, e-wallet, atau layanan pembayaran, dan kami tidak pernah meminta kata sandi.</li>
+    <li>Tidak ada iklan, analitik pihak ketiga, atau pelacak di dalam aplikasi.</li>
+    <li>Tidak ada akses ke lokasi, kontak, kamera, atau mikrofon.</li>
+  </ul>
+
+  <h2>3. Menghapus data</h2>
+  <p>
+    Karena data hanya ada di perangkatmu, kamu mengendalikannya sepenuhnya. Menghapus aplikasi, atau menghapus data aplikasi
+    lewat pengaturan Android, akan menghapus semua catatan secara permanen. Kami tidak menyimpan salinan, jadi data yang sudah
+    dihapus tidak dapat kami pulihkan.
+  </p>
+
+  <h2>4. Cadangan perangkat</h2>
+  <p>
+    Jika fitur cadangan bawaan sistem operasi (misalnya cadangan Google di Android) aktif, sistem dapat menyertakan data
+    aplikasi dalam cadanganmu. Cadangan itu dikelola oleh penyedia sistem operasi sesuai kebijakan mereka, bukan oleh kami.
+  </p>
+
+  <h2>5. Uji coba tertutup</h2>
+  <p>
+    Untuk ikut uji coba tertutup, kamu bergabung ke Google Group dan program pengujian Google Play memakai akun Google-mu.
+    Keduanya dikelola oleh Google. Sebagai pengelola grup, kami dapat melihat alamat email anggota grup; kami hanya
+    memakainya untuk memberi akses uji coba dan tidak membagikannya. Masukan yang kamu kirim lewat email atau Google Play
+    hanya kami pakai untuk memperbaiki aplikasi.
+  </p>
+
+  <h2>6. Situs ini</h2>
+  <p>
+    Situs ini tidak memakai cookie, formulir, atau analitik. Penyedia hosting dapat mencatat data teknis standar seperti
+    alamat IP dan jenis peramban untuk keamanan dan operasional, sesuai kebijakan mereka.
+  </p>
+
+  <h2>7. Anak-anak</h2>
+  <p>
+    Aplikasi tidak ditujukan untuk anak di bawah 13 tahun dan tidak mengumpulkan data dari siapa pun, termasuk anak-anak.
+  </p>
+
+  <h2>8. Perubahan kebijakan</h2>
+  <p>
+    Jika aplikasi kelak menambahkan fitur yang mengubah cara data ditangani (misalnya sinkronisasi), kami akan memperbarui
+    halaman ini dan tanggal berlakunya sebelum fitur itu tersedia.
+  </p>
+
+  <h2>9. Kontak</h2>
+  <p>Pertanyaan tentang privasi dapat dikirim ke <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>
+</Legal>

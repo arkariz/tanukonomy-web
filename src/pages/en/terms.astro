@@ -1,0 +1,77 @@
+---
+import Legal from '../../layouts/Legal.astro';
+import { CONTACT_EMAIL } from '../../config';
+---
+
+<Legal
+  lang="en"
+  page="terms"
+  title="Terms of Use"
+  description="Terms for using the Tanukonomy app, including during the closed beta."
+>
+  <p class="lede">
+    By installing or using Tanukonomy, you agree to the terms below. If you don’t agree, please don’t use the app.
+  </p>
+
+  <h2>1. What Tanukonomy is</h2>
+  <p>
+    Tanukonomy is an app for <strong>recording</strong> personal finances: wallets, transactions, budgets, and freelance
+    hours. It does not move money, make payments, or connect to banks, and it is not a financial, banking, or investment
+    service.
+  </p>
+
+  <h2>2. Not financial advice</h2>
+  <p>
+    Figures and summaries in the app are calculated from the data you enter. The app does not provide financial, tax, or
+    legal advice. Your financial decisions are your own responsibility.
+  </p>
+
+  <h2>3. Responsibility for your data</h2>
+  <p>
+    Because data is stored only on your device (see the <a href="/en/privacy/">Privacy Policy</a>), you are responsible for
+    keeping your device and its data safe. We cannot recover data lost through a damaged, lost, or reset device, or an
+    uninstalled app.
+  </p>
+
+  <h2>4. Beta period</h2>
+  <p>During the closed beta:</p>
+  <ul>
+    <li>the app is still in development and may contain errors, including display or calculation errors;</li>
+    <li>features may change, be added, or be removed without notice;</li>
+    <li>updates may change or, in the worst case, delete beta data;</li>
+    <li>beta access may end at any time.</li>
+  </ul>
+  <p>Please don’t make the beta app your only record of important finances.</p>
+
+  <h2>5. Feedback</h2>
+  <p>Feedback, suggestions, and bug reports you send may be used to improve Tanukonomy without any obligation to you.</p>
+
+  <h2>6. Fair use</h2>
+  <p>
+    You agree not to reverse engineer, redistribute, or sell the app, except as permitted by applicable law.
+  </p>
+
+  <h2>7. Intellectual property</h2>
+  <p>
+    The Tanukonomy name, logo, tanuki mascot, illustrations, and code belong to its developer. Fonts on the site and in the
+    app are used under the SIL Open Font License.
+  </p>
+
+  <h2>8. No warranty and limitation of liability</h2>
+  <p>
+    The app is provided “as is” without warranty of any kind. To the extent permitted by law, we are not liable for any
+    loss arising from using or being unable to use the app, including data loss.
+  </p>
+
+  <h2>9. Changes to these terms</h2>
+  <p>
+    We may update these terms. The latest version is always on this page with its effective date. Continuing to use the app
+    after a change means you accept the new terms.
+  </p>
+
+  <h2>10. Governing law</h2>
+  <p>These terms are governed by the laws of the Republic of Indonesia.</p>
+
+  <h2>11. Contact</h2>
+  <p>Questions about these terms can be sent to <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>
+</Legal>

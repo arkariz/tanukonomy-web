@@ -1,0 +1,17 @@
+---
+interface Props {
+  name: string;
+  size?: number;
+}
+const { name, size = 32 } = Astro.props;
+const icons = import.meta.glob<string>('../assets/icons/*.svg', { eager: true, query: '?raw', import: 'default' });
+const svg = icons[`../assets/icons/${name}.svg`];
+if (!svg) throw new Error(`Ikon tidak ditemukan: ${name}`);
+const sized = svg
+  .replace(/<!--[\s\S]*?-->/g, '')
+  .replace(/width="\d+"/, `width="${size}"`)
+  .replace(/height="\d+"/, `height="${size}"`)
+  .replace('<svg ', '<svg aria-hidden="true" focusable="false" ');
+---
+
+<Fragment set:html={sized} />

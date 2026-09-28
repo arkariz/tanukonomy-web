@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<style>
+  @font-face { font-family: 'Space Grotesk'; src: url('../../public/fonts/SpaceGrotesk-Variable.woff2'); font-weight: 300 700; }
+  @font-face { font-family: 'Plus Jakarta Sans'; src: url('../../public/fonts/PlusJakartaSans-Variable.woff2'); font-weight: 200 800; }
+  @font-face { font-family: 'Space Mono'; src: url('../../public/fonts/SpaceMono-Bold.woff2'); font-weight: 700; }
+  * { box-sizing: border-box; margin: 0; }
+  body { width: 1200px; height: 630px; background: #fff8f5; font-family: 'Plus Jakarta Sans'; color: #1e1b19; overflow: hidden;
+    background-image: repeating-linear-gradient(to bottom, transparent 0 31px, rgb(30 27 25 / .12) 31px 32px); }
+  .frame { position: absolute; inset: 28px; border: 3px solid #1e1b19; border-radius: 10px; box-shadow: 8px 8px 0 #1e1b19; background: rgb(255 248 245 / .85); }
+  .copy { position: absolute; left: 72px; top: 76px; width: 640px; }
+  .brand { display: flex; align-items: center; gap: 14px; font-family: 'Space Grotesk'; font-weight: 700; font-size: 34px; letter-spacing: -0.02em; }
+  .brand img { width: 64px; image-rendering: pixelated; }
+  .label { font-family: 'Space Mono'; font-weight: 700; font-size: 20px; letter-spacing: .08em; text-transform: uppercase; color: #c2410c; margin-top: 44px; }
+  h1 { font-family: 'Space Grotesk'; font-weight: 700; font-size: 66px; line-height: 1.05; letter-spacing: -0.025em; margin-top: 14px; }
+  .chips { display: flex; gap: 12px; margin-top: 34px; }
+  .chips span { font-family: 'Space Mono'; font-weight: 700; font-size: 18px; padding: 8px 14px; border: 2px solid #1e1b19; border-radius: 4px; background: #fff; }
+  .art { position: absolute; right: 70px; bottom: 60px; width: 390px; image-rendering: pixelated; }
+</style>
+</head>
+<body>
+  <div class="frame"></div>
+  <div class="copy">
+    <div class="brand"><img src="../../src/assets/illustration/mascot_head.png" alt="" />Tanukonomy</div>
+    <div class="label" id="label"></div>
+    <h1 id="title"></h1>
+    <div class="chips" id="chips"></div>
+  </div>
+  <img class="art" src="../../src/assets/illustration/onboarding_4.png" alt="" />
+  <script>
+    const copy = {
+      id: { label: 'Catatan keuangan pribadi', title: 'Buku kas pribadi yang tetap di ponselmu.', chips: ['Tanpa akun', 'Data di perangkat', 'Gratis'] },
+      en: { label: 'Personal money tracker', title: 'A personal cash book that stays on your phone.', chips: ['No account', 'Data on device', 'Free'] },
+    }[new URLSearchParams(location.search).get('lang') || 'id'];
+    document.getElementById('label').textContent = copy.label;
+    document.getElementById('title').textContent = copy.title;
+    document.getElementById('chips').innerHTML = copy.chips.map((c) => `<span>${c}</span>`).join('');
+  </script>
+</body>
+</html>

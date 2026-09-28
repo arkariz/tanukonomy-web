@@ -1,0 +1,99 @@
+---
+import Logo from './Logo.astro';
+import { CONTACT_EMAIL } from '../config';
+import { type Lang, type PageKey, otherLang, path, t } from '../i18n';
+
+interface Props {
+  lang: Lang;
+  page: PageKey;
+}
+const { lang, page } = Astro.props;
+const d = t(lang);
+const home = path('home', lang);
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="wrap grid">
+    <div class="brand">
+      <Logo href={home} />
+      <p>{d.footer.tagline}</p>
+    </div>
+    <div>
+      <h2 class="label">{d.footer.product}</h2>
+      <ul>
+        <li><a href={`${home}#fitur`}>{d.nav.features}</a></li>
+        <li><a href={`${home}#freelance`}>{d.nav.freelance}</a></li>
+        <li><a href={path('beta', lang)}>{d.footer.beta}</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="label">{d.footer.legal}</h2>
+      <ul>
+        <li><a href={path('privacy', lang)}>{d.footer.privacy}</a></li>
+        <li><a href={path('terms', lang)}>{d.footer.terms}</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="label">{d.footer.contact}</h2>
+      <ul>
+        <li><a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a></li>
+        <li><a href={path(page, otherLang(lang))} hreflang={otherLang(lang)} lang={otherLang(lang)}>{d.nav.langLabel}</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap base">
+    <p>© {year} Tanukonomy. {d.footer.rights}</p>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    border-top: var(--border);
+    background: var(--bg-sunk);
+    padding-top: 56px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: 1.6fr repeat(3, 1fr);
+    gap: 32px;
+  }
+  .brand p {
+    color: var(--muted);
+    margin-top: 12px;
+    max-width: 32ch;
+  }
+  .label {
+    font-size: 0.8125rem;
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 10px;
+  }
+  a {
+    text-decoration: none;
+    overflow-wrap: anywhere;
+  }
+  ul a:hover {
+    color: var(--accent);
+    text-decoration: underline;
+  }
+  .base {
+    margin-top: 48px;
+    padding-block: 24px;
+    border-top: 1px solid var(--divider);
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+  @media (max-width: 800px) {
+    .grid {
+      grid-template-columns: 1fr 1fr;
+    }
+    .brand {
+      grid-column: 1 / -1;
+    }
+  }
+</style>

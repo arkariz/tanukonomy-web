@@ -1,0 +1,28 @@
+---
+import { Image } from 'astro:assets';
+import mascot from '../assets/illustration/mascot_head.png';
+import { APP_NAME } from '../config';
+
+interface Props {
+  href: string;
+}
+const { href } = Astro.props;
+---
+
+<a class="logo" href={href}>
+  <Image src={mascot} alt="" width={44} height={35} class="pixel" loading="eager" />
+  <span>{APP_NAME}</span>
+</a>
+
+<style>
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.25rem;
+    letter-spacing: -0.02em;
+  }
+</style>

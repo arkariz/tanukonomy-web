@@ -1,0 +1,692 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import Phone from './Phone.astro';
+import PixelIcon from './PixelIcon.astro';
+import heroMascot from '../assets/illustration/hero_mascot.png';
+import walletsArt from '../assets/illustration/onboarding_2.png';
+import recordArt from '../assets/illustration/onboarding_3.png';
+import budgetArt from '../assets/illustration/onboarding_4.png';
+import ctaArt from '../assets/illustration/onboarding_5.png';
+import { APP_NAME, SITE_URL } from '../config';
+import { type Lang, path, t } from '../i18n';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const d = t(lang);
+
+const featureArt: Record<string, { src: ImageMetadata; w: number }> = {
+  catat: { src: recordArt, w: 150 },
+  dompet: { src: walletsArt, w: 130 },
+  anggaran: { src: budgetArt, w: 190 },
+};
+const questionIcons = ['wallets', 'transactions', 'budget'];
+const privacyIcons = ['locked', 'wallet_bank', 'check', 'home'];
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'MobileApplication',
+    name: APP_NAME,
+    operatingSystem: 'ANDROID',
+    applicationCategory: 'FinanceApplication',
+    description: d.meta.description,
+    inLanguage: ['id', 'en'],
+    url: new URL(path('home', lang), SITE_URL).href,
+    offers: { '@type': 'Offer', price: '0', priceCurrency: 'IDR' },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: d.faq.items.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  },
+];
+---
+
+<Base lang={lang} page="home" title={d.meta.title} description={d.meta.description} jsonLd={jsonLd}>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <span class="label">{d.hero.eyebrow}</span>
+        <h1>{d.hero.title}</h1>
+        <p class="lead">{d.hero.body}</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href={path('beta', lang)}>{d.hero.primary}</a>
+          <a class="link-tertiary" href="#fitur">{d.hero.secondary}</a>
+        </div>
+        <ul class="chips" role="list">
+          {d.hero.chips.map((c) => <li>{c}</li>)}
+        </ul>
+      </div>
+      <div class="hero-visual">
+        <Phone screen="home" lang={lang} alt={d.hero.shotAlt} eager />
+        <Image src={heroMascot} alt="" width={200} class="pixel hero-mascot" loading="eager" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Tiga pertanyaan -->
+  <section class="section questions" aria-labelledby="q-title">
+    <div class="wrap">
+      <span class="label">{d.questions.label}</span>
+      <h2 id="q-title">{d.questions.title}</h2>
+      <ol class="q-grid" role="list">
+        {
+          d.questions.items.map((q, i) => (
+            <li class="card q-card">
+              <div class="q-head">
+                <span class="q-icon">
+                  <PixelIcon name={questionIcons[i]} size={32} />
+                </span>
+                <span class="q-num">0{i + 1}</span>
+              </div>
+              <h3>{q.q}</h3>
+              <p>{q.a}</p>
+              <span class="q-tag">{q.tag}</span>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+
+  <!-- Fitur -->
+  <section id="fitur" class="section features" aria-labelledby="f-title">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="label">{d.features.label}</span>
+        <h2 id="f-title">{d.features.title}</h2>
+      </div>
+      {
+        d.features.items.map((f, i) => (
+          <article class:list={['feature', { flip: i % 2 === 1 }]} id={f.id}>
+            <div class="feature-copy">
+              <span class="tag">{f.tag}</span>
+              <h3>{f.title}</h3>
+              <p class="lead">{f.body}</p>
+              <ul class="check-list">
+                {f.points.map((p) => <li>{p}</li>)}
+              </ul>
+            </div>
+            <div class="feature-visual">
+              <Phone screen={f.shot} lang={lang} alt={f.shotAlt} />
+              {featureArt[f.id] && (
+                <Image src={featureArt[f.id].src} alt="" width={featureArt[f.id].w} class="pixel feature-art" />
+              )}
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- Freelance -->
+  <section id="freelance" class="section freelance" aria-labelledby="fl-title">
+    <div class="wrap fl-grid">
+      <div>
+        <span class="label">{d.freelance.label}</span>
+        <h2 id="fl-title">{d.freelance.title}</h2>
+        <p class="lead">{d.freelance.body}</p>
+        <dl class="ledger card">
+          {
+            d.freelance.points.map((p, i) => (
+              <div class="ledger-row">
+                <dt>
+                  <PixelIcon name={['worklog', 'invoice', 'paid'][i]} size={28} />
+                  {p.k}
+                </dt>
+                <dd>{p.v}</dd>
+              </div>
+            ))
+          }
+        </dl>
+      </div>
+      <div class="fl-visual">
+        <Phone screen="freelance" lang={lang} alt={d.freelance.shotAlt} />
+      </div>
+    </div>
+  </section>
+
+  <!-- Privasi -->
+  <section id="privasi" class="section privacy" aria-labelledby="p-title">
+    <div class="wrap">
+      <div class="privacy-head">
+        <span class="label">{d.privacy.label}</span>
+        <h2 id="p-title">{d.privacy.title}</h2>
+        <p class="lead">{d.privacy.body}</p>
+      </div>
+      <ul class="p-grid" role="list">
+        {
+          d.privacy.items.map((p, i) => (
+            <li class="p-item">
+              <span class="p-icon">
+                <PixelIcon name={privacyIcons[i]} size={32} />
+              </span>
+              <h3>{p.t}</h3>
+              <p>{p.d}</p>
+            </li>
+          ))
+        }
+      </ul>
+      <a class="p-link" href={path('privacy', lang)}>{d.privacy.link} →</a>
+    </div>
+  </section>
+
+  <!-- Mode gelap -->
+  <section class="section dark-mode" aria-labelledby="d-title">
+    <div class="wrap dm-grid">
+      <div>
+        <span class="label">{d.dark.label}</span>
+        <h2 id="d-title">{d.dark.title}</h2>
+        <p class="lead">{d.dark.body}</p>
+      </div>
+      <div class="dm-pair">
+        <Phone screen="transaksi" lang={lang} alt={d.dark.altLight} theme="light" />
+        <Phone screen="transaksi" lang={lang} alt={d.dark.altDark} theme="dark" class="dm-dark" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Cara mulai -->
+  <section class="section steps" aria-labelledby="s-title">
+    <div class="wrap">
+      <span class="label">{d.steps.label}</span>
+      <h2 id="s-title">{d.steps.title}</h2>
+      <ol class="s-grid" role="list">
+        {
+          d.steps.items.map((s, i) => (
+            <li>
+              <span class="s-num" aria-hidden="true">
+                {i + 1}
+              </span>
+              <h3>{s.t}</h3>
+              <p>{s.d}</p>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+
+  <!-- Tanya jawab -->
+  <section id="tanya-jawab" class="section faq" aria-labelledby="faq-title">
+    <div class="wrap faq-grid">
+      <div>
+        <span class="label">{d.faq.label}</span>
+        <h2 id="faq-title">{d.faq.title}</h2>
+      </div>
+      <div class="faq-list">
+        {
+          d.faq.items.map((f) => (
+            <details class="card">
+              <summary>{f.q}</summary>
+              <p>{f.a}</p>
+            </details>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section cta-section" aria-labelledby="cta-title">
+    <div class="wrap">
+      <div class="cta card">
+        <div class="cta-copy">
+          <h2 id="cta-title">{d.cta.title}</h2>
+          <p class="lead">{d.cta.body}</p>
+          <a class="btn btn-primary" href={path('beta', lang)}>{d.cta.primary}</a>
+        </div>
+        <Image src={ctaArt} alt="" width={260} class="pixel cta-art" />
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  /* Hero ------------------------------------------------------------ */
+  .hero {
+    padding-block: clamp(40px, 7vw, 96px) clamp(64px, 9vw, 120px);
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent 0 31px,
+      var(--divider) 31px 32px
+    );
+    border-bottom: var(--border);
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: clamp(32px, 6vw, 80px);
+    align-items: center;
+  }
+  .hero h1 {
+    margin-bottom: 20px;
+  }
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px 28px;
+    margin-top: 32px;
+  }
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+    margin: 32px 0 0;
+  }
+  .chips li {
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 0.8125rem;
+    padding: 6px 12px;
+    background: var(--card);
+    border: var(--border);
+    border-radius: 4px;
+  }
+  .hero-visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+  .hero-mascot {
+    position: absolute;
+    left: calc(50% - 170px);
+    bottom: -36px;
+    translate: -62% 0;
+    width: 200px;
+    height: auto;
+    filter: drop-shadow(0 4px 0 color-mix(in srgb, var(--edge) 25%, transparent));
+  }
+
+  /* Tiga pertanyaan --------------------------------------------------- */
+  .q-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    padding: 0;
+    margin: 48px 0 0;
+    list-style: none;
+  }
+  .q-card {
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .q-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  .q-icon {
+    display: inline-grid;
+    place-items: center;
+    width: 52px;
+    height: 52px;
+    border: var(--border);
+    border-radius: 4px;
+    background: var(--bg-sunk);
+  }
+  .q-num {
+    font-family: var(--font-mono);
+    font-weight: 700;
+    color: var(--muted);
+  }
+  .q-card p {
+    color: var(--muted);
+    flex: 1;
+  }
+  .q-tag {
+    align-self: flex-start;
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 0.8125rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--accent);
+  }
+
+  /* Fitur ------------------------------------------------------------- */
+  .features {
+    background: var(--bg-sunk);
+    border-block: var(--border);
+  }
+  .section-head {
+    max-width: 720px;
+    margin-bottom: clamp(40px, 6vw, 72px);
+  }
+  .feature {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(32px, 6vw, 96px);
+    align-items: center;
+    padding-block: clamp(32px, 5vw, 56px);
+  }
+  .feature + .feature {
+    border-top: 2px dashed var(--divider);
+  }
+  .feature.flip .feature-copy {
+    order: 2;
+  }
+  .feature-copy h3 {
+    font-size: clamp(1.625rem, 2.8vw, 2.25rem);
+    font-weight: 700;
+    margin: 14px 0 16px;
+  }
+  .feature-copy .lead {
+    margin-bottom: 24px;
+  }
+  .tag {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 0.8125rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    background: var(--tint-accent);
+    color: var(--accent);
+    border-radius: 4px;
+  }
+  .feature-visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+  /* Ilustrasi menempel di sisi luar bingkai, tidak menutupi layar. */
+  .feature-art {
+    position: absolute;
+    right: calc(50% - 170px);
+    bottom: -24px;
+    translate: 68% 0;
+    height: auto;
+  }
+  .flip .feature-art {
+    right: auto;
+    left: calc(50% - 170px);
+    translate: -68% 0;
+  }
+
+  /* Freelance --------------------------------------------------------- */
+  .fl-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: clamp(32px, 6vw, 96px);
+    align-items: center;
+  }
+  .fl-grid h2 {
+    margin-bottom: 20px;
+  }
+  .ledger {
+    margin: 32px 0 0;
+    padding: 8px 24px;
+    border-left: 8px solid var(--pending);
+  }
+  .ledger-row {
+    padding-block: 16px;
+  }
+  .ledger-row + .ledger-row {
+    border-top: 2px dashed var(--divider);
+  }
+  dt {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.125rem;
+  }
+  dd {
+    margin: 2px 0 0 42px;
+    color: var(--muted);
+  }
+  .fl-visual {
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Privasi ----------------------------------------------------------- */
+  .privacy {
+    background: var(--band);
+    color: var(--on-band);
+  }
+  .privacy .label {
+    color: #f46b1c;
+  }
+  .privacy .lead {
+    color: var(--on-band-muted);
+  }
+  .privacy-head {
+    max-width: 720px;
+  }
+  .privacy-head h2 {
+    margin-bottom: 20px;
+  }
+  .p-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 56px 0 40px;
+  }
+  .p-item {
+    padding: 24px;
+    border: 2px solid #8a7d6e;
+    border-radius: var(--radius);
+    background: #231f1b;
+  }
+  .p-icon {
+    display: inline-grid;
+    place-items: center;
+    width: 52px;
+    height: 52px;
+    background: #fff8f5;
+    border-radius: 4px;
+    margin-bottom: 18px;
+  }
+  .p-item h3 {
+    font-size: 1.1875rem;
+    margin-bottom: 8px;
+  }
+  .p-item p {
+    color: var(--on-band-muted);
+    font-size: 0.975rem;
+  }
+  .p-link {
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: #f46b1c;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 2px;
+  }
+
+  /* Mode gelap -------------------------------------------------------- */
+  .dm-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: clamp(32px, 6vw, 80px);
+    align-items: center;
+  }
+  .dm-grid h2 {
+    margin-bottom: 20px;
+  }
+  .dm-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    justify-items: center;
+    align-items: start;
+  }
+  .dm-pair :global(.dm-dark) {
+    margin-top: 56px;
+  }
+
+  /* Langkah ----------------------------------------------------------- */
+  .steps {
+    background: var(--bg-sunk);
+    border-block: var(--border);
+  }
+  .s-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    list-style: none;
+    padding: 0;
+    margin: 48px 0 0;
+  }
+  .s-num {
+    display: inline-grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 1.25rem;
+    background: var(--card);
+    border: var(--border);
+    border-radius: 4px;
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+  }
+  .s-grid h3 {
+    margin-bottom: 8px;
+  }
+  .s-grid p {
+    color: var(--muted);
+  }
+
+  /* Tanya jawab ------------------------------------------------------- */
+  .faq-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.8fr;
+    gap: clamp(32px, 6vw, 80px);
+    align-items: start;
+  }
+  .faq-list {
+    display: grid;
+    gap: 14px;
+  }
+  details {
+    box-shadow: none;
+  }
+  details[open] {
+    box-shadow: var(--shadow);
+  }
+  summary {
+    cursor: pointer;
+    list-style: none;
+    padding: 20px 56px 20px 22px;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.125rem;
+    position: relative;
+  }
+  summary::-webkit-details-marker {
+    display: none;
+  }
+  summary::after {
+    content: '+';
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    translate: 0 -50%;
+    font-family: var(--font-mono);
+    font-size: 1.375rem;
+    color: var(--accent);
+  }
+  details[open] summary::after {
+    content: '−';
+  }
+  details p {
+    padding: 0 22px 22px;
+    color: var(--muted);
+  }
+
+  /* CTA --------------------------------------------------------------- */
+  .cta-section {
+    padding-top: 0;
+  }
+  .cta {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    align-items: center;
+    gap: 32px;
+    padding: clamp(28px, 5vw, 56px);
+    background: var(--tint-accent);
+    box-shadow: var(--shadow-lg);
+  }
+  .cta h2 {
+    margin-bottom: 16px;
+  }
+  .cta .lead {
+    color: var(--text);
+    margin-bottom: 28px;
+  }
+  .cta-art {
+    justify-self: center;
+    height: auto;
+  }
+
+  /* Responsif --------------------------------------------------------- */
+  @media (max-width: 960px) {
+    .p-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media (max-width: 860px) {
+    .hero-grid,
+    .feature,
+    .fl-grid,
+    .dm-grid,
+    .faq-grid,
+    .cta {
+      grid-template-columns: 1fr;
+    }
+    .feature.flip .feature-copy {
+      order: 0;
+    }
+    .q-grid,
+    .s-grid {
+      grid-template-columns: 1fr;
+    }
+    .hero-visual {
+      margin-top: 8px;
+    }
+    .cta-art {
+      width: 200px;
+    }
+  }
+  @media (max-width: 560px) {
+    .p-grid {
+      grid-template-columns: 1fr;
+    }
+    .hero-mascot {
+      width: 130px;
+      left: 0;
+      bottom: -28px;
+      translate: 0 0;
+    }
+    .feature-art {
+      display: none;
+    }
+    .dm-pair {
+      gap: 12px;
+    }
+    .dm-pair :global(.dm-dark) {
+      margin-top: 32px;
+    }
+  }
+</style>
