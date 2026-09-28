@@ -1,6 +1,7 @@
 ---
 import Legal from '../layouts/Legal.astro';
 import { CONTACT_EMAIL } from '../config';
+import { path } from '../i18n';
 ---
 
 <Legal
@@ -29,7 +30,7 @@ import { CONTACT_EMAIL } from '../config';
 
   <h2>3. Tanggung jawab atas data</h2>
   <p>
-    Karena data hanya tersimpan di perangkatmu (lihat <a href="/privasi/">Kebijakan Privasi</a>), kamu bertanggung jawab
+    Karena data hanya tersimpan di perangkatmu (lihat <a href={path('privacy', 'id')}>Kebijakan Privasi</a>), kamu bertanggung jawab
     menjaga perangkat dan datanya. Kami tidak dapat memulihkan data yang hilang karena perangkat rusak, hilang, direset,
     atau aplikasinya dihapus.
   </p>

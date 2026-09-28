@@ -31,6 +31,17 @@ HTML yang bisa dirayapi, cepat, dua bahasa.
    ini. Pendaftaran penguji lewat Google Group + halaman opt-in Google Play,
    jadi situs tidak perlu backend.
 
+## Amandemen (2026-09-28): GitHub Pages dulu
+
+Pemilik menunda domain dan alamat kontak. Sampai domain dibeli, situs
+disajikan di GitHub Pages `https://arkariz.github.io/tanukonomy-web/`
+lewat GitHub Actions. Semua jalur internal melewati `withBase()`/`path()`
+supaya pindah ke domain sendiri cukup mengubah `SITE_URL` dan `BASE_PATH`.
+Batasan yang diterima: `robots.txt` di subfolder tidak dibaca perayap (hanya
+`/robots.txt` di akar domain yang berlaku), dan otoritas SEO yang terkumpul
+di `github.io` tidak ikut pindah — jadi jangan mulai kerja SEO serius (S-1
+s.d. S-5) sebelum domain sendiri aktif.
+
 ## Konsekuensi
 
 - Lighthouse 100 di performa, aksesibilitas, praktik terbaik, dan SEO di

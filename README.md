@@ -32,8 +32,11 @@ Node 22 atau lebih baru.
 
 Semua ada di `src/config.ts`:
 
-- `SITE_URL` — domain final. Dipakai untuk canonical, hreflang, sitemap,
-  dan Open Graph. Juga perbarui baris `Sitemap:` di `public/robots.txt`.
+- `SITE_URL` dan `BASE_PATH` — sekarang GitHub Pages
+  (`https://arkariz.github.io` + `/tanukonomy-web/`). Saat pindah ke domain
+  sendiri: `SITE_URL` jadi domainnya, `BASE_PATH` jadi `'/'`, dan perbarui
+  baris `Sitemap:` di `public/robots.txt`. Jalur internal wajib lewat
+  `path()` atau `withBase()`, jangan tulis `/...` mentah.
 - `CONTACT_EMAIL` — alamat kontak di footer, halaman uji coba, dan
   dokumen hukum.
 - `GOOGLE_GROUP_URL` dan `PLAY_TESTING_URL` — selama kosong, tombol di
@@ -63,6 +66,10 @@ docs/                  ADR dan daftar tugas situs
 
 ## Deploy
 
-Rencananya Cloudflare Pages (lihat [ADR-001](docs/adr/0001-astro-statis-di-cloudflare-pages.md)):
-perintah build `npm run build`, direktori keluaran `dist`, variabel
-lingkungan `NODE_VERSION=22`.
+Sementara di **GitHub Pages**: setiap push ke `main` atau branch kerja
+menjalankan `.github/workflows/deploy.yml` (check, build, deploy).
+Syarat sekali atur di GitHub: Settings → Pages → Source: **GitHub
+Actions**, dan repo publik (Pages untuk repo privat butuh GitHub Pro).
+
+Tujuan akhirnya tetap Cloudflare Pages di domain sendiri (lihat
+[ADR-001](docs/adr/0001-astro-statis-di-cloudflare-pages.md)).

@@ -1,5 +1,6 @@
 import { id } from './id';
 import { en } from './en';
+import { withBase } from '../config';
 
 export type Lang = 'id' | 'en';
 export type PageKey = 'home' | 'beta' | 'privacy' | 'terms';
@@ -16,7 +17,7 @@ const routes: Record<PageKey, Record<Lang, string>> = {
   terms: { id: '/syarat/', en: '/en/terms/' },
 };
 
-export const path = (page: PageKey, lang: Lang) => routes[page][lang];
+export const path = (page: PageKey, lang: Lang) => withBase(routes[page][lang]);
 
 export const otherLang = (lang: Lang): Lang => (lang === 'id' ? 'en' : 'id');
 

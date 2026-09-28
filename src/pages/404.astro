@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import { Image } from 'astro:assets';
 import art from '../assets/illustration/mascot_head.png';
+import { path } from '../i18n';
 ---
 
 <Base lang="id" page="home" title="Halaman tidak ditemukan — Tanukonomy" description="Halaman yang kamu cari tidak ada.">
@@ -9,7 +10,7 @@ import art from '../assets/illustration/mascot_head.png';
     <Image src={art} alt="" width={144} class="pixel" />
     <h1>Halaman ini tidak ada di buku kas.</h1>
     <p class="lead">Tanuki sudah mencari di semua dompet, tapi tautannya tidak ditemukan. <span lang="en">Page not found.</span></p>
-    <a class="btn btn-primary" href="/">Kembali ke beranda</a>
+    <a class="btn btn-primary" href={path('home', 'id')}>Kembali ke beranda</a>
   </section>
 </Base>
 

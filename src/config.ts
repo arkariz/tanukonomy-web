@@ -2,7 +2,16 @@
  * Satu-satunya tempat untuk nilai yang bergantung pada keputusan pemilik.
  * Ganti di sini, bukan di halaman.
  */
-export const SITE_URL = 'https://tanukonomy.app';
+export const SITE_URL = 'https://arkariz.github.io';
+
+/**
+ * Awalan jalur situs. GitHub Pages proyek disajikan di /<nama-repo>/;
+ * kosongkan ('/') begitu situs pindah ke domain sendiri.
+ */
+export const BASE_PATH = '/tanukonomy-web/';
+
+/** Jalur absolut di dalam situs, memperhitungkan BASE_PATH. `p` diawali '/'. */
+export const withBase = (p: string) => BASE_PATH.replace(/\/$/, '') + p;
 
 /** Alamat kontak publik (kebijakan privasi mewajibkannya). */
 export const CONTACT_EMAIL = 'halo@tanukonomy.app';

@@ -1,6 +1,7 @@
 ---
 import Legal from '../../layouts/Legal.astro';
 import { CONTACT_EMAIL } from '../../config';
+import { path } from '../../i18n';
 ---
 
 <Legal
@@ -28,7 +29,7 @@ import { CONTACT_EMAIL } from '../../config';
 
   <h2>3. Responsibility for your data</h2>
   <p>
-    Because data is stored only on your device (see the <a href="/en/privacy/">Privacy Policy</a>), you are responsible for
+    Because data is stored only on your device (see the <a href={path('privacy', 'en')}>Privacy Policy</a>), you are responsible for
     keeping your device and its data safe. We cannot recover data lost through a damaged, lost, or reset device, or an
     uninstalled app.
   </p>

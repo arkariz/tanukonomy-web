@@ -2,7 +2,9 @@
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { APP_NAME, SITE_URL } from '../config';
+import { APP_NAME, SITE_URL, withBase } from '../config';
+import groteskUrl from '../assets/fonts/SpaceGrotesk-Variable.woff2?url';
+import jakartaUrl from '../assets/fonts/PlusJakartaSans-Variable.woff2?url';
 import { type Lang, type PageKey, htmlLang, ogLocale, otherLang, path, t } from '../i18n';
 
 interface Props {
@@ -18,14 +20,14 @@ const d = t(lang);
 const canonical = new URL(path(page, lang), SITE_URL).href;
 const alternate = new URL(path(page, otherLang(lang)), SITE_URL).href;
 const idUrl = new URL(path(page, 'id'), SITE_URL).href;
-const ogImage = new URL(`/og/og-${lang}.png`, SITE_URL).href;
+const ogImage = new URL(withBase(`/og/og-${lang}.png`), SITE_URL).href;
 
 const org = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: APP_NAME,
-  url: SITE_URL,
-  logo: new URL('/icon-512.png', SITE_URL).href,
+  url: new URL(path('home', 'id'), SITE_URL).href,
+  logo: new URL(withBase('/icon-512.png'), SITE_URL).href,
 };
 ---
 
@@ -44,14 +46,14 @@ const org = {
     <meta name="theme-color" content="#fff8f5" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#231f1b" media="(prefers-color-scheme: dark)" />
     <meta name="color-scheme" content="light dark" />
-    <link rel="icon" href="/favicon.ico" sizes="32x32" />
-    <link rel="icon" type="image/png" href="/icon-192.png" sizes="192x192" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="icon" href={withBase('/favicon.ico')} sizes="32x32" />
+    <link rel="icon" type="image/png" href={withBase('/icon-192.png')} sizes="192x192" />
+    <link rel="apple-touch-icon" href={withBase('/apple-touch-icon.png')} />
+    <link rel="manifest" href={withBase('/site.webmanifest')} />
+    <link rel="sitemap" href={withBase('/sitemap-index.xml')} />
 
-    <link rel="preload" href="/fonts/SpaceGrotesk-Variable.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="/fonts/PlusJakartaSans-Variable.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={groteskUrl} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={jakartaUrl} as="font" type="font/woff2" crossorigin />
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={APP_NAME} />
