@@ -2,7 +2,7 @@ import type { Dict } from './id';
 
 export const en: Dict = {
   meta: {
-    title: 'Tanukonomy — Private Budget & Expense Tracker, No Account',
+    title: 'Tanukonomy — Private Budget & Expense Tracker',
     description:
       'Record income, expenses, and transfers between wallets in seconds. Plan monthly budgets and track freelance hours. Your data stays on your phone.',
     ogAlt: 'Tanukonomy: a personal cash book on your phone, kept by a tanuki bookkeeper',
@@ -23,7 +23,7 @@ export const en: Dict = {
     body: 'Record money in, money out, and moves between wallets in seconds. Plan budgets, track freelance hours, and always know where your money is.',
     primary: 'Join the beta',
     secondary: 'See how it works',
-    chips: ['No account', 'Data stays on device', 'Free during beta'],
+    chips: ['Works offline', 'Data stays on device', 'Free during beta'],
     shotAlt: 'Tanukonomy Home screen: total cash, this month’s income and expenses, active budget, and freelance summary',
   },
   questions: {
@@ -90,15 +90,15 @@ export const en: Dict = {
   },
   privacy: {
     label: 'Privacy',
-    title: 'Your data never leaves your phone.',
-    body: 'Tanukonomy has no servers. Every record is stored on your own device, so there is nothing for us to read, sell, or leak.',
+    title: 'Today, your data stays on your phone.',
+    body: 'Tanukonomy started with no servers. Right now, every record is stored only on your own device, so there is nothing for us to read, sell, or leak.',
     items: [
-      { t: 'No account', d: 'Open the app and start. No email or phone number required.' },
+      { t: 'Start with no account', d: 'Try the app right now, no sign-up. An account is coming later for optional features like sync and a premium plan.' },
       { t: 'No bank connection', d: 'You do the recording. No bank passwords, no account access.' },
-      { t: 'No ads or trackers', d: 'No third-party analytics inside the app.' },
+      { t: 'Your data isn’t sold', d: 'We don’t sell or share your data with advertisers. Basic usage analytics for product improvement will be introduced transparently later on.' },
       { t: 'Works offline', d: 'Record on the train or at the market, signal or not.' },
     ],
-    future: 'Coming later: syncing your data to other devices (optional, and only if you turn it on). Until then, your records live on one device only.',
+    future: 'In the works: an optional account for syncing across devices and a premium (freemium) plan, plus basic usage analytics for product improvement. All of it will be announced transparently and this privacy policy updated before it goes live — the core recording features will keep working without an account.',
     link: 'Read the privacy policy',
   },
   steps: {
@@ -121,9 +121,10 @@ export const en: Dict = {
     label: 'FAQ',
     title: 'Common questions',
     items: [
-      { q: 'Is Tanukonomy free?', a: 'Yes, it’s free during the beta. We’ll give plenty of notice if that ever changes.' },
+      { q: 'Is Tanukonomy free?', a: 'Yes, it’s free to use during the beta. We plan to introduce an optional premium plan (freemium) later on; core recording will stay free, and we’ll give plenty of notice before any change.' },
       { q: 'Does Tanukonomy connect to my bank account?', a: 'No. Tanukonomy is a notebook: you record each transaction yourself. The app doesn’t move money, doesn’t pay, and never asks for bank logins.' },
-      { q: 'Where is my data stored?', a: 'Only on your phone. There’s no account and no server, so we can’t see your records.' },
+      { q: 'Where is my data stored?', a: 'Right now, only on your phone — there’s no account yet, so we can’t see your records. An optional account for syncing is in the works; recording locally without an account will keep working.' },
+      { q: 'Does the app use analytics or track me for ads?', a: 'Right now, there’s no third-party analytics or ad tracking inside the app. Later on we plan to add basic usage analytics to understand and improve the app — not to sell data or show ads. We’ll update this privacy policy and let you know before that goes live.' },
       { q: 'What happens if I switch phones or uninstall?', a: 'Because data lives only on the device, uninstalling also deletes your records. Export and file backup are in the works.' },
       { q: 'Can I use it on more than one device?', a: 'Not yet. Right now your records live on a single device. Syncing data across devices is planned as an optional feature you turn on yourself — until then, the app keeps working fully offline as it does today.' },
       { q: 'Is it available on iPhone?', a: 'The closed beta starts on Android through Google Play. iOS will follow.' },
@@ -149,7 +150,7 @@ export const en: Dict = {
   beta: {
     metaTitle: 'Join the Tanukonomy Closed Beta on Android',
     metaDescription:
-      'Become an early tester of Tanukonomy, a private money tracker with no account. The full steps through Google Play, free.',
+      'Become an early tester of Tanukonomy, a private money tracker. The full steps through Google Play, free.',
     eyebrow: 'Closed beta · Android',
     title: 'Help us get Tanukonomy ready for everyone.',
     body: 'Before its public release on Google Play, Tanukonomy needs real users to test it for at least 14 consecutive days, with at least 12 testers — that’s Google’s own requirement, not ours. If you use Android and want to get your money in order, we’d love to have you.',

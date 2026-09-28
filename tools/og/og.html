@@ -31,8 +31,8 @@
   <img class="art" src="../../src/assets/illustration/onboarding_4.png" alt="" />
   <script>
     const copy = {
-      id: { label: 'Catatan keuangan pribadi', title: 'Buku kas pribadi yang tetap di ponselmu.', chips: ['Tanpa akun', 'Data di perangkat', 'Gratis'] },
-      en: { label: 'Personal money tracker', title: 'A personal cash book that stays on your phone.', chips: ['No account', 'Data on device', 'Free'] },
+      id: { label: 'Catatan keuangan pribadi', title: 'Buku kas pribadi yang tetap di ponselmu.', chips: ['Bisa offline', 'Data di perangkat', 'Gratis'] },
+      en: { label: 'Personal money tracker', title: 'A personal cash book that stays on your phone.', chips: ['Works offline', 'Data on device', 'Free'] },
     }[new URLSearchParams(location.search).get('lang') || 'id'];
     document.getElementById('label').textContent = copy.label;
     document.getElementById('title').textContent = copy.title;

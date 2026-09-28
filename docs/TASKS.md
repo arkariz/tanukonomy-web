@@ -29,6 +29,18 @@ Diperbarui 28 September 2026.
       landing serta kebijakan privasi (id, en) sekarang menyebut rencana
       sinkronisasi data multi-perangkat sebagai fitur mendatang, opsional,
       belum tersedia.
+- [x] **W-9** Pemilik mengonfirmasi rencana produk: akan ada akun, analitik
+      pemakaian, dan model freemium (bukan cuma sinkronisasi). Klaim
+      absolut "tanpa akun" dan "tanpa iklan dan pelacak" dilunakkan jadi
+      "saat ini"/"hari ini" di semua tempat: judul `<title>`, chip hero,
+      empat kartu privasi landing, kotak "sedang disiapkan", FAQ (2 item
+      baru: analitik, freemium; 1 diperbarui: lokasi data), meta deskripsi
+      `/beta`, dan gambar Open Graph. Kebijakan privasi (id, en) dapat §6
+      diperluas (akun, sinkronisasi, **dan langganan premium**) dan §7 baru
+      (analitik pemakaian produk, dengan janji: bukan untuk jual data/
+      iklan, tidak mencakup isi catatan keuangan, provider akan disebutkan
+      sebelum aktif); §2 diberi kualifikasi "saat ini". Nomor bagian 7–10
+      lama bergeser jadi 8–11.
 
 ## Menunggu pemilik
 
@@ -48,6 +60,12 @@ Diperbarui 28 September 2026.
       keluaran `dist`, `NODE_VERSION=22`) dan pasang domain.
 - [ ] **P-6** Konfirmasi dua klaim di tanya jawab: iOS "menyusul" dan
       "gratis selama uji coba".
+- [ ] **P-8** Begitu fitur akun/sinkronisasi, langganan premium, atau
+      analitik pemakaian (W-9) mulai dibangun di aplikasi: sebutkan nama
+      penyedia analitik dan penyedia pembayaran di kebijakan privasi
+      (§6–§7 `privasi.astro`/`en/privacy.astro`), lalu perbarui
+      `LEGAL_EFFECTIVE_DATE`. Jangan aktifkan fiturnya di aplikasi sebelum
+      kebijakan ini diperbarui.
 
 ## Berikutnya (SEO)
 

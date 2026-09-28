@@ -1,6 +1,6 @@
 export const id = {
   meta: {
-    title: 'Tanukonomy — Aplikasi Catatan Keuangan Pribadi, Tanpa Akun',
+    title: 'Tanukonomy — Aplikasi Catatan Keuangan Pribadi',
     description:
       'Catat pemasukan, pengeluaran, dan transfer antar dompet dalam hitungan detik. Susun anggaran bulanan dan pantau jam kerja freelance. Data tetap di ponselmu.',
     ogAlt: 'Tanukonomy: buku kas pribadi di ponselmu, ditemani tanuki juru catat',
@@ -21,7 +21,7 @@ export const id = {
     body: 'Catat uang masuk, uang keluar, dan pindah dompet dalam hitungan detik. Susun anggaran, pantau jam kerja freelance, dan selalu tahu di mana uangmu berada.',
     primary: 'Ikut uji coba',
     secondary: 'Lihat cara kerjanya',
-    chips: ['Tanpa akun', 'Data di perangkat', 'Gratis selama uji coba'],
+    chips: ['Bisa dipakai offline', 'Data di perangkat', 'Gratis selama uji coba'],
     shotAlt: 'Layar Beranda Tanukonomy: total kas, pemasukan dan pengeluaran bulan ini, anggaran aktif, dan ringkasan freelance',
   },
   questions: {
@@ -88,15 +88,15 @@ export const id = {
   },
   privacy: {
     label: 'Privasi',
-    title: 'Datamu tidak pernah meninggalkan ponsel.',
-    body: 'Tanukonomy tidak punya server. Semua catatan disimpan di perangkatmu sendiri, jadi tidak ada yang bisa kami baca, jual, atau bocorkan.',
+    title: 'Hari ini, datamu tetap di ponselmu.',
+    body: 'Tanukonomy dimulai tanpa server. Saat ini semua catatan tersimpan hanya di perangkatmu sendiri, jadi tidak ada yang bisa kami baca, jual, atau bocorkan.',
     items: [
-      { t: 'Tanpa akun', d: 'Buka aplikasinya dan langsung mulai. Tidak ada email atau nomor ponsel yang diminta.' },
+      { t: 'Mulai tanpa akun', d: 'Coba aplikasinya sekarang, tanpa mendaftar. Akun akan hadir belakangan untuk fitur opsional seperti sinkronisasi dan langganan premium.' },
       { t: 'Tanpa sambungan bank', d: 'Kamu yang mencatat. Tidak ada kata sandi bank atau akses rekening.' },
-      { t: 'Tanpa iklan dan pelacak', d: 'Tidak ada analitik pihak ketiga di dalam aplikasi.' },
+      { t: 'Data tidak dijual', d: 'Kami tidak menjual atau membagikan datamu ke pengiklan. Analitik pemakaian dasar untuk perbaikan produk akan diperkenalkan secara transparan ke depannya.' },
       { t: 'Bekerja tanpa internet', d: 'Mencatat di kereta atau di pasar tetap bisa, sinyal atau tidak.' },
     ],
-    future: 'Sedang disiapkan: sinkronisasi data ke perangkat lain (opsional, kamu yang menyalakannya). Sampai fitur itu tersedia, catatanmu hanya ada di satu perangkat.',
+    future: 'Sedang disiapkan: akun opsional untuk sinkronisasi antar perangkat dan langganan premium (freemium), serta analitik pemakaian dasar untuk perbaikan produk. Semuanya akan diumumkan secara transparan dan kebijakan privasi diperbarui sebelum aktif — fitur pencatatan inti tetap bisa dipakai tanpa akun.',
     link: 'Baca kebijakan privasi',
   },
   steps: {
@@ -119,9 +119,10 @@ export const id = {
     label: 'Tanya jawab',
     title: 'Yang sering ditanyakan',
     items: [
-      { q: 'Apakah Tanukonomy gratis?', a: 'Ya, gratis selama masa uji coba. Kami akan memberi tahu jauh-jauh hari kalau ada perubahan.' },
+      { q: 'Apakah Tanukonomy gratis?', a: 'Ya, gratis dipakai selama masa uji coba. Ke depannya kami berencana membuka langganan premium opsional (freemium); pencatatan inti tetap bisa dipakai gratis, dan perubahan apa pun akan diumumkan jauh-jauh hari.' },
       { q: 'Apakah Tanukonomy terhubung ke rekening bank saya?', a: 'Tidak. Tanukonomy adalah buku catatan: kamu yang mencatat setiap transaksi. Aplikasi tidak memindahkan uang, tidak membayar, dan tidak pernah meminta data login bank.' },
-      { q: 'Di mana data saya disimpan?', a: 'Hanya di ponselmu. Tidak ada akun dan tidak ada server, jadi kami tidak bisa melihat catatanmu.' },
+      { q: 'Di mana data saya disimpan?', a: 'Saat ini hanya di ponselmu — belum ada akun, jadi kami tidak bisa melihat catatanmu. Akun opsional untuk sinkronisasi sedang disiapkan; mencatat secara lokal tanpa akun akan tetap bisa dipakai.' },
+      { q: 'Apakah aplikasi ini memakai analitik atau melacak saya untuk iklan?', a: 'Saat ini tidak ada analitik pihak ketiga atau pelacak iklan di dalam aplikasi. Ke depannya kami berencana menambahkan analitik pemakaian dasar untuk memahami dan memperbaiki aplikasi — bukan untuk menjual data atau menampilkan iklan. Kebijakan privasi akan diperbarui dan diberi tahu sebelum itu aktif.' },
       { q: 'Apa yang terjadi kalau saya ganti ponsel atau menghapus aplikasi?', a: 'Karena data hanya ada di perangkat, menghapus aplikasi juga menghapus catatannya. Fitur ekspor dan cadangan ke berkas sedang kami siapkan.' },
       { q: 'Bisa dipakai di beberapa perangkat sekaligus?', a: 'Belum. Saat ini catatanmu hanya ada di satu perangkat. Sinkronisasi data antar perangkat sedang kami siapkan sebagai fitur opsional yang kamu nyalakan sendiri — sampai tersedia, aplikasi tetap bekerja sepenuhnya offline seperti sekarang.' },
       { q: 'Tersedia di iPhone?', a: 'Uji coba tertutup dimulai di Android lewat Google Play. Versi iOS menyusul.' },
@@ -147,7 +148,7 @@ export const id = {
   beta: {
     metaTitle: 'Ikut Uji Coba Tertutup Tanukonomy di Android',
     metaDescription:
-      'Daftar jadi penguji awal Tanukonomy, aplikasi catatan keuangan pribadi tanpa akun. Langkah lengkap lewat Google Play, gratis.',
+      'Daftar jadi penguji awal Tanukonomy, aplikasi catatan keuangan pribadi. Langkah lengkap lewat Google Play, gratis.',
     eyebrow: 'Uji coba tertutup · Android',
     title: 'Bantu kami menyiapkan Tanukonomy untuk semua orang.',
     body: 'Sebelum dirilis publik di Google Play, Tanukonomy perlu diuji oleh pengguna sungguhan selama setidaknya 14 hari berturut-turut, dengan minimal 12 penguji — ini syarat resmi Google, bukan aturan kami. Kalau kamu memakai Android dan ingin mulai rapi mencatat keuangan, kami ingin kamu ikut.',
