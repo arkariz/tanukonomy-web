@@ -52,6 +52,15 @@ Diperbarui 28 September 2026.
       `--pending-on-tint` ditambahkan ke `global.css` untuk lencana
       "Segera" (`--pending` langsung di atas `--tint-pending` hanya
       4,19:1, di bawah ambang WCAG 4,5:1 untuk teks kecil).
+- [x] **W-11** Halaman hapus akun/data (`/hapus-akun/`, `/en/delete-account/`),
+      untuk kolom "URL hapus akun" di Play Console (App content → Data
+      safety), ditautkan dari footer. Karena aplikasi belum punya sistem
+      akun, isinya jujur soal keadaan sekarang (§1–§2: cara hapus data
+      lokal lewat uninstall/clear data, tanpa masa retensi karena tidak
+      ada server) dan menuliskan janji untuk nanti (§3: penghapusan akun
+      dalam aplikasi dalam 30 hari, begitu akun/sinkronisasi aktif —
+      lihat `PLAY_DATA_SAFETY.md` repo `Saldough`). Perbarui §3 dengan
+      langkah pasti begitu fitur itu sungguhan dibangun.
 
 ## Menunggu pemilik
 
@@ -74,9 +83,17 @@ Diperbarui 28 September 2026.
 - [ ] **P-8** Begitu fitur akun/sinkronisasi, langganan premium, atau
       analitik pemakaian (W-9) mulai dibangun di aplikasi: sebutkan nama
       penyedia analitik dan penyedia pembayaran di kebijakan privasi
-      (§6–§7 `privasi.astro`/`en/privacy.astro`), lalu perbarui
+      (§6–§7 `privasi.astro`/`en/privacy.astro`), tulis ulang §3 halaman
+      hapus akun (W-11) dengan langkah pasti, lalu perbarui
       `LEGAL_EFFECTIVE_DATE`. Jangan aktifkan fiturnya di aplikasi sebelum
-      kebijakan ini diperbarui.
+      keduanya diperbarui.
+- [ ] **P-9** Setelah domain sendiri aktif (P-1): tempel URL halaman hapus
+      akun (`/hapus-akun/`, W-11) ke kolom "URL hapus akun" di Play
+      Console (App content → Data safety) begitu fitur akun benar-benar
+      dibangun. Untuk uji coba tertutup sekarang, kolom ini biasanya tidak
+      wajib diisi kalau jawaban "metode pembuatan akun" dipilih "Aplikasi
+      saya tidak mengizinkan pengguna membuat akun" (lihat
+      `PLAY_DATA_SAFETY.md` repo `Saldough`).
 
 ## Berikutnya (SEO)
 

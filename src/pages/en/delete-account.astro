@@ -1,0 +1,71 @@
+---
+import Legal from '../../layouts/Legal.astro';
+import { CONTACT_EMAIL } from '../../config';
+import { path } from '../../i18n';
+---
+
+<Legal
+  lang="en"
+  page="deleteAccount"
+  title="Delete Account and Data"
+  description="How to delete all Tanukonomy data from your device, and the planned account deletion process once accounts are available."
+>
+  <p class="lede">
+    <strong>Tanukonomy doesn’t have an account system yet.</strong> Everything you record — wallets, transactions,
+    budgets, freelance projects — is stored only on your own device, never sent to any server. So right now there’s no
+    “account” to delete; what you can delete is the data itself, directly on your device.
+  </p>
+
+  <h2>1. How to delete all your data now</h2>
+  <p>Pick one:</p>
+  <ul>
+    <li>
+      <strong>Uninstall the app.</strong> Long-press the Tanukonomy icon, choose “Uninstall”, and confirm. This
+      permanently and immediately deletes every wallet, transaction, budget, and setting.
+    </li>
+    <li>
+      <strong>Clear the app’s data without uninstalling.</strong> Open Android Settings → Apps → Tanukonomy → Storage
+      → Clear data (wording varies by Android version). The app stays installed but resets to a freshly-installed
+      state.
+    </li>
+  </ul>
+
+  <h2>2. What data is deleted, and for how long</h2>
+  <p>
+    Because Tanukonomy has no server, there is no copy of your data anywhere but your device. As soon as you do either
+    of the above:
+  </p>
+  <ul>
+    <li><strong>Deleted immediately, with no retention period</strong>: every wallet and its balance, transaction
+      history, budgets and their items, freelance projects and hours, and app settings.</li>
+    <li><strong>Nothing is kept by us afterward</strong> — we have no way to recover, view, or share data you’ve
+      deleted, because we never held a copy of it in the first place.</li>
+  </ul>
+  <p>
+    Your operating system’s own backup (such as Google backup on Android), if you’ve turned it on, is managed by
+    Google under their own policies — see <a href={path('privacy', 'en')}>Privacy Policy</a> §4.
+  </p>
+
+  <h2>3. Once accounts are available (not active yet)</h2>
+  <p>
+    We plan to add an optional account for syncing across devices and a premium plan — see{' '}
+    <a href={path('privacy', 'en')}>Privacy Policy</a> §6. This feature is <strong>not available yet</strong>. Once it
+    goes live, this page will be updated with the exact steps, following these commitments:
+  </p>
+  <ul>
+    <li>account deletion will be available <strong>inside the app</strong> (Settings → Account → Delete Account),
+      with no need to contact us first;</li>
+    <li>deleting your account will remove your data from our servers within <strong>30 days</strong> of the
+      request;</li>
+    <li>data stored locally on your device is not automatically deleted by an account deletion — use the steps in §1
+      if you want to remove that too;</li>
+    <li>if in-app deletion isn’t possible for some reason, a request by email below will be processed on the same
+      timeline.</li>
+  </ul>
+
+  <h2>4. Other questions or requests</h2>
+  <p>
+    Send them to <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. Mention your device and, if relevant, roughly
+    when you installed Tanukonomy, so we can help faster.
+  </p>
+</Legal>

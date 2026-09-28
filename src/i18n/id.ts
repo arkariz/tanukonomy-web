@@ -165,6 +165,7 @@ export const id = {
     contact: 'Kontak',
     privacy: 'Kebijakan Privasi',
     terms: 'Syarat dan Ketentuan',
+    deleteAccount: 'Hapus Data/Akun',
     beta: 'Uji coba tertutup',
     rights: 'Dibuat di Indonesia.',
   },

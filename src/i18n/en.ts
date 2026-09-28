@@ -167,6 +167,7 @@ export const en: Dict = {
     contact: 'Contact',
     privacy: 'Privacy Policy',
     terms: 'Terms of Use',
+    deleteAccount: 'Delete Data/Account',
     beta: 'Closed beta',
     rights: 'Made in Indonesia.',
   },

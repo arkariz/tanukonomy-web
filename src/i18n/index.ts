@@ -3,7 +3,7 @@ import { en } from './en';
 import { withBase } from '../config';
 
 export type Lang = 'id' | 'en';
-export type PageKey = 'home' | 'beta' | 'privacy' | 'terms';
+export type PageKey = 'home' | 'beta' | 'privacy' | 'terms' | 'deleteAccount';
 
 const dicts = { id, en };
 
@@ -15,6 +15,7 @@ const routes: Record<PageKey, Record<Lang, string>> = {
   beta: { id: '/beta/', en: '/en/beta/' },
   privacy: { id: '/privasi/', en: '/en/privacy/' },
   terms: { id: '/syarat/', en: '/en/terms/' },
+  deleteAccount: { id: '/hapus-akun/', en: '/en/delete-account/' },
 };
 
 export const path = (page: PageKey, lang: Lang) => withBase(routes[page][lang]);

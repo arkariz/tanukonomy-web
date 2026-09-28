@@ -1,0 +1,72 @@
+---
+import Legal from '../layouts/Legal.astro';
+import { CONTACT_EMAIL } from '../config';
+import { path } from '../i18n';
+---
+
+<Legal
+  lang="id"
+  page="deleteAccount"
+  title="Hapus Akun dan Data"
+  description="Cara menghapus seluruh data Tanukonomy dari perangkatmu, dan rencana penghapusan akun begitu fitur akun tersedia."
+>
+  <p class="lede">
+    <strong>Tanukonomy saat ini belum punya sistem akun.</strong> Semua data yang kamu catat — dompet, transaksi,
+    anggaran, proyek freelance — tersimpan hanya di perangkatmu sendiri, tidak pernah dikirim ke server mana pun. Karena
+    itu, saat ini tidak ada "akun" untuk dihapus; yang bisa kamu hapus adalah datanya sendiri, langsung dari perangkat.
+  </p>
+
+  <h2>1. Cara menghapus semua datamu sekarang</h2>
+  <p>Pilih salah satu:</p>
+  <ul>
+    <li>
+      <strong>Hapus aplikasinya (uninstall).</strong> Tekan lama ikon Tanukonomy, pilih "Uninstall" atau "Copot
+      pemasangan", lalu konfirmasi. Ini menghapus seluruh dompet, transaksi, anggaran, dan pengaturan secara permanen
+      dan seketika.
+    </li>
+    <li>
+      <strong>Hapus data aplikasi tanpa uninstall.</strong> Buka Pengaturan Android → Aplikasi → Tanukonomy →
+      Penyimpanan → Hapus data (atau "Clear storage" / "Clear data", tergantung versi Android). Aplikasinya tetap
+      terpasang, tapi kembali ke keadaan baru dipasang.
+    </li>
+  </ul>
+
+  <h2>2. Jenis data yang dihapus, dan masa retensinya</h2>
+  <p>
+    Karena Tanukonomy tidak memiliki server, tidak ada salinan datamu yang tersimpan di mana pun selain di
+    perangkatmu. Begitu langkah di atas dilakukan:
+  </p>
+  <ul>
+    <li><strong>Dihapus seketika, tanpa masa retensi</strong>: seluruh dompet dan saldonya, riwayat transaksi, anggaran
+      dan pos-posnya, proyek dan jam kerja freelance, serta pengaturan aplikasi.</li>
+    <li><strong>Tidak ada yang kami simpan setelahnya</strong> — kami tidak punya cara untuk memulihkan, melihat, atau
+      membagikan data yang sudah kamu hapus, karena memang tidak pernah ada salinannya di pihak kami.</li>
+  </ul>
+  <p>
+    Cadangan bawaan sistem operasi (misalnya cadangan Google di Android), kalau kamu nyalakan sendiri, dikelola oleh
+    Google sesuai kebijakan mereka — lihat <a href={path('privacy', 'id')}>Kebijakan Privasi</a> §4.
+  </p>
+
+  <h2>3. Begitu fitur akun tersedia (belum aktif)</h2>
+  <p>
+    Kami berencana menambahkan akun opsional untuk sinkronisasi antar perangkat dan langganan premium — lihat{' '}
+    <a href={path('privacy', 'id')}>Kebijakan Privasi</a> §6. Fitur ini <strong>belum tersedia</strong>. Begitu aktif, halaman ini
+    akan diperbarui dengan langkah pasti, mengikuti komitmen berikut:
+  </p>
+  <ul>
+    <li>penghapusan akun bisa dilakukan <strong>di dalam aplikasi</strong> (Pengaturan → Akun → Hapus Akun), tanpa
+      perlu menghubungi kami lebih dulu;</li>
+    <li>menghapus akun menghapus salinan datamu di server kami dalam waktu paling lama <strong>30 hari</strong> sejak
+      permintaan;</li>
+    <li>data yang tersimpan lokal di perangkatmu tidak ikut terhapus otomatis oleh penghapusan akun — hapus lewat
+      langkah di §1 kalau kamu juga mau menghapusnya dari perangkat;</li>
+    <li>kalau karena suatu hal penghapusan lewat aplikasi tidak bisa dilakukan, permintaan lewat email di bawah akan
+      diproses dengan tenggat yang sama.</li>
+  </ul>
+
+  <h2>4. Pertanyaan atau permintaan lain</h2>
+  <p>
+    Kirim ke <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. Sebutkan perangkat dan, kalau relevan, kira-kira
+    kapan kamu memasang Tanukonomy, supaya lebih mudah kami bantu.
+  </p>
+</Legal>
