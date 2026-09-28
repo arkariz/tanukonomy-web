@@ -10,6 +10,7 @@ export const id = {
     features: 'Fitur',
     privacy: 'Privasi',
     freelance: 'Freelance',
+    upcoming: 'Mendatang',
     faq: 'Tanya jawab',
     cta: 'Ikut uji coba',
     langLabel: 'English',
@@ -97,6 +98,28 @@ export const id = {
       { t: 'Bekerja tanpa internet', d: 'Mencatat di kereta atau di pasar tetap bisa, sinyal atau tidak.' },
     ],
     future: 'Sedang disiapkan: akun opsional untuk sinkronisasi antar perangkat dan langganan premium (freemium), serta analitik pemakaian dasar untuk perbaikan produk. Semuanya akan diumumkan secara transparan dan kebijakan privasi diperbarui sebelum aktif — fitur pencatatan inti tetap bisa dipakai tanpa akun.',
+    link: 'Baca kebijakan privasi',
+  },
+  upcoming: {
+    label: 'Fitur mendatang',
+    badge: 'Segera',
+    title: 'Yang sedang kami rencanakan.',
+    body: 'Belum ada di uji coba tertutup, dan belum ada tanggal rilis. Fitur-fitur ini mengikuti prinsip privasi yang sama seperti akun dan sinkronisasi di atas: opsional, dan diumumkan lebih dulu sebelum aktif.',
+    items: [
+      {
+        t: 'Catat otomatis',
+        d: 'Notifikasi transaksi, foto struk, dan catatan suara diubah jadi draf CATAT yang tinggal kamu tinjau dan konfirmasi — bukan langsung tersimpan begitu saja.',
+      },
+      {
+        t: 'Dashboard insight keuangan',
+        d: 'Tren pemasukan dan pengeluaran, kategori paling boros, dan pola bulanan, dibaca dari riwayat yang sudah kamu catat sendiri.',
+      },
+      {
+        t: 'Catatan bersama',
+        d: 'Kelola dompet dan anggaran bersama pasangan atau tim kecil, dengan kendali siapa boleh melihat dan mencatat apa.',
+      },
+    ],
+    note: 'Belum ada tanggal rilis. Semuanya opsional dan akan dijelaskan di kebijakan privasi sebelum diluncurkan.',
     link: 'Baca kebijakan privasi',
   },
   steps: {

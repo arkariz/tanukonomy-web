@@ -41,6 +41,17 @@ Diperbarui 28 September 2026.
       iklan, tidak mencakup isi catatan keuangan, provider akan disebutkan
       sebelum aktif); §2 diberi kualifikasi "saat ini". Nomor bagian 7–10
       lama bergeser jadi 8–11.
+- [x] **W-10** Bagian baru "Fitur mendatang" (`#mendatang`) di landing,
+      antara Privasi dan Mode gelap: tiga rencana (catat otomatis dari
+      notifikasi/struk/suara, dashboard insight keuangan, catatan
+      bersama), masing-masing berkartu bingkai putus-putus amber dan
+      lencana "Segera", plus catatan yang menaut ke kebijakan privasi.
+      Ditautkan dari navigasi header. "Catat otomatis" ditulis sebagai
+      draf yang mengalir ke CATAT untuk dikonfirmasi, bukan jalur
+      pencatatan baru (aturan #8 `CLAUDE.md` aplikasi). Token warna baru
+      `--pending-on-tint` ditambahkan ke `global.css` untuk lencana
+      "Segera" (`--pending` langsung di atas `--tint-pending` hanya
+      4,19:1, di bawah ambang WCAG 4,5:1 untuk teks kecil).
 
 ## Menunggu pemilik
 

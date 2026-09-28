@@ -183,6 +183,39 @@ const jsonLd = [
     </div>
   </section>
 
+  <!-- Fitur mendatang -->
+  <section id="mendatang" class="section upcoming" aria-labelledby="u-title">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="label">{d.upcoming.label}</span>
+        <h2 id="u-title">{d.upcoming.title}</h2>
+        <p class="lead">{d.upcoming.body}</p>
+      </div>
+      <ul class="u-grid" role="list">
+        {
+          d.upcoming.items.map((u, i) => (
+            <li class="u-card">
+              <div class="u-head">
+                <span class="u-icon">
+                  <PixelIcon name={['record', 'budget', 'worklog'][i]} size={32} />
+                </span>
+                <span class="u-badge">{d.upcoming.badge}</span>
+              </div>
+              <h3>{u.t}</h3>
+              <p>{u.d}</p>
+            </li>
+          ))
+        }
+      </ul>
+      <p class="u-note">
+        <PixelIcon name="pending" size={20} />
+        <span>
+          {d.upcoming.note} <a href={path('privacy', lang)}>{d.upcoming.link} →</a>
+        </span>
+      </p>
+    </div>
+  </section>
+
   <!-- Mode gelap -->
   <section class="section dark-mode" aria-labelledby="d-title">
     <div class="wrap dm-grid">
@@ -534,6 +567,79 @@ const jsonLd = [
     text-decoration-thickness: 2px;
   }
 
+  /* Fitur mendatang ----------------------------------------------------- */
+  .u-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    padding: 0;
+    margin: 48px 0 32px;
+    list-style: none;
+  }
+  .u-card {
+    padding: 28px;
+    background: var(--card);
+    border: 2px dashed var(--pending);
+    border-radius: var(--radius);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .u-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  .u-icon {
+    display: inline-grid;
+    place-items: center;
+    width: 52px;
+    height: 52px;
+    border: var(--border);
+    border-radius: 4px;
+    background: var(--bg-sunk);
+  }
+  .u-badge {
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    color: var(--pending-on-tint);
+    background: var(--tint-pending);
+    border-radius: 4px;
+  }
+  .u-card h3 {
+    font-size: 1.1875rem;
+  }
+  .u-card p {
+    color: var(--muted);
+    flex: 1;
+  }
+  .u-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    max-width: 74ch;
+    padding: 14px 18px;
+    background: var(--tint-pending);
+    border-radius: var(--radius);
+    color: var(--muted);
+  }
+  .u-note :global(svg) {
+    flex: none;
+    margin-top: 2px;
+  }
+  .u-note a {
+    font-weight: 700;
+    color: var(--text);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+  }
+
   /* Mode gelap -------------------------------------------------------- */
   .dm-grid {
     display: grid;
@@ -663,7 +769,8 @@ const jsonLd = [
 
   /* Responsif --------------------------------------------------------- */
   @media (max-width: 960px) {
-    .p-grid {
+    .p-grid,
+    .u-grid {
       grid-template-columns: 1fr 1fr;
     }
   }
@@ -691,7 +798,8 @@ const jsonLd = [
     }
   }
   @media (max-width: 560px) {
-    .p-grid {
+    .p-grid,
+    .u-grid {
       grid-template-columns: 1fr;
     }
     .hero-mascot {

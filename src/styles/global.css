@@ -43,6 +43,9 @@
   --tint-accent: #fdf0e8;
   --tint-income: #dcf2e3;
   --tint-pending: #f6ecd6;
+  /* Teks/lencana di atas --tint-pending butuh ini, bukan --pending langsung --
+     #a16207 hanya 4.19:1 di atas #f6ecd6, di bawah ambang 4.5:1 WCAG. */
+  --pending-on-tint: #8a5506;
   --band: #1e1b19;
   --on-band: #f2ece7;
   --on-band-muted: #c9c1b9;
@@ -80,6 +83,7 @@
     --tint-accent: #3d2618;
     --tint-income: #1f3a28;
     --tint-pending: #43341a;
+    --pending-on-tint: #f59e0b;
     --band: #14120f;
     --on-band: #f2ece7;
     --on-band-muted: #a8a29e;
@@ -105,6 +109,7 @@
   --tint-accent: #3d2618;
   --tint-income: #1f3a28;
   --tint-pending: #43341a;
+  --pending-on-tint: #f59e0b;
   --band: #14120f;
   --on-band: #f2ece7;
   --on-band-muted: #a8a29e;

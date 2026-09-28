@@ -12,6 +12,7 @@ export const en: Dict = {
     features: 'Features',
     privacy: 'Privacy',
     freelance: 'Freelance',
+    upcoming: 'Coming next',
     faq: 'FAQ',
     cta: 'Join the beta',
     langLabel: 'Bahasa Indonesia',
@@ -99,6 +100,28 @@ export const en: Dict = {
       { t: 'Works offline', d: 'Record on the train or at the market, signal or not.' },
     ],
     future: 'In the works: an optional account for syncing across devices and a premium (freemium) plan, plus basic usage analytics for product improvement. All of it will be announced transparently and this privacy policy updated before it goes live — the core recording features will keep working without an account.',
+    link: 'Read the privacy policy',
+  },
+  upcoming: {
+    label: 'Coming next',
+    badge: 'Coming soon',
+    title: 'What we’re planning next.',
+    body: 'None of this is in the closed beta yet, and there’s no release date. These features follow the same privacy principles as the account and sync above: optional, and announced before they go live.',
+    items: [
+      {
+        t: 'Automatic recording',
+        d: 'Transaction notifications, receipt photos, and voice notes turned into a RECORD draft you review and confirm — never saved outright on their own.',
+      },
+      {
+        t: 'A financial insight dashboard',
+        d: 'Income and spending trends, your biggest spending categories, and monthly patterns, read from the history you’ve already recorded.',
+      },
+      {
+        t: 'Shared records',
+        d: 'Manage wallets and budgets together with a partner or a small team, with control over who can see and record what.',
+      },
+    ],
+    note: 'No release date yet. All of it will be optional and explained in the privacy policy before launch.',
     link: 'Read the privacy policy',
   },
   steps: {
