@@ -20,6 +20,15 @@ Diperbarui 28 September 2026.
 
 - [x] **W-7** Hosting sementara di GitHub Pages
       (`arkariz.github.io/tanukonomy-web/`) dengan workflow deploy otomatis.
+- [x] **W-8** Freelance dihapus dari navigasi header (tetap ada sebagai
+      bagian isi landing dan di footer) karena itu bagian dari fitur
+      CATAT, bukan area terpisah. `/beta` ditulis ulang: 4 langkah yang
+      cocok dengan alur asli Google Play (akun yang sama di tiga tempat,
+      waktu tunggu aktivasi realistis), plus bagian "Masalah yang mungkin
+      muncul" (7 isu umum opt-in closed testing). FAQ dan bagian privasi
+      landing serta kebijakan privasi (id, en) sekarang menyebut rencana
+      sinkronisasi data multi-perangkat sebagai fitur mendatang, opsional,
+      belum tersedia.
 
 ## Menunggu pemilik
 

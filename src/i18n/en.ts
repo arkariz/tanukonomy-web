@@ -98,6 +98,7 @@ export const en: Dict = {
       { t: 'No ads or trackers', d: 'No third-party analytics inside the app.' },
       { t: 'Works offline', d: 'Record on the train or at the market, signal or not.' },
     ],
+    future: 'Coming later: syncing your data to other devices (optional, and only if you turn it on). Until then, your records live on one device only.',
     link: 'Read the privacy policy',
   },
   steps: {
@@ -124,6 +125,7 @@ export const en: Dict = {
       { q: 'Does Tanukonomy connect to my bank account?', a: 'No. Tanukonomy is a notebook: you record each transaction yourself. The app doesn’t move money, doesn’t pay, and never asks for bank logins.' },
       { q: 'Where is my data stored?', a: 'Only on your phone. There’s no account and no server, so we can’t see your records.' },
       { q: 'What happens if I switch phones or uninstall?', a: 'Because data lives only on the device, uninstalling also deletes your records. Export and file backup are in the works.' },
+      { q: 'Can I use it on more than one device?', a: 'Not yet. Right now your records live on a single device. Syncing data across devices is planned as an optional feature you turn on yourself — until then, the app keeps working fully offline as it does today.' },
       { q: 'Is it available on iPhone?', a: 'The closed beta starts on Android through Google Play. iOS will follow.' },
       { q: 'Which currencies are supported?', a: 'Indonesian Rupiah for now. Amounts are stored in cents, so totals never drift from rounding.' },
       { q: 'Why a tanuki?', a: 'The Shigaraki tanuki statues of Japan carry a ledger and symbols of prosperity. Ours is a bookkeeper who keeps you company on every screen.' },
@@ -147,17 +149,38 @@ export const en: Dict = {
   beta: {
     metaTitle: 'Join the Tanukonomy Closed Beta on Android',
     metaDescription:
-      'Become an early tester of Tanukonomy, a private money tracker with no account. Three steps through Google Play, free.',
+      'Become an early tester of Tanukonomy, a private money tracker with no account. The full steps through Google Play, free.',
     eyebrow: 'Closed beta · Android',
     title: 'Help us get Tanukonomy ready for everyone.',
-    body: 'Before its public release on Google Play, Tanukonomy needs real users to test it for at least 14 days. If you use Android and want to get your money in order, we’d love to have you.',
+    body: 'Before its public release on Google Play, Tanukonomy needs real users to test it for at least 14 consecutive days, with at least 12 testers — that’s Google’s own requirement, not ours. If you use Android and want to get your money in order, we’d love to have you.',
     needLabel: 'What you need',
-    needs: ['An Android phone running 6.0 or newer', 'The Google account you use on the Play Store', 'Willingness to use the app for 14 days'],
+    needs: [
+      'An Android phone running 6.0 or newer',
+      'One Google account, used consistently to join the group, open the testing link, and stay active in the Play Store app',
+      'Willingness to use the app for 14 consecutive days',
+    ],
     stepsLabel: 'Steps',
     steps: [
-      { t: 'Join the tester group', d: 'Join the testers’ Google Group with the same Google account you use on the Play Store. The group is only used for access.', action: 'Join the tester group' },
-      { t: 'Turn on beta access', d: 'Open the Google Play testing page and tap “Become a tester”. Access can take a few minutes to activate.', action: 'Open the testing page' },
-      { t: 'Install and start recording', d: 'Install Tanukonomy from the Play Store, create your first wallet, and keep it installed for at least 14 days.', action: null },
+      {
+        t: 'Join the tester group',
+        d: 'Open the group link and join, using the same Google account that’s active in your Play Store app. Joining this group is what makes Google recognize your account as a tester — without it, the link in step 2 won’t work for you.',
+        action: 'Join the tester group',
+      },
+      {
+        t: 'Open the testing link and tap “Become a tester”',
+        d: 'Still on the same phone and account, open the testing link and tap “Become a tester”. Google needs time to process it — usually a few minutes, sometimes a few hours. Once active, the same link will show a button to open the Play Store.',
+        action: 'Open the testing link',
+      },
+      {
+        t: 'Install it from the Play Store app',
+        d: 'Search “Tanukonomy” in your phone’s Play Store app (not a regular Google search), or tap the button that appears on the testing link. If it’s not showing yet, give it a bit more time — that’s normal, see the troubleshooting section below.',
+        action: null,
+      },
+      {
+        t: 'Use it for 14 consecutive days',
+        d: 'Create your first wallet and record transactions as you normally would. Keep the app installed and use it now and then over 14 days — opting out partway through resets the count.',
+        action: null,
+      },
     ],
     soon: 'Opening soon',
     soonNote: 'Sign-up links are being prepared. Bookmark this page and check back shortly.',
@@ -170,6 +193,38 @@ export const en: Dict = {
     feedback: 'Send feedback to',
     feedbackPlay: 'or through the tester feedback box on the Play Store page.',
     privacyNote: 'Joining the beta doesn’t send your financial data to us. Your records stay on your phone as always.',
+    troubleLabel: 'If something doesn’t go smoothly',
+    troubleTitle: 'Issues you might run into',
+    trouble: [
+      {
+        q: 'I tapped “Become a tester” but the app isn’t showing up on the Play Store',
+        a: 'This is the most common thing that happens, and it usually isn’t a sign anything is wrong. Google needs time to process a new tester status — give it a few hours (rarely up to a full day). Reopen the testing link to confirm your status is active, then look for the app in your phone’s Play Store app, not a regular web search.',
+      },
+      {
+        q: 'I see “This app isn’t available for your account”',
+        a: 'This almost always means the Google account currently active in your Play Store app is different from the one you used to join the group and tap “Become a tester”. Open the Play Store, tap your profile photo in the top right, switch to the right account, then repeat step 2.',
+      },
+      {
+        q: 'My phone has more than one Google account',
+        a: 'Make sure the same Google account is used in all three places: joining the tester group, opening the testing link, and being the active account in the Play Store app. If any one of them is a different account, Google won’t recognize you as a tester.',
+      },
+      {
+        q: '“Your device isn’t compatible with this version”',
+        a: 'Tanukonomy needs Android 6.0 or newer. If your phone is older than that, you can’t join this beta yet — let us know by email so we know there’s interest from older devices.',
+      },
+      {
+        q: 'I accidentally left the testing program',
+        a: 'Reopen the testing link and tap “Become a tester” again to rejoin. The 14-day count restarts from when you rejoin, so try not to opt in and out repeatedly.',
+      },
+      {
+        q: 'It’s been 14 days and the app still hasn’t gone public',
+        a: '14 days and 12 testers are Google’s minimum requirements, not a guaranteed release date. We may still be reviewing feedback or finishing other things before the public release. The app keeps working as usual for you throughout the beta.',
+      },
+      {
+        q: 'App updates aren’t showing up',
+        a: 'Updates for testers can take longer to arrive than a public release. Try opening the Play Store, tapping your profile photo, “Manage apps & device”, and checking for updates manually there.',
+      },
+    ],
   },
   legal: {
     effective: 'Effective',

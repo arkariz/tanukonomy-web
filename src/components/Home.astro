@@ -175,6 +175,10 @@ const jsonLd = [
           ))
         }
       </ul>
+      <p class="p-future">
+        <PixelIcon name="pending" size={22} />
+        <span>{d.privacy.future}</span>
+      </p>
       <a class="p-link" href={path('privacy', lang)}>{d.privacy.link} →</a>
     </div>
   </section>
@@ -504,6 +508,23 @@ const jsonLd = [
   .p-item p {
     color: var(--on-band-muted);
     font-size: 0.975rem;
+  }
+  .p-future {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    max-width: 68ch;
+    padding: 16px 18px;
+    margin-bottom: 24px;
+    background: #231f1b;
+    border: 2px dashed #8a7d6e;
+    border-radius: var(--radius);
+    color: var(--on-band-muted);
+    font-size: 0.975rem;
+  }
+  .p-future :global(svg) {
+    flex: none;
+    margin-top: 2px;
   }
   .p-link {
     font-family: var(--font-display);

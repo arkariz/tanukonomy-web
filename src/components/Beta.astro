@@ -12,7 +12,7 @@ interface Props {
 const { lang } = Astro.props;
 const d = t(lang);
 const b = d.beta;
-const urls = [GOOGLE_GROUP_URL, PLAY_TESTING_URL, ''];
+const urls = [GOOGLE_GROUP_URL, PLAY_TESTING_URL];
 const open = GOOGLE_GROUP_URL !== '' && PLAY_TESTING_URL !== '';
 // Tombol utama hanya satu per layar (ADR-020): langkah pertama yang belum
 // dikerjakan penguji; langkah kedua bergaya sekunder.
@@ -94,6 +94,23 @@ const btnClass = (i: number) => (i === 0 ? 'btn btn-primary' : 'btn btn-secondar
           <PixelIcon name="locked" size={24} />
           <span>{b.privacyNote}</span>
         </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section trouble" aria-labelledby="trouble-title">
+    <div class="wrap">
+      <span class="label">{b.troubleLabel}</span>
+      <h2 id="trouble-title">{b.troubleTitle}</h2>
+      <div class="trouble-list">
+        {
+          b.trouble.map((item) => (
+            <details class="card">
+              <summary>{item.q}</summary>
+              <p>{item.a}</p>
+            </details>
+          ))
+        }
       </div>
     </div>
   </section>
@@ -208,6 +225,49 @@ const btnClass = (i: number) => (i === 0 ? 'btn btn-primary' : 'btn btn-secondar
     display: flex;
     gap: 12px;
     align-items: center;
+    color: var(--muted);
+  }
+  .trouble h2 {
+    margin: 12px 0 32px;
+  }
+  .trouble-list {
+    display: grid;
+    gap: 14px;
+    max-width: 860px;
+  }
+  .trouble-list details {
+    box-shadow: none;
+  }
+  .trouble-list details[open] {
+    box-shadow: var(--shadow);
+  }
+  .trouble-list summary {
+    cursor: pointer;
+    list-style: none;
+    padding: 20px 56px 20px 22px;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.0625rem;
+    position: relative;
+  }
+  .trouble-list summary::-webkit-details-marker {
+    display: none;
+  }
+  .trouble-list summary::after {
+    content: '+';
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    translate: 0 -50%;
+    font-family: var(--font-mono);
+    font-size: 1.375rem;
+    color: var(--accent);
+  }
+  .trouble-list details[open] summary::after {
+    content: '−';
+  }
+  .trouble-list p {
+    padding: 0 22px 22px;
     color: var(--muted);
   }
   @media (max-width: 860px) {

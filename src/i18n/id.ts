@@ -96,6 +96,7 @@ export const id = {
       { t: 'Tanpa iklan dan pelacak', d: 'Tidak ada analitik pihak ketiga di dalam aplikasi.' },
       { t: 'Bekerja tanpa internet', d: 'Mencatat di kereta atau di pasar tetap bisa, sinyal atau tidak.' },
     ],
+    future: 'Sedang disiapkan: sinkronisasi data ke perangkat lain (opsional, kamu yang menyalakannya). Sampai fitur itu tersedia, catatanmu hanya ada di satu perangkat.',
     link: 'Baca kebijakan privasi',
   },
   steps: {
@@ -122,6 +123,7 @@ export const id = {
       { q: 'Apakah Tanukonomy terhubung ke rekening bank saya?', a: 'Tidak. Tanukonomy adalah buku catatan: kamu yang mencatat setiap transaksi. Aplikasi tidak memindahkan uang, tidak membayar, dan tidak pernah meminta data login bank.' },
       { q: 'Di mana data saya disimpan?', a: 'Hanya di ponselmu. Tidak ada akun dan tidak ada server, jadi kami tidak bisa melihat catatanmu.' },
       { q: 'Apa yang terjadi kalau saya ganti ponsel atau menghapus aplikasi?', a: 'Karena data hanya ada di perangkat, menghapus aplikasi juga menghapus catatannya. Fitur ekspor dan cadangan ke berkas sedang kami siapkan.' },
+      { q: 'Bisa dipakai di beberapa perangkat sekaligus?', a: 'Belum. Saat ini catatanmu hanya ada di satu perangkat. Sinkronisasi data antar perangkat sedang kami siapkan sebagai fitur opsional yang kamu nyalakan sendiri — sampai tersedia, aplikasi tetap bekerja sepenuhnya offline seperti sekarang.' },
       { q: 'Tersedia di iPhone?', a: 'Uji coba tertutup dimulai di Android lewat Google Play. Versi iOS menyusul.' },
       { q: 'Mata uang apa yang didukung?', a: 'Saat ini Rupiah. Nominal disimpan dalam sen, jadi hitungannya tidak meleset karena pembulatan.' },
       { q: 'Kenapa tanuki?', a: 'Patung tanuki Shigaraki di Jepang digambarkan membawa buku catatan utang dan simbol kemakmuran. Tanuki kami juru catat yang menemanimu di tiap layar.' },
@@ -145,17 +147,38 @@ export const id = {
   beta: {
     metaTitle: 'Ikut Uji Coba Tertutup Tanukonomy di Android',
     metaDescription:
-      'Daftar jadi penguji awal Tanukonomy, aplikasi catatan keuangan pribadi tanpa akun. Tiga langkah lewat Google Play, gratis.',
+      'Daftar jadi penguji awal Tanukonomy, aplikasi catatan keuangan pribadi tanpa akun. Langkah lengkap lewat Google Play, gratis.',
     eyebrow: 'Uji coba tertutup · Android',
     title: 'Bantu kami menyiapkan Tanukonomy untuk semua orang.',
-    body: 'Sebelum dirilis publik di Google Play, Tanukonomy perlu diuji oleh pengguna sungguhan selama setidaknya 14 hari. Kalau kamu memakai Android dan ingin mulai rapi mencatat keuangan, kami ingin kamu ikut.',
+    body: 'Sebelum dirilis publik di Google Play, Tanukonomy perlu diuji oleh pengguna sungguhan selama setidaknya 14 hari berturut-turut, dengan minimal 12 penguji — ini syarat resmi Google, bukan aturan kami. Kalau kamu memakai Android dan ingin mulai rapi mencatat keuangan, kami ingin kamu ikut.',
     needLabel: 'Yang kamu perlukan',
-    needs: ['Ponsel Android 6.0 atau lebih baru', 'Akun Google yang dipakai di Play Store', 'Kesediaan memakai aplikasi selama 14 hari'],
+    needs: [
+      'Ponsel Android 6.0 atau lebih baru',
+      'Satu akun Google yang sama dipakai untuk gabung grup, membuka tautan uji coba, dan aktif di aplikasi Play Store',
+      'Kesediaan memakai aplikasi selama 14 hari berturut-turut',
+    ],
     stepsLabel: 'Langkah',
     steps: [
-      { t: 'Gabung ke grup penguji', d: 'Masuk ke Google Group penguji memakai akun Google yang sama dengan Play Store-mu. Grup ini hanya dipakai untuk daftar akses.', action: 'Gabung grup penguji' },
-      { t: 'Aktifkan akses uji coba', d: 'Buka halaman uji coba Google Play, lalu ketuk "Jadi penguji". Perlu beberapa menit sampai aksesnya aktif.', action: 'Buka halaman uji coba' },
-      { t: 'Pasang dan mulai mencatat', d: 'Pasang Tanukonomy dari Play Store, buat dompet pertama, dan biarkan terpasang minimal 14 hari.', action: null },
+      {
+        t: 'Gabung ke grup penguji',
+        d: 'Buka tautan grup dan gabung, memakai akun Google yang sama dengan yang aktif di aplikasi Play Store ponselmu. Gabung ke grup ini yang membuat Google mengenali akunmu sebagai penguji — tanpa langkah ini, tautan di langkah 2 tidak akan berfungsi untuk akunmu.',
+        action: 'Gabung grup penguji',
+      },
+      {
+        t: 'Buka tautan uji coba dan ketuk "Jadi Penguji"',
+        d: 'Masih di ponsel dan akun yang sama, buka tautan uji coba lalu ketuk tombol "Jadi Penguji". Google butuh waktu memprosesnya, biasanya beberapa menit, kadang sampai beberapa jam. Setelah aktif, tautan yang sama akan menampilkan tombol untuk membuka Play Store.',
+        action: 'Buka tautan uji coba',
+      },
+      {
+        t: 'Pasang lewat aplikasi Play Store',
+        d: 'Cari "Tanukonomy" di aplikasi Play Store ponselmu (bukan pencarian Google biasa), atau ketuk tombol yang muncul di tautan uji coba. Kalau belum terlihat, tunggu sebentar lagi — ini normal, lihat bagian pemecahan masalah di bawah.',
+        action: null,
+      },
+      {
+        t: 'Pakai selama 14 hari berturut-turut',
+        d: 'Buat dompet pertama dan catat transaksi sepertinya biasanya. Biarkan aplikasi tetap terpasang dan sesekali dipakai selama 14 hari — keluar dari uji coba di tengah jalan akan membuat hitungan harinya dimulai ulang.',
+        action: null,
+      },
     ],
     soon: 'Segera dibuka',
     soonNote: 'Tautan pendaftaran sedang disiapkan. Simpan halaman ini dan kembali lagi sebentar lagi.',
@@ -168,6 +191,38 @@ export const id = {
     feedback: 'Kirim masukan ke',
     feedbackPlay: 'atau lewat kolom masukan penguji di halaman Play Store.',
     privacyNote: 'Ikut uji coba tidak mengirim data keuanganmu ke kami. Catatanmu tetap di ponselmu seperti biasa.',
+    troubleLabel: 'Kalau ada yang tidak lancar',
+    troubleTitle: 'Masalah yang mungkin muncul',
+    trouble: [
+      {
+        q: 'Sudah ketuk "Jadi Penguji" tapi aplikasinya tidak muncul di Play Store',
+        a: 'Ini yang paling sering terjadi dan biasanya bukan tanda ada yang salah. Google butuh waktu memproses status penguji baru — tunggu beberapa jam (jarang sampai sehari penuh). Buka lagi tautan uji coba untuk memastikan statusnya sudah aktif, lalu cari aplikasinya lewat aplikasi Play Store di ponsel, bukan lewat pencarian di web.',
+      },
+      {
+        q: 'Muncul pesan "Aplikasi ini tidak tersedia untuk akun Anda"',
+        a: 'Hampir selalu berarti akun Google yang sedang aktif di aplikasi Play Store berbeda dari akun yang kamu pakai untuk gabung grup dan menekan "Jadi Penguji". Buka Play Store, ketuk foto profil di kanan atas, pindah ke akun yang benar, lalu ulangi langkah 2.',
+      },
+      {
+        q: 'Ponselku memakai lebih dari satu akun Google',
+        a: 'Pastikan satu akun Google yang sama dipakai di tiga tempat: saat gabung grup penguji, saat membuka tautan uji coba, dan sebagai akun yang aktif di aplikasi Play Store. Kalau salah satunya beda akun, Google tidak mengenalimu sebagai penguji.',
+      },
+      {
+        q: '"Perangkat Anda tidak kompatibel dengan versi ini"',
+        a: 'Tanukonomy butuh Android 6.0 ke atas. Kalau ponselmu lebih lama dari itu, kamu belum bisa ikut uji coba ini — kabari kami lewat email supaya kami tahu ada peminat dengan perangkat lebih lama.',
+      },
+      {
+        q: 'Aku tidak sengaja keluar dari program uji coba',
+        a: 'Buka lagi tautan uji coba dan ketuk "Jadi Penguji" sekali lagi untuk bergabung ulang. Hitungan 14 hari dimulai ulang dari saat kamu bergabung kembali, jadi usahakan tidak keluar-masuk program.',
+      },
+      {
+        q: 'Sudah 14 hari tapi aplikasinya belum juga rilis publik',
+        a: '14 hari dan 12 penguji adalah syarat minimum dari Google, bukan jaminan tanggal rilis. Kami mungkin masih meninjau masukan atau menyelesaikan hal lain sebelum rilis publik. Aplikasinya tetap bisa kamu pakai seperti biasa selama masa uji coba berlangsung.',
+      },
+      {
+        q: 'Pembaruan aplikasi tidak kunjung muncul',
+        a: 'Pembaruan untuk penguji kadang butuh waktu lebih lama sampai daripada rilis publik. Coba buka Play Store, ketuk foto profil, "Kelola aplikasi & perangkat", lalu periksa pembaruan secara manual di sana.',
+      },
+    ],
   },
   legal: {
     effective: 'Berlaku sejak',
