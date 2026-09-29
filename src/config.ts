@@ -2,13 +2,13 @@
  * Satu-satunya tempat untuk nilai yang bergantung pada keputusan pemilik.
  * Ganti di sini, bukan di halaman.
  */
-export const SITE_URL = 'https://arkariz.github.io';
+export const SITE_URL = 'https://tanukonomy.app';
 
 /**
- * Awalan jalur situs. GitHub Pages proyek disajikan di /<nama-repo>/;
- * kosongkan ('/') begitu situs pindah ke domain sendiri.
+ * Awalan jalur situs. '/' karena situs disajikan di domain sendiri
+ * (public/CNAME); kembali ke '/<nama-repo>/' hanya kalau domain dilepas.
  */
-export const BASE_PATH = '/tanukonomy-web/';
+export const BASE_PATH = '/';
 
 /** Jalur absolut di dalam situs, memperhitungkan BASE_PATH. `p` diawali '/'. */
 export const withBase = (p: string) => BASE_PATH.replace(/\/$/, '') + p;

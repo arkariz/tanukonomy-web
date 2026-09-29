@@ -18,8 +18,10 @@ Diperbarui 28 September 2026.
 - [x] **W-6** Lighthouse 100/100/100/100 di `/`, `/en/`, `/beta/`,
       `/privasi/`, `/en/terms/`.
 
-- [x] **W-7** Hosting sementara di GitHub Pages
-      (`arkariz.github.io/tanukonomy-web/`) dengan workflow deploy otomatis.
+- [x] **W-7** Hosting di GitHub Pages dengan workflow deploy otomatis.
+      29 Sep 2026: pindah ke domain sendiri `tanukonomy.app`
+      (`public/CNAME`, `SITE_URL`, `BASE_PATH = '/'`, `robots.txt`).
+      Hosting tetap GitHub Pages; Cloudflare Pages tidak dipakai dulu.
 - [x] **W-8** Freelance dihapus dari navigasi header (tetap ada sebagai
       bagian isi landing dan di footer) karena itu bagian dari fitur
       CATAT, bukan area terpisah. `/beta` ditulis ulang: 4 langkah yang
@@ -64,9 +66,14 @@ Diperbarui 28 September 2026.
 
 ## Menunggu pemilik
 
-- [ ] **P-1** *(ditunda pemilik 28 Sep 2026)* Cek merek dagang "Tanukonomy" dan beli domain (T-8.3 di repo
-      aplikasi). Lalu ganti `SITE_URL` dan baris `Sitemap:` di
-      `public/robots.txt` kalau domainnya bukan `tanukonomy.app`.
+- [x] **P-1** Domain `tanukonomy.app` dibeli pemilik 29 Sep 2026. Cek
+      merek dagang "Tanukonomy" (T-8.3 di repo aplikasi) masih terpisah.
+- [ ] **P-1b** DNS `tanukonomy.app` diarahkan ke GitHub Pages (4 record A
+      `185.199.108–111.153`, 4 record AAAA `2606:50c0:8000–8003::153`,
+      CNAME `www` → `arkariz.github.io`), lalu Settings → Pages → Custom
+      domain `tanukonomy.app` dan centang "Enforce HTTPS" setelah
+      sertifikat terbit. Opsional: verifikasi domain di Settings akun →
+      Pages supaya domain tidak bisa diklaim repo lain.
 - [ ] **P-2** *(ditunda pemilik 28 Sep 2026; `halo@tanukonomy.app` belum menerima email)* Alamat kontak: aktifkan Email Routing Cloudflare untuk
       `halo@<domain>` (atau ganti `CONTACT_EMAIL`).
 - [ ] **P-3** Tinjau dan setujui isi kebijakan privasi dan syarat. Draf
@@ -76,8 +83,10 @@ Diperbarui 28 September 2026.
       Console, lalu isi `GOOGLE_GROUP_URL` dan `PLAY_TESTING_URL`.
 - [ ] **P-7** Aktifkan GitHub Pages: Settings → Pages → Source: GitHub
       Actions, dan jadikan repo publik (atau pakai GitHub Pro).
-- [ ] **P-5** *(setelah P-1)* Hubungkan repo ke Cloudflare Pages (build `npm run build`,
-      keluaran `dist`, `NODE_VERSION=22`) dan pasang domain.
+- [-] **P-5** *(dibatalkan 29 Sep 2026)* Cloudflare Pages tidak dipakai;
+      situs tetap di GitHub Pages dengan domain sendiri (P-1b). Buka lagi
+      hanya kalau butuh header HTTP kustom atau repo harus privat tanpa
+      GitHub Pro.
 - [ ] **P-6** Konfirmasi dua klaim di tanya jawab: iOS "menyusul" dan
       "gratis selama uji coba".
 - [x] **P-8a** *(29 Sep 2026, ADR-023 di repo aplikasi)* Identitas opsional

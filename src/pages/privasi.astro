@@ -1,6 +1,7 @@
 ---
 import Legal from '../layouts/Legal.astro';
 import { CONTACT_EMAIL } from '../config';
+import { path } from '../i18n';
 ---
 
 <Legal
@@ -76,7 +77,7 @@ import { CONTACT_EMAIL } from '../config';
     <li>Akun saat ini murni identitas: dompet, transaksi, dan anggaranmu <strong>tidak</strong> ikut dikirim atau
       disimpan di server mana pun hanya karena kamu masuk — lihat §8 untuk rencana sinkronisasinya.</li>
     <li>Kamu bisa menghapus akunmu kapan saja, dari dalam aplikasi (ikon Akun di Beranda → Hapus Akun) atau lewat
-      <a href="/hapus-akun/">halaman hapus akun</a>.</li>
+      <a href={path('deleteAccount', 'id')}>halaman hapus akun</a>.</li>
   </ul>
 
   <h2>7. Analitik pemakaian dan laporan error</h2>

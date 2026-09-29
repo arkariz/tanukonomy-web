@@ -32,10 +32,10 @@ Node 22 atau lebih baru.
 
 Semua ada di `src/config.ts`:
 
-- `SITE_URL` dan `BASE_PATH` — sekarang GitHub Pages
-  (`https://arkariz.github.io` + `/tanukonomy-web/`). Saat pindah ke domain
-  sendiri: `SITE_URL` jadi domainnya, `BASE_PATH` jadi `'/'`, dan perbarui
-  baris `Sitemap:` di `public/robots.txt`. Jalur internal wajib lewat
+- `SITE_URL` dan `BASE_PATH` — sekarang domain sendiri
+  (`https://tanukonomy.app` + `/`), dihosting GitHub Pages lewat
+  `public/CNAME`. Kalau domain berubah, ganti ketiganya bersamaan
+  (`SITE_URL`, `public/CNAME`, baris `Sitemap:` di `public/robots.txt`). Jalur internal wajib lewat
   `path()` atau `withBase()`, jangan tulis `/...` mentah.
 - `CONTACT_EMAIL` — alamat kontak di footer, halaman uji coba, dan
   dokumen hukum.

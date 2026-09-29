@@ -1,6 +1,7 @@
 ---
 import Legal from '../../layouts/Legal.astro';
 import { CONTACT_EMAIL } from '../../config';
+import { path } from '../../i18n';
 ---
 
 <Legal
@@ -73,7 +74,7 @@ import { CONTACT_EMAIL } from '../../config';
     <li>An account is currently pure identity: your wallets, transactions, and budgets are <strong>not</strong> sent
       to or stored on any server just because you sign in — see §8 for the planned sync feature.</li>
     <li>You can delete your account any time, from inside the app (Account icon on Home → Delete Account) or via the
-      <a href="/en/delete-account/">delete account page</a>.</li>
+      <a href={path('deleteAccount', 'en')}>delete account page</a>.</li>
   </ul>
 
   <h2>7. Usage analytics and error reporting</h2>
