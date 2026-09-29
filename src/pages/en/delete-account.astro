@@ -8,12 +8,12 @@ import { path } from '../../i18n';
   lang="en"
   page="deleteAccount"
   title="Delete Account and Data"
-  description="How to delete all Tanukonomy data from your device, and the planned account deletion process once accounts are available."
+  description="How to delete your Tanukonomy account and all your data, from the app and from your device."
 >
   <p class="lede">
-    <strong>Tanukonomy doesn’t have an account system yet.</strong> Everything you record — wallets, transactions,
-    budgets, freelance projects — is stored only on your own device, never sent to any server. So right now there’s no
-    “account” to delete; what you can delete is the data itself, directly on your device.
+    Your financial records — wallets, transactions, budgets, freelance projects — are stored only on your own device,
+    never sent to any server. Tanukonomy also has an optional account (for signing in with Google); if you created
+    one, you can delete it any time using the steps in §3.
   </p>
 
   <h2>1. How to delete all your data now</h2>
@@ -46,21 +46,30 @@ import { path } from '../../i18n';
     Google under their own policies — see <a href={path('privacy', 'en')}>Privacy Policy</a> §4.
   </p>
 
-  <h2>3. Once accounts are available (not active yet)</h2>
+  <h2>3. Deleting your account (if you have one)</h2>
   <p>
-    We plan to add an optional account for syncing across devices and a premium plan — see{' '}
-    <a href={path('privacy', 'en')}>Privacy Policy</a> §6. This feature is <strong>not available yet</strong>. Once it
-    goes live, this page will be updated with the exact steps, following these commitments:
+    Tanukonomy has an optional account for signing in with Google — see{' '}
+    <a href={path('privacy', 'en')}>Privacy Policy</a> §6. This account is pure identity: there is no sync of your
+    wallet/transaction/budget data to a server yet (see §8 of the privacy policy for what's planned).
   </p>
   <ul>
-    <li>account deletion will be available <strong>inside the app</strong> (Settings → Account → Delete Account),
-      with no need to contact us first;</li>
-    <li>deleting your account will remove your data from our servers within <strong>30 days</strong> of the
-      request;</li>
-    <li>data stored locally on your device is not automatically deleted by an account deletion — use the steps in §1
-      if you want to remove that too;</li>
-    <li>if in-app deletion isn’t possible for some reason, a request by email below will be processed on the same
-      timeline.</li>
+    <li>
+      <strong>In the app (fastest way):</strong> open Tanukonomy → tap the Account icon on Home → tap "Delete
+      Account" → confirm. Your account is deleted immediately; no need to contact us first.
+    </li>
+    <li>
+      <strong>By email</strong>, if you can't open the app or run into trouble: send a request to the email in §4,
+      naming the email you sign in with. We process it within 30 days at the latest.
+    </li>
+    <li>
+      Deleting your account does not delete data stored locally on your device (wallets, transactions, budgets) —
+      that data was never sent to your account in the first place. Use the steps in §1 if you want to remove that
+      too.
+    </li>
+    <li>
+      Once server-side data sync ships (see §8 of the privacy policy), this page will be updated with the deletion
+      timeline for that synced data.
+    </li>
   </ul>
 
   <h2>4. Other questions or requests</h2>

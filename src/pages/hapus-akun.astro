@@ -8,12 +8,12 @@ import { path } from '../i18n';
   lang="id"
   page="deleteAccount"
   title="Hapus Akun dan Data"
-  description="Cara menghapus seluruh data Tanukonomy dari perangkatmu, dan rencana penghapusan akun begitu fitur akun tersedia."
+  description="Cara menghapus akun Tanukonomy dan seluruh datamu, baik dari dalam aplikasi maupun dari perangkat."
 >
   <p class="lede">
-    <strong>Tanukonomy saat ini belum punya sistem akun.</strong> Semua data yang kamu catat — dompet, transaksi,
-    anggaran, proyek freelance — tersimpan hanya di perangkatmu sendiri, tidak pernah dikirim ke server mana pun. Karena
-    itu, saat ini tidak ada "akun" untuk dihapus; yang bisa kamu hapus adalah datanya sendiri, langsung dari perangkat.
+    Catatan keuanganmu — dompet, transaksi, anggaran, proyek freelance — tersimpan hanya di perangkatmu sendiri, tidak
+    pernah dikirim ke server mana pun. Tanukonomy juga punya akun opsional (untuk masuk dengan Google); kalau kamu
+    memilih membuatnya, kamu bisa menghapusnya kapan saja lewat langkah di §3.
   </p>
 
   <h2>1. Cara menghapus semua datamu sekarang</h2>
@@ -47,21 +47,30 @@ import { path } from '../i18n';
     Google sesuai kebijakan mereka — lihat <a href={path('privacy', 'id')}>Kebijakan Privasi</a> §4.
   </p>
 
-  <h2>3. Begitu fitur akun tersedia (belum aktif)</h2>
+  <h2>3. Menghapus akun (kalau kamu punya)</h2>
   <p>
-    Kami berencana menambahkan akun opsional untuk sinkronisasi antar perangkat dan langganan premium — lihat{' '}
-    <a href={path('privacy', 'id')}>Kebijakan Privasi</a> §6. Fitur ini <strong>belum tersedia</strong>. Begitu aktif, halaman ini
-    akan diperbarui dengan langkah pasti, mengikuti komitmen berikut:
+    Tanukonomy punya akun opsional untuk masuk dengan Google — lihat{' '}
+    <a href={path('privacy', 'id')}>Kebijakan Privasi</a> §6. Akun ini murni identitas: belum ada sinkronisasi data
+    dompet/transaksi/anggaran ke server (lihat §7 kebijakan privasi untuk rencananya ke depan).
   </p>
   <ul>
-    <li>penghapusan akun bisa dilakukan <strong>di dalam aplikasi</strong> (Pengaturan → Akun → Hapus Akun), tanpa
-      perlu menghubungi kami lebih dulu;</li>
-    <li>menghapus akun menghapus salinan datamu di server kami dalam waktu paling lama <strong>30 hari</strong> sejak
-      permintaan;</li>
-    <li>data yang tersimpan lokal di perangkatmu tidak ikut terhapus otomatis oleh penghapusan akun — hapus lewat
-      langkah di §1 kalau kamu juga mau menghapusnya dari perangkat;</li>
-    <li>kalau karena suatu hal penghapusan lewat aplikasi tidak bisa dilakukan, permintaan lewat email di bawah akan
-      diproses dengan tenggat yang sama.</li>
+    <li>
+      <strong>Lewat aplikasi (cara tercepat):</strong> buka Tanukonomy → ketuk ikon Akun di Beranda → ketuk "Hapus
+      Akun" → konfirmasi. Akunmu terhapus seketika; tidak perlu menghubungi kami dulu.
+    </li>
+    <li>
+      <strong>Lewat email</strong>, kalau aplikasinya tidak bisa dibuka atau kamu menemui kendala: kirim permintaan ke
+      email di §4, sebutkan email yang dipakai untuk masuk. Kami proses paling lambat 30 hari.
+    </li>
+    <li>
+      Menghapus akun tidak menghapus data yang tersimpan lokal di perangkatmu (dompet, transaksi, anggaran) — itu
+      memang tidak pernah ikut terkirim ke akun. Hapus lewat langkah di §1 kalau kamu juga mau menghapusnya dari
+      perangkat.
+    </li>
+    <li>
+      Begitu sinkronisasi data ke server digarap nanti (lihat §8 kebijakan privasi), halaman ini akan diperbarui
+      dengan tenggat penghapusan data tersinkron itu.
+    </li>
   </ul>
 
   <h2>4. Pertanyaan atau permintaan lain</h2>

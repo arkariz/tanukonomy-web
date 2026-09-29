@@ -80,13 +80,23 @@ Diperbarui 28 September 2026.
       keluaran `dist`, `NODE_VERSION=22`) dan pasang domain.
 - [ ] **P-6** Konfirmasi dua klaim di tanya jawab: iOS "menyusul" dan
       "gratis selama uji coba".
-- [ ] **P-8** Begitu fitur akun/sinkronisasi, langganan premium, atau
-      analitik pemakaian (W-9) mulai dibangun di aplikasi: sebutkan nama
-      penyedia analitik dan penyedia pembayaran di kebijakan privasi
-      (§6–§7 `privasi.astro`/`en/privacy.astro`), tulis ulang §3 halaman
-      hapus akun (W-11) dengan langkah pasti, lalu perbarui
-      `LEGAL_EFFECTIVE_DATE`. Jangan aktifkan fiturnya di aplikasi sebelum
-      keduanya diperbarui.
+- [x] **P-8a** *(29 Sep 2026, ADR-023 di repo aplikasi)* Identitas opsional
+      (Google Sign-In + email/sandi tester), Firebase Analytics, dan
+      Firebase Crashlytics sudah masuk kode aplikasi. Kebijakan privasi
+      diperbarui: §6 "Akun (opsional)" dan §7 "Analitik pemakaian dan
+      laporan error" menyebut Firebase Authentication/Analytics/Crashlytics
+      secara eksplisit (`privasi.astro`, `en/privacy.astro`); §3 halaman
+      hapus akun (`hapus-akun.astro`, `en/delete-account.astro`) ditulis
+      ulang jadi langkah pasti (ikon Akun di Beranda → Hapus Akun), bukan
+      lagi "belum tersedia". `LEGAL_EFFECTIVE_DATE` diperbarui ke
+      2026-09-29.
+- [ ] **P-8b** Sinkronisasi data dompet/transaksi/anggaran ke server dan
+      langganan premium **masih belum digarap** — bagian itu di kebijakan
+      privasi (sekarang §8) dan §3 halaman hapus akun tetap berupa rencana.
+      Begitu digarap: sebutkan penyedia backend/pembayaran secara eksplisit,
+      tulis ulang bagian itu dengan langkah pasti dan tenggat penghapusan
+      data tersinkron, lalu perbarui `LEGAL_EFFECTIVE_DATE`. Jangan
+      aktifkan fiturnya di aplikasi sebelum keduanya diperbarui.
 - [ ] **P-9** Setelah domain sendiri aktif (P-1): tempel URL halaman hapus
       akun (`/hapus-akun/`, W-11) ke kolom "URL hapus akun" di Play
       Console (App content → Data safety) begitu fitur akun benar-benar

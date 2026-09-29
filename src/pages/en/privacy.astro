@@ -7,13 +7,13 @@ import { CONTACT_EMAIL } from '../../config';
   lang="en"
   page="privacy"
   title="Privacy Policy"
-  description="Learn how Tanukonomy handles your data today, and what's planned for accounts, sync, a premium plan, and usage analytics."
+  description="Learn how Tanukonomy handles your data: optional accounts, usage analytics, and what's planned for sync and a premium plan."
 >
   <p class="lede">
-    <strong>In short:</strong> Today, Tanukonomy does not collect or send your personal data to any server — everything
-    you record stays on your device. We're working on an optional account (with sync and a premium plan) and basic usage
-    analytics; both are covered in §6 and §7, will be announced transparently, and this policy will be updated before
-    they go live.
+    <strong>In short:</strong> Your financial records — wallets, transactions, budgets — stay 100% on your device; they
+    are never sent to any server. Tanukonomy has an optional account (§6) and uses Firebase Analytics/Crashlytics (§7)
+    to understand usage and catch errors. Syncing your data to an account and a premium plan are still planned, not
+    available yet (§8).
   </p>
 
   <p>
@@ -32,16 +32,12 @@ import { CONTACT_EMAIL } from '../../config';
     <li>cannot be viewed, restored, or deleted remotely by us.</li>
   </ul>
 
-  <h2>2. What we currently don’t collect</h2>
-  <p>
-    This section describes things <strong>as they stand today</strong>. Some of it will change once the account,
-    premium plan, and usage analytics features in §6 and §7 go live — neither is available yet.
-  </p>
+  <h2>2. What we don’t collect</h2>
   <ul>
-    <li>There is no account yet, so we don’t ask for your name, email, or phone number.</li>
-    <li>There is no connection to banks, e-wallets, or payment services, and we never ask for passwords.</li>
-    <li>There are no third-party analytics or ad trackers in the app. We don’t sell or share your data with advertisers,
-      now or after §7 goes live.</li>
+    <li>Creating an account is optional, and we never see or store your Google account password — see §6.</li>
+    <li>There is no connection to banks, e-wallets, or payment services, and we never ask for their passwords.</li>
+    <li>There are no ads or ad trackers in the app, and we don’t sell or share your data with advertisers. The usage
+      analytics in §7 are for product improvement, not ads.</li>
     <li>There is no access to your location, contacts, camera, or microphone.</li>
   </ul>
 
@@ -64,52 +60,70 @@ import { CONTACT_EMAIL } from '../../config';
     not share them. Feedback you send by email or through Google Play is used only to improve the app.
   </p>
 
-  <h2>6. Coming feature: accounts, sync, and a premium plan</h2>
+  <h2>6. Account (optional)</h2>
   <p>
-    We plan to add accounts, so you can sync your data across more than one phone and unlock an optional premium plan
-    (freemium). This feature is <strong>not available yet</strong>. A few things are already settled for when it ships:
+    Tanukonomy has an optional account. Core recording (CATAT, Transactions, Wallets, Budgets, Freelance) keeps working
+    fully <strong>without</strong> creating one.
   </p>
   <ul>
-    <li>creating an account will be <strong>optional</strong> — core recording will keep working without one, fully
-      offline as it does today;</li>
-    <li>turning on sync will mean some data (wallets, transactions, budgets) is sent to a server to sync between your own
-      devices, not shared with other users;</li>
-    <li>a premium plan will need payment details; those are handled by a third-party payment provider (e.g. Google Play
-      Billing), not stored by us directly;</li>
-    <li>before accounts are active for anyone, we’ll update this policy with the full details: which server is used, how
-      the data is protected, and how to delete your account.</li>
+    <li>Sign in with Google: through Firebase Authentication (a Google service), we receive the name, email address,
+      and profile photo from the Google account you choose. We never see or store your Google account password.</li>
+    <li>A small number of internal test accounts can also sign in with an email and password that we manage ourselves
+      — <strong>there is no public sign-up</strong> via email and password.</li>
+    <li>An account is currently pure identity: your wallets, transactions, and budgets are <strong>not</strong> sent
+      to or stored on any server just because you sign in — see §8 for the planned sync feature.</li>
+    <li>You can delete your account any time, from inside the app (Account icon on Home → Delete Account) or via the
+      <a href="/en/delete-account/">delete account page</a>.</li>
   </ul>
 
-  <h2>7. Coming feature: product usage analytics</h2>
+  <h2>7. Usage analytics and error reporting</h2>
   <p>
-    We plan to add basic analytics to understand how the app is used (e.g. which features get opened, where people get
-    stuck) so we can improve it. This feature is <strong>not available yet</strong>. Its limits:
+    Tanukonomy uses <strong>Firebase Analytics</strong> and <strong>Firebase Crashlytics</strong> (both Google
+    services) to understand general feature usage and capture technical errors so they can be fixed. Both run for
+    every user, regardless of sign-in status — unlike the account data in §6, which only exists if you choose to
+    sign in.
   </p>
   <ul>
-    <li>it’s for <strong>product improvement</strong>, not for selling data or showing ads — Tanukonomy doesn’t show
-      ads;</li>
-    <li>it won’t include the content of your financial records (amounts, wallet names, transaction notes) — only feature
-      usage patterns;</li>
-    <li>before it goes live, we’ll name the analytics provider in this policy and give a way to opt out where the
-      provider makes that available.</li>
+    <li>What’s collected: screens opened, basic events like opening the app, and technical information when an error
+      occurs (device type, OS version, error trace).</li>
+    <li><strong>Does not include the content of your financial records</strong> — amounts, wallet names, and
+      transaction notes are never sent to Analytics or Crashlytics.</li>
+    <li>This data is processed by Google as our service provider for that purpose only — not for sale or showing
+      ads; Tanukonomy shows no ads.</li>
   </ul>
 
-  <h2>8. This site</h2>
+  <h2>8. Coming feature: data sync and a premium plan</h2>
+  <p>
+    We plan to add syncing your data to your account (used across more than one phone) and an optional premium plan
+    (freemium). This feature is <strong>not available yet</strong>. A few things are already settled for when it
+    ships:
+  </p>
+  <ul>
+    <li>turning on sync will be <strong>optional</strong> and separate from simply having an account — core recording
+      will keep working fully offline as it does today;</li>
+    <li>turning it on will mean some data (wallets, transactions, budgets) is sent to a server to sync between your
+      own devices, not shared with other users;</li>
+    <li>a premium plan will need payment details; those are handled by a third-party payment provider (e.g. Google
+      Play Billing), not stored by us directly;</li>
+    <li>before sync is active for anyone, we’ll update this policy with the full details: which server is used and
+      how the data is protected.</li>
+  </ul>
+
+  <h2>9. This site</h2>
   <p>
     This site uses no cookies, forms, or analytics. The hosting provider may log standard technical data such as IP address
     and browser type for security and operations, under their own policies.
   </p>
 
-  <h2>9. Children</h2>
-  <p>The app is not directed at children under 13 and does not collect data from anyone, including children.</p>
+  <h2>10. Children</h2>
+  <p>The app is not directed at children under 13 and does not knowingly collect data from children.</p>
 
-  <h2>10. Changes to this policy</h2>
+  <h2>11. Changes to this policy</h2>
   <p>
-    If the app later adds a feature that changes how data is handled (including accounts, sync, the premium plan, and
-    usage analytics in §6 and §7), we will update this page and its effective date before that feature becomes
-    available.
+    If the app later adds a feature that changes how data is handled (including data sync and the premium plan in
+    §8), we will update this page and its effective date before that feature becomes available.
   </p>
 
-  <h2>11. Contact</h2>
+  <h2>12. Contact</h2>
   <p>Privacy questions can be sent to <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>
 </Legal>

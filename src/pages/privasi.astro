@@ -7,13 +7,13 @@ import { CONTACT_EMAIL } from '../config';
   lang="id"
   page="privacy"
   title="Kebijakan Privasi"
-  description="Pelajari bagaimana Tanukonomy menangani datamu hari ini, dan rencana akun, sinkronisasi, langganan premium, serta analitik pemakaian ke depannya."
+  description="Pelajari bagaimana Tanukonomy menangani datamu: akun opsional, analitik pemakaian, dan rencana sinkronisasi serta langganan premium ke depannya."
 >
   <p class="lede">
-    <strong>Ringkasnya:</strong> Hari ini, Tanukonomy tidak mengumpulkan atau mengirim data pribadimu ke server mana pun —
-    semua yang kamu catat tetap di perangkatmu. Kami sedang menyiapkan akun opsional (dengan sinkronisasi dan langganan
-    premium) serta analitik pemakaian dasar; keduanya dijelaskan di §6 dan §7, akan diumumkan secara transparan, dan
-    kebijakan ini diperbarui sebelum aktif.
+    <strong>Ringkasnya:</strong> Catatan keuanganmu — dompet, transaksi, anggaran — tetap 100% di perangkatmu; tidak
+    pernah dikirim ke server mana pun. Tanukonomy punya akun opsional (§6) dan memakai Firebase Analytics/Crashlytics
+    (§7) untuk memahami pemakaian dan menangkap error. Sinkronisasi data ke akun dan langganan premium masih rencana,
+    belum tersedia (§8).
   </p>
 
   <p>
@@ -32,16 +32,12 @@ import { CONTACT_EMAIL } from '../config';
     <li>tidak dapat kami lihat, pulihkan, atau hapus dari jarak jauh.</li>
   </ul>
 
-  <h2>2. Yang saat ini tidak kami kumpulkan</h2>
-  <p>
-    Bagian ini menjelaskan keadaan <strong>hari ini</strong>. Sebagian akan berubah begitu fitur akun, langganan premium,
-    dan analitik pemakaian di §6 dan §7 aktif — keduanya belum tersedia.
-  </p>
+  <h2>2. Yang tidak kami kumpulkan</h2>
   <ul>
-    <li>Belum ada akun, jadi kami tidak meminta nama, email, atau nomor telepon.</li>
-    <li>Tidak ada sambungan ke bank, e-wallet, atau layanan pembayaran, dan kami tidak pernah meminta kata sandi.</li>
-    <li>Tidak ada analitik pihak ketiga atau pelacak iklan di dalam aplikasi. Kami tidak menjual atau membagikan datamu ke
-      pengiklan, baik sekarang maupun sesudah §7 aktif.</li>
+    <li>Membuat akun bersifat opsional, dan kami tidak pernah melihat atau menyimpan sandi akun Googlemu — lihat §6.</li>
+    <li>Tidak ada sambungan ke bank, e-wallet, atau layanan pembayaran, dan kami tidak pernah meminta kata sandinya.</li>
+    <li>Tidak ada iklan atau pelacak iklan di dalam aplikasi, dan kami tidak menjual atau membagikan datamu ke
+      pengiklan. Analitik pemakaian di §7 untuk perbaikan produk, bukan iklan.</li>
     <li>Tidak ada akses ke lokasi, kontak, kamera, atau mikrofon.</li>
   </ul>
 
@@ -66,54 +62,73 @@ import { CONTACT_EMAIL } from '../config';
     hanya kami pakai untuk memperbaiki aplikasi.
   </p>
 
-  <h2>6. Fitur mendatang: akun, sinkronisasi, dan langganan premium</h2>
+  <h2>6. Akun (opsional)</h2>
   <p>
-    Kami berencana menambahkan akun, supaya kamu bisa menyinkronkan data ke lebih dari satu ponsel dan membuka langganan
-    premium opsional (freemium). Fitur ini <strong>belum tersedia</strong>. Beberapa hal yang sudah pasti begitu
-    diluncurkan nanti:
+    Tanukonomy punya akun opsional. Pencatatan inti (CATAT, Transaksi, Dompet, Anggaran, Freelance) tetap berfungsi
+    penuh <strong>tanpa</strong> membuat akun.
   </p>
   <ul>
-    <li>membuat akun bersifat <strong>opsional</strong> — pencatatan inti tetap bisa dipakai tanpa akun, sepenuhnya
-      offline seperti sekarang;</li>
-    <li>menyalakan sinkronisasi berarti sebagian data (dompet, transaksi, anggaran) dikirim ke server untuk
-      disinkronkan antar perangkatmu sendiri, bukan dibagikan ke pengguna lain;</li>
+    <li>Masuk dengan akun Google: lewat Firebase Authentication (layanan Google), kami menerima nama, alamat email,
+      dan foto profil dari akun Google yang kamu pilih. Kami tidak pernah melihat atau menyimpan sandi akun
+      Googlemu.</li>
+    <li>Sejumlah kecil akun uji internal juga bisa masuk dengan email dan sandi yang kami kelola sendiri secara
+      manual — <strong>tidak ada pendaftaran publik</strong> lewat email dan sandi.</li>
+    <li>Akun saat ini murni identitas: dompet, transaksi, dan anggaranmu <strong>tidak</strong> ikut dikirim atau
+      disimpan di server mana pun hanya karena kamu masuk — lihat §8 untuk rencana sinkronisasinya.</li>
+    <li>Kamu bisa menghapus akunmu kapan saja, dari dalam aplikasi (ikon Akun di Beranda → Hapus Akun) atau lewat
+      <a href="/hapus-akun/">halaman hapus akun</a>.</li>
+  </ul>
+
+  <h2>7. Analitik pemakaian dan laporan error</h2>
+  <p>
+    Tanukonomy memakai <strong>Firebase Analytics</strong> dan <strong>Firebase Crashlytics</strong> (keduanya layanan
+    Google) untuk memahami pemakaian fitur secara umum dan menangkap error teknis, supaya bisa diperbaiki. Keduanya
+    berjalan untuk semua pengguna, terlepas dari status masuk — beda dari data akun di §6, yang hanya ada kalau kamu
+    memilih masuk.
+  </p>
+  <ul>
+    <li>Yang dikumpulkan: layar yang dibuka, event dasar seperti membuka aplikasi, dan info teknis saat terjadi error
+      (jenis perangkat, versi sistem operasi, jejak error).</li>
+    <li><strong>Tidak termasuk isi catatan keuanganmu</strong> — nominal, nama dompet, dan catatan transaksi tidak
+      pernah dikirim ke Analytics maupun Crashlytics.</li>
+    <li>Data ini diproses Google sebagai penyedia layanan kami untuk keperluan itu saja — bukan untuk dijual atau
+      menampilkan iklan; Tanukonomy tidak menampilkan iklan.</li>
+  </ul>
+
+  <h2>8. Fitur mendatang: sinkronisasi data dan langganan premium</h2>
+  <p>
+    Kami berencana membuka sinkronisasi data ke akunmu (dipakai di lebih dari satu ponsel) dan langganan premium
+    opsional (freemium). Fitur ini <strong>belum tersedia</strong>. Beberapa hal yang sudah pasti begitu diluncurkan
+    nanti:
+  </p>
+  <ul>
+    <li>menyalakan sinkronisasi bersifat <strong>opsional</strong> dan terpisah dari sekadar membuat akun — pencatatan
+      inti tetap bisa dipakai sepenuhnya offline seperti sekarang;</li>
+    <li>menyalakannya berarti sebagian data (dompet, transaksi, anggaran) dikirim ke server untuk disinkronkan antar
+      perangkatmu sendiri, bukan dibagikan ke pengguna lain;</li>
     <li>langganan premium akan butuh data pembayaran; itu diproses oleh penyedia pembayaran pihak ketiga (mis. Google
       Play Billing), bukan disimpan oleh kami sendiri;</li>
-    <li>sebelum akun aktif untuk siapa pun, kami akan memperbarui kebijakan ini dengan rincian lengkap: server yang
-      dipakai, cara datanya dilindungi, dan cara menghapus akun kembali.</li>
+    <li>sebelum sinkronisasi aktif untuk siapa pun, kami akan memperbarui kebijakan ini dengan rincian lengkap: server
+      yang dipakai dan cara datanya dilindungi.</li>
   </ul>
 
-  <h2>7. Fitur mendatang: analitik pemakaian produk</h2>
-  <p>
-    Kami berencana menambahkan analitik dasar untuk memahami bagaimana aplikasi dipakai (mis. fitur mana yang sering
-    dibuka, di mana pengguna tersendat) supaya bisa diperbaiki. Fitur ini <strong>belum tersedia</strong>. Batasannya:
-  </p>
-  <ul>
-    <li>analitik ini untuk <strong>perbaikan produk</strong>, bukan untuk menjual data atau menampilkan iklan —
-      Tanukonomy tidak menampilkan iklan;</li>
-    <li>tidak mencakup isi catatan keuanganmu (nominal, nama dompet, catatan transaksi) — hanya pola pemakaian fitur;</li>
-    <li>sebelum aktif, kami akan menyebutkan penyedia analitiknya di kebijakan ini dan memberi cara untuk menonaktifkannya
-      kalau tersedia dari penyedianya.</li>
-  </ul>
-
-  <h2>8. Situs ini</h2>
+  <h2>9. Situs ini</h2>
   <p>
     Situs ini tidak memakai cookie, formulir, atau analitik. Penyedia hosting dapat mencatat data teknis standar seperti
     alamat IP dan jenis peramban untuk keamanan dan operasional, sesuai kebijakan mereka.
   </p>
 
-  <h2>9. Anak-anak</h2>
+  <h2>10. Anak-anak</h2>
   <p>
-    Aplikasi tidak ditujukan untuk anak di bawah 13 tahun dan tidak mengumpulkan data dari siapa pun, termasuk anak-anak.
+    Aplikasi tidak ditujukan untuk anak di bawah 13 tahun dan tidak sengaja mengumpulkan data dari anak-anak.
   </p>
 
-  <h2>10. Perubahan kebijakan</h2>
+  <h2>11. Perubahan kebijakan</h2>
   <p>
-    Jika aplikasi kelak menambahkan fitur yang mengubah cara data ditangani (termasuk akun, sinkronisasi, langganan
-    premium, dan analitik pemakaian di §6 dan §7), kami akan memperbarui halaman ini dan tanggal berlakunya sebelum
-    fitur itu tersedia.
+    Jika aplikasi kelak menambahkan fitur yang mengubah cara data ditangani (termasuk sinkronisasi dan langganan
+    premium di §8), kami akan memperbarui halaman ini dan tanggal berlakunya sebelum fitur itu tersedia.
   </p>
 
-  <h2>11. Kontak</h2>
+  <h2>12. Kontak</h2>
   <p>Pertanyaan tentang privasi dapat dikirim ke <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>
 </Legal>
