@@ -198,8 +198,8 @@ export const en: Dict = {
       },
       {
         t: 'Install it from the Play Store app',
-        d: 'Search “Tanukonomy” in your phone’s Play Store app (not a regular Google search), or tap the button that appears on the testing link. If it’s not showing yet, give it a bit more time — that’s normal, see the troubleshooting section below.',
-        action: null,
+        d: 'Once your tester status is active, open Tanukonomy’s Play Store page and tap “Install”. If the page won’t open or the app isn’t showing yet, give it a bit more time — that’s normal, see the troubleshooting section below.',
+        action: 'Open in Play Store',
       },
       {
         t: 'Use it for 14 consecutive days',

@@ -196,8 +196,8 @@ export const id = {
       },
       {
         t: 'Pasang lewat aplikasi Play Store',
-        d: 'Cari "Tanukonomy" di aplikasi Play Store ponselmu (bukan pencarian Google biasa), atau ketuk tombol yang muncul di tautan uji coba. Kalau belum terlihat, tunggu sebentar lagi — ini normal, lihat bagian pemecahan masalah di bawah.',
-        action: null,
+        d: 'Setelah status penguji aktif, buka halaman Tanukonomy di Play Store lalu ketuk "Instal". Kalau halamannya belum bisa dibuka atau aplikasinya belum terlihat, tunggu sebentar lagi — ini normal, lihat bagian pemecahan masalah di bawah.',
+        action: 'Buka di Play Store',
       },
       {
         t: 'Pakai selama 14 hari berturut-turut',

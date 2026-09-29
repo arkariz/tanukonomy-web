@@ -79,8 +79,10 @@ Diperbarui 28 September 2026.
 - [ ] **P-3** Tinjau dan setujui isi kebijakan privasi dan syarat. Draf
       ditulis dari perilaku aplikasi per 28 Sep 2026 (tanpa server, tanpa
       izin Android tambahan, tanpa analitik); bukan nasihat hukum.
-- [ ] **P-4** Buat Google Group penguji dan jalur closed testing di Play
-      Console, lalu isi `GOOGLE_GROUP_URL` dan `PLAY_TESTING_URL`.
+- [x] **P-4** Google Group penguji dan jalur closed testing sudah dibuat
+      pemilik (29 Sep 2026). `GOOGLE_GROUP_URL` (tanpa `/u/1/`),
+      `PLAY_TESTING_URL` (halaman opt-in "Jadi Penguji"), dan
+      `PLAY_STORE_URL` (tombol baru di langkah 3 `/beta`) sudah diisi.
 - [ ] **P-7** Aktifkan GitHub Pages: Settings → Pages → Source: GitHub
       Actions, dan jadikan repo publik (atau pakai GitHub Pro).
 - [-] **P-5** *(dibatalkan 29 Sep 2026)* Cloudflare Pages tidak dipakai;

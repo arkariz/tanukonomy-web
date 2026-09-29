@@ -39,7 +39,7 @@ Semua ada di `src/config.ts`:
   `path()` atau `withBase()`, jangan tulis `/...` mentah.
 - `CONTACT_EMAIL` — alamat kontak di footer, halaman uji coba, dan
   dokumen hukum.
-- `GOOGLE_GROUP_URL` dan `PLAY_TESTING_URL` — selama kosong, tombol di
+- `GOOGLE_GROUP_URL`, `PLAY_TESTING_URL`, dan `PLAY_STORE_URL` — selama kosong, tombol di
   `/beta/` tampil "Segera dibuka", bukan tautan mati.
 - `LEGAL_EFFECTIVE_DATE` — ubah setiap kali isi kebijakan privasi atau
   syarat berubah.

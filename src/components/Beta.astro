@@ -3,7 +3,7 @@ import { Image } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 import PixelIcon from './PixelIcon.astro';
 import art from '../assets/illustration/onboarding_5.png';
-import { CONTACT_EMAIL, GOOGLE_GROUP_URL, PLAY_TESTING_URL } from '../config';
+import { CONTACT_EMAIL, GOOGLE_GROUP_URL, PLAY_STORE_URL, PLAY_TESTING_URL } from '../config';
 import { type Lang, t } from '../i18n';
 
 interface Props {
@@ -12,10 +12,10 @@ interface Props {
 const { lang } = Astro.props;
 const d = t(lang);
 const b = d.beta;
-const urls = [GOOGLE_GROUP_URL, PLAY_TESTING_URL];
+const urls = [GOOGLE_GROUP_URL, PLAY_TESTING_URL, PLAY_STORE_URL];
 const open = GOOGLE_GROUP_URL !== '' && PLAY_TESTING_URL !== '';
 // Tombol utama hanya satu per layar (ADR-020): langkah pertama yang belum
-// dikerjakan penguji; langkah kedua bergaya sekunder.
+// dikerjakan penguji; langkah berikutnya bergaya sekunder.
 const btnClass = (i: number) => (i === 0 ? 'btn btn-primary' : 'btn btn-secondary');
 ---
 
