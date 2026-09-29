@@ -22,10 +22,10 @@ export const CONTACT_EMAIL = 'halo@tanukonomy.app';
  * Jangan menyertakan `/u/<n>/` dari URL Google: itu nomor akun di peramban
  * pemilik dan bisa membuka akun yang salah di perangkat penguji.
  */
-export const GOOGLE_GROUP_URL = 'https://groups.google.com/g/tanukonomy-closed-tester';
+export const GOOGLE_GROUP_URL: string = 'https://groups.google.com/g/tanukonomy-closed-tester';
 /** Halaman opt-in "Jadi Penguji"; beda dari halaman toko di bawah. */
-export const PLAY_TESTING_URL = 'https://play.google.com/apps/testing/com.arkarizdev.tanukonomy';
-export const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.arkarizdev.tanukonomy';
+export const PLAY_TESTING_URL: string = 'https://play.google.com/apps/testing/com.arkarizdev.tanukonomy';
+export const PLAY_STORE_URL: string = 'https://play.google.com/store/apps/details?id=com.arkarizdev.tanukonomy';
 
 /** Tanggal berlaku dokumen hukum (YYYY-MM-DD). */
 export const LEGAL_EFFECTIVE_DATE = '2026-09-29';
