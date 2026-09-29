@@ -24,7 +24,7 @@ export const en: Dict = {
     body: 'Record money in, money out, and moves between wallets in seconds. Plan budgets, track freelance hours, and always know where your money is.',
     primary: 'Join the beta',
     secondary: 'See how it works',
-    chips: ['Works offline', 'Data stays on device', 'Free during beta'],
+    chips: ['Works offline', 'Data stays on device'],
     shotAlt: 'Tanukonomy Home screen: total cash, this month’s income and expenses, active budget, and freelance summary',
   },
   questions: {
@@ -38,7 +38,7 @@ export const en: Dict = {
   },
   features: {
     label: 'Features',
-    title: 'Built to be used every day, not once a month.',
+    title: 'Everything you need to keep track of your money.',
     items: [
       {
         id: 'catat',
@@ -53,7 +53,7 @@ export const en: Dict = {
         id: 'dompet',
         tag: 'Wallets',
         title: 'Every balance in one place',
-        body: 'Bank, e-wallet, cash, and savings sit side by side. A transfer only moves where your money is, so your total stays the same and it never counts as spending.',
+        body: 'Bank, e-wallet, cash, and savings sit side by side, with cash records that are always accurate. Moves between wallets are recorded as transfers, so your income and spending reports stay clean.',
         points: ['Total cash across active wallets', 'Transfers don’t skew your reports', 'Balances recomputed from history'],
         shot: 'dompet',
         shotAlt: 'Wallet list: BCA, GoPay, Cash, and Savings with their balances',
@@ -106,7 +106,7 @@ export const en: Dict = {
     label: 'Coming next',
     badge: 'Coming soon',
     title: 'What we’re planning next.',
-    body: 'None of this is in the closed beta yet, and there’s no release date. These features follow the same privacy principles as the account and sync above: optional, and announced before they go live.',
+    body: 'These features follow the same privacy principles as the account and sync above: optional, and announced before they go live.',
     items: [
       {
         t: 'Automatic recording',
@@ -121,7 +121,7 @@ export const en: Dict = {
         d: 'Manage wallets and budgets together with a partner or a small team, with control over who can see and record what.',
       },
     ],
-    note: 'No release date yet. All of it will be optional and explained in the privacy policy before launch.',
+    note: 'All of it will be optional and explained in the privacy policy before launch.',
     link: 'Read the privacy policy',
   },
   steps: {
@@ -144,7 +144,7 @@ export const en: Dict = {
     label: 'FAQ',
     title: 'Common questions',
     items: [
-      { q: 'Is Tanukonomy free?', a: 'Yes, it’s free to use during the beta. We plan to introduce an optional premium plan (freemium) later on; core recording will stay free, and we’ll give plenty of notice before any change.' },
+      { q: 'Is Tanukonomy free?', a: 'Yes, core recording is free. An optional premium plan (freemium) with extra features will come later, and we’ll give plenty of notice before any change.' },
       { q: 'Does Tanukonomy connect to my bank account?', a: 'No. Tanukonomy is a notebook: you record each transaction yourself. The app doesn’t move money, doesn’t pay, and never asks for bank logins.' },
       { q: 'Where is my data stored?', a: 'Right now, only on your phone — there’s no account yet, so we can’t see your records. An optional account for syncing is in the works; recording locally without an account will keep working.' },
       { q: 'Does the app use analytics or track me for ads?', a: 'Right now, there’s no third-party analytics or ad tracking inside the app. Later on we plan to add basic usage analytics to understand and improve the app — not to sell data or show ads. We’ll update this privacy policy and let you know before that goes live.' },

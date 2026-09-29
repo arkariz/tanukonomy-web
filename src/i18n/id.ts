@@ -22,7 +22,7 @@ export const id = {
     body: 'Catat uang masuk, uang keluar, dan pindah dompet dalam hitungan detik. Susun anggaran, pantau jam kerja freelance, dan selalu tahu di mana uangmu berada.',
     primary: 'Ikut uji coba',
     secondary: 'Lihat cara kerjanya',
-    chips: ['Bisa dipakai offline', 'Data di perangkat', 'Gratis selama uji coba'],
+    chips: ['Bisa dipakai offline', 'Data di perangkat'],
     shotAlt: 'Layar Beranda Tanukonomy: total kas, pemasukan dan pengeluaran bulan ini, anggaran aktif, dan ringkasan freelance',
   },
   questions: {
@@ -36,7 +36,7 @@ export const id = {
   },
   features: {
     label: 'Fitur',
-    title: 'Dibuat untuk dicatat setiap hari, bukan sebulan sekali.',
+    title: 'Semua yang kamu butuhkan untuk mencatat keuangan.',
     items: [
       {
         id: 'catat',
@@ -51,7 +51,7 @@ export const id = {
         id: 'dompet',
         tag: 'Dompet',
         title: 'Semua saldo di satu tempat',
-        body: 'Bank, e-wallet, tunai, dan tabungan tampil berdampingan. Transfer antar dompet hanya memindahkan tempat uangmu, jadi total kas tidak ikut berubah dan tidak terhitung sebagai pengeluaran.',
+        body: 'Bank, e-wallet, tunai, dan tabungan tampil berdampingan, dengan pencatatan kas yang selalu akurat. Perpindahan antar dompet dicatat sebagai transfer, jadi laporan pemasukan dan pengeluaranmu tetap rapi.',
         points: ['Total kas dari semua dompet aktif', 'Transfer tidak mengacaukan laporan', 'Saldo dihitung ulang dari riwayat'],
         shot: 'dompet',
         shotAlt: 'Daftar dompet: BCA, GoPay, Tunai, dan Tabungan beserta saldonya',
@@ -104,7 +104,7 @@ export const id = {
     label: 'Fitur mendatang',
     badge: 'Segera',
     title: 'Yang sedang kami rencanakan.',
-    body: 'Belum ada di uji coba tertutup, dan belum ada tanggal rilis. Fitur-fitur ini mengikuti prinsip privasi yang sama seperti akun dan sinkronisasi di atas: opsional, dan diumumkan lebih dulu sebelum aktif.',
+    body: 'Fitur-fitur ini mengikuti prinsip privasi yang sama seperti akun dan sinkronisasi di atas: opsional, dan diumumkan lebih dulu sebelum aktif.',
     items: [
       {
         t: 'Catat otomatis',
@@ -119,7 +119,7 @@ export const id = {
         d: 'Kelola dompet dan anggaran bersama pasangan atau tim kecil, dengan kendali siapa boleh melihat dan mencatat apa.',
       },
     ],
-    note: 'Belum ada tanggal rilis. Semuanya opsional dan akan dijelaskan di kebijakan privasi sebelum diluncurkan.',
+    note: 'Semuanya opsional dan akan dijelaskan di kebijakan privasi sebelum diluncurkan.',
     link: 'Baca kebijakan privasi',
   },
   steps: {
@@ -142,7 +142,7 @@ export const id = {
     label: 'Tanya jawab',
     title: 'Yang sering ditanyakan',
     items: [
-      { q: 'Apakah Tanukonomy gratis?', a: 'Ya, gratis dipakai selama masa uji coba. Ke depannya kami berencana membuka langganan premium opsional (freemium); pencatatan inti tetap bisa dipakai gratis, dan perubahan apa pun akan diumumkan jauh-jauh hari.' },
+      { q: 'Apakah Tanukonomy gratis?', a: 'Ya, pencatatan inti gratis. Ke depannya akan ada langganan premium opsional (freemium) untuk fitur tambahan, dan perubahan apa pun akan diumumkan jauh-jauh hari.' },
       { q: 'Apakah Tanukonomy terhubung ke rekening bank saya?', a: 'Tidak. Tanukonomy adalah buku catatan: kamu yang mencatat setiap transaksi. Aplikasi tidak memindahkan uang, tidak membayar, dan tidak pernah meminta data login bank.' },
       { q: 'Di mana data saya disimpan?', a: 'Saat ini hanya di ponselmu — belum ada akun, jadi kami tidak bisa melihat catatanmu. Akun opsional untuk sinkronisasi sedang disiapkan; mencatat secara lokal tanpa akun akan tetap bisa dipakai.' },
       { q: 'Apakah aplikasi ini memakai analitik atau melacak saya untuk iklan?', a: 'Saat ini tidak ada analitik pihak ketiga atau pelacak iklan di dalam aplikasi. Ke depannya kami berencana menambahkan analitik pemakaian dasar untuk memahami dan memperbaiki aplikasi — bukan untuk menjual data atau menampilkan iklan. Kebijakan privasi akan diperbarui dan diberi tahu sebelum itu aktif.' },
