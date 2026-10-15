@@ -88,12 +88,12 @@ export const id = {
   },
   privacy: {
     label: 'Privasi',
-    title: 'Datamu tidak pernah meninggalkan ponsel.',
-    body: 'Tanukonomy tidak punya server. Semua catatan disimpan di perangkatmu sendiri, jadi tidak ada yang bisa kami baca, jual, atau bocorkan.',
+    title: 'Catatan keuanganmu tidak pernah meninggalkan ponsel.',
+    body: 'Tanukonomy tidak punya server untuk catatanmu. Semua catatan disimpan di perangkatmu sendiri, jadi tidak ada yang bisa kami baca, jual, atau bocorkan.',
     items: [
-      { t: 'Tanpa akun', d: 'Buka aplikasinya dan langsung mulai. Tidak ada email atau nomor ponsel yang diminta.' },
+      { t: 'Akun opsional', d: 'Buka aplikasinya dan langsung mulai. Masuk dengan akun hanya kalau kamu mau.' },
       { t: 'Tanpa sambungan bank', d: 'Kamu yang mencatat. Tidak ada kata sandi bank atau akses rekening.' },
-      { t: 'Tanpa iklan dan pelacak', d: 'Tidak ada analitik pihak ketiga di dalam aplikasi.' },
+      { t: 'Tanpa iklan', d: 'Aplikasi hanya mengirim data teknis terbatas, tanpa catatan keuanganmu. Rinciannya ada di kebijakan privasi.' },
       { t: 'Bekerja tanpa internet', d: 'Mencatat di kereta atau di pasar tetap bisa, sinyal atau tidak.' },
     ],
     link: 'Baca kebijakan privasi',
@@ -120,7 +120,7 @@ export const id = {
     items: [
       { q: 'Apakah Tanukonomy gratis?', a: 'Ya, gratis selama masa uji coba. Kami akan memberi tahu jauh-jauh hari kalau ada perubahan.' },
       { q: 'Apakah Tanukonomy terhubung ke rekening bank saya?', a: 'Tidak. Tanukonomy adalah buku catatan: kamu yang mencatat setiap transaksi. Aplikasi tidak memindahkan uang, tidak membayar, dan tidak pernah meminta data login bank.' },
-      { q: 'Di mana data saya disimpan?', a: 'Hanya di ponselmu. Tidak ada akun dan tidak ada server, jadi kami tidak bisa melihat catatanmu.' },
+      { q: 'Di mana data saya disimpan?', a: 'Hanya di ponselmu. Akun bersifat opsional dan catatan keuangan tidak dikirim ke server mana pun, jadi kami tidak bisa melihat catatanmu.' },
       { q: 'Apa yang terjadi kalau saya ganti ponsel atau menghapus aplikasi?', a: 'Karena data hanya ada di perangkat, menghapus aplikasi juga menghapus catatannya. Fitur ekspor dan cadangan ke berkas sedang kami siapkan.' },
       { q: 'Tersedia di iPhone?', a: 'Uji coba tertutup dimulai di Android lewat Google Play. Versi iOS menyusul.' },
       { q: 'Mata uang apa yang didukung?', a: 'Saat ini Rupiah. Nominal disimpan dalam sen, jadi hitungannya tidak meleset karena pembulatan.' },

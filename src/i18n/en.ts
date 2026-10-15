@@ -90,12 +90,12 @@ export const en: Dict = {
   },
   privacy: {
     label: 'Privacy',
-    title: 'Your data never leaves your phone.',
-    body: 'Tanukonomy has no servers. Every record is stored on your own device, so there is nothing for us to read, sell, or leak.',
+    title: 'Your financial records never leave your phone.',
+    body: 'Tanukonomy has no server for your records. Every record is stored on your own device, so there is nothing for us to read, sell, or leak.',
     items: [
-      { t: 'No account', d: 'Open the app and start. No email or phone number required.' },
+      { t: 'Account optional', d: 'Open the app and start. Sign in only if you want to.' },
       { t: 'No bank connection', d: 'You do the recording. No bank passwords, no account access.' },
-      { t: 'No ads or trackers', d: 'No third-party analytics inside the app.' },
+      { t: 'No ads', d: 'The app sends only limited technical data, never your financial records. Details are in the privacy policy.' },
       { t: 'Works offline', d: 'Record on the train or at the market, signal or not.' },
     ],
     link: 'Read the privacy policy',
@@ -122,7 +122,7 @@ export const en: Dict = {
     items: [
       { q: 'Is Tanukonomy free?', a: 'Yes, it’s free during the beta. We’ll give plenty of notice if that ever changes.' },
       { q: 'Does Tanukonomy connect to my bank account?', a: 'No. Tanukonomy is a notebook: you record each transaction yourself. The app doesn’t move money, doesn’t pay, and never asks for bank logins.' },
-      { q: 'Where is my data stored?', a: 'Only on your phone. There’s no account and no server, so we can’t see your records.' },
+      { q: 'Where is my data stored?', a: 'Only on your phone. An account is optional and your financial records are not sent to any server, so we can’t see them.' },
       { q: 'What happens if I switch phones or uninstall?', a: 'Because data lives only on the device, uninstalling also deletes your records. Export and file backup are in the works.' },
       { q: 'Is it available on iPhone?', a: 'The closed beta starts on Android through Google Play. iOS will follow.' },
       { q: 'Which currencies are supported?', a: 'Indonesian Rupiah for now. Amounts are stored in cents, so totals never drift from rounding.' },
