@@ -26,7 +26,13 @@ Diperbarui 15 Oktober 2026.
       termasuk peristiwa pembaruan, Firebase Remote Config, pembaruan kecil
       Shorebird, pembaruan versi lewat Google Play); klaim lama "tanpa akun,
       tanpa server, tanpa analitik, tanpa akses mikrofon" dihapus karena
-      sudah tidak benar. Bagian bernomor ulang 1–11. `LEGAL_EFFECTIVE_DATE`
+      sudah tidak benar. Ditambah butir Catat lewat suara, Catat Cerdas
+      dengan Gemini (teks yang dikirim dan tidak dikirim), dan Catat dari
+      notifikasi; klaim "tidak ada data keuangan keluar" dipersempit
+      menjadi catatan tersimpan, dengan teks Catat Cerdas sebagai satu-
+      satunya pengecualian. Syarat memakai tanggal sendiri
+      (`TERMS_EFFECTIVE_DATE`, tetap 2026-09-28); "Tanpa akun" menjadi
+      "Tanpa perlu akun". Bagian bernomor ulang 1–11. `LEGAL_EFFECTIVE_DATE`
       menjadi 2026-10-15. Blok privasi dan tanya jawab di landing disamakan.
       Data keuangan tetap lokal; klaim itu tidak diubah.
 
@@ -40,14 +46,16 @@ Diperbarui 15 Oktober 2026.
 - [ ] **P-3** Tinjau dan setujui isi kebijakan privasi dan syarat. Draf
       awal ditulis per 28 Sep 2026; kebijakan privasi diperbarui 15 Okt 2026
       (W-8) mengikuti perilaku aplikasi Fase 20; bukan nasihat hukum.
-- [ ] **P-8** Putuskan sisa dari W-8: (a) tanggal berlaku bersama membuat
-      Syarat ikut bertanggal 15 Okt 2026 padahal isinya tidak berubah;
-      (b) chip dan judul landing "Tanpa akun" / "No account" (hero, `<title>`,
-      meta beta) kini tidak sepenuhnya benar karena akun opsional ada;
-      (c) tautan hapus akun `/hapus-akun/` yang diminta formulir Data
-      safety belum ada di situs ini; (d) cocokkan formulir Data safety
-      Play Console dengan kebijakan baru, dan periksa izin mikrofon
-      (Catat lewat Suara) serta akses notifikasi terhadap bagian 2.
+- [ ] **P-8** *(sisa W-8)* (a) Cocokkan formulir Data safety Play Console
+      dengan bagian 3 dan 4 kebijakan baru: tambah "ID perangkat atau ID
+      lain", dan pertimbangkan kategori teks/audio untuk Catat Cerdas
+      (Gemini) dan suara; (b) Gemini: ADR-027 menyebut tier gratis hanya
+      untuk closed testing dan pindah ke berbayar sebelum rilis publik;
+      kebijakan hanya menulis "tunduk pada ketentuan Gemini API", periksa
+      lagi sebelum rilis publik; (c) halaman hapus akun sudah ada di
+      `https://tanukonomy.app/en/delete-account` (di luar repo ini, tidak
+      saya verifikasi dari sandbox); pastikan versi Indonesia dan kebijakan
+      menaut ke URL yang benar.
 - [ ] **P-4** Buat Google Group penguji dan jalur closed testing di Play
       Console, lalu isi `GOOGLE_GROUP_URL` dan `PLAY_TESTING_URL`.
 - [ ] **P-7** Aktifkan GitHub Pages: Settings → Pages → Source: GitHub
