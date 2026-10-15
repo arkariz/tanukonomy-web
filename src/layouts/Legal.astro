@@ -1,6 +1,6 @@
 ---
 import Base from './Base.astro';
-import { LEGAL_EFFECTIVE_DATE } from '../config';
+import { LEGAL_EFFECTIVE_DATE as DEFAULT_EFFECTIVE_DATE } from '../config';
 import { type Lang, type PageKey, path, t } from '../i18n';
 
 interface Props {
@@ -8,10 +8,11 @@ interface Props {
   page: PageKey;
   title: string;
   description: string;
+  effectiveDate?: string;
 }
-const { lang, page, title, description } = Astro.props;
+const { lang, page, title, description, effectiveDate = DEFAULT_EFFECTIVE_DATE } = Astro.props;
 const d = t(lang);
-const date = new Date(`${LEGAL_EFFECTIVE_DATE}T00:00:00`).toLocaleDateString(lang === 'id' ? 'id-ID' : 'en-GB', {
+const date = new Date(`${effectiveDate}T00:00:00`).toLocaleDateString(lang === 'id' ? 'id-ID' : 'en-GB', {
   day: 'numeric',
   month: 'long',
   year: 'numeric',
@@ -22,7 +23,7 @@ const date = new Date(`${LEGAL_EFFECTIVE_DATE}T00:00:00`).toLocaleDateString(lan
   <article class="wrap legal">
     <a class="back" href={path('home', lang)}>← {d.legal.back}</a>
     <h1>{title}</h1>
-    <p class="effective">{d.legal.effective} <time datetime={LEGAL_EFFECTIVE_DATE}>{date}</time></p>
+    <p class="effective">{d.legal.effective} <time datetime={effectiveDate}>{date}</time></p>
     <div class="prose">
       <slot />
     </div>

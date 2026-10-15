@@ -24,6 +24,9 @@ export const GOOGLE_GROUP_URL = '';
 export const PLAY_TESTING_URL = '';
 
 /** Tanggal berlaku dokumen hukum (YYYY-MM-DD). */
-export const LEGAL_EFFECTIVE_DATE = '2026-09-28';
+export const LEGAL_EFFECTIVE_DATE = '2026-10-15';
+
+/** Tanggal berlaku Syarat dan Ketentuan (terakhir isinya diubah). */
+export const TERMS_EFFECTIVE_DATE = '2026-09-28';
 
 export const APP_NAME = 'Tanukonomy';
