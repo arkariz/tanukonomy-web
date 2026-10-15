@@ -1,6 +1,6 @@
 # Tugas tanukonomy-web
 
-Diperbarui 28 September 2026.
+Diperbarui 15 Oktober 2026.
 
 ## Selesai
 
@@ -20,6 +20,15 @@ Diperbarui 28 September 2026.
 
 - [x] **W-7** Hosting sementara di GitHub Pages
       (`arkariz.github.io/tanukonomy-web/`) dengan workflow deploy otomatis.
+- [x] **W-8** *(15 Okt 2026, Fase 20 aplikasi, bagian B-4)* Kebijakan privasi
+      (id, en) disesuaikan dengan aplikasi: bagian baru "Akun (opsional)"
+      dan "Data teknis dan layanan pihak ketiga" (Analytics dan Crashlytics
+      termasuk peristiwa pembaruan, Firebase Remote Config, pembaruan kecil
+      Shorebird, pembaruan versi lewat Google Play); klaim lama "tanpa akun,
+      tanpa server, tanpa analitik, tanpa akses mikrofon" dihapus karena
+      sudah tidak benar. Bagian bernomor ulang 1–11. `LEGAL_EFFECTIVE_DATE`
+      menjadi 2026-10-15. Blok privasi dan tanya jawab di landing disamakan.
+      Data keuangan tetap lokal; klaim itu tidak diubah.
 
 ## Menunggu pemilik
 
@@ -29,8 +38,16 @@ Diperbarui 28 September 2026.
 - [ ] **P-2** *(ditunda pemilik 28 Sep 2026; `halo@tanukonomy.app` belum menerima email)* Alamat kontak: aktifkan Email Routing Cloudflare untuk
       `halo@<domain>` (atau ganti `CONTACT_EMAIL`).
 - [ ] **P-3** Tinjau dan setujui isi kebijakan privasi dan syarat. Draf
-      ditulis dari perilaku aplikasi per 28 Sep 2026 (tanpa server, tanpa
-      izin Android tambahan, tanpa analitik); bukan nasihat hukum.
+      awal ditulis per 28 Sep 2026; kebijakan privasi diperbarui 15 Okt 2026
+      (W-8) mengikuti perilaku aplikasi Fase 20; bukan nasihat hukum.
+- [ ] **P-8** Putuskan sisa dari W-8: (a) tanggal berlaku bersama membuat
+      Syarat ikut bertanggal 15 Okt 2026 padahal isinya tidak berubah;
+      (b) chip dan judul landing "Tanpa akun" / "No account" (hero, `<title>`,
+      meta beta) kini tidak sepenuhnya benar karena akun opsional ada;
+      (c) tautan hapus akun `/hapus-akun/` yang diminta formulir Data
+      safety belum ada di situs ini; (d) cocokkan formulir Data safety
+      Play Console dengan kebijakan baru, dan periksa izin mikrofon
+      (Catat lewat Suara) serta akses notifikasi terhadap bagian 2.
 - [ ] **P-4** Buat Google Group penguji dan jalur closed testing di Play
       Console, lalu isi `GOOGLE_GROUP_URL` dan `PLAY_TESTING_URL`.
 - [ ] **P-7** Aktifkan GitHub Pages: Settings → Pages → Source: GitHub
