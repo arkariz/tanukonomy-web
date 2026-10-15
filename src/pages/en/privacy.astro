@@ -7,11 +7,11 @@ import { CONTACT_EMAIL } from '../../config';
   lang="en"
   page="privacy"
   title="Privacy Policy"
-  description="Tanukonomy collects no personal data. Every financial record is stored only on your device, with no account and no server."
+  description="Your financial records in Tanukonomy stay on your device. The app sends only limited technical data through Firebase and Shorebird, never your financial data."
 >
   <p class="lede">
-    <strong>In short:</strong> Tanukonomy does not collect, send, or store your personal data on any server. Everything you
-    record stays on your device.
+    <strong>In short:</strong> everything you record stays on your device and is never sent to any server. Only limited
+    technical data leaves the device, for updates, usage statistics, and crash reports, as described in section 4.
   </p>
 
   <p>
@@ -26,52 +26,94 @@ import { CONTACT_EMAIL } from '../../config';
   </p>
   <ul>
     <li>is stored <strong>only in your device’s local storage</strong>;</li>
-    <li>is never sent to our servers or third parties, because the app has no server;</li>
+    <li>is never sent to us or to third parties, including the services described in sections 3 and 4;</li>
     <li>cannot be viewed, restored, or deleted remotely by us.</li>
   </ul>
 
   <h2>2. What we don’t collect</h2>
   <ul>
-    <li>There is no account, so we don’t ask for your name, email, or phone number.</li>
     <li>There is no connection to banks, e-wallets, or payment services, and we never ask for passwords.</li>
-    <li>There are no ads, third-party analytics, or trackers in the app.</li>
-    <li>There is no access to your location, contacts, camera, or microphone.</li>
+    <li>There are no ads in the app.</li>
+    <li>There is no access to your location, contacts, or camera.</li>
+    <li>No financial data (wallets, transactions, budgets, freelance projects) leaves the device.</li>
   </ul>
 
-  <h2>3. Deleting your data</h2>
+  <h2>3. Account (optional)</h2>
   <p>
-    Because your data lives only on your device, you are fully in control. Uninstalling the app, or clearing its data in
-    Android settings, permanently deletes all records. We keep no copy, so deleted data cannot be recovered by us.
+    The app is fully functional without an account. If you choose to sign in, we receive your account’s email address and
+    user ID to manage that account. You can sign in with a Google account or with an email and password. An account does
+    not cause your financial data to be sent anywhere.
   </p>
 
-  <h2>4. Device backups</h2>
+  <h2>4. Technical data and third-party services</h2>
+  <p>Besides the account, the app uses the services below. None of them receives the financial data you record.</p>
+  <ul>
+    <li>
+      <strong>Firebase Analytics and Crashlytics (Google).</strong> The app sends basic usage events and crash reports so
+      we can improve it. This runs for all users, with or without an account. Update-related events include the type of
+      update banner, the action you choose (for example Update or Later), and the build number and small-update number. The
+      small-update number is also recorded as a single attribute on events and crash reports.
+    </li>
+    <li>
+      <strong>Firebase Remote Config (Google).</strong> The app uses it to fetch the “What’s new” release notes. Its SDK
+      automatically sends the country code, language code, time zone, platform and operating system version, Firebase
+      Android App ID, package name, SDK version, and a Firebase installation ID. That ID is created per app installation and
+      does not uniquely identify a user or a device.
+    </li>
+    <li>
+      <strong>Small updates through Shorebird.</strong> The app contacts Shorebird’s server to ask whether a small update is
+      available. The data sent is an anonymous installation ID that Shorebird generates at random (used to count active
+      installations), the app id, the release and build version, the small-update number, the platform, and the processor
+      architecture. There is no location, device fingerprint, advertising ID, or user data. Like any internet service,
+      Shorebird’s server operational logs may include an IP address. Their official description is in the
+      <a href="https://docs.shorebird.dev/code-push/faq/" rel="noopener">Shorebird FAQ</a>.
+    </li>
+    <li>
+      <strong>Version updates through Google Play.</strong> The app uses Google Play’s in-app updates service. The version
+      check is performed by Google Play services on your device. The app sends no data to us or to our servers for this.
+    </li>
+  </ul>
+  <p>
+    These services are run by their providers and are subject to their policies. Details of the data the Firebase SDKs send
+    are in the
+    <a href="https://firebase.google.com/docs/android/play-data-disclosure" rel="noopener">Firebase data disclosure</a>.
+  </p>
+
+  <h2>5. Deleting your data</h2>
+  <p>
+    Because your financial data lives only on your device, you are fully in control. Uninstalling the app, or clearing its
+    data in Android settings, permanently deletes all records. We keep no copy, so deleted data cannot be recovered by us.
+    If you use an account, you can delete it from inside the app.
+  </p>
+
+  <h2>6. Device backups</h2>
   <p>
     If your operating system’s built-in backup (such as Google backup on Android) is turned on, the system may include app
     data in your backup. Those backups are managed by the operating system provider under their policies, not by us.
   </p>
 
-  <h2>5. Closed beta</h2>
+  <h2>7. Closed beta</h2>
   <p>
     To join the closed beta, you join a Google Group and the Google Play testing program with your Google account. Both are
     run by Google. As the group manager, we can see members’ email addresses; we use them only to grant beta access and do
     not share them. Feedback you send by email or through Google Play is used only to improve the app.
   </p>
 
-  <h2>6. This site</h2>
+  <h2>8. This site</h2>
   <p>
     This site uses no cookies, forms, or analytics. The hosting provider may log standard technical data such as IP address
     and browser type for security and operations, under their own policies.
   </p>
 
-  <h2>7. Children</h2>
-  <p>The app is not directed at children under 13 and does not collect data from anyone, including children.</p>
+  <h2>9. Children</h2>
+  <p>The app is not directed at children under 13.</p>
 
-  <h2>8. Changes to this policy</h2>
+  <h2>10. Changes to this policy</h2>
   <p>
     If the app later adds a feature that changes how data is handled (such as sync), we will update this page and its
     effective date before that feature becomes available.
   </p>
 
-  <h2>9. Contact</h2>
+  <h2>11. Contact</h2>
   <p>Privacy questions can be sent to <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>
 </Legal>

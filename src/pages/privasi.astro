@@ -7,11 +7,12 @@ import { CONTACT_EMAIL } from '../config';
   lang="id"
   page="privacy"
   title="Kebijakan Privasi"
-  description="Tanukonomy tidak mengumpulkan data pribadi. Semua catatan keuangan disimpan hanya di perangkatmu, tanpa akun dan tanpa server."
+  description="Catatan keuangan di Tanukonomy hanya disimpan di perangkatmu. Aplikasi hanya mengirim data teknis terbatas lewat Firebase dan Shorebird, tanpa data keuanganmu."
 >
   <p class="lede">
-    <strong>Ringkasnya:</strong> Tanukonomy tidak mengumpulkan, mengirim, atau menyimpan data pribadimu di server mana pun.
-    Semua yang kamu catat tetap di perangkatmu.
+    <strong>Ringkasnya:</strong> semua yang kamu catat tetap di perangkatmu dan tidak pernah dikirim ke server mana pun.
+    Yang keluar dari perangkat hanya data teknis terbatas untuk pembaruan, statistik pemakaian, dan laporan crash, seperti
+    dijelaskan di bagian 4.
   </p>
 
   <p>
@@ -26,32 +27,78 @@ import { CONTACT_EMAIL } from '../config';
   </p>
   <ul>
     <li>disimpan <strong>hanya di penyimpanan lokal perangkatmu</strong>;</li>
-    <li>tidak pernah dikirim ke server kami atau pihak ketiga, karena aplikasi tidak memiliki server;</li>
+    <li>
+      tidak pernah dikirim ke kami atau ke pihak ketiga, termasuk layanan yang dijelaskan di bagian 3 dan 4;
+    </li>
     <li>tidak dapat kami lihat, pulihkan, atau hapus dari jarak jauh.</li>
   </ul>
 
   <h2>2. Yang tidak kami kumpulkan</h2>
   <ul>
-    <li>Tidak ada akun, jadi kami tidak meminta nama, email, atau nomor telepon.</li>
     <li>Tidak ada sambungan ke bank, e-wallet, atau layanan pembayaran, dan kami tidak pernah meminta kata sandi.</li>
-    <li>Tidak ada iklan, analitik pihak ketiga, atau pelacak di dalam aplikasi.</li>
-    <li>Tidak ada akses ke lokasi, kontak, kamera, atau mikrofon.</li>
+    <li>Tidak ada iklan di dalam aplikasi.</li>
+    <li>Tidak ada akses ke lokasi, kontak, atau kamera.</li>
+    <li>Tidak ada data keuangan (dompet, transaksi, anggaran, proyek freelance) yang meninggalkan perangkat.</li>
   </ul>
 
-  <h2>3. Menghapus data</h2>
+  <h2>3. Akun (opsional)</h2>
   <p>
-    Karena data hanya ada di perangkatmu, kamu mengendalikannya sepenuhnya. Menghapus aplikasi, atau menghapus data aplikasi
-    lewat pengaturan Android, akan menghapus semua catatan secara permanen. Kami tidak menyimpan salinan, jadi data yang sudah
-    dihapus tidak dapat kami pulihkan.
+    Aplikasi berfungsi penuh tanpa akun. Jika kamu memilih masuk, kami menerima alamat email dan ID pengguna akunmu untuk
+    mengelola akun itu. Masuk bisa lewat akun Google atau email dan kata sandi. Akun tidak membuat data keuanganmu
+    dikirim ke mana pun.
   </p>
 
-  <h2>4. Cadangan perangkat</h2>
+  <h2>4. Data teknis dan layanan pihak ketiga</h2>
+  <p>
+    Selain akun, aplikasi memakai layanan berikut. Tidak satu pun menerima data keuangan yang kamu catat.
+  </p>
+  <ul>
+    <li>
+      <strong>Firebase Analytics dan Crashlytics (Google).</strong> Aplikasi mengirim peristiwa pemakaian dasar dan laporan
+      crash untuk memperbaiki aplikasi. Ini berjalan untuk semua pengguna, dengan atau tanpa akun. Peristiwa terkait
+      pembaruan mencakup jenis banner pembaruan, tindakan yang kamu pilih (misalnya Perbarui atau Nanti), serta nomor build
+      dan nomor pembaruan kecil. Nomor pembaruan kecil juga dicatat sebagai satu atribut pada peristiwa dan laporan crash.
+    </li>
+    <li>
+      <strong>Firebase Remote Config (Google).</strong> Aplikasi memakainya untuk mengambil catatan rilis "Apa yang baru".
+      SDK-nya mengirim otomatis kode negara, kode bahasa, zona waktu, versi platform dan sistem operasi, Firebase Android
+      App ID, nama paket, versi SDK, dan Firebase installation ID. ID ini dibuat per instalasi aplikasi dan tidak
+      mengidentifikasi unik pengguna atau perangkat.
+    </li>
+    <li>
+      <strong>Pembaruan kecil lewat Shorebird.</strong> Aplikasi menghubungi server Shorebird untuk menanyakan ada tidaknya
+      pembaruan kecil. Data yang dikirim adalah ID instalasi anonim yang dibuat Shorebird secara acak (dipakai menghitung
+      jumlah instalasi aktif), id aplikasi, versi rilis dan build, nomor pembaruan kecil, platform, dan arsitektur
+      prosesor. Tidak ada lokasi, sidik perangkat, ID iklan, atau data pengguna. Seperti layanan internet lainnya, log
+      operasional server Shorebird dapat memuat alamat IP. Keterangan resmi ada di
+      <a href="https://docs.shorebird.dev/code-push/faq/" rel="noopener">FAQ Shorebird</a>.
+    </li>
+    <li>
+      <strong>Pembaruan versi lewat Google Play.</strong> Aplikasi memakai layanan pembaruan dalam aplikasi Google Play.
+      Pengecekan versi dilakukan oleh layanan Google Play di perangkatmu. Aplikasi tidak mengirim data apa pun ke kami atau
+      ke server kami untuk keperluan ini.
+    </li>
+  </ul>
+  <p>
+    Layanan-layanan ini dijalankan oleh penyedianya dan tunduk pada kebijakan mereka. Rincian data yang dikirim SDK
+    Firebase ada di
+    <a href="https://firebase.google.com/docs/android/play-data-disclosure" rel="noopener">pengungkapan data Firebase</a>.
+  </p>
+
+  <h2>5. Menghapus data</h2>
+  <p>
+    Karena data keuanganmu hanya ada di perangkatmu, kamu mengendalikannya sepenuhnya. Menghapus aplikasi, atau menghapus
+    data aplikasi lewat pengaturan Android, akan menghapus semua catatan secara permanen. Kami tidak menyimpan salinan, jadi
+    data yang sudah dihapus tidak dapat kami pulihkan. Jika kamu memakai akun, kamu dapat menghapusnya dari dalam aplikasi.
+  </p>
+
+  <h2>6. Cadangan perangkat</h2>
   <p>
     Jika fitur cadangan bawaan sistem operasi (misalnya cadangan Google di Android) aktif, sistem dapat menyertakan data
     aplikasi dalam cadanganmu. Cadangan itu dikelola oleh penyedia sistem operasi sesuai kebijakan mereka, bukan oleh kami.
   </p>
 
-  <h2>5. Uji coba tertutup</h2>
+  <h2>7. Uji coba tertutup</h2>
   <p>
     Untuk ikut uji coba tertutup, kamu bergabung ke Google Group dan program pengujian Google Play memakai akun Google-mu.
     Keduanya dikelola oleh Google. Sebagai pengelola grup, kami dapat melihat alamat email anggota grup; kami hanya
@@ -59,23 +106,21 @@ import { CONTACT_EMAIL } from '../config';
     hanya kami pakai untuk memperbaiki aplikasi.
   </p>
 
-  <h2>6. Situs ini</h2>
+  <h2>8. Situs ini</h2>
   <p>
     Situs ini tidak memakai cookie, formulir, atau analitik. Penyedia hosting dapat mencatat data teknis standar seperti
     alamat IP dan jenis peramban untuk keamanan dan operasional, sesuai kebijakan mereka.
   </p>
 
-  <h2>7. Anak-anak</h2>
-  <p>
-    Aplikasi tidak ditujukan untuk anak di bawah 13 tahun dan tidak mengumpulkan data dari siapa pun, termasuk anak-anak.
-  </p>
+  <h2>9. Anak-anak</h2>
+  <p>Aplikasi tidak ditujukan untuk anak di bawah 13 tahun.</p>
 
-  <h2>8. Perubahan kebijakan</h2>
+  <h2>10. Perubahan kebijakan</h2>
   <p>
     Jika aplikasi kelak menambahkan fitur yang mengubah cara data ditangani (misalnya sinkronisasi), kami akan memperbarui
     halaman ini dan tanggal berlakunya sebelum fitur itu tersedia.
   </p>
 
-  <h2>9. Kontak</h2>
+  <h2>11. Kontak</h2>
   <p>Pertanyaan tentang privasi dapat dikirim ke <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>
 </Legal>
