@@ -7,12 +7,12 @@ import { CONTACT_EMAIL } from '../config';
   lang="id"
   page="privacy"
   title="Kebijakan Privasi"
-  description="Catatan keuangan di Tanukonomy hanya disimpan di perangkatmu. Aplikasi hanya mengirim data teknis terbatas lewat Firebase dan Shorebird, tanpa data keuanganmu."
+  description="Catatan keuangan di Tanukonomy disimpan di perangkatmu, bukan di server kami. Data teknis dan teks Catat Cerdas yang dikirim ke Google dijelaskan di sini."
 >
   <p class="lede">
-    <strong>Ringkasnya:</strong> semua yang kamu catat tetap di perangkatmu dan tidak pernah dikirim ke server mana pun.
-    Yang keluar dari perangkat hanya data teknis terbatas untuk pembaruan, statistik pemakaian, dan laporan crash, seperti
-    dijelaskan di bagian 4.
+    <strong>Ringkasnya:</strong> semua yang kamu catat tersimpan di perangkatmu dan tidak dikirim ke kami. Yang keluar dari
+    perangkat adalah data teknis terbatas (pembaruan, statistik pemakaian, laporan crash) dan, bila kamu memakai Catat
+    Cerdas, teks yang ditafsirkan oleh Google. Rinciannya ada di bagian 4.
   </p>
 
   <p>
@@ -28,7 +28,8 @@ import { CONTACT_EMAIL } from '../config';
   <ul>
     <li>disimpan <strong>hanya di penyimpanan lokal perangkatmu</strong>;</li>
     <li>
-      tidak pernah dikirim ke kami atau ke pihak ketiga, termasuk layanan yang dijelaskan di bagian 3 dan 4;
+      tidak dikirim ke kami. Satu-satunya yang dapat sampai ke pihak ketiga adalah teks yang kamu minta aplikasi tafsirkan
+      lewat Catat Cerdas, seperti dijelaskan di bagian 4;
     </li>
     <li>tidak dapat kami lihat, pulihkan, atau hapus dari jarak jauh.</li>
   </ul>
@@ -38,7 +39,10 @@ import { CONTACT_EMAIL } from '../config';
     <li>Tidak ada sambungan ke bank, e-wallet, atau layanan pembayaran, dan kami tidak pernah meminta kata sandi.</li>
     <li>Tidak ada iklan di dalam aplikasi.</li>
     <li>Tidak ada akses ke lokasi, kontak, atau kamera.</li>
-    <li>Tidak ada data keuangan (dompet, transaksi, anggaran, proyek freelance) yang meninggalkan perangkat.</li>
+    <li>
+      Tidak ada dompet, transaksi, anggaran, atau proyek freelance tersimpan yang dikirim ke mana pun. Teks Catat Cerdas
+      (bagian 4) adalah satu-satunya pengecualian.
+    </li>
   </ul>
 
   <h2>3. Akun (opsional)</h2>
@@ -50,7 +54,7 @@ import { CONTACT_EMAIL } from '../config';
 
   <h2>4. Data teknis dan layanan pihak ketiga</h2>
   <p>
-    Selain akun, aplikasi memakai layanan berikut. Tidak satu pun menerima data keuangan yang kamu catat.
+    Selain akun, aplikasi memakai layanan berikut. Tidak satu pun menerima catatan keuangan yang tersimpan di aplikasi.
   </p>
   <ul>
     <li>
@@ -78,6 +82,26 @@ import { CONTACT_EMAIL } from '../config';
       Pengecekan versi dilakukan oleh layanan Google Play di perangkatmu. Aplikasi tidak mengirim data apa pun ke kami atau
       ke server kami untuk keperluan ini.
     </li>
+    <li>
+      <strong>Catat lewat suara.</strong> Fitur ini meminta izin mikrofon. Ucapanmu diubah menjadi teks oleh layanan
+      pengenal suara. Bila paket bahasa offline tidak terpasang, layanan itu dapat memakai server Google. Aplikasi tidak
+      menyimpan rekaman suara.
+    </li>
+    <li>
+      <strong>Catat Cerdas dengan Gemini (Google, lewat Firebase AI Logic).</strong> Saat aturan di perangkat ragu
+      menafsirkan sebuah teks (hasil ucapan atau teks notifikasi), aplikasi mengirim teks itu ke Gemini untuk dijadikan draf
+      transaksi. Yang dikirim adalah teks tersebut, nama dompet dan kategori yang aktif, dan tanggal. Saldo, riwayat
+      transaksi, ID internal, dan nama aplikasi sumber notifikasi tidak dikirim. Pada teks notifikasi, angka yang bukan
+      nominal transaksi, seperti nomor rekening dan saldo, disamarkan sebelum dikirim. Teks yang dikirim tetap dapat memuat
+      nominal atau nama yang kamu sebut, jadi hindari menyebut informasi yang tidak ingin kamu bagikan. Teks hasil ucapan
+      tidak disimpan setelah draf dibuat. Pemrosesan oleh Google tunduk pada ketentuan layanan Gemini API. Bila offline
+      atau gagal, aplikasi memakai hasil tafsir di perangkat.
+    </li>
+    <li>
+      <strong>Catat dari notifikasi (Android, opsional).</strong> Bila kamu mengaktifkannya, kamu memberi akses notifikasi
+      dan memilih sendiri aplikasi mana yang dibaca. Hanya notifikasi dari aplikasi pilihanmu yang lolos penyaring
+      transaksi yang diproses. Teksnya disimpan di perangkat paling lama 7 hari.
+    </li>
   </ul>
   <p>
     Layanan-layanan ini dijalankan oleh penyedianya dan tunduk pada kebijakan mereka. Rincian data yang dikirim SDK
@@ -89,7 +113,8 @@ import { CONTACT_EMAIL } from '../config';
   <p>
     Karena data keuanganmu hanya ada di perangkatmu, kamu mengendalikannya sepenuhnya. Menghapus aplikasi, atau menghapus
     data aplikasi lewat pengaturan Android, akan menghapus semua catatan secara permanen. Kami tidak menyimpan salinan, jadi
-    data yang sudah dihapus tidak dapat kami pulihkan. Jika kamu memakai akun, kamu dapat menghapusnya dari dalam aplikasi.
+    data yang sudah dihapus tidak dapat kami pulihkan. Jika kamu memakai akun, kamu dapat menghapusnya dari dalam aplikasi atau lewat
+    <a href="https://tanukonomy.app/en/delete-account" rel="noopener">halaman hapus akun</a>.
   </p>
 
   <h2>6. Cadangan perangkat</h2>
