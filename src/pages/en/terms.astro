@@ -1,12 +1,13 @@
 ---
 import Legal from '../../layouts/Legal.astro';
-import { CONTACT_EMAIL } from '../../config';
+import { CONTACT_EMAIL, TERMS_EFFECTIVE_DATE } from '../../config';
 import { path } from '../../i18n';
 ---
 
 <Legal
   lang="en"
   page="terms"
+  effectiveDate={TERMS_EFFECTIVE_DATE}
   title="Terms of Use"
   description="Terms for using the Tanukonomy app, including during the closed beta."
 >
