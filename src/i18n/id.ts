@@ -1,6 +1,6 @@
 export const id = {
   meta: {
-    title: 'Tanukonomy — Aplikasi Catatan Keuangan Pribadi, Tanpa Akun',
+    title: 'Tanukonomy — Aplikasi Catatan Keuangan Pribadi, Tanpa Perlu Akun',
     description:
       'Catat pemasukan, pengeluaran, dan transfer antar dompet dalam hitungan detik. Susun anggaran bulanan dan pantau jam kerja freelance. Data tetap di ponselmu.',
     ogAlt: 'Tanukonomy: buku kas pribadi di ponselmu, ditemani tanuki juru catat',
@@ -21,7 +21,7 @@ export const id = {
     body: 'Catat uang masuk, uang keluar, dan pindah dompet dalam hitungan detik. Susun anggaran, pantau jam kerja freelance, dan selalu tahu di mana uangmu berada.',
     primary: 'Ikut uji coba',
     secondary: 'Lihat cara kerjanya',
-    chips: ['Tanpa akun', 'Data di perangkat', 'Gratis selama uji coba'],
+    chips: ['Tanpa perlu akun', 'Data di perangkat', 'Gratis selama uji coba'],
     shotAlt: 'Layar Beranda Tanukonomy: total kas, pemasukan dan pengeluaran bulan ini, anggaran aktif, dan ringkasan freelance',
   },
   questions: {
@@ -145,7 +145,7 @@ export const id = {
   beta: {
     metaTitle: 'Ikut Uji Coba Tertutup Tanukonomy di Android',
     metaDescription:
-      'Daftar jadi penguji awal Tanukonomy, aplikasi catatan keuangan pribadi tanpa akun. Tiga langkah lewat Google Play, gratis.',
+      'Daftar jadi penguji awal Tanukonomy, aplikasi catatan keuangan pribadi tanpa perlu akun. Tiga langkah lewat Google Play, gratis.',
     eyebrow: 'Uji coba tertutup · Android',
     title: 'Bantu kami menyiapkan Tanukonomy untuk semua orang.',
     body: 'Sebelum dirilis publik di Google Play, Tanukonomy perlu diuji oleh pengguna sungguhan selama setidaknya 14 hari. Kalau kamu memakai Android dan ingin mulai rapi mencatat keuangan, kami ingin kamu ikut.',

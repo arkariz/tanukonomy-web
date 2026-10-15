@@ -2,7 +2,7 @@ import type { Dict } from './id';
 
 export const en: Dict = {
   meta: {
-    title: 'Tanukonomy — Private Budget & Expense Tracker, No Account',
+    title: 'Tanukonomy — Private Budget & Expense Tracker, No Account Needed',
     description:
       'Record income, expenses, and transfers between wallets in seconds. Plan monthly budgets and track freelance hours. Your data stays on your phone.',
     ogAlt: 'Tanukonomy: a personal cash book on your phone, kept by a tanuki bookkeeper',
@@ -23,7 +23,7 @@ export const en: Dict = {
     body: 'Record money in, money out, and moves between wallets in seconds. Plan budgets, track freelance hours, and always know where your money is.',
     primary: 'Join the beta',
     secondary: 'See how it works',
-    chips: ['No account', 'Data stays on device', 'Free during beta'],
+    chips: ['No account needed', 'Data stays on device', 'Free during beta'],
     shotAlt: 'Tanukonomy Home screen: total cash, this month’s income and expenses, active budget, and freelance summary',
   },
   questions: {
@@ -147,7 +147,7 @@ export const en: Dict = {
   beta: {
     metaTitle: 'Join the Tanukonomy Closed Beta on Android',
     metaDescription:
-      'Become an early tester of Tanukonomy, a private money tracker with no account. Three steps through Google Play, free.',
+      'Become an early tester of Tanukonomy, a private money tracker, no account needed. Three steps through Google Play, free.',
     eyebrow: 'Closed beta · Android',
     title: 'Help us get Tanukonomy ready for everyone.',
     body: 'Before its public release on Google Play, Tanukonomy needs real users to test it for at least 14 days. If you use Android and want to get your money in order, we’d love to have you.',
