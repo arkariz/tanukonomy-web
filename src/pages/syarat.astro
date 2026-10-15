@@ -1,12 +1,13 @@
 ---
 import Legal from '../layouts/Legal.astro';
-import { CONTACT_EMAIL } from '../config';
+import { CONTACT_EMAIL, TERMS_EFFECTIVE_DATE } from '../config';
 import { path } from '../i18n';
 ---
 
 <Legal
   lang="id"
   page="terms"
+  effectiveDate={TERMS_EFFECTIVE_DATE}
   title="Syarat dan Ketentuan"
   description="Syarat penggunaan aplikasi Tanukonomy, termasuk selama masa uji coba tertutup."
 >

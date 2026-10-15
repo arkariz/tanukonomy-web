@@ -8,13 +8,12 @@ import { path } from '../i18n';
   lang="id"
   page="privacy"
   title="Kebijakan Privasi"
-  description="Pelajari bagaimana Tanukonomy menangani datamu: akun opsional, analitik pemakaian, dan rencana sinkronisasi serta langganan premium ke depannya."
+  description="Catatan keuangan di Tanukonomy disimpan di perangkatmu, bukan di server kami. Data teknis dan teks Catat Cerdas yang dikirim ke Google dijelaskan di sini."
 >
   <p class="lede">
-    <strong>Ringkasnya:</strong> Catatan keuanganmu — dompet, transaksi, anggaran — tetap 100% di perangkatmu; tidak
-    pernah dikirim ke server mana pun. Tanukonomy punya akun opsional (§6) dan memakai Firebase Analytics/Crashlytics
-    (§7) untuk memahami pemakaian dan menangkap error. Sinkronisasi data ke akun dan langganan premium masih rencana,
-    belum tersedia (§8).
+    <strong>Ringkasnya:</strong> semua yang kamu catat tersimpan di perangkatmu dan tidak dikirim ke kami. Yang keluar dari
+    perangkat adalah data teknis terbatas (pembaruan, statistik pemakaian, laporan crash) dan, bila kamu memakai Catat
+    Cerdas, teks yang ditafsirkan oleh Google. Rinciannya ada di bagian 4.
   </p>
 
   <p>
@@ -29,33 +28,103 @@ import { path } from '../i18n';
   </p>
   <ul>
     <li>disimpan <strong>hanya di penyimpanan lokal perangkatmu</strong>;</li>
-    <li>tidak pernah dikirim ke server kami atau pihak ketiga, karena aplikasi tidak memiliki server;</li>
+    <li>
+      tidak dikirim ke kami. Satu-satunya yang dapat sampai ke pihak ketiga adalah teks yang kamu minta aplikasi tafsirkan
+      lewat Catat Cerdas, seperti dijelaskan di bagian 4;
+    </li>
     <li>tidak dapat kami lihat, pulihkan, atau hapus dari jarak jauh.</li>
   </ul>
 
   <h2>2. Yang tidak kami kumpulkan</h2>
   <ul>
-    <li>Membuat akun bersifat opsional, dan kami tidak pernah melihat atau menyimpan sandi akun Googlemu — lihat §6.</li>
-    <li>Tidak ada sambungan ke bank, e-wallet, atau layanan pembayaran, dan kami tidak pernah meminta kata sandinya.</li>
-    <li>Tidak ada iklan atau pelacak iklan di dalam aplikasi, dan kami tidak menjual atau membagikan datamu ke
-      pengiklan. Analitik pemakaian di §7 untuk perbaikan produk, bukan iklan.</li>
-    <li>Tidak ada akses ke lokasi, kontak, kamera, atau mikrofon.</li>
+    <li>Tidak ada sambungan ke bank, e-wallet, atau layanan pembayaran, dan kami tidak pernah meminta kata sandi.</li>
+    <li>Tidak ada iklan di dalam aplikasi.</li>
+    <li>Tidak ada akses ke lokasi, kontak, atau kamera.</li>
+    <li>
+      Tidak ada dompet, transaksi, anggaran, atau proyek freelance tersimpan yang dikirim ke mana pun. Teks Catat Cerdas
+      (bagian 4) adalah satu-satunya pengecualian.
+    </li>
   </ul>
 
-  <h2>3. Menghapus data</h2>
+  <h2>3. Akun (opsional)</h2>
   <p>
-    Karena data hanya ada di perangkatmu, kamu mengendalikannya sepenuhnya. Menghapus aplikasi, atau menghapus data aplikasi
-    lewat pengaturan Android, akan menghapus semua catatan secara permanen. Kami tidak menyimpan salinan, jadi data yang sudah
-    dihapus tidak dapat kami pulihkan.
+    Aplikasi berfungsi penuh tanpa akun. Jika kamu memilih masuk, kami menerima alamat email dan ID pengguna akunmu untuk
+    mengelola akun itu. Masuk bisa lewat akun Google atau email dan kata sandi. Akun tidak membuat data keuanganmu
+    dikirim ke mana pun.
   </p>
 
-  <h2>4. Cadangan perangkat</h2>
+  <h2>4. Data teknis dan layanan pihak ketiga</h2>
+  <p>
+    Selain akun, aplikasi memakai layanan berikut. Tidak satu pun menerima catatan keuangan yang tersimpan di aplikasi.
+  </p>
+  <ul>
+    <li>
+      <strong>Firebase Analytics dan Crashlytics (Google).</strong> Aplikasi mengirim peristiwa pemakaian dasar dan laporan
+      crash untuk memperbaiki aplikasi. Ini berjalan untuk semua pengguna, dengan atau tanpa akun. Peristiwa terkait
+      pembaruan mencakup jenis banner pembaruan, tindakan yang kamu pilih (misalnya Perbarui atau Nanti), serta nomor build
+      dan nomor pembaruan kecil. Nomor pembaruan kecil juga dicatat sebagai satu atribut pada peristiwa dan laporan crash.
+    </li>
+    <li>
+      <strong>Firebase Remote Config (Google).</strong> Aplikasi memakainya untuk mengambil catatan rilis "Apa yang baru".
+      SDK-nya mengirim otomatis kode negara, kode bahasa, zona waktu, versi platform dan sistem operasi, Firebase Android
+      App ID, nama paket, versi SDK, dan Firebase installation ID. ID ini dibuat per instalasi aplikasi dan tidak
+      mengidentifikasi unik pengguna atau perangkat.
+    </li>
+    <li>
+      <strong>Pembaruan kecil lewat Shorebird.</strong> Aplikasi menghubungi server Shorebird untuk menanyakan ada tidaknya
+      pembaruan kecil. Data yang dikirim adalah ID instalasi anonim yang dibuat Shorebird secara acak (dipakai menghitung
+      jumlah instalasi aktif), id aplikasi, versi rilis dan build, nomor pembaruan kecil, platform, dan arsitektur
+      prosesor. Tidak ada lokasi, sidik perangkat, ID iklan, atau data pengguna. Seperti layanan internet lainnya, log
+      operasional server Shorebird dapat memuat alamat IP. Keterangan resmi ada di
+      <a href="https://docs.shorebird.dev/code-push/faq/" rel="noopener">FAQ Shorebird</a>.
+    </li>
+    <li>
+      <strong>Pembaruan versi lewat Google Play.</strong> Aplikasi memakai layanan pembaruan dalam aplikasi Google Play.
+      Pengecekan versi dilakukan oleh layanan Google Play di perangkatmu. Aplikasi tidak mengirim data apa pun ke kami atau
+      ke server kami untuk keperluan ini.
+    </li>
+    <li>
+      <strong>Catat lewat suara.</strong> Fitur ini meminta izin mikrofon. Ucapanmu diubah menjadi teks oleh layanan
+      pengenal suara. Bila paket bahasa offline tidak terpasang, layanan itu dapat memakai server Google. Aplikasi tidak
+      menyimpan rekaman suara.
+    </li>
+    <li>
+      <strong>Catat Cerdas dengan Gemini (Google, lewat Firebase AI Logic).</strong> Saat aturan di perangkat ragu
+      menafsirkan sebuah teks (hasil ucapan atau teks notifikasi), aplikasi mengirim teks itu ke Gemini untuk dijadikan draf
+      transaksi. Yang dikirim adalah teks tersebut, nama dompet dan kategori yang aktif, dan tanggal. Saldo, riwayat
+      transaksi, ID internal, dan nama aplikasi sumber notifikasi tidak dikirim. Pada teks notifikasi, angka yang bukan
+      nominal transaksi, seperti nomor rekening dan saldo, disamarkan sebelum dikirim. Teks yang dikirim tetap dapat memuat
+      nominal atau nama yang kamu sebut, jadi hindari menyebut informasi yang tidak ingin kamu bagikan. Teks hasil ucapan
+      tidak disimpan setelah draf dibuat. Pemrosesan oleh Google tunduk pada ketentuan layanan Gemini API. Bila offline
+      atau gagal, aplikasi memakai hasil tafsir di perangkat.
+    </li>
+    <li>
+      <strong>Catat dari notifikasi (Android, opsional).</strong> Bila kamu mengaktifkannya, kamu memberi akses notifikasi
+      dan memilih sendiri aplikasi mana yang dibaca. Hanya notifikasi dari aplikasi pilihanmu yang lolos penyaring
+      transaksi yang diproses. Teksnya disimpan di perangkat paling lama 7 hari.
+    </li>
+  </ul>
+  <p>
+    Layanan-layanan ini dijalankan oleh penyedianya dan tunduk pada kebijakan mereka. Rincian data yang dikirim SDK
+    Firebase ada di
+    <a href="https://firebase.google.com/docs/android/play-data-disclosure" rel="noopener">pengungkapan data Firebase</a>.
+  </p>
+
+  <h2>5. Menghapus data</h2>
+  <p>
+    Karena data keuanganmu hanya ada di perangkatmu, kamu mengendalikannya sepenuhnya. Menghapus aplikasi, atau menghapus
+    data aplikasi lewat pengaturan Android, akan menghapus semua catatan secara permanen. Kami tidak menyimpan salinan, jadi
+    data yang sudah dihapus tidak dapat kami pulihkan. Jika kamu memakai akun, kamu dapat menghapusnya dari dalam aplikasi atau lewat
+    <a href={path('deleteAccount', 'id')}>halaman hapus akun</a>.
+  </p>
+
+  <h2>6. Cadangan perangkat</h2>
   <p>
     Jika fitur cadangan bawaan sistem operasi (misalnya cadangan Google di Android) aktif, sistem dapat menyertakan data
     aplikasi dalam cadanganmu. Cadangan itu dikelola oleh penyedia sistem operasi sesuai kebijakan mereka, bukan oleh kami.
   </p>
 
-  <h2>5. Uji coba tertutup</h2>
+  <h2>7. Uji coba tertutup</h2>
   <p>
     Untuk ikut uji coba tertutup, kamu bergabung ke Google Group dan program pengujian Google Play memakai akun Google-mu.
     Keduanya dikelola oleh Google. Sebagai pengelola grup, kami dapat melihat alamat email anggota grup; kami hanya
@@ -63,73 +132,21 @@ import { path } from '../i18n';
     hanya kami pakai untuk memperbaiki aplikasi.
   </p>
 
-  <h2>6. Akun (opsional)</h2>
-  <p>
-    Tanukonomy punya akun opsional. Pencatatan inti (CATAT, Transaksi, Dompet, Anggaran, Freelance) tetap berfungsi
-    penuh <strong>tanpa</strong> membuat akun.
-  </p>
-  <ul>
-    <li>Masuk dengan akun Google: lewat Firebase Authentication (layanan Google), kami menerima nama, alamat email,
-      dan foto profil dari akun Google yang kamu pilih. Kami tidak pernah melihat atau menyimpan sandi akun
-      Googlemu.</li>
-    <li>Sejumlah kecil akun uji internal juga bisa masuk dengan email dan sandi yang kami kelola sendiri secara
-      manual — <strong>tidak ada pendaftaran publik</strong> lewat email dan sandi.</li>
-    <li>Akun saat ini murni identitas: dompet, transaksi, dan anggaranmu <strong>tidak</strong> ikut dikirim atau
-      disimpan di server mana pun hanya karena kamu masuk — lihat §8 untuk rencana sinkronisasinya.</li>
-    <li>Kamu bisa menghapus akunmu kapan saja, dari dalam aplikasi (ikon Akun di Beranda → Hapus Akun) atau lewat
-      <a href={path('deleteAccount', 'id')}>halaman hapus akun</a>.</li>
-  </ul>
-
-  <h2>7. Analitik pemakaian dan laporan error</h2>
-  <p>
-    Tanukonomy memakai <strong>Firebase Analytics</strong> dan <strong>Firebase Crashlytics</strong> (keduanya layanan
-    Google) untuk memahami pemakaian fitur secara umum dan menangkap error teknis, supaya bisa diperbaiki. Keduanya
-    berjalan untuk semua pengguna, terlepas dari status masuk — beda dari data akun di §6, yang hanya ada kalau kamu
-    memilih masuk.
-  </p>
-  <ul>
-    <li>Yang dikumpulkan: layar yang dibuka, event dasar seperti membuka aplikasi, dan info teknis saat terjadi error
-      (jenis perangkat, versi sistem operasi, jejak error).</li>
-    <li><strong>Tidak termasuk isi catatan keuanganmu</strong> — nominal, nama dompet, dan catatan transaksi tidak
-      pernah dikirim ke Analytics maupun Crashlytics.</li>
-    <li>Data ini diproses Google sebagai penyedia layanan kami untuk keperluan itu saja — bukan untuk dijual atau
-      menampilkan iklan; Tanukonomy tidak menampilkan iklan.</li>
-  </ul>
-
-  <h2>8. Fitur mendatang: sinkronisasi data dan langganan premium</h2>
-  <p>
-    Kami berencana membuka sinkronisasi data ke akunmu (dipakai di lebih dari satu ponsel) dan langganan premium
-    opsional (freemium). Fitur ini <strong>belum tersedia</strong>. Beberapa hal yang sudah pasti begitu diluncurkan
-    nanti:
-  </p>
-  <ul>
-    <li>menyalakan sinkronisasi bersifat <strong>opsional</strong> dan terpisah dari sekadar membuat akun — pencatatan
-      inti tetap bisa dipakai sepenuhnya offline seperti sekarang;</li>
-    <li>menyalakannya berarti sebagian data (dompet, transaksi, anggaran) dikirim ke server untuk disinkronkan antar
-      perangkatmu sendiri, bukan dibagikan ke pengguna lain;</li>
-    <li>langganan premium akan butuh data pembayaran; itu diproses oleh penyedia pembayaran pihak ketiga (mis. Google
-      Play Billing), bukan disimpan oleh kami sendiri;</li>
-    <li>sebelum sinkronisasi aktif untuk siapa pun, kami akan memperbarui kebijakan ini dengan rincian lengkap: server
-      yang dipakai dan cara datanya dilindungi.</li>
-  </ul>
-
-  <h2>9. Situs ini</h2>
+  <h2>8. Situs ini</h2>
   <p>
     Situs ini tidak memakai cookie, formulir, atau analitik. Penyedia hosting dapat mencatat data teknis standar seperti
     alamat IP dan jenis peramban untuk keamanan dan operasional, sesuai kebijakan mereka.
   </p>
 
-  <h2>10. Anak-anak</h2>
+  <h2>9. Anak-anak</h2>
+  <p>Aplikasi tidak ditujukan untuk anak di bawah 13 tahun.</p>
+
+  <h2>10. Perubahan kebijakan</h2>
   <p>
-    Aplikasi tidak ditujukan untuk anak di bawah 13 tahun dan tidak sengaja mengumpulkan data dari anak-anak.
+    Jika aplikasi kelak menambahkan fitur yang mengubah cara data ditangani (misalnya sinkronisasi), kami akan memperbarui
+    halaman ini dan tanggal berlakunya sebelum fitur itu tersedia.
   </p>
 
-  <h2>11. Perubahan kebijakan</h2>
-  <p>
-    Jika aplikasi kelak menambahkan fitur yang mengubah cara data ditangani (termasuk sinkronisasi dan langganan
-    premium di §8), kami akan memperbarui halaman ini dan tanggal berlakunya sebelum fitur itu tersedia.
-  </p>
-
-  <h2>12. Kontak</h2>
+  <h2>11. Kontak</h2>
   <p>Pertanyaan tentang privasi dapat dikirim ke <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>
 </Legal>

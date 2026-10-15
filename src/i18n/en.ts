@@ -91,22 +91,22 @@ export const en: Dict = {
   },
   privacy: {
     label: 'Privacy',
-    title: 'Today, your data stays on your phone.',
-    body: 'Tanukonomy started with no servers. Right now, every record is stored only on your own device, so there is nothing for us to read, sell, or leak.',
+    title: 'Your financial records never leave your phone.',
+    body: 'Tanukonomy has no server for your records. Every record is stored on your own device, so there is nothing for us to read, sell, or leak.',
     items: [
-      { t: 'Start with no account', d: 'Try the app right now, no sign-up. An account is coming later for optional features like sync and a premium plan.' },
+      { t: 'Account optional', d: 'Open the app and start. Sign in only if you want to.' },
       { t: 'No bank connection', d: 'You do the recording. No bank passwords, no account access.' },
-      { t: 'Your data isn’t sold', d: 'We don’t sell or share your data with advertisers. Basic usage analytics for product improvement will be introduced transparently later on.' },
+      { t: 'No ads', d: 'The app sends only limited technical data, never your financial records. Details are in the privacy policy.' },
       { t: 'Works offline', d: 'Record on the train or at the market, signal or not.' },
     ],
-    future: 'In the works: an optional account for syncing across devices and a premium (freemium) plan, plus basic usage analytics for product improvement. All of it will be announced transparently and this privacy policy updated before it goes live — the core recording features will keep working without an account.',
+    future: 'In the works: syncing across devices and a premium (freemium) plan. All of it will be announced transparently and this privacy policy updated before it goes live — the core recording features will keep working without an account.',
     link: 'Read the privacy policy',
   },
   upcoming: {
     label: 'Coming next',
     badge: 'Coming soon',
     title: 'What we’re planning next.',
-    body: 'These features follow the same privacy principles as the account and sync above: optional, and announced before they go live.',
+    body: 'These features follow the same privacy principles as the sync above: optional, and announced before they go live.',
     items: [
       {
         t: 'Automatic recording',
@@ -146,8 +146,8 @@ export const en: Dict = {
     items: [
       { q: 'Is Tanukonomy free?', a: 'Yes, core recording is free. An optional premium plan (freemium) with extra features will come later, and we’ll give plenty of notice before any change.' },
       { q: 'Does Tanukonomy connect to my bank account?', a: 'No. Tanukonomy is a notebook: you record each transaction yourself. The app doesn’t move money, doesn’t pay, and never asks for bank logins.' },
-      { q: 'Where is my data stored?', a: 'Right now, only on your phone — there’s no account yet, so we can’t see your records. An optional account for syncing is in the works; recording locally without an account will keep working.' },
-      { q: 'Does the app use analytics or track me for ads?', a: 'Right now, there’s no third-party analytics or ad tracking inside the app. Later on we plan to add basic usage analytics to understand and improve the app — not to sell data or show ads. We’ll update this privacy policy and let you know before that goes live.' },
+      { q: 'Where is my data stored?', a: 'Only on your phone. An account is optional and your financial records are not sent to any server, so we can’t see them.' },
+      { q: 'Does the app use analytics or track me for ads?', a: 'There are no ads. The app uses Firebase Analytics and Crashlytics for basic usage statistics and crash reports, never your financial records. Details are in the privacy policy.' },
       { q: 'What happens if I switch phones or uninstall?', a: 'Because data lives only on the device, uninstalling also deletes your records. Export and file backup are in the works.' },
       { q: 'Can I use it on more than one device?', a: 'Not yet. Right now your records live on a single device. Syncing data across devices is planned as an optional feature you turn on yourself — until then, the app keeps working fully offline as it does today.' },
       { q: 'Is it available on iPhone?', a: 'The closed beta starts on Android through Google Play. iOS will follow.' },

@@ -89,22 +89,22 @@ export const id = {
   },
   privacy: {
     label: 'Privasi',
-    title: 'Hari ini, datamu tetap di ponselmu.',
-    body: 'Tanukonomy dimulai tanpa server. Saat ini semua catatan tersimpan hanya di perangkatmu sendiri, jadi tidak ada yang bisa kami baca, jual, atau bocorkan.',
+    title: 'Catatan keuanganmu tidak pernah meninggalkan ponsel.',
+    body: 'Tanukonomy tidak punya server untuk catatanmu. Semua catatan disimpan di perangkatmu sendiri, jadi tidak ada yang bisa kami baca, jual, atau bocorkan.',
     items: [
-      { t: 'Mulai tanpa akun', d: 'Coba aplikasinya sekarang, tanpa mendaftar. Akun akan hadir belakangan untuk fitur opsional seperti sinkronisasi dan langganan premium.' },
+      { t: 'Akun opsional', d: 'Buka aplikasinya dan langsung mulai. Masuk dengan akun hanya kalau kamu mau.' },
       { t: 'Tanpa sambungan bank', d: 'Kamu yang mencatat. Tidak ada kata sandi bank atau akses rekening.' },
-      { t: 'Data tidak dijual', d: 'Kami tidak menjual atau membagikan datamu ke pengiklan. Analitik pemakaian dasar untuk perbaikan produk akan diperkenalkan secara transparan ke depannya.' },
+      { t: 'Tanpa iklan', d: 'Aplikasi hanya mengirim data teknis terbatas, tanpa catatan keuanganmu. Rinciannya ada di kebijakan privasi.' },
       { t: 'Bekerja tanpa internet', d: 'Mencatat di kereta atau di pasar tetap bisa, sinyal atau tidak.' },
     ],
-    future: 'Sedang disiapkan: akun opsional untuk sinkronisasi antar perangkat dan langganan premium (freemium), serta analitik pemakaian dasar untuk perbaikan produk. Semuanya akan diumumkan secara transparan dan kebijakan privasi diperbarui sebelum aktif — fitur pencatatan inti tetap bisa dipakai tanpa akun.',
+    future: 'Sedang disiapkan: sinkronisasi data antar perangkat dan langganan premium (freemium). Semuanya akan diumumkan secara transparan dan kebijakan privasi diperbarui sebelum aktif — fitur pencatatan inti tetap bisa dipakai tanpa akun.',
     link: 'Baca kebijakan privasi',
   },
   upcoming: {
     label: 'Fitur mendatang',
     badge: 'Segera',
     title: 'Yang sedang kami rencanakan.',
-    body: 'Fitur-fitur ini mengikuti prinsip privasi yang sama seperti akun dan sinkronisasi di atas: opsional, dan diumumkan lebih dulu sebelum aktif.',
+    body: 'Fitur-fitur ini mengikuti prinsip privasi yang sama seperti sinkronisasi di atas: opsional, dan diumumkan lebih dulu sebelum aktif.',
     items: [
       {
         t: 'Catat otomatis',
@@ -144,8 +144,8 @@ export const id = {
     items: [
       { q: 'Apakah Tanukonomy gratis?', a: 'Ya, pencatatan inti gratis. Ke depannya akan ada langganan premium opsional (freemium) untuk fitur tambahan, dan perubahan apa pun akan diumumkan jauh-jauh hari.' },
       { q: 'Apakah Tanukonomy terhubung ke rekening bank saya?', a: 'Tidak. Tanukonomy adalah buku catatan: kamu yang mencatat setiap transaksi. Aplikasi tidak memindahkan uang, tidak membayar, dan tidak pernah meminta data login bank.' },
-      { q: 'Di mana data saya disimpan?', a: 'Saat ini hanya di ponselmu — belum ada akun, jadi kami tidak bisa melihat catatanmu. Akun opsional untuk sinkronisasi sedang disiapkan; mencatat secara lokal tanpa akun akan tetap bisa dipakai.' },
-      { q: 'Apakah aplikasi ini memakai analitik atau melacak saya untuk iklan?', a: 'Saat ini tidak ada analitik pihak ketiga atau pelacak iklan di dalam aplikasi. Ke depannya kami berencana menambahkan analitik pemakaian dasar untuk memahami dan memperbaiki aplikasi — bukan untuk menjual data atau menampilkan iklan. Kebijakan privasi akan diperbarui dan diberi tahu sebelum itu aktif.' },
+      { q: 'Di mana data saya disimpan?', a: 'Hanya di ponselmu. Akun bersifat opsional dan catatan keuangan tidak dikirim ke server mana pun, jadi kami tidak bisa melihat catatanmu.' },
+      { q: 'Apakah aplikasi ini memakai analitik atau melacak saya untuk iklan?', a: 'Tidak ada iklan. Aplikasi memakai Firebase Analytics dan Crashlytics untuk statistik pemakaian dasar dan laporan crash, tanpa catatan keuanganmu. Rinciannya ada di kebijakan privasi.' },
       { q: 'Apa yang terjadi kalau saya ganti ponsel atau menghapus aplikasi?', a: 'Karena data hanya ada di perangkat, menghapus aplikasi juga menghapus catatannya. Fitur ekspor dan cadangan ke berkas sedang kami siapkan.' },
       { q: 'Bisa dipakai di beberapa perangkat sekaligus?', a: 'Belum. Saat ini catatanmu hanya ada di satu perangkat. Sinkronisasi data antar perangkat sedang kami siapkan sebagai fitur opsional yang kamu nyalakan sendiri — sampai tersedia, aplikasi tetap bekerja sepenuhnya offline seperti sekarang.' },
       { q: 'Tersedia di iPhone?', a: 'Uji coba tertutup dimulai di Android lewat Google Play. Versi iOS menyusul.' },
