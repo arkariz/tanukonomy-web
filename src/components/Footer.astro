@@ -6,8 +6,10 @@ import { type Lang, type PageKey, otherLang, path, t } from '../i18n';
 interface Props {
   lang: Lang;
   page: PageKey;
+  altPath?: string | null;
 }
-const { lang, page } = Astro.props;
+const { lang, page, altPath } = Astro.props;
+const switchHref = altPath === undefined ? path(page, otherLang(lang)) : (altPath ?? path('blog', otherLang(lang)));
 const d = t(lang);
 const home = path('home', lang);
 const year = new Date().getFullYear();
@@ -24,6 +26,7 @@ const year = new Date().getFullYear();
       <ul>
         <li><a href={`${home}#fitur`}>{d.nav.features}</a></li>
         <li><a href={`${home}#freelance`}>{d.nav.freelance}</a></li>
+        <li><a href={path('blog', lang)}>{d.footer.blog}</a></li>
         <li><a href={path('beta', lang)}>{d.footer.beta}</a></li>
       </ul>
     </div>
@@ -39,7 +42,7 @@ const year = new Date().getFullYear();
       <h2 class="label">{d.footer.contact}</h2>
       <ul>
         <li><a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a></li>
-        <li><a href={path(page, otherLang(lang))} hreflang={otherLang(lang)} lang={otherLang(lang)}>{d.nav.langLabel}</a></li>
+        <li><a href={switchHref} hreflang={otherLang(lang)} lang={otherLang(lang)}>{d.nav.langLabel}</a></li>
       </ul>
     </div>
   </div>

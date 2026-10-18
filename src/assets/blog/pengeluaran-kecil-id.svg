@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="486" height="214" viewBox="0 0 486 214" role="img" aria-labelledby="t d"><title id="t">Pengeluaran kecil yang berulang</title><desc id="d">Dua puluh kotak, satu per hari kerja, masing-masing Rp25.000, berjumlah Rp500.000.</desc><style>
+.bg{fill:#fff8f5}.card{fill:#ffffff}.edge{stroke:#1e1b19}.sh{fill:#1e1b19}
+.tx{fill:#1e1b19}.mu{fill:#57534e}.ac{fill:#c2410c}.inc{fill:#15803d}.exp{fill:#b91c1c}.tr{fill:#1d4ed8}
+.f-ac{fill:#c2410c}
+.t-ac{fill:#fdf0e8}.t-in{fill:#dcf2e3}.t-ex{fill:#fde8e6}.t-tr{fill:#e3ebfc}.t-mu{fill:#faf2ee}
+.ln{stroke:#1e1b19;stroke-width:2;fill:none}.ar{fill:#1e1b19}
+text{font-family:ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
+.m{font-family:ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace}
+@media (prefers-color-scheme:dark){
+.card{fill:#2d2823}.edge{stroke:#8a7d6e}.sh{fill:#14120f}
+.tx{fill:#f2ece7}.mu{fill:#a8a29e}.ac{fill:#f46b1c}.inc{fill:#22c55e}.exp{fill:#f87171}.tr{fill:#60a5fa}
+.f-ac{fill:#f46b1c}
+.t-ac{fill:#3d2618}.t-in{fill:#1f3a28}.t-ex{fill:#4a2323}.t-tr{fill:#1f2a44}.t-mu{fill:#1c1916}
+.ln{stroke:#8a7d6e}.ar{fill:#8a7d6e}}
+</style><rect class="sh" x="4" y="10" width="480" height="196" rx="6"/><rect class="card edge" x="0" y="6" width="480" height="196" rx="6" stroke-width="2"/><rect class="f-ac" x="26" y="34" width="22" height="22"/><rect class="f-ac" x="54" y="34" width="22" height="22"/><rect class="f-ac" x="82" y="34" width="22" height="22"/><rect class="f-ac" x="110" y="34" width="22" height="22"/><rect class="f-ac" x="138" y="34" width="22" height="22"/><rect class="f-ac" x="26" y="62" width="22" height="22"/><rect class="f-ac" x="54" y="62" width="22" height="22"/><rect class="f-ac" x="82" y="62" width="22" height="22"/><rect class="f-ac" x="110" y="62" width="22" height="22"/><rect class="f-ac" x="138" y="62" width="22" height="22"/><rect class="f-ac" x="26" y="90" width="22" height="22"/><rect class="f-ac" x="54" y="90" width="22" height="22"/><rect class="f-ac" x="82" y="90" width="22" height="22"/><rect class="f-ac" x="110" y="90" width="22" height="22"/><rect class="f-ac" x="138" y="90" width="22" height="22"/><rect class="f-ac" x="26" y="118" width="22" height="22"/><rect class="f-ac" x="54" y="118" width="22" height="22"/><rect class="f-ac" x="82" y="118" width="22" height="22"/><rect class="f-ac" x="110" y="118" width="22" height="22"/><rect class="f-ac" x="138" y="118" width="22" height="22"/><text class="tx" x="200" y="62" font-size="22" font-weight="700" text-anchor="start">20 hari kerja</text><text class="tx m" x="200" y="92" font-size="22" font-weight="700" text-anchor="start">× Rp25.000</text><line class="ln" x1="200" y1="108" x2="458" y2="108"/><rect class="t-ex edge" x="200" y="120" width="258" height="44" rx="6" stroke-width="2"/><text class="exp m" x="329" y="150" font-size="26" font-weight="700" text-anchor="middle">= Rp500.000</text><text class="mu" x="26" y="186" font-size="14" font-weight="500" text-anchor="start">Contoh hitungan, bukan patokan</text></svg>

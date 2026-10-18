@@ -1,0 +1,97 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import { type Lang, articlePath, t } from '../i18n';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const d = t(lang);
+const posts = (await getCollection('blog', ({ data }) => data.lang === lang && (import.meta.env.DEV || !data.draft))).sort(
+  (a, b) => b.data.publishedDate.valueOf() - a.data.publishedDate.valueOf(),
+);
+const fmt = (date: Date) =>
+  date.toLocaleDateString(lang === 'id' ? 'id-ID' : 'en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+const minutes = (body = '') => Math.max(1, Math.ceil(body.split(/\s+/).filter(Boolean).length / 200));
+---
+
+<Base lang={lang} page="blog" title={d.blog.metaTitle} description={d.blog.metaDescription}>
+  <section class="wrap idx">
+    <p class="label">{d.blog.label}</p>
+    <h1>{d.blog.title}</h1>
+    <p class="lead">{d.blog.intro}</p>
+
+    {posts.length === 0 && <p class="empty">{d.blog.empty}</p>}
+    <ul class="list">
+      {
+        posts.map((p) => (
+          <li class="card item">
+            <p class="meta">
+              <time datetime={p.data.publishedDate.toISOString().slice(0, 10)}>{fmt(p.data.publishedDate)}</time>
+              <span aria-hidden="true">·</span>
+              <span>{minutes(p.body)} {d.blog.readMin}</span>
+            </p>
+            <h2><a href={articlePath(lang, p.data.slug)}>{p.data.title}</a></h2>
+            <p>{p.data.description}</p>
+            <a class="more" href={articlePath(lang, p.data.slug)}>{d.blog.readMore} →</a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</Base>
+
+<style>
+  .idx {
+    padding-block: clamp(40px, 7vw, 88px);
+    max-width: 860px;
+  }
+  .idx h1 {
+    margin: 10px 0 18px;
+    font-size: clamp(2rem, 4.6vw, 3rem);
+  }
+  .lead {
+    color: var(--muted);
+    max-width: 60ch;
+  }
+  .list {
+    list-style: none;
+    margin: 40px 0 0;
+    padding: 0;
+    display: grid;
+    gap: 24px;
+  }
+  .item {
+    padding: 24px 26px;
+  }
+  .item h2 {
+    font-size: clamp(1.375rem, 2.6vw, 1.75rem);
+    margin: 8px 0 10px;
+  }
+  .item h2 a {
+    text-decoration: none;
+  }
+  .item h2 a:hover {
+    color: var(--accent);
+  }
+  .meta {
+    display: flex;
+    gap: 8px;
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 0.8125rem;
+    color: var(--muted);
+  }
+  .more {
+    display: inline-block;
+    margin-top: 14px;
+    color: var(--accent);
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .empty {
+    margin-top: 32px;
+    color: var(--muted);
+  }
+</style>

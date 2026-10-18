@@ -148,8 +148,16 @@ Diperbarui 15 Oktober 2026.
       catatan keuangan", "aplikasi pencatat keuangan pribadi", "cara
       mencatat keuangan freelancer". Data toko aplikasi ada di
       `docs/01-product/ASO_NAME_RESEARCH.md` repo aplikasi.
-- [ ] **S-3** Koleksi artikel panduan (Astro content collection) untuk
-      kata kunci informasional; satu artikel = satu niat pencarian.
+- [x] **S-3** *(18 Okt 2026)* Koleksi artikel Astro: `src/content.config.ts`
+      (koleksi `blog`, skema frontmatter), rute `/blog/`, `/blog/<slug>/`,
+      `/en/blog/`, `/en/blog/<slug>/`, tata letak `Article.astro` (daftar isi,
+      waktu baca, JSON-LD `BlogPosting` dan `BreadcrumbList`, hreflang ke
+      padanan bahasa bila ada), tautan "Artikel" di header dan footer,
+      masuk sitemap. Artikel `draft: true` tidak dibangun. Satu artikel
+      terbit (id dan en): "Uang habis sebelum akhir bulan". Skill penulis:
+      `.claude/skills/blog-writer/`. Belum ada: gambar OG per artikel.
+- [ ] **S-6** Gambar OG per artikel (render dari ilustrasi) dan
+      artikel berikutnya dari peta topik di skill `blog-writer`.
 - [ ] **S-4** Setelah rilis publik: tautan Google Play di hero dan JSON-LD
       (`installUrl`), lencana "Tersedia di Google Play".
 - [ ] **S-5** Backlink awal: direktori aplikasi Indonesia, komunitas
