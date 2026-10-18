@@ -13,13 +13,20 @@ interface Props {
   title: string;
   description: string;
   jsonLd?: object[];
+  /** Jalur halaman ini bila bukan hasil path(page, lang), mis. artikel. */
+  canonicalPath?: string;
+  /** Jalur padanan di bahasa lain; null bila tidak ada, kosong = path(page, otherLang). */
+  alternatePath?: string | null;
+  ogType?: 'website' | 'article';
 }
 
-const { lang, page, title, description, jsonLd = [] } = Astro.props;
+const { lang, page, title, description, jsonLd = [], canonicalPath, alternatePath, ogType = 'website' } = Astro.props;
 const d = t(lang);
-const canonical = new URL(path(page, lang), SITE_URL).href;
-const alternate = new URL(path(page, otherLang(lang)), SITE_URL).href;
-const idUrl = new URL(path(page, 'id'), SITE_URL).href;
+const canonical = new URL(canonicalPath ?? path(page, lang), SITE_URL).href;
+const altPath = alternatePath === undefined ? path(page, otherLang(lang)) : alternatePath;
+const alternate = altPath ? new URL(altPath, SITE_URL).href : null;
+// x-default: versi Indonesia bila ada; kalau tidak, halaman ini sendiri.
+const idUrl = lang === 'id' ? canonical : alternate;
 const ogImage = new URL(withBase(`/og/og-${lang}.png`), SITE_URL).href;
 
 const org = {
@@ -40,8 +47,8 @@ const org = {
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
     <link rel="alternate" hreflang={htmlLang(lang)} href={canonical} />
-    <link rel="alternate" hreflang={htmlLang(otherLang(lang))} href={alternate} />
-    <link rel="alternate" hreflang="x-default" href={idUrl} />
+    {alternate && <link rel="alternate" hreflang={htmlLang(otherLang(lang))} href={alternate} />}
+    <link rel="alternate" hreflang="x-default" href={idUrl ?? canonical} />
 
     <meta name="theme-color" content="#fff8f5" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#231f1b" media="(prefers-color-scheme: dark)" />
@@ -55,13 +62,13 @@ const org = {
     <link rel="preload" href={groteskUrl} as="font" type="font/woff2" crossorigin />
     <link rel="preload" href={jakartaUrl} as="font" type="font/woff2" crossorigin />
 
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
     <meta property="og:site_name" content={APP_NAME} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:locale" content={ogLocale(lang)} />
-    <meta property="og:locale:alternate" content={ogLocale(otherLang(lang))} />
+    {alternate && <meta property="og:locale:alternate" content={ogLocale(otherLang(lang))} />}
     <meta property="og:image" content={ogImage} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -75,10 +82,10 @@ const org = {
   </head>
   <body>
     <a class="skip" href="#isi">{d.nav.skip}</a>
-    <Header lang={lang} page={page} />
+    <Header lang={lang} page={page} altPath={altPath} />
     <main id="isi">
       <slot />
     </main>
-    <Footer lang={lang} page={page} />
+    <Footer lang={lang} page={page} altPath={altPath} />
   </body>
 </html>

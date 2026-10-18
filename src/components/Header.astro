@@ -5,8 +5,11 @@ import { type Lang, type PageKey, otherLang, path, t } from '../i18n';
 interface Props {
   lang: Lang;
   page: PageKey;
+  /** Jalur padanan bahasa lain; bawaan path(page, otherLang). */
+  altPath?: string | null;
 }
-const { lang, page } = Astro.props;
+const { lang, page, altPath } = Astro.props;
+const switchHref = altPath === undefined ? path(page, otherLang(lang)) : (altPath ?? path('blog', otherLang(lang)));
 const d = t(lang);
 const home = path('home', lang);
 const anchor = (id: string) => (page === 'home' ? `#${id}` : `${home}#${id}`);
@@ -15,6 +18,7 @@ const links = [
   { href: anchor('privasi'), label: d.nav.privacy },
   { href: anchor('mendatang'), label: d.nav.upcoming },
   { href: anchor('tanya-jawab'), label: d.nav.faq },
+  { href: path('blog', lang), label: d.nav.blog },
 ];
 ---
 
@@ -27,7 +31,7 @@ const links = [
       </ul>
     </nav>
     <div class="actions">
-      <a class="lang" href={path(page, otherLang(lang))} hreflang={otherLang(lang)} lang={otherLang(lang)}>
+      <a class="lang" href={switchHref} hreflang={otherLang(lang)} lang={otherLang(lang)}>
         <span aria-hidden="true">{otherLang(lang).toUpperCase()}</span>
         <span class="visually-hidden">{d.nav.langLabel}</span>
       </a>

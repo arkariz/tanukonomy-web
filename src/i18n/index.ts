@@ -3,7 +3,7 @@ import { en } from './en';
 import { withBase } from '../config';
 
 export type Lang = 'id' | 'en';
-export type PageKey = 'home' | 'beta' | 'privacy' | 'terms' | 'deleteAccount';
+export type PageKey = 'home' | 'beta' | 'privacy' | 'terms' | 'deleteAccount' | 'blog';
 
 const dicts = { id, en };
 
@@ -16,6 +16,7 @@ const routes: Record<PageKey, Record<Lang, string>> = {
   privacy: { id: '/privasi/', en: '/en/privacy/' },
   terms: { id: '/syarat/', en: '/en/terms/' },
   deleteAccount: { id: '/hapus-akun/', en: '/en/delete-account/' },
+  blog: { id: '/blog/', en: '/en/blog/' },
 };
 
 export const path = (page: PageKey, lang: Lang) => withBase(routes[page][lang]);
@@ -24,3 +25,6 @@ export const otherLang = (lang: Lang): Lang => (lang === 'id' ? 'en' : 'id');
 
 export const htmlLang = (lang: Lang) => (lang === 'id' ? 'id-ID' : 'en');
 export const ogLocale = (lang: Lang) => (lang === 'id' ? 'id_ID' : 'en_US');
+
+/** Jalur artikel: /blog/<slug>/ (id) dan /en/blog/<slug>/ (en). */
+export const articlePath = (lang: Lang, slug: string) => path('blog', lang) + slug + '/';
