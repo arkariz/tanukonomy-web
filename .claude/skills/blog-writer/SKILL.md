@@ -152,8 +152,8 @@ Transaction, Budget, Transfer, History). Hubungkan keduanya lewat
 
 ## Format hasil
 
-Satu berkas Markdown per bahasa. Karena koleksi artikel Astro belum ada
-(S-3 di `docs/TASKS.md`), jalur ini adalah **usulan** dan dicatat di laporan:
+Satu berkas Markdown per bahasa di koleksi `blog` (skema di
+`src/content.config.ts`; rute `/blog/<slug>/` dan `/en/blog/<slug>/`):
 
 - `src/content/blog/id/<slug>.md`
 - `src/content/blog/en/<slug>.md`
@@ -172,9 +172,9 @@ intent: informasional # informasional | perbandingan | panduan-fitur
 publishedDate: 2026-10-18
 updatedDate: 2026-10-18
 author: "Tim Tanukonomy"
-image: ""             # opsional, berkas asli di repo
+image: "../../../assets/illustration/hero_mascot.png"  # sampul, opsional; jalur relatif dari berkas artikel
 imageAlt: ""
-draft: true           # selalu true sampai pemilik menyetujui
+draft: true           # true = tidak dibangun. Ubah ke false hanya bila pemilik meminta artikel tayang
 ---
 ```
 
@@ -185,10 +185,35 @@ Setelah berkas, tampilkan **laporan singkat** dalam bahasa Indonesia:
 3. Hal yang perlu diputuskan pemilik (klaim yang dihapus, fitur yang
    butuh konfirmasi, gambar yang perlu dirender).
 4. Tiga judul alternatif.
-5. Pekerjaan teknis yang tersisa bila koleksi artikel belum ada.
+5. Aset yang dibuat atau dipakai, dan apa yang belum tersedia.
 
-Jangan menulis kode halaman, koleksi, atau tata letak Astro di dalam skill
-ini kecuali pemilik memintanya sebagai tugas terpisah.
+Jangan mengubah kode halaman, koleksi, atau tata letak Astro di dalam tugas
+menulis artikel kecuali pemilik memintanya sebagai tugas terpisah.
+
+## Aset di artikel
+
+Artikel yang kaya visual lebih mudah dipahami, tetapi tiap gambar harus
+membantu pembaca, bukan menghias.
+
+- **Sampul**: `image` di frontmatter (maskot `hero_mascot.png` atau
+  ilustrasi proyek lain), dengan `imageAlt` yang menjelaskan isinya.
+- **Ilustrasi penjelas** untuk hitungan atau perbandingan: SVG milik
+  proyek di `src/assets/blog/<nama>-<bahasa>.svg`, dibuat dengan
+  `tools/blog/make_svgs.py` (lebar kanvas 486, teks ≥ 14px, mode gelap di
+  dalam SVG, satu berkas per bahasa). Angka di ilustrasi harus sama persis
+  dengan teks dan ditandai sebagai contoh bila bukan data.
+- **Tangkapan layar aplikasi**: hanya yang ada di `src/assets/screens/`
+  (render aplikasi sungguhan), diberi keterangan "Data contoh". Pilih layar
+  yang benar-benar mendukung kalimat di sekitarnya.
+- Sisipkan dengan sintaks Markdown biasa, lalu keterangan sebagai baris
+  miring tepat di bawahnya (tanpa baris kosong):
+
+  ```md
+  ![alt yang menjelaskan isi gambar](../../../assets/blog/nama-id.svg)
+  *Keterangan singkat.*
+  ```
+- Selalu isi `alt`. Jangan memasukkan teks penting hanya di dalam gambar.
+- Gambar OG per artikel belum ada; artikel memakai gambar OG bawaan bahasa.
 
 ## Peta topik (usulan awal, bukan data pencarian)
 
