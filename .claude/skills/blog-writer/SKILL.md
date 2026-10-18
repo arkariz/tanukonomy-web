@@ -30,7 +30,9 @@ verifikasi dari repo (lihat langkah 2).
 Tanya hanya yang belum jelas, selain itu simpulkan dan beri label:
 
 - **Topik atau kata kunci**, atau biarkan skill ini mengusulkan dari daftar
-  di `docs/TASKS.md` (S-2) dan bagian "Peta topik" di bawah.
+  di `docs/TASKS.md` (S-2) dan bagian "Peta topik" di bawah. Pemilik
+  menghendaki tips keuangan umum; jangan mengusulkan topik yang sejak
+  judulnya sudah tentang fitur Tanukonomy.
 - **Bahasa**: Indonesia dulu. Padanan Inggris dibuat bila diminta atau bila
   topiknya relevan untuk pembaca berbahasa Inggris.
 - **Pembaca**: bawaannya pekerja lepas dan pekerja muda di Indonesia yang
@@ -102,7 +104,12 @@ Urutan yang dipakai:
 3. **Isi** dengan H2 yang masing-masing menjawab sub-pertanyaan. Pakai
    langkah bernomor untuk "cara", tabel untuk perbandingan, dan satu contoh
    berangka yang bisa diikuti pembaca.
-4. **Bagian Tanukonomy**, hanya bila relevan: satu bagian pendek (H2) yang
+4. **Bridging halus ke Tanukonomy** (preferensi pemilik, 18 Okt 2026).
+   Topik artikel adalah tips keuangan umum yang berguna dengan alat apa
+   pun, bukan fitur aplikasi. Langkah-langkahnya harus bisa dikerjakan
+   pembaca tanpa Tanukonomy. Tanukonomy baru muncul di satu bagian dekat
+   akhir, sebagai salah satu cara mempermudah, dengan nada "bila kamu ingin",
+   bukan "gunakan". Bagian Tanukonomy: satu bagian pendek (H2) yang
    menunjukkan bagaimana langkah tadi dikerjakan di aplikasi, memakai fitur
    dan istilah yang benar. Paling banyak satu bagian ini plus satu kalimat
    penutup yang menaut ke `/beta/`. Tidak ada tombol, banner, atau seruan
