@@ -150,6 +150,10 @@ Diperbarui 15 Oktober 2026.
       `docs/01-product/ASO_NAME_RESEARCH.md` repo aplikasi.
 - [ ] **S-3** Koleksi artikel panduan (Astro content collection) untuk
       kata kunci informasional; satu artikel = satu niat pencarian.
+      Skill penulisnya sudah ada: `.claude/skills/blog-writer/` (18 Okt
+      2026). Koleksi `src/content/blog/{id,en}/`, rute, dan JSON-LD
+      `Article` belum dibuat; skill menulis berkas Markdown berfrontmatter
+      dengan `draft: true` sampai itu ada.
 - [ ] **S-4** Setelah rilis publik: tautan Google Play di hero dan JSON-LD
       (`installUrl`), lencana "Tersedia di Google Play".
 - [ ] **S-5** Backlink awal: direktori aplikasi Indonesia, komunitas
