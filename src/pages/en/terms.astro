@@ -37,7 +37,8 @@ import { path } from '../../i18n';
   <h2>4. Account (optional)</h2>
   <p>
     The app is fully functional without an account. If you choose to sign in, you are responsible for keeping access to
-    your account secure and for providing accurate information. You can delete your account at any time from inside the app
+    your account secure and for providing accurate information. The Tanukonomy Plus trial is offered only to users who
+    sign in. You can delete your account at any time from inside the app
     or through the <a href={path('deleteAccount', 'en')}>delete account page</a>. An account does not cause your financial
     records to be stored on our servers.
   </p>
@@ -51,8 +52,8 @@ import { path } from '../../i18n';
 
   <h2>6. Third-party services and Smart Record</h2>
   <p>
-    The app uses third-party services: Google Play, Firebase, Shorebird, and, for the Smart Record feature, Gemini
-    (Google). The data sent to each service is described in the <a href={path('privacy', 'en')}>Privacy Policy</a>. These
+    The app uses third-party services: Google Play (including Google Play Billing), Firebase, Shorebird, RevenueCat to
+    manage subscriptions, and, for the Smart Record feature, Gemini (Google). The data sent to each service is described in the <a href={path('privacy', 'en')}>Privacy Policy</a>. These
     services are run by their providers and are subject to their own terms.
   </p>
   <p>
@@ -77,11 +78,46 @@ import { path } from '../../i18n';
   </ul>
   <p>Please don’t make a test version your only record of important finances.</p>
 
-  <h2>9. Cost</h2>
+  <h2>9. Tanukonomy Plus and cost</h2>
   <p>
-    Core recording is free for now. If paid features are added later, we will announce them first. Payments through Google
-    Play follow Google Play’s terms.
+    Core recording is free. Tanukonomy Plus is an optional paid subscription for additional features, such as automation and
+    advanced analysis. The list of Plus features and the limits of the free version are shown in the app and may change from
+    time to time. The app does not show ads.
   </p>
+  <ul>
+    <li>
+      <strong>Purchases and payment.</strong> Monthly or yearly subscriptions are bought through Google Play. The price and
+      the terms of any offer are shown on the purchase screen before you buy. Google processes the payment; we do not
+      receive your card number. Purchases are also subject to the Google Play Terms of Service.
+    </li>
+    <li>
+      <strong>Trial.</strong> We may give a free Plus trial to users who sign in. Its length is shown in the app. The trial
+      does not ask for card details, and afterwards the app returns to the free version unless you subscribe.
+    </li>
+    <li>
+      <strong>Renewal and cancellation.</strong> A subscription renews automatically until you cancel it in your Google
+      Play subscription settings. Cancelling applies to the next period, and Plus stays active until the end of the period
+      you already paid for.
+    </li>
+    <li>
+      <strong>Refunds.</strong> Governed by Google Play’s policy, without limiting rights that by law cannot be waived,
+      including your consumer rights where you live.
+    </li>
+    <li>
+      <strong>Plus status.</strong> Plus status is worked out from subscription data at Google Play and RevenueCat. You can
+      restore a purchase on another phone from Account. Signing out does not cancel a subscription. If a payment fails and
+      the subscription is put on hold, Plus may be inactive until payment is sorted out. Without internet, Plus stays active
+      for a limited time.
+    </li>
+    <li>
+      <strong>Price and plan changes.</strong> We may change prices or plans. For a running subscription, price changes
+      follow Google Play’s rules and are notified before they take effect.
+    </li>
+    <li>
+      <strong>Your data stays.</strong> When Plus ends, your records are not deleted and core recording is not locked. Some
+      advanced views, such as analysis of older periods, may be locked without Plus.
+    </li>
+  </ul>
 
   <h2>10. Fair use</h2>
   <p>

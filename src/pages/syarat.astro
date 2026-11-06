@@ -38,7 +38,7 @@ import { path } from '../i18n';
   <h2>4. Akun (opsional)</h2>
   <p>
     Aplikasi berfungsi penuh tanpa akun. Kalau kamu memilih masuk, kamu bertanggung jawab menjaga akses ke akunmu dan
-    memberi informasi yang benar. Kamu dapat menghapus akunmu kapan saja lewat aplikasi atau
+    memberi informasi yang benar. Uji coba Tanukonomy Plus hanya diberikan kepada pengguna yang masuk akun. Kamu dapat menghapus akunmu kapan saja lewat aplikasi atau
     <a href={path('deleteAccount', 'id')}>halaman hapus akun</a>. Akun tidak membuat catatan keuanganmu tersimpan di server
     kami.
   </p>
@@ -52,8 +52,8 @@ import { path } from '../i18n';
 
   <h2>6. Layanan pihak ketiga dan Catat Cerdas</h2>
   <p>
-    Aplikasi memakai layanan pihak ketiga, yaitu Google Play, Firebase, Shorebird, dan, untuk fitur Catat Cerdas, Gemini
-    (Google). Data yang dikirim ke tiap layanan dijelaskan di <a href={path('privacy', 'id')}>Kebijakan Privasi</a>. Layanan
+    Aplikasi memakai layanan pihak ketiga, yaitu Google Play (termasuk Google Play Billing), Firebase, Shorebird,
+    RevenueCat untuk mengelola langganan, dan, untuk fitur Catat Cerdas, Gemini (Google). Data yang dikirim ke tiap layanan dijelaskan di <a href={path('privacy', 'id')}>Kebijakan Privasi</a>. Layanan
     itu dijalankan penyedianya dan tunduk pada ketentuan mereka sendiri.
   </p>
   <p>
@@ -78,11 +78,47 @@ import { path } from '../i18n';
   </ul>
   <p>Mohon jangan menjadikan versi uji coba satu-satunya catatan keuangan yang penting bagimu.</p>
 
-  <h2>9. Biaya</h2>
+  <h2>9. Tanukonomy Plus dan biaya</h2>
   <p>
-    Saat ini pencatatan inti gratis. Bila kelak ada fitur berbayar, kami akan mengumumkannya lebih dulu. Pembayaran lewat
-    Google Play mengikuti ketentuan Google Play.
+    Pencatatan inti gratis. Tanukonomy Plus adalah langganan berbayar opsional untuk fitur tambahan, seperti otomasi dan
+    analisis lanjutan. Daftar fitur Plus dan batas versi gratis tampil di aplikasi dan dapat berubah dari waktu ke waktu.
+    Aplikasi tidak menampilkan iklan.
   </p>
+  <ul>
+    <li>
+      <strong>Pembelian dan pembayaran.</strong> Langganan bulanan atau tahunan dibeli lewat Google Play. Harga dan syarat
+      penawaran tampil di layar pembelian sebelum kamu membeli. Google memproses pembayaran; kami tidak menerima nomor
+      kartumu. Pembelian juga tunduk pada Ketentuan Layanan Google Play.
+    </li>
+    <li>
+      <strong>Uji coba.</strong> Kami dapat memberi uji coba Plus gratis kepada pengguna yang masuk akun. Lamanya
+      ditampilkan di aplikasi. Uji coba tidak meminta data kartu, dan sesudahnya aplikasi kembali ke versi gratis kecuali
+      kamu berlangganan.
+    </li>
+    <li>
+      <strong>Perpanjangan dan pembatalan.</strong> Langganan diperpanjang otomatis sampai kamu membatalkannya lewat
+      pengaturan langganan di Google Play. Pembatalan berlaku untuk periode berikutnya, dan Plus tetap aktif sampai akhir
+      periode yang sudah kamu bayar.
+    </li>
+    <li>
+      <strong>Pengembalian dana.</strong> Diatur oleh kebijakan Google Play, tanpa mengurangi hak yang menurut hukum tidak
+      dapat dikesampingkan, termasuk hak konsumen di tempat tinggalmu.
+    </li>
+    <li>
+      <strong>Status Plus.</strong> Status Plus dihitung dari data langganan di Google Play dan RevenueCat. Kamu dapat
+      memulihkan pembelian di ponsel lain lewat Akun. Keluar dari akun tidak membatalkan langganan. Bila pembayaran gagal
+      dan langganan ditahan, Plus dapat nonaktif sampai pembayaran beres. Tanpa internet, Plus tetap aktif untuk
+      sementara waktu.
+    </li>
+    <li>
+      <strong>Perubahan harga dan paket.</strong> Kami dapat mengubah harga atau paket. Untuk langganan yang sedang
+      berjalan, perubahan harga mengikuti aturan Google Play dan diberitahukan sebelum berlaku.
+    </li>
+    <li>
+      <strong>Datamu tetap ada.</strong> Berakhirnya Plus tidak menghapus catatanmu dan tidak mengunci pencatatan inti.
+      Beberapa tampilan lanjutan, misalnya analisis periode lama, dapat terkunci tanpa Plus.
+    </li>
+  </ul>
 
   <h2>10. Penggunaan yang wajar</h2>
   <p>
