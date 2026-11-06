@@ -81,6 +81,23 @@ Diperbarui 15 Oktober 2026.
 
 ## Menunggu pemilik
 
+- [x] **W-13** *(6 Nov 2026)* Syarat dan Ketentuan (id, en) ditulis ulang
+      agar bisa jadi tautan Terms of Service untuk Trader Status Declaration
+      Google Play: bagian penyedia, akun opsional, layanan pihak ketiga dan
+      Catat Cerdas (Gemini), ketersediaan dan pembaruan, versi uji coba,
+      biaya, penghentian, dan hak konsumen yang tidak dapat dikesampingkan.
+      `TERMS_EFFECTIVE_DATE` menjadi 2026-11-06. Tautan untuk Play Console:
+      `https://tanukonomy.app/syarat/` dan `https://tanukonomy.app/en/terms/`.
+      Nama hukum dan alamat penyedia sengaja tidak ditulis; lihat P-11.
+      Revisi 2 (sama hari): bagian "Tanukonomy Plus dan biaya" (langganan
+      bulanan/tahunan lewat Google Play, uji coba hanya bagi yang masuk akun,
+      perpanjangan dan pembatalan, pengembalian dana mengikuti Google Play
+      tanpa mengurangi hak konsumen, status Plus, perubahan harga) dan
+      RevenueCat di daftar layanan pihak ketiga; kebijakan privasi ikut
+      menyebut RevenueCat (email, nama, ID, riwayat langganan). Sumber:
+      repo aplikasi `main` 0.12.2+21 (ADR-041, `PLAY_DATA_SAFETY.md`,
+      `release_notes/21-0.json`). Branch `claude/rombak-design-system-theming-5747b4`
+      tidak ada di remote `arkariz/Saldough`, jadi tidak dibaca.
 - [x] **P-1** Domain `tanukonomy.app` dibeli pemilik 29 Sep 2026. Cek
       merek dagang "Tanukonomy" (T-8.3 di repo aplikasi) masih terpisah.
 - [ ] **P-1b** DNS `tanukonomy.app` diarahkan ke GitHub Pages (4 record A
@@ -103,6 +120,17 @@ Diperbarui 15 Oktober 2026.
       lagi sebelum rilis publik; (c) halaman hapus akun (W-11) sudah
       diselaraskan dengan nomor bagian kebijakan baru; Gemini belum
       disebut di halaman itu, tambahkan bila perlu.
+- [ ] **P-11** Trader Status Declaration (Play Console). Pemilik sudah
+      memutuskan **trader** (6 Nov 2026). Tersisa, menurut teks halaman
+      bantuan Google yang ditempel pemilik: (a) batas akun lama 1 Feb 2027;
+      (b) Manage account › Account details › About you, lalu per aplikasi di
+      Policy and programs › App content, konfirmasi status trader; (c) self-
+      certify penawaran sesuai hukum dan isi tautan ToS per aplikasi:
+      `https://tanukonomy.app/syarat/` (id) dan `https://tanukonomy.app/en/terms/`
+      (en); (d) akun pengembang pribadi wajib memberi nomor telepon, dan
+      alamat ikut tampil publik di Google Play; (e) email kontak harus benar-
+      benar menerima email (P-2 belum selesai). Syarat belum ditinjau secara
+      hukum; bukan nasihat hukum.
 - [x] **P-4** Google Group penguji dan jalur closed testing sudah dibuat
       pemilik (29 Sep 2026). `GOOGLE_GROUP_URL` (tanpa `/u/1/`),
       `PLAY_TESTING_URL` (halaman opt-in "Jadi Penguji"), dan

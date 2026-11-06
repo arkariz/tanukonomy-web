@@ -49,7 +49,8 @@ import { path } from '../../i18n';
   <h2>3. Account (optional)</h2>
   <p>
     The app is fully functional without an account. If you choose to sign in, we receive your account’s email address and
-    user ID to manage that account. You can sign in with a Google account or with an email and password. An account does
+    user ID to manage that account. You can sign in with a Google account or with an email and password. To manage Plus
+    subscriptions, your account email and name are also passed to RevenueCat (see section 4). An account does
     not cause your financial data to be sent anywhere.
   </p>
 
@@ -79,6 +80,14 @@ import { path } from '../../i18n';
     <li>
       <strong>Version updates through Google Play.</strong> The app uses Google Play’s in-app updates service. The version
       check is performed by Google Play services on your device. The app sends no data to us or to our servers for this.
+    </li>
+    <li>
+      <strong>Plus subscription (RevenueCat and Google Play).</strong> The app uses RevenueCat to manage subscriptions.
+      RevenueCat receives a user ID (anonymous, or your account ID if you sign in), your account email address and display
+      name if you sign in, subscription history and status, and the technical data its SDK sends, such as IP address, app
+      version, and platform. Payment is processed by Google Play; the app does not receive your card number. Analytics also
+      records paywall, trial, and purchase events (for example paywall views and the plan type), without prices or the
+      content of your financial records.
     </li>
     <li>
       <strong>Voice recording.</strong> This feature asks for microphone permission. Your speech is turned into text by a

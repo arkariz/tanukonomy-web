@@ -49,7 +49,8 @@ import { path } from '../i18n';
   <h2>3. Akun (opsional)</h2>
   <p>
     Aplikasi berfungsi penuh tanpa akun. Jika kamu memilih masuk, kami menerima alamat email dan ID pengguna akunmu untuk
-    mengelola akun itu. Masuk bisa lewat akun Google atau email dan kata sandi. Akun tidak membuat data keuanganmu
+    mengelola akun itu. Masuk bisa lewat akun Google atau email dan kata sandi. Untuk mengelola langganan Plus, email dan
+    nama akunmu juga diteruskan ke RevenueCat (lihat bagian 4). Akun tidak membuat data keuanganmu
     dikirim ke mana pun.
   </p>
 
@@ -82,6 +83,14 @@ import { path } from '../i18n';
       <strong>Pembaruan versi lewat Google Play.</strong> Aplikasi memakai layanan pembaruan dalam aplikasi Google Play.
       Pengecekan versi dilakukan oleh layanan Google Play di perangkatmu. Aplikasi tidak mengirim data apa pun ke kami atau
       ke server kami untuk keperluan ini.
+    </li>
+    <li>
+      <strong>Langganan Plus (RevenueCat dan Google Play).</strong> Aplikasi memakai RevenueCat untuk mengelola langganan.
+      RevenueCat menerima ID pengguna (anonim, atau ID akunmu bila masuk), alamat email dan nama tampilan akun bila kamu
+      masuk, riwayat dan status langganan, serta data teknis yang dikirim SDK-nya, misalnya alamat IP, versi aplikasi, dan
+      platform. Pembayaran diproses Google Play; aplikasi tidak menerima nomor kartumu. Analytics juga mencatat peristiwa
+      paywall, uji coba, dan pembelian (misalnya tampilan paywall dan jenis paket), tanpa harga atau isi catatan
+      keuanganmu.
     </li>
     <li>
       <strong>Catat lewat suara.</strong> Fitur ini meminta izin mikrofon. Ucapanmu diubah menjadi teks oleh layanan
