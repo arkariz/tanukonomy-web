@@ -31,6 +31,6 @@ export const PLAY_STORE_URL: string = 'https://play.google.com/store/apps/detail
 export const LEGAL_EFFECTIVE_DATE = '2026-10-15';
 
 /** Tanggal berlaku Syarat dan Ketentuan (terakhir isinya diubah). */
-export const TERMS_EFFECTIVE_DATE = '2026-09-28';
+export const TERMS_EFFECTIVE_DATE = '2026-11-06';
 
 export const APP_NAME = 'Tanukonomy';

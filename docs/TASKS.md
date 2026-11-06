@@ -81,6 +81,14 @@ Diperbarui 15 Oktober 2026.
 
 ## Menunggu pemilik
 
+- [x] **W-13** *(6 Nov 2026)* Syarat dan Ketentuan (id, en) ditulis ulang
+      agar bisa jadi tautan Terms of Service untuk Trader Status Declaration
+      Google Play: bagian penyedia, akun opsional, layanan pihak ketiga dan
+      Catat Cerdas (Gemini), ketersediaan dan pembaruan, versi uji coba,
+      biaya, penghentian, dan hak konsumen yang tidak dapat dikesampingkan.
+      `TERMS_EFFECTIVE_DATE` menjadi 2026-11-06. Tautan untuk Play Console:
+      `https://tanukonomy.app/syarat/` dan `https://tanukonomy.app/en/terms/`.
+      Nama hukum dan alamat penyedia sengaja tidak ditulis; lihat P-11.
 - [x] **P-1** Domain `tanukonomy.app` dibeli pemilik 29 Sep 2026. Cek
       merek dagang "Tanukonomy" (T-8.3 di repo aplikasi) masih terpisah.
 - [ ] **P-1b** DNS `tanukonomy.app` diarahkan ke GitHub Pages (4 record A
@@ -103,6 +111,17 @@ Diperbarui 15 Oktober 2026.
       lagi sebelum rilis publik; (c) halaman hapus akun (W-11) sudah
       diselaraskan dengan nomor bagian kebijakan baru; Gemini belum
       disebut di halaman itu, tambahkan bila perlu.
+- [ ] **P-11** Trader Status Declaration (Play Console). Hanya pemilik yang
+      bisa memutuskan trader atau non-trader; salah menyatakan bisa berujung
+      penghapusan aplikasi. Menurut ringkasan halaman bantuan Google
+      (dicari 6 Nov 2026, halaman aslinya tidak bisa dibuka dari sandbox, jadi
+      cek ulang): akun lama wajib mengisi sebelum 1 Feb 2027, trader diminta
+      tautan Terms of Service per aplikasi, dan mulai 1 Mar 2027 tautan itu,
+      kontak, dan nomor D-U-N-S tampil ke pengguna. Yang perlu disiapkan:
+      (a) putuskan status dan isi deklarasinya; (b) alamat email kontak
+      harus benar-benar menerima email (P-2 belum selesai); (c) tinjau Syarat
+      dan putuskan apakah nama hukum penyedia perlu ditulis di bagian 2;
+      (d) isi tautan Syarat di Play Console. Bukan nasihat hukum.
 - [x] **P-4** Google Group penguji dan jalur closed testing sudah dibuat
       pemilik (29 Sep 2026). `GOOGLE_GROUP_URL` (tanpa `/u/1/`),
       `PLAY_TESTING_URL` (halaman opt-in "Jadi Penguji"), dan

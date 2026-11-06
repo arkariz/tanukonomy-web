@@ -9,7 +9,7 @@ import { path } from '../i18n';
   page="terms"
   effectiveDate={TERMS_EFFECTIVE_DATE}
   title="Syarat dan Ketentuan"
-  description="Syarat penggunaan aplikasi Tanukonomy, termasuk selama masa uji coba tertutup."
+  description="Syarat penggunaan aplikasi Tanukonomy: apa yang dilakukan aplikasi, akun opsional, layanan pihak ketiga, pembaruan, dan batas tanggung jawab."
 >
   <p class="lede">
     Dengan memasang atau memakai Tanukonomy, kamu menyetujui syarat berikut. Kalau tidak setuju, mohon jangan memakai
@@ -23,62 +23,109 @@ import { path } from '../i18n';
     keuangan, perbankan, atau investasi.
   </p>
 
-  <h2>2. Bukan nasihat keuangan</h2>
+  <h2>2. Siapa penyedianya</h2>
+  <p>
+    Tanukonomy dikembangkan dan disediakan oleh pengembang Tanukonomy ("kami"). Kamu dapat menghubungi kami lewat email
+    di bagian 16. Informasi kontak penyedia juga dapat ditampilkan di halaman Tanukonomy di Google Play.
+  </p>
+
+  <h2>3. Bukan nasihat keuangan</h2>
   <p>
     Angka dan ringkasan di aplikasi dihitung dari data yang kamu masukkan. Aplikasi tidak memberi nasihat keuangan, pajak,
     atau hukum. Keputusan keuanganmu sepenuhnya tanggung jawabmu.
   </p>
 
-  <h2>3. Tanggung jawab atas data</h2>
+  <h2>4. Akun (opsional)</h2>
   <p>
-    Karena data hanya tersimpan di perangkatmu (lihat <a href={path('privacy', 'id')}>Kebijakan Privasi</a>), kamu bertanggung jawab
-    menjaga perangkat dan datanya. Kami tidak dapat memulihkan data yang hilang karena perangkat rusak, hilang, direset,
-    atau aplikasinya dihapus.
+    Aplikasi berfungsi penuh tanpa akun. Kalau kamu memilih masuk, kamu bertanggung jawab menjaga akses ke akunmu dan
+    memberi informasi yang benar. Kamu dapat menghapus akunmu kapan saja lewat aplikasi atau
+    <a href={path('deleteAccount', 'id')}>halaman hapus akun</a>. Akun tidak membuat catatan keuanganmu tersimpan di server
+    kami.
   </p>
 
-  <h2>4. Masa uji coba</h2>
-  <p>Selama uji coba tertutup:</p>
+  <h2>5. Tanggung jawab atas data</h2>
+  <p>
+    Karena catatan keuanganmu tersimpan di perangkatmu (lihat <a href={path('privacy', 'id')}>Kebijakan Privasi</a>), kamu
+    bertanggung jawab menjaga perangkat dan datanya. Kami tidak dapat memulihkan data yang hilang karena perangkat rusak,
+    hilang, direset, atau aplikasinya dihapus.
+  </p>
+
+  <h2>6. Layanan pihak ketiga dan Catat Cerdas</h2>
+  <p>
+    Aplikasi memakai layanan pihak ketiga, yaitu Google Play, Firebase, Shorebird, dan, untuk fitur Catat Cerdas, Gemini
+    (Google). Data yang dikirim ke tiap layanan dijelaskan di <a href={path('privacy', 'id')}>Kebijakan Privasi</a>. Layanan
+    itu dijalankan penyedianya dan tunduk pada ketentuan mereka sendiri.
+  </p>
+  <p>
+    Hasil tafsir otomatis dari suara atau notifikasi dapat keliru. Periksa catatanmu, terutama bila kamu mengaktifkan
+    pencatatan otomatis dari notifikasi.
+  </p>
+
+  <h2>7. Ketersediaan dan pembaruan</h2>
+  <p>
+    Kami dapat memperbarui aplikasi lewat Google Play atau lewat pembaruan kecil, serta mengubah, menambah, atau menghapus
+    fitur. Kami berusaha menjaga aplikasi tetap berjalan, tetapi tidak menjamin aplikasi selalu tersedia atau bebas
+    gangguan. Pencatatan inti dirancang tetap bisa dipakai tanpa internet.
+  </p>
+
+  <h2>8. Versi uji coba</h2>
+  <p>Selama aplikasi masih berstatus uji coba (misalnya uji coba tertutup di Google Play):</p>
   <ul>
     <li>aplikasi masih dalam pengembangan dan mungkin memuat kesalahan, termasuk kesalahan tampilan atau perhitungan;</li>
     <li>fitur dapat berubah, ditambah, atau dihapus tanpa pemberitahuan;</li>
     <li>pembaruan dapat mengubah atau, dalam kasus terburuk, menghapus data uji coba;</li>
     <li>akses uji coba dapat diakhiri kapan saja.</li>
   </ul>
-  <p>Mohon jangan menjadikan aplikasi versi uji coba satu-satunya catatan keuangan yang penting bagimu.</p>
+  <p>Mohon jangan menjadikan versi uji coba satu-satunya catatan keuangan yang penting bagimu.</p>
 
-  <h2>5. Masukan</h2>
+  <h2>9. Biaya</h2>
+  <p>
+    Saat ini pencatatan inti gratis. Bila kelak ada fitur berbayar, kami akan mengumumkannya lebih dulu. Pembayaran lewat
+    Google Play mengikuti ketentuan Google Play.
+  </p>
+
+  <h2>10. Penggunaan yang wajar</h2>
+  <p>
+    Kamu setuju untuk tidak merekayasa balik, mendistribusikan ulang, atau menjual aplikasi, kecuali sejauh diizinkan oleh
+    hukum yang berlaku. Aplikasi tidak ditujukan untuk anak di bawah 13 tahun.
+  </p>
+
+  <h2>11. Masukan</h2>
   <p>
     Masukan, saran, dan laporan masalah yang kamu kirim boleh kami pakai untuk memperbaiki Tanukonomy tanpa kewajiban
     apa pun kepadamu.
   </p>
 
-  <h2>6. Penggunaan yang wajar</h2>
-  <p>
-    Kamu setuju untuk tidak merekayasa balik, mendistribusikan ulang, atau menjual aplikasi, kecuali sejauh diizinkan oleh
-    hukum yang berlaku.
-  </p>
-
-  <h2>7. Hak kekayaan intelektual</h2>
+  <h2>12. Hak kekayaan intelektual</h2>
   <p>
     Nama, logo, maskot tanuki, ilustrasi, dan kode Tanukonomy adalah milik pengembangnya. Font di situs dan aplikasi
     dipakai di bawah SIL Open Font License.
   </p>
 
-  <h2>8. Tanpa jaminan dan batas tanggung jawab</h2>
+  <h2>13. Tanpa jaminan dan batas tanggung jawab</h2>
   <p>
     Aplikasi disediakan "sebagaimana adanya" tanpa jaminan apa pun. Sejauh diizinkan hukum, kami tidak bertanggung jawab
-    atas kerugian yang timbul dari pemakaian atau ketidakmampuan memakai aplikasi, termasuk kehilangan data.
+    atas kerugian yang timbul dari pemakaian atau ketidakmampuan memakai aplikasi, termasuk kehilangan data. Syarat ini
+    tidak membatasi hak yang menurut hukum tidak dapat dikesampingkan, termasuk hak konsumen di tempat tinggalmu.
   </p>
 
-  <h2>9. Perubahan syarat</h2>
+  <h2>14. Mengakhiri pemakaian</h2>
+  <p>
+    Kamu dapat berhenti memakai Tanukonomy kapan saja dengan menghapus aplikasinya, dan menghapus akunmu bila kamu
+    memilikinya. Kami dapat mengakhiri akses ke aplikasi atau akunmu bila kamu melanggar syarat ini, atau bila layanan
+    dihentikan.
+  </p>
+
+  <h2>15. Perubahan syarat</h2>
   <p>
     Kami dapat memperbarui syarat ini. Versi terbaru selalu ada di halaman ini beserta tanggal berlakunya. Terus memakai
     aplikasi sesudah perubahan berarti kamu menyetujui syarat yang baru.
   </p>
 
-  <h2>10. Hukum yang berlaku</h2>
-  <p>Syarat ini diatur oleh hukum Republik Indonesia.</p>
-
-  <h2>11. Kontak</h2>
-  <p>Pertanyaan tentang syarat ini dapat dikirim ke <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>
+  <h2>16. Hukum yang berlaku dan kontak</h2>
+  <p>
+    Syarat ini diatur oleh hukum Republik Indonesia, tanpa mengurangi hak konsumen yang tidak dapat dikesampingkan menurut
+    hukum tempat tinggalmu. Pertanyaan tentang syarat ini dapat dikirim ke
+    <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
+  </p>
 </Legal>
