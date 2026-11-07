@@ -98,6 +98,15 @@ Diperbarui 15 Oktober 2026.
       repo aplikasi `main` 0.12.2+21 (ADR-041, `PLAY_DATA_SAFETY.md`,
       `release_notes/21-0.json`). Branch `claude/rombak-design-system-theming-5747b4`
       tidak ada di remote `arkariz/Saldough`, jadi tidak dibaca.
+- [x] **W-14** *(7 Nov 2026)* Gaya visual situs disesuaikan ke design system v2
+      "Tanukonomy Matcha" (ADR-002 situs): token terang dan gelap v2, huruf
+      Plus Jakarta Sans (Space Grotesk dihapus), ikon dan maskot clay,
+      tangkapan layar listing Play v2 (id, en) untuk fitur, freelance, dan
+      artikel, komponen `ClayIcon` dan `Shot` menggantikan `PixelIcon` dan
+      `Phone`, ikon situs, manifest, dan gambar OG dibuat ulang, ilustrasi
+      artikel ke token v2, fitur Rutin ditambahkan ke daftar fitur dan
+      "Riwayat" digabung dengan Analisis. Render mentah per layar belum
+      mungkin dari sesi agen (tanpa Flutter SDK dan emulator).
 - [x] **P-1** Domain `tanukonomy.app` dibeli pemilik 29 Sep 2026. Cek
       merek dagang "Tanukonomy" (T-8.3 di repo aplikasi) masih terpisah.
 - [ ] **P-1b** DNS `tanukonomy.app` diarahkan ke GitHub Pages (4 record A
@@ -131,6 +140,13 @@ Diperbarui 15 Oktober 2026.
       alamat ikut tampil publik di Google Play; (e) email kontak harus benar-
       benar menerima email (P-2 belum selesai). Syarat belum ditinjau secara
       hukum; bukan nasihat hukum.
+- [ ] **P-12** Tinjau teks pemasaran terhadap fitur yang sudah rilis (selisih
+      terbawa dari sebelum v2, tidak diubah di W-14): bagian "Fitur
+      mendatang" masih memuat Catat otomatis (notifikasi dan suara sudah ada),
+      kotak "Sedang disiapkan" dan FAQ masih menyebut langganan premium
+      sebagai rencana padahal Plus sudah ada, dan chip "Gratis" sudah tidak
+      dipakai di gambar OG. Putuskan juga apakah render mentah per layar
+      (emulator di mesin pemilik) menggantikan slide listing di `Shot`.
 - [x] **P-4** Google Group penguji dan jalur closed testing sudah dibuat
       pemilik (29 Sep 2026). `GOOGLE_GROUP_URL` (tanpa `/u/1/`),
       `PLAY_TESTING_URL` (halaman opt-in "Jadi Penguji"), dan

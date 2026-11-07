@@ -53,14 +53,15 @@ src/
   i18n/index.ts        slug per bahasa, helper bahasa
   layouts/Base.astro   <head> SEO: canonical, hreflang, OG, JSON-LD
   layouts/Legal.astro  kerangka halaman hukum
-  components/          Home, Beta, Phone (tangkapan layar), PixelIcon, ...
+  components/          Home, Beta, Shot (tangkapan layar), ClayIcon, ...
   pages/               rute; halaman hukum ditulis langsung per bahasa
-  assets/screens/      tangkapan layar aplikasi sungguhan (lihat tools/screenshots)
-  assets/illustration/ maskot tanuki dari aplikasi
-  assets/icons/        ikon pixel dari aplikasi
+  assets/shots/        tangkapan layar listing Play v2 (lihat tools/screenshots)
+  assets/clay/         ikon dan maskot clay 3D dari aplikasi
+  assets/blog/         ilustrasi artikel (tools/blog/make_svgs.py)
 public/                font woff2 (subset latin), ikon, og/, robots.txt
 tools/og/              template dan skrip render gambar Open Graph
-tools/screenshots/     seed data dan skrip render tangkapan layar aplikasi
+tools/screenshots/     cara memperbarui tangkapan layar dari repo aplikasi
+tools/blog/            generator ilustrasi artikel
 docs/                  ADR dan daftar tugas situs
 ```
 
