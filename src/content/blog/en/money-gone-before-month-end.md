@@ -9,8 +9,8 @@ intent: informasional
 publishedDate: 2026-10-18
 updatedDate: 2026-10-18
 author: "Tim Tanukonomy"
-image: "../../../assets/illustration/hero_mascot.png"
-imageAlt: "A tanuki bookkeeper in a yellow hat writing in an open notebook"
+image: "../../../assets/clay/tanuki_mascot.svg"
+imageAlt: "The Tanukonomy tanuki mascot in a glossy 3D clay style, with a green leaf on its head"
 draft: false
 ---
 
@@ -76,7 +76,7 @@ A notes app or a spreadsheet is enough for that. If your money is spread across 
 
 In Tanukonomy, each bank account, e-wallet, or pile of cash is a wallet. A transfer between wallets is recorded as a transfer, so it is not counted as spending. You can also set up a budget as a spending plan, without setting the money aside. The app only records: it does not move or pay money. Your financial records are stored on your device, and core recording works without internet.
 
-![The Record Expense screen in Tanukonomy with Out, In, and Transfer tabs, an amount of Rp45.000, and Cash as the source wallet](../../../assets/screens/catat-en-light.png)
+![Screenshot "Record it in seconds": the Record Expense form with Out, In, and Transfer tabs and an amount of Rp45,000, next to the transaction History](../../../assets/shots/en/02_catat.jpg)
 *The Record screen in Tanukonomy: choose Out, In, or Transfer. Sample data.*
 
 ## Frequently asked questions

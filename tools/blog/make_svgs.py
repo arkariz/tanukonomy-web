@@ -11,27 +11,32 @@ Untuk artikel baru, salin pola fungsi di sini; jangan menggambar ulang dari nol.
 import sys, html
 out = sys.argv[1]
 CSS = """
-.bg{fill:#fff8f5}.card{fill:#ffffff}.edge{stroke:#1e1b19}.sh{fill:#1e1b19}
-.tx{fill:#1e1b19}.mu{fill:#57534e}.ac{fill:#c2410c}.inc{fill:#15803d}.exp{fill:#b91c1c}.tr{fill:#1d4ed8}
-.f-ac{fill:#c2410c}
-.t-ac{fill:#fdf0e8}.t-in{fill:#dcf2e3}.t-ex{fill:#fde8e6}.t-tr{fill:#e3ebfc}.t-mu{fill:#faf2ee}
-.ln{stroke:#1e1b19;stroke-width:2;fill:none}.ar{fill:#1e1b19}
-text{font-family:ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
-.m{font-family:ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace}
+.card{fill:#ffffff}.edge{stroke:#eaecef}
+.tx{fill:#111827}.mu{fill:#4b5563}.ac{fill:#1f4b2c}.inc{fill:#1f4b2c}.exp{fill:#ba1a1a}.tr{fill:#1d4ed8}
+.f-ac{fill:#1f4b2c}
+.t-ac{fill:#f4f6f4}.t-in{fill:#d8e6dc}.t-ex{fill:#ffdad6}.t-tr{fill:#eff6ff}.t-mu{fill:#f3f4f6}
+.ln{stroke:#eaecef;stroke-width:1.5;fill:none}.ar{fill:#4b5563}
+text{font-family:'Plus Jakarta Sans',ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
+.m{font-family:'Space Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace}
 @media (prefers-color-scheme:dark){
-.card{fill:#2d2823}.edge{stroke:#8a7d6e}.sh{fill:#14120f}
-.tx{fill:#f2ece7}.mu{fill:#a8a29e}.ac{fill:#f46b1c}.inc{fill:#22c55e}.exp{fill:#f87171}.tr{fill:#60a5fa}
-.f-ac{fill:#f46b1c}
-.t-ac{fill:#3d2618}.t-in{fill:#1f3a28}.t-ex{fill:#4a2323}.t-tr{fill:#1f2a44}.t-mu{fill:#1c1916}
-.ln{stroke:#8a7d6e}.ar{fill:#8a7d6e}}
+.card{fill:#171b18}.edge{stroke:#2a302c}
+.tx{fill:#eef1ee}.mu{fill:#b8c0ba}.ac{fill:#a2d2a9}.inc{fill:#8fd19e}.exp{fill:#ffb4ab}.tr{fill:#93b4f5}
+.f-ac{fill:#a2d2a9}
+.t-ac{fill:#222823}.t-in{fill:#1d3324}.t-ex{fill:#4a2323}.t-tr{fill:#172338}.t-mu{fill:#1a1e1b}
+.ln{stroke:#2a302c}.ar{fill:#b8c0ba}}
 """
 def esc(s): return html.escape(s, quote=False)
 def svg(w,h,title,desc,body):
     return (f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" role="img" aria-labelledby="t d">'
             f'<title id="t">{esc(title)}</title><desc id="d">{esc(desc)}</desc><style>{CSS}</style>{body}</svg>')
-def box(x,y,w,h,cls='card',sh=4):
-    return (f'<rect class="sh" x="{x+sh}" y="{y+sh}" width="{w}" height="{h}" rx="6"/>'
-            f'<rect class="{cls} edge" x="{x}" y="{y}" width="{w}" height="{h}" rx="6" stroke-width="2"/>')
+def box(x,y,w,h,cls='card',r=16):
+    return f'<rect class="{cls} edge" x="{x}" y="{y}" width="{w}" height="{h}" rx="{r}" stroke-width="1"/>'
+def top_round(x,y,w,h,cls,r=15):
+    return f'<path class="{cls}" d="M{x} {y+h}V{y+r}Q{x} {y} {x+r} {y}H{x+w-r}Q{x+w} {y} {x+w} {y+r}V{y+h}Z"/>'
+def left_round(x,y,w,h,cls,r=15):
+    return f'<path class="{cls}" d="M{x+w} {y}H{x+r}Q{x} {y} {x} {y+r}V{y+h-r}Q{x} {y+h} {x+r} {y+h}H{x+w}Z"/>'
+def inner(x,y,w,h,cls,r=8):
+    return f'<rect class="{cls} edge" x="{x}" y="{y}" width="{w}" height="{h}" rx="{r}" stroke-width="1"/>'
 def T(x,y,s,cls='tx',size=16,weight=600,anchor='start',mono=False):
     c=f'{cls} m' if mono else cls
     return f'<text class="{c}" x="{x}" y="{y}" font-size="{size}" font-weight="{weight}" text-anchor="{anchor}">{esc(s)}</text>'
@@ -68,7 +73,7 @@ def groups(lang):
     t=TX[lang]; W=486; ch=126; gap=14; b=''
     for i,(lab,sub,items,note,tint) in enumerate(t['g']):
         y=6+i*(ch+gap); b+=box(0,y,480,ch)
-        b+=f'<rect class="{tint}" x="1" y="{y+1}" width="140" height="{ch-2}" rx="5"/><line class="ln" x1="141" y1="{y+1}" x2="141" y2="{y+ch-1}"/>'
+        b+=left_round(1,y+1,140,ch-2,tint)+f'<line class="ln" x1="141" y1="{y+1}" x2="141" y2="{y+ch-1}"/>'
         b+=T(14,y+34,lab,'tx',14,700,mono=True)+T(14,y+62,sub[0],'mu',15,500)+T(14,y+82,sub[1],'mu',15,500)
         for j,it in enumerate(items):
             yy=y+34+j*26; b+=f'<rect class="f-ac" x="158" y="{yy-10}" width="10" height="10"/>'+T(178,yy,it,'tx',17,600)
@@ -78,10 +83,10 @@ def groups(lang):
 def small(lang):
     t=TX[lang]; W,H=486,214; b=box(0,6,480,196)
     for k in range(20):
-        r,c=divmod(k,5); b+=f'<rect class="f-ac" x="{26+c*28}" y="{34+r*28}" width="22" height="22"/>'
+        r,c=divmod(k,5); b+=f'<rect class="f-ac" x="{26+c*28}" y="{34+r*28}" width="22" height="22" rx="6"/>'
     b+=T(200,62,t['s_days'],'tx',22,700)+T(200,92,t['s_mul'],'tx',22,700,mono=True)
     b+=f'<line class="ln" x1="200" y1="108" x2="458" y2="108"/>'
-    b+=f'<rect class="t-ex edge" x="200" y="120" width="258" height="44" rx="6" stroke-width="2"/>'
+    b+=inner(200,120,258,44,'t-ex',10)
     b+=T(329,150,'= '+money(lang,500000),'exp',26,700,'middle',True)
     b+=T(26,186,t['s_note'],'mu',14,500)
     return svg(W,H,t['s_title'],t['s_desc'],b)
@@ -92,7 +97,7 @@ def yearly(lang):
     b+=f'<line class="ln" x1="240" y1="90" x2="240" y2="116"/><polygon class="ar" points="232,114 248,114 240,128"/>'+T(258,108,t['y_div'],'mu',15,600)
     for i in range(12):
         r,c=divmod(i,6); x=10+c*78; y=146+r*70
-        b+=f'<rect class="sh" x="{x+3}" y="{y+3}" width="70" height="58" rx="4"/><rect class="t-in edge" x="{x}" y="{y}" width="70" height="58" rx="4" stroke-width="2"/>'
+        b+=inner(x,y,70,58,'t-in',10)
         b+=T(x+35,y+22,m[i],'mu',13,700,'middle',True)+T(x+35,y+46,'150'+('rb' if lang=='id' else 'K'),'inc',17,700,'middle',True)
     b+=T(240,316,t['y_each'],'inc',22,700,'middle',True)+T(240,342,t['y_note'],'mu',14,500,'middle')
     return svg(W,H,t['y_title'],t['y_desc'],b)
@@ -101,16 +106,16 @@ def transfer(lang):
     t=TX[lang]; W=486; ph=268; gap=16; H=6+2*ph+gap+10; b=''
     for ci,(head,wrong) in enumerate(((t['wrong'],True),(t['right'],False))):
         y0=6+ci*(ph+gap); b+=box(0,y0,480,ph)
-        b+=f'<rect class="{"t-ex" if wrong else "t-in"}" x="1" y="{y0+1}" width="478" height="38" rx="5"/><line class="ln" x1="1" y1="{y0+39}" x2="479" y2="{y0+39}"/>'
+        b+=top_round(1,y0+1,478,38,"t-ex" if wrong else "t-in")+f'<line class="ln" x1="1" y1="{y0+39}" x2="479" y2="{y0+39}"/>'
         b+=T(240,y0+26,head,'exp' if wrong else 'inc',15,700,'middle',True)
-        b+=f'<rect class="t-mu edge" x="22" y="{y0+54}" width="190" height="38" rx="5" stroke-width="2"/>'+T(117,y0+79,t['acc'],'tx',16,600,'middle')
-        b+=f'<rect class="t-mu edge" x="268" y="{y0+54}" width="190" height="38" rx="5" stroke-width="2"/>'+T(363,y0+79,t['ew'],'tx',16,600,'middle')
+        b+=inner(22,y0+54,190,38,'t-mu')+T(117,y0+79,t['acc'],'tx',16,600,'middle')
+        b+=inner(268,y0+54,190,38,'t-mu')+T(363,y0+79,t['ew'],'tx',16,600,'middle')
         b+=f'<line class="ln" x1="216" y1="{y0+73}" x2="250" y2="{y0+73}"/><polygon class="ar" points="248,{y0+66} 262,{y0+73} 248,{y0+80}"/>'
         ct='t-ex' if wrong else 't-tr'; co='exp' if wrong else 'tr'
-        b+=f'<rect class="{ct} edge" x="22" y="{y0+106}" width="436" height="50" rx="5" stroke-width="2"/>'
+        b+=inner(22,y0+106,436,50,ct)
         b+=T(38,y0+137,(t['w_tr'] if wrong else t['r_tr'])+' · '+money(lang,500000),co,16,700)
         b+=T(442,y0+137,('−'+money(lang,500000)) if wrong else t['r_tr_n'],co,15,700,'end',True)
-        b+=f'<rect class="t-ex edge" x="22" y="{y0+164}" width="436" height="50" rx="5" stroke-width="2"/>'
+        b+=inner(22,y0+164,436,50,'t-ex')
         b+=T(38,y0+195,t['shop']+' · '+money(lang,500000),'exp',16,700)+T(442,y0+195,'−'+money(lang,500000),'exp',15,700,'end',True)
         b+=T(22,y0+246,t['tot'],'mu',14,600)+T(458,y0+250,money(lang,1000000 if wrong else 500000),'exp' if wrong else 'inc',26,700,'end',True)
     return svg(W,H,t['tp_title'],t['tp_desc'],b)
