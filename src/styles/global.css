@@ -1,15 +1,11 @@
 /*
- * Bahasa visual pixel dari aplikasi (ADR-015, palet ADR-016, penekanan
- * ADR-020 di repo arkariz/Saldough). Nilai warna disalin dari
- * app_colors_extension.dart; jangan menambah warna di luar token ini.
+ * Bahasa visual v2 "Tanukonomy Matcha" dari aplikasi (ADR-043 di repo
+ * arkariz/Saldough; spek di docs/03-design/design-system-v2/). Nilai warna
+ * disalin dari tokens.json aplikasi (terang dan gelap); jangan menambah warna
+ * di luar token ini. Nama variabel lama dipertahankan supaya komponen situs
+ * tidak perlu berganti nama; artinya kini mengikuti v2.
  */
 
-@font-face {
-  font-family: 'Space Grotesk';
-  src: url('../assets/fonts/SpaceGrotesk-Variable.woff2') format('woff2');
-  font-weight: 300 700;
-  font-display: swap;
-}
 @font-face {
   font-family: 'Plus Jakarta Sans';
   src: url('../assets/fonts/PlusJakartaSans-Variable.woff2') format('woff2');
@@ -25,39 +21,45 @@
 
 :root {
   color-scheme: light;
-  --bg: #fff8f5;
-  --bg-sunk: #faf2ee;
-  --card: #ffffff;
-  --edge: #1e1b19;
-  --text: #1e1b19;
-  --muted: #57534e;
-  --divider: rgb(30 27 25 / 0.14);
-  --accent: #c2410c;
+  --bg: #fafaf9; /* surfaceCanvas: kanvas kabut hangat */
+  --bg-sunk: #f3f4f6; /* surfaceSunken */
+  --card: #ffffff; /* surfaceCard */
+  --edge: #eaecef; /* outlineSubtle: garis rambut 1px */
+  --edge-strong: #d1d5db; /* outlineStrong */
+  --text: #111827; /* textPrimary */
+  --muted: #4b5563; /* textSecondary */
+  --divider: #eaecef;
+  --accent: #1f4b2c; /* actionPrimary: hijau matcha */
+  --accent-pressed: #163720; /* actionPrimaryPressed */
   --on-accent: #ffffff;
-  --income: #15803d;
-  --income-fill: #16a34a;
-  --expense: #b91c1c;
-  --expense-fill: #dc2626;
-  --transfer: #1d4ed8;
-  --pending: #a16207;
-  --tint-accent: #fdf0e8;
-  --tint-income: #dcf2e3;
-  --tint-pending: #f6ecd6;
-  /* Teks/lencana di atas --tint-pending butuh ini, bukan --pending langsung --
-     #a16207 hanya 4.19:1 di atas #f6ecd6, di bawah ambang 4.5:1 WCAG. */
-  --pending-on-tint: #8a5506;
-  --band: #1e1b19;
-  --on-band: #f2ece7;
-  --on-band-muted: #c9c1b9;
+  --income: #1f4b2c;
+  --income-fill: #3c6846; /* surfaceTint */
+  --expense: #ba1a1a;
+  --expense-fill: #ba1a1a;
+  --transfer: #1d4ed8; /* info */
+  --pending: #92400e; /* warning */
+  --tint-accent: #f4f6f4; /* surfaceHover: isi tipis */
+  --tint-income: #d8e6dc; /* incomeContainer: sage */
+  --tint-pending: #fef3c7; /* warningContainer */
+  --pending-on-tint: #78350f; /* onWarningContainer */
+  --tint-warm: #f4ede2; /* toneWarmContainer: sampanye */
+  --on-tint-warm: #5c4d3c;
+  --band: #1f4b2c; /* heroSurface: kartu saldo hijau hutan */
+  --on-band: #ffffff;
+  --on-band-muted: #b3dfc5; /* onHeroMuted */
+  --on-band-accent: #6ee7b7; /* heroAccent */
 
-  --font-display: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
   --font-body: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
   --font-mono: 'Space Mono', ui-monospace, 'SFMono-Regular', monospace;
 
-  --border: 2px solid var(--edge);
-  --shadow: 4px 4px 0 var(--edge);
-  --shadow-lg: 6px 6px 0 var(--edge);
-  --radius: 6px;
+  --border: 1px solid var(--edge);
+  --shadow: 0 2px 8px rgb(17 24 39 / 0.03); /* elevasi kartu */
+  --shadow-lg: 0 8px 24px -4px rgb(17 24 39 / 0.06); /* elevasi overlay */
+  --radius: 8px; /* kontrol: tombol, kolom */
+  --radius-card: 16px; /* kartu dan kelompok data */
+  --radius-xl: 24px; /* dialog, panel besar */
+  --radius-pill: 9999px; /* badge, chip, avatar */
   --gutter: clamp(16px, 4vw, 32px);
   --max: 1160px;
 }
@@ -65,54 +67,68 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme='light']) {
     color-scheme: dark;
-    --bg: #231f1b;
-    --bg-sunk: #1c1916;
-    --card: #2d2823;
-    --edge: #8a7d6e;
-    --text: #f2ece7;
-    --muted: #a8a29e;
-    --divider: rgb(242 236 231 / 0.18);
-    --accent: #f46b1c;
-    --on-accent: #14120f;
-    --income: #22c55e;
-    --income-fill: #22c55e;
-    --expense: #f87171;
-    --expense-fill: #f87171;
-    --transfer: #60a5fa;
-    --pending: #f59e0b;
-    --tint-accent: #3d2618;
-    --tint-income: #1f3a28;
-    --tint-pending: #43341a;
-    --pending-on-tint: #f59e0b;
-    --band: #14120f;
-    --on-band: #f2ece7;
-    --on-band-muted: #a8a29e;
+    --bg: #0f1210;
+    --bg-sunk: #1a1e1b;
+    --card: #171b18;
+    --edge: #2a302c;
+    --edge-strong: #4a524c;
+    --text: #eef1ee;
+    --muted: #b8c0ba;
+    --divider: #2a302c;
+    --accent: #a2d2a9;
+    --accent-pressed: #bdefc4;
+    --on-accent: #00210c;
+    --income: #8fd19e;
+    --income-fill: #8fd19e;
+    --expense: #ffb4ab;
+    --expense-fill: #ffb4ab;
+    --transfer: #93b4f5;
+    --pending: #f2c46d;
+    --tint-accent: #222823;
+    --tint-income: #1d3324;
+    --tint-pending: #3a2c10;
+    --pending-on-tint: #fde7b0;
+    --tint-warm: #2e2820;
+    --on-tint-warm: #e8d9c3;
+    --band: #1f4b2c;
+    --on-band: #ffffff;
+    --on-band-muted: #b3dfc5;
+    --on-band-accent: #6ee7b7;
+    --shadow: 0 2px 8px rgb(0 0 0 / 0.25);
+    --shadow-lg: 0 8px 24px -4px rgb(0 0 0 / 0.4);
   }
 }
 :root[data-theme='dark'] {
   color-scheme: dark;
-  --bg: #231f1b;
-  --bg-sunk: #1c1916;
-  --card: #2d2823;
-  --edge: #8a7d6e;
-  --text: #f2ece7;
-  --muted: #a8a29e;
-  --divider: rgb(242 236 231 / 0.18);
-  --accent: #f46b1c;
-  --on-accent: #14120f;
-  --income: #22c55e;
-  --income-fill: #22c55e;
-  --expense: #f87171;
-  --expense-fill: #f87171;
-  --transfer: #60a5fa;
-  --pending: #f59e0b;
-  --tint-accent: #3d2618;
-  --tint-income: #1f3a28;
-  --tint-pending: #43341a;
-  --pending-on-tint: #f59e0b;
-  --band: #14120f;
-  --on-band: #f2ece7;
-  --on-band-muted: #a8a29e;
+  --bg: #0f1210;
+  --bg-sunk: #1a1e1b;
+  --card: #171b18;
+  --edge: #2a302c;
+  --edge-strong: #4a524c;
+  --text: #eef1ee;
+  --muted: #b8c0ba;
+  --divider: #2a302c;
+  --accent: #a2d2a9;
+  --accent-pressed: #bdefc4;
+  --on-accent: #00210c;
+  --income: #8fd19e;
+  --income-fill: #8fd19e;
+  --expense: #ffb4ab;
+  --expense-fill: #ffb4ab;
+  --transfer: #93b4f5;
+  --pending: #f2c46d;
+  --tint-accent: #222823;
+  --tint-income: #1d3324;
+  --tint-pending: #3a2c10;
+  --pending-on-tint: #fde7b0;
+  --tint-warm: #2e2820;
+  --on-tint-warm: #e8d9c3;
+  --band: #1f4b2c;
+  --on-band: #ffffff;
+  --on-band-muted: #b3dfc5;
+  --on-band-accent: #6ee7b7;
+  --shadow: 0 2px 8px rgb(0 0 0 / 0.25);
+  --shadow-lg: 0 8px 24px -4px rgb(0 0 0 / 0.4);
 }
 
 *,
@@ -163,7 +179,7 @@ h2,
 h3 {
   font-family: var(--font-display);
   line-height: 1.12;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
   margin: 0;
   text-wrap: balance;
 }
@@ -201,12 +217,12 @@ p {
   padding-block: clamp(64px, 10vw, 128px);
 }
 
-/* Label mikro: Space Mono kapital, minimal 12px (ADR-020 §2). */
+/* Label mikro: Space Mono Bold kapital, minimal 12px (pixelLabel di v2). */
 .label {
   font-family: var(--font-mono);
   font-size: 0.8125rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--accent);
   margin-bottom: 16px;
@@ -219,70 +235,98 @@ p {
   max-width: 60ch;
 }
 
+/* Kartu: putih, garis rambut 1px, sudut 16, bayangan sekitar tipis. */
 .card {
   background: var(--card);
   border: var(--border);
-  border-radius: var(--radius);
+  border-radius: var(--radius-card);
   box-shadow: var(--shadow);
 }
 
-/* Tiga tingkat tombol (ADR-020 §1). Satu .btn-primary per layar. */
+/* Tiga tingkat tombol. Satu .btn-primary per layar. Keadaan ditekan tidak
+   menaikkan elevasi: warna isi atau bingkai berganti dalam 150ms. */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  min-height: 52px;
+  min-height: 48px;
   padding: 0 24px;
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 1.0625rem;
+  font-size: 1rem;
   text-decoration: none;
-  border: var(--border);
+  border: 1px solid transparent;
   border-radius: var(--radius);
   cursor: pointer;
   transition:
-    transform 120ms ease,
-    box-shadow 120ms ease;
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    transform 150ms ease-out;
+}
+.btn:active {
+  transform: scale(0.98);
 }
 .btn-primary {
   background: var(--accent);
   color: var(--on-accent);
-  box-shadow: var(--shadow);
 }
 .btn-primary:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: var(--shadow-lg);
-}
-.btn-primary:active {
-  transform: translate(4px, 4px);
-  box-shadow: 0 0 0 var(--edge);
+  background: var(--accent-pressed);
 }
 .btn-secondary {
   background: var(--card);
   color: var(--text);
+  border-color: var(--edge);
 }
 .btn-secondary:hover {
-  background: var(--bg-sunk);
+  background: var(--tint-accent);
+  border-color: var(--edge-strong);
 }
 .btn[aria-disabled='true'] {
   background: var(--bg-sunk);
   color: var(--muted);
-  box-shadow: none;
+  border-color: var(--edge);
   cursor: not-allowed;
-  border-style: dashed;
 }
 .link-tertiary {
   font-family: var(--font-display);
   font-weight: 700;
   color: var(--accent);
   text-decoration: underline;
-  text-decoration-thickness: 2px;
+  text-decoration-thickness: 1px;
   text-underline-offset: 4px;
 }
 
-.pixel {
-  image-rendering: pixelated;
+/* Ikon clay: ilustrasi berwarna penuh; jangan diberi image-rendering piksel. */
+.clay {
+  display: block;
+  height: auto;
+}
+
+/* Tile ikon: datar, sudut 12, isi netral; hanya ikonnya yang berwarna. */
+.tile {
+  display: inline-grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: var(--bg-sunk);
+}
+
+/* Pil: badge, tag, dan chip. */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+  background: var(--tint-income);
+  color: var(--income);
 }
 
 .visually-hidden {
@@ -303,7 +347,7 @@ p {
   background: var(--accent);
   color: var(--on-accent);
   font-weight: 700;
-  border: var(--border);
+  border-radius: var(--radius);
 }
 .skip:focus {
   top: 16px;
@@ -324,11 +368,11 @@ p {
 .check-list li::before {
   content: '';
   flex: none;
-  width: 18px;
-  height: 18px;
-  margin-top: 4px;
-  background: var(--income-fill);
-  border: var(--border);
-  border-radius: 2px;
-  box-shadow: inset 0 0 0 3px var(--card);
+  width: 20px;
+  height: 20px;
+  margin-top: 3px;
+  border-radius: 50%;
+  background: var(--accent);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill-rule='evenodd' d='M10 20a10 10 0 100-20 10 10 0 000 20zm4.7-12.3a1 1 0 00-1.4-1.4L8.5 11.1 6.7 9.3a1 1 0 00-1.4 1.4l2.5 2.5a1 1 0 001.4 0z'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill-rule='evenodd' d='M10 20a10 10 0 100-20 10 10 0 000 20zm4.7-12.3a1 1 0 00-1.4-1.4L8.5 11.1 6.7 9.3a1 1 0 00-1.4 1.4l2.5 2.5a1 1 0 001.4 0z'/%3E%3C/svg%3E") center / contain no-repeat;
 }

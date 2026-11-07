@@ -1,0 +1,60 @@
+---
+import { getImage } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import type { Lang } from '../i18n';
+
+interface Props {
+  /** Nama berkas di src/assets/shots/<bahasa>/ tanpa .jpg, mis. "01_beranda". */
+  shot: string;
+  lang: Lang;
+  alt: string;
+  eager?: boolean;
+  class?: string;
+}
+const { shot, lang, alt, eager = false, class: cls } = Astro.props;
+
+// Tangkapan layar listing Play (render asli aplikasi v2, 1080x1920) dari repo aplikasi,
+// docs/03-release/store_assets/screenshots/. Satu berkas per bahasa.
+const files = import.meta.glob<{ default: ImageMetadata }>('../assets/shots/*/*.jpg', { eager: true });
+const src = files[`../assets/shots/${lang}/${shot}.jpg`]?.default;
+if (!src) throw new Error(`Tangkapan layar tidak ditemukan: ${lang}/${shot}`);
+
+const widths = [360, 540, 720];
+const sizes = '(max-width: 640px) 80vw, 360px';
+const [avif, webp] = await Promise.all(
+  (['avif', 'webp'] as const).map((format) => getImage({ src, widths, sizes, format, quality: format === 'avif' ? 58 : 76 })),
+);
+---
+
+<figure class:list={['shot', cls]}>
+  <picture>
+    <source type="image/avif" srcset={avif.srcSet.attribute} sizes={sizes} />
+    <img
+      src={webp.src}
+      srcset={webp.srcSet.attribute}
+      sizes={sizes}
+      alt={alt}
+      width={1080}
+      height={1920}
+      loading={eager ? 'eager' : 'lazy'}
+      fetchpriority={eager ? 'high' : 'auto'}
+      decoding="async"
+    />
+  </picture>
+</figure>
+
+<style>
+  .shot {
+    margin: 0;
+    width: min(100%, 360px);
+    border: var(--border);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    background: var(--bg-sunk);
+  }
+  .shot img {
+    width: 100%;
+    height: auto;
+  }
+</style>

@@ -1,8 +1,8 @@
 ---
-import { Image, getImage } from 'astro:assets';
+import { getImage } from 'astro:assets';
 import { getCollection, render, type CollectionEntry } from 'astro:content';
 import Base from './Base.astro';
-import mascot from '../assets/illustration/mascot_head.png';
+import ClayIcon from '../components/ClayIcon.astro';
 import { APP_NAME, SITE_URL } from '../config';
 import { type Lang, articlePath, htmlLang, otherLang, path, t } from '../i18n';
 
@@ -31,7 +31,7 @@ const alternatePath = translation ? articlePath(other, translation.data.slug) : 
 const canonicalPath = articlePath(lang, post.slug);
 const url = new URL(canonicalPath, SITE_URL).href;
 const cover = post.image
-  ? await getImage({ src: post.image, width: 480, format: 'webp', quality: 90 })
+  ? await getImage({ src: post.image, width: 480, format: post.image.format === 'svg' ? 'svg' : 'webp', quality: 90 })
   : undefined;
 
 const jsonLd = [
@@ -97,7 +97,7 @@ const jsonLd = [
 
     {cover && (
       <figure class="cover">
-        <img class="pixel" src={cover.src} width={cover.attributes.width} height={cover.attributes.height} alt={post.imageAlt} fetchpriority="high" decoding="async" />
+        <img src={cover.src} width={cover.attributes.width} height={cover.attributes.height} alt={post.imageAlt} fetchpriority="high" decoding="async" />
       </figure>
     )}
 
@@ -115,7 +115,7 @@ const jsonLd = [
     </div>
 
     <aside class="author" aria-label={d.blog.by + ' ' + post.author}>
-      <Image src={mascot} alt="" width={64} height={50} class="pixel" />
+      <ClayIcon name="tanuki_mascot" size={56} />
       <div>
         <p class="who">{post.author}</p>
         <p class="note">{d.blog.authorNote}</p>
@@ -161,9 +161,9 @@ const jsonLd = [
   .cover {
     margin: 28px 0 0;
     border: var(--border);
-    border-radius: var(--radius);
+    border-radius: var(--radius-xl);
     box-shadow: var(--shadow);
-    background: var(--tint-accent);
+    background: radial-gradient(circle at 35% 30%, var(--card), var(--tint-income) 85%);
     overflow: hidden;
   }
   .cover {
@@ -179,12 +179,13 @@ const jsonLd = [
     margin: 32px 0 0;
     padding: 20px 24px;
     border: var(--border);
-    border-radius: var(--radius);
+    border-radius: var(--radius-card);
     background: var(--card);
   }
   .toc ol {
     margin: 10px 0 0;
-    padding-left: 22px;
+    padding-left: 0;
+    list-style: none;
   }
   .toc li {
     margin-bottom: 6px;
@@ -237,12 +238,11 @@ const jsonLd = [
     width: 100%;
     max-width: 520px;
   }
-  .prose :global(img[src*='/screens/']),
-  .prose :global(img[src*='catat-id']),
-  .prose :global(img[src*='catat-en']) {
-    max-width: 320px;
+  .prose :global(img[src*='02_catat']) {
+    max-width: 340px;
     border: var(--border);
-    box-shadow: var(--shadow);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
   }
   .prose :global(table) {
     width: 100%;
