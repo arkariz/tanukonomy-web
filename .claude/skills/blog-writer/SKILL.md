@@ -134,7 +134,7 @@ untuk panduan menyeluruh. Jangan menambah panjang demi hitungan kata.
 - **Tautan internal**: 2–4 ke halaman situs yang relevan (`/`, `/beta/`,
   artikel lain), dengan teks tautan deskriptif. Dilarang "klik di sini".
   Tautan keluar hanya ke sumber resmi dan diberi `rel="noopener"`.
-- **Gambar**: hanya tangkapan layar asli dari `tools/screenshots/` atau
+- **Gambar**: hanya tangkapan layar asli dari `src/assets/shots/` atau
   ilustrasi milik proyek. Jangan mockup, jangan gambar stok yang menyiratkan
   fitur. Beri `alt` yang menjelaskan isi, plus ukuran lebar dan tinggi.
 - Kata kunci muncul alami di judul, H1, pembuka, satu atau dua H2, dan
@@ -172,7 +172,7 @@ intent: informasional # informasional | perbandingan | panduan-fitur
 publishedDate: 2026-10-18
 updatedDate: 2026-10-18
 author: "Tim Tanukonomy"
-image: "../../../assets/illustration/hero_mascot.png"  # sampul, opsional; jalur relatif dari berkas artikel
+image: "../../../assets/clay/tanuki_mascot.svg"  # sampul, opsional; jalur relatif dari berkas artikel
 imageAlt: ""
 draft: true           # true = tidak dibangun. Ubah ke false hanya bila pemilik meminta artikel tayang
 ---
@@ -195,14 +195,15 @@ menulis artikel kecuali pemilik memintanya sebagai tugas terpisah.
 Artikel yang kaya visual lebih mudah dipahami, tetapi tiap gambar harus
 membantu pembaca, bukan menghias.
 
-- **Sampul**: `image` di frontmatter (maskot `hero_mascot.png` atau
-  ilustrasi proyek lain), dengan `imageAlt` yang menjelaskan isinya.
+- **Sampul**: `image` di frontmatter (maskot clay
+  `tanuki_mascot.svg` atau ilustrasi proyek lain), dengan `imageAlt` yang menjelaskan isinya.
 - **Ilustrasi penjelas** untuk hitungan atau perbandingan: SVG milik
   proyek di `src/assets/blog/<nama>-<bahasa>.svg`, dibuat dengan
   `tools/blog/make_svgs.py` (lebar kanvas 486, teks ≥ 14px, mode gelap di
   dalam SVG, satu berkas per bahasa). Angka di ilustrasi harus sama persis
   dengan teks dan ditandai sebagai contoh bila bukan data.
-- **Tangkapan layar aplikasi**: hanya yang ada di `src/assets/screens/`
+- **Tangkapan layar aplikasi**: hanya yang ada di `src/assets/shots/<bahasa>/` (tangkapan layar listing
+  Play v2; teks alternatif wajib menyebut judul di dalam gambar)
   (render aplikasi sungguhan), diberi keterangan "Data contoh". Pilih layar
   yang benar-benar mendukung kalimat di sekitarnya.
 - Sisipkan dengan sintaks Markdown biasa, lalu keterangan sebagai baris

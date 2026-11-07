@@ -1,34 +1,33 @@
-# Tangkapan layar aplikasi
+# Tangkapan layar aplikasi (v2)
 
-Semua gambar ponsel di `src/assets/screens/` adalah render **aplikasi
-sungguhan** (repo `arkariz/Saldough`) dengan data contoh, bukan mockup.
-Nama berkas: `<layar>-<bahasa>-<tema>.png`, 780×1688 (390×844 @2x).
+Sejak 7 Nov 2026 situs memakai **tangkapan layar listing Google Play v2** dari
+repo aplikasi `arkariz/Saldough`, bukan render ponsel sendiri. Itu render
+**aplikasi sungguhan** (emulator, cadangan demo), bukan mockup, dalam bahasa
+`id` dan `en`.
 
-## Merender ulang
+| Di situs | Sumber di repo aplikasi |
+|---|---|
+| `src/assets/shots/<bahasa>/NN_<nama>.jpg` (1080×1920) | `docs/03-release/store_assets/screenshots/<bahasa>/NN_<nama>.jpg` |
+| `public/icon-*.png`, `apple-touch-icon.png`, `favicon.ico` | `docs/03-release/store_assets/app_icon_512.png` (disimpan di `src/assets/icon-src/app-icon-v2-512.png`) |
+| `src/assets/clay/*.svg` | `assets/icons_clay/*.svg` |
 
-Dari akar repo aplikasi (Flutter 3.47.2), dengan Playwright terpasang global:
+## Memperbarui
+
+Kalau tampilan aplikasi berubah besar, repo aplikasi membangun ulang
+tangkapan layar listing (`scripts/launcher_icon/build_store_screenshots.py`,
+caranya di `docs/03-release/PLAY_STORE_LISTING.md` §4.1). Salin hasilnya:
 
 ```sh
-cp ../tanukonomy-web/tools/screenshots/main_screenshot.dart lib/
-flutter create . --platforms web
-flutter build web --release --no-web-resources-cdn -t lib/main_screenshot.dart
-(cd build/web && python3 -m http.server 8080 &)
-
-OUT=../tanukonomy-web/src/assets/screens
-export NODE_PATH=$(npm root -g)
-node ../tanukonomy-web/tools/screenshots/drive.cjs $OUT light id-ID id
-node ../tanukonomy-web/tools/screenshots/drive.cjs $OUT dark  id-ID id
-node ../tanukonomy-web/tools/screenshots/drive.cjs $OUT light en-US en
-node ../tanukonomy-web/tools/screenshots/drive.cjs $OUT dark  en-US en
-
-# Bersihkan repo aplikasi — jangan ada yang ikut ter-commit.
-git checkout -- .metadata analysis_options.yaml
-rm -rf web .idea *.iml test/widget_test.dart build/web lib/main_screenshot.dart
+A=../Saldough   # lokasi repo aplikasi
+for l in id en; do cp $A/docs/03-release/store_assets/screenshots/$l/*.jpg src/assets/shots/$l/; done
 ```
 
-`main_screenshot.dart` mengisi dompet, transaksi bulan berjalan, satu
-anggaran, dan satu proyek freelance, lalu menandai onboarding dan tur
-selesai supaya layar tidak tertutup sorotan. Tanggal mengikuti hari build.
+Nama berkas (`01_beranda`, `02_catat`, `03_rutin`, `04_anggaran`,
+`05_freelance`, `06_analisis`) dirujuk dari `src/i18n/*.ts` (`shot`).
+Setiap tangkapan layar punya judul bawaan di dalam gambar, jadi **teks
+alternatifnya wajib menyebut judul itu** dan isi layarnya. Gambar adalah
+slide pemasaran berbingkai ponsel, bukan layar mentah; kalau kelak ada render
+mentah per layar, ganti komponen `src/components/Shot.astro`.
 
-`drive.cjs` menekan navigasi bawah lewat koordinat (lebar 390), jadi kalau
-tata letak navigasi aplikasi berubah, koordinatnya perlu disesuaikan.
+Render mentah (emulator atau `flutter test`) tidak bisa dijalankan dari sesi
+agen tanpa Flutter SDK; pemilik merendernya di mesin sendiri.

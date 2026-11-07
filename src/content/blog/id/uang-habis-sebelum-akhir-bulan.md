@@ -9,8 +9,8 @@ intent: informasional
 publishedDate: 2026-10-18
 updatedDate: 2026-10-18
 author: "Tim Tanukonomy"
-image: "../../../assets/illustration/hero_mascot.png"
-imageAlt: "Tanuki juru catat bertopi kuning sedang menulis di buku catatan yang terbuka"
+image: "../../../assets/clay/tanuki_mascot.svg"
+imageAlt: "Maskot tanuki Tanukonomy bergaya tanah liat 3D, berkilap dengan daun hijau di kepalanya"
 draft: false
 ---
 
@@ -76,7 +76,7 @@ Catatan ponsel atau spreadsheet sudah cukup untuk itu. Kalau uangmu tersebar di 
 
 Di Tanukonomy, tiap rekening, e-wallet, atau uang tunai menjadi satu dompet. Transfer antar dompet dicatat sebagai transfer, jadi tidak terhitung sebagai pengeluaran. Kamu juga bisa menyusun anggaran sebagai rencana belanja, tanpa memisahkan uangnya. Aplikasi ini hanya mencatat: ia tidak memindahkan atau membayarkan uang. Catatan keuanganmu tersimpan di perangkat, dan pencatatan inti bisa dipakai tanpa internet.
 
-![Layar Catat Pengeluaran di Tanukonomy dengan tab Keluar, Masuk, dan Transfer, nominal Rp45.000, dan dompet sumber Tunai](../../../assets/screens/catat-id-light.png)
+![Tangkapan layar "Catat dalam hitungan detik": formulir Catat Pengeluaran dengan tab Keluar, Masuk, dan Transfer, nominal Rp45.000, di sebelah Riwayat transaksi](../../../assets/shots/id/02_catat.jpg)
 *Layar Catat di Tanukonomy: pilih Keluar, Masuk, atau Transfer. Data contoh.*
 
 ## Pertanyaan yang sering muncul

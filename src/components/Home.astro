@@ -1,13 +1,7 @@
 ---
-import { Image } from 'astro:assets';
 import Base from '../layouts/Base.astro';
-import Phone from './Phone.astro';
-import PixelIcon from './PixelIcon.astro';
-import heroMascot from '../assets/illustration/hero_mascot.png';
-import walletsArt from '../assets/illustration/onboarding_2.png';
-import recordArt from '../assets/illustration/onboarding_3.png';
-import budgetArt from '../assets/illustration/onboarding_4.png';
-import ctaArt from '../assets/illustration/onboarding_5.png';
+import ClayIcon from './ClayIcon.astro';
+import Shot from './Shot.astro';
 import { APP_NAME, SITE_URL } from '../config';
 import { type Lang, path, t } from '../i18n';
 
@@ -17,13 +11,10 @@ interface Props {
 const { lang } = Astro.props;
 const d = t(lang);
 
-const featureArt: Record<string, { src: ImageMetadata; w: number }> = {
-  catat: { src: recordArt, w: 150 },
-  dompet: { src: walletsArt, w: 130 },
-  anggaran: { src: budgetArt, w: 190 },
-};
-const questionIcons = ['wallets', 'transactions', 'budget'];
-const privacyIcons = ['locked', 'wallet_bank', 'check', 'home'];
+const questionIcons = ['bank_wallet', 'receipt_bills', 'chart_investment'];
+const privacyIcons = ['shield_emergency', 'bank_wallet', 'check_completed', 'wifi_internet'];
+const upcomingIcons = ['scan_camera', 'report_bars', 'family_people'];
+const freelanceIcons = ['clipboard_worklog', 'doc_invoice', 'coin_paid'];
 
 const jsonLd = [
   {
@@ -65,9 +56,15 @@ const jsonLd = [
           {d.hero.chips.map((c) => <li>{c}</li>)}
         </ul>
       </div>
-      <div class="hero-visual">
-        <Phone screen="home" lang={lang} alt={d.hero.shotAlt} eager />
-        <Image src={heroMascot} alt="" width={200} class="pixel hero-mascot" loading="eager" />
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hero-orb">
+          <ClayIcon name="tanuki_mascot" size={280} class="hero-tanuki" eager />
+          <ClayIcon name="piggy_savings" size={76} class="float f1" />
+          <ClayIcon name="cash_wallet" size={68} class="float f2" />
+          <ClayIcon name="chart_investment" size={72} class="float f3" />
+          <ClayIcon name="tier_coin" size={56} class="float f4" />
+          <ClayIcon name="check_completed" size={52} class="float f5" />
+        </div>
       </div>
     </div>
   </section>
@@ -82,8 +79,8 @@ const jsonLd = [
           d.questions.items.map((q, i) => (
             <li class="card q-card">
               <div class="q-head">
-                <span class="q-icon">
-                  <PixelIcon name={questionIcons[i]} size={32} />
+                <span class="tile q-icon">
+                  <ClayIcon name={questionIcons[i]} size={36} />
                 </span>
                 <span class="q-num">0{i + 1}</span>
               </div>
@@ -108,7 +105,7 @@ const jsonLd = [
         d.features.items.map((f, i) => (
           <article class:list={['feature', { flip: i % 2 === 1 }]} id={f.id}>
             <div class="feature-copy">
-              <span class="tag">{f.tag}</span>
+              <span class="pill">{f.tag}</span>
               <h3>{f.title}</h3>
               <p class="lead">{f.body}</p>
               <ul class="check-list">
@@ -116,10 +113,7 @@ const jsonLd = [
               </ul>
             </div>
             <div class="feature-visual">
-              <Phone screen={f.shot} lang={lang} alt={f.shotAlt} />
-              {featureArt[f.id] && (
-                <Image src={featureArt[f.id].src} alt="" width={featureArt[f.id].w} class="pixel feature-art" />
-              )}
+              <Shot shot={f.shot} lang={lang} alt={f.shotAlt} />
             </div>
           </article>
         ))
@@ -139,7 +133,7 @@ const jsonLd = [
             d.freelance.points.map((p, i) => (
               <div class="ledger-row">
                 <dt>
-                  <PixelIcon name={['worklog', 'invoice', 'paid'][i]} size={28} />
+                  <ClayIcon name={freelanceIcons[i]} size={32} />
                   {p.k}
                 </dt>
                 <dd>{p.v}</dd>
@@ -149,7 +143,7 @@ const jsonLd = [
         </dl>
       </div>
       <div class="fl-visual">
-        <Phone screen="freelance" lang={lang} alt={d.freelance.shotAlt} />
+        <Shot shot={d.freelance.shot} lang={lang} alt={d.freelance.shotAlt} />
       </div>
     </div>
   </section>
@@ -167,7 +161,7 @@ const jsonLd = [
           d.privacy.items.map((p, i) => (
             <li class="p-item">
               <span class="p-icon">
-                <PixelIcon name={privacyIcons[i]} size={32} />
+                <ClayIcon name={privacyIcons[i]} size={34} />
               </span>
               <h3>{p.t}</h3>
               <p>{p.d}</p>
@@ -176,7 +170,7 @@ const jsonLd = [
         }
       </ul>
       <p class="p-future">
-        <PixelIcon name="pending" size={22} />
+        <ClayIcon name="hourglass_pending" size={26} />
         <span>{d.privacy.future}</span>
       </p>
       <a class="p-link" href={path('privacy', lang)}>{d.privacy.link} →</a>
@@ -196,8 +190,8 @@ const jsonLd = [
           d.upcoming.items.map((u, i) => (
             <li class="u-card">
               <div class="u-head">
-                <span class="u-icon">
-                  <PixelIcon name={['record', 'budget', 'worklog'][i]} size={32} />
+                <span class="tile u-icon">
+                  <ClayIcon name={upcomingIcons[i]} size={36} />
                 </span>
                 <span class="u-badge">{d.upcoming.badge}</span>
               </div>
@@ -208,7 +202,7 @@ const jsonLd = [
         }
       </ul>
       <p class="u-note">
-        <PixelIcon name="pending" size={20} />
+        <ClayIcon name="hourglass_pending" size={24} />
         <span>
           {d.upcoming.note} <a href={path('privacy', lang)}>{d.upcoming.link} →</a>
         </span>
@@ -224,9 +218,21 @@ const jsonLd = [
         <h2 id="d-title">{d.dark.title}</h2>
         <p class="lead">{d.dark.body}</p>
       </div>
-      <div class="dm-pair">
-        <Phone screen="transaksi" lang={lang} alt={d.dark.altLight} theme="light" />
-        <Phone screen="transaksi" lang={lang} alt={d.dark.altDark} theme="dark" class="dm-dark" />
+      <div class="dm-pair" aria-hidden="true">
+        <div class="swatch swatch-light">
+          <span class="sw-hero"></span>
+          <span class="sw-row"></span>
+          <span class="sw-row short"></span>
+          <span class="sw-btn"></span>
+          <span class="sw-name">{d.dark.light}</span>
+        </div>
+        <div class="swatch swatch-dark">
+          <span class="sw-hero"></span>
+          <span class="sw-row"></span>
+          <span class="sw-row short"></span>
+          <span class="sw-btn"></span>
+          <span class="sw-name">{d.dark.night}</span>
+        </div>
       </div>
     </div>
   </section>
@@ -281,21 +287,20 @@ const jsonLd = [
           <p class="lead">{d.cta.body}</p>
           <a class="btn btn-primary" href={path('beta', lang)}>{d.cta.primary}</a>
         </div>
-        <Image src={ctaArt} alt="" width={260} class="pixel cta-art" />
+        <ClayIcon name="tanuki_mascot" size={200} class="cta-art" />
       </div>
     </div>
   </section>
 </Base>
 
+
 <style>
-  /* Hero ------------------------------------------------------------ */
+  /* Hero: kanvas kabut dengan cahaya sage lembut, tanpa garis kertas. */
   .hero {
     padding-block: clamp(40px, 7vw, 96px) clamp(64px, 9vw, 120px);
-    background-image: repeating-linear-gradient(
-      to bottom,
-      transparent 0 31px,
-      var(--divider) 31px 32px
-    );
+    background:
+      radial-gradient(60% 70% at 88% 18%, color-mix(in srgb, var(--tint-income) 75%, transparent), transparent 70%),
+      var(--bg);
     border-bottom: var(--border);
   }
   .hero-grid {
@@ -326,24 +331,54 @@ const jsonLd = [
     font-family: var(--font-mono);
     font-weight: 700;
     font-size: 0.8125rem;
-    padding: 6px 12px;
+    padding: 6px 14px;
     background: var(--card);
     border: var(--border);
-    border-radius: 4px;
+    border-radius: var(--radius-pill);
   }
   .hero-visual {
-    position: relative;
     display: flex;
     justify-content: center;
   }
-  .hero-mascot {
-    position: absolute;
-    left: calc(50% - 170px);
-    bottom: -36px;
-    translate: -62% 0;
-    width: 200px;
+  .hero-orb {
+    position: relative;
+    width: min(100%, 420px);
+    aspect-ratio: 1;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, var(--card), var(--tint-income) 78%);
+    border: var(--border);
+    box-shadow: var(--shadow-lg);
+  }
+  .hero-orb :global(.hero-tanuki) {
+    width: 68%;
     height: auto;
-    filter: drop-shadow(0 4px 0 color-mix(in srgb, var(--edge) 25%, transparent));
+    filter: drop-shadow(0 12px 16px rgb(17 24 39 / 0.18));
+  }
+  .hero-orb :global(.float) {
+    position: absolute;
+    filter: drop-shadow(0 6px 8px rgb(17 24 39 / 0.18));
+  }
+  .hero-orb :global(.f1) {
+    left: 4%;
+    top: 12%;
+  }
+  .hero-orb :global(.f2) {
+    right: 2%;
+    top: 22%;
+  }
+  .hero-orb :global(.f3) {
+    left: 8%;
+    bottom: 10%;
+  }
+  .hero-orb :global(.f4) {
+    right: 14%;
+    bottom: 6%;
+  }
+  .hero-orb :global(.f5) {
+    left: 42%;
+    top: -2%;
   }
 
   /* Tiga pertanyaan --------------------------------------------------- */
@@ -366,15 +401,6 @@ const jsonLd = [
     justify-content: space-between;
     align-items: center;
     margin-bottom: 8px;
-  }
-  .q-icon {
-    display: inline-grid;
-    place-items: center;
-    width: 52px;
-    height: 52px;
-    border: var(--border);
-    border-radius: 4px;
-    background: var(--bg-sunk);
   }
   .q-num {
     font-family: var(--font-mono);
@@ -412,7 +438,7 @@ const jsonLd = [
     padding-block: clamp(32px, 5vw, 56px);
   }
   .feature + .feature {
-    border-top: 2px dashed var(--divider);
+    border-top: 1px solid var(--divider);
   }
   .feature.flip .feature-copy {
     order: 2;
@@ -425,35 +451,9 @@ const jsonLd = [
   .feature-copy .lead {
     margin-bottom: 24px;
   }
-  .tag {
-    display: inline-block;
-    font-family: var(--font-mono);
-    font-weight: 700;
-    font-size: 0.8125rem;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    padding: 4px 10px;
-    background: var(--tint-accent);
-    color: var(--accent);
-    border-radius: 4px;
-  }
   .feature-visual {
-    position: relative;
     display: flex;
     justify-content: center;
-  }
-  /* Ilustrasi menempel di sisi luar bingkai, tidak menutupi layar. */
-  .feature-art {
-    position: absolute;
-    right: calc(50% - 170px);
-    bottom: -24px;
-    translate: 68% 0;
-    height: auto;
-  }
-  .flip .feature-art {
-    right: auto;
-    left: calc(50% - 170px);
-    translate: -68% 0;
   }
 
   /* Freelance --------------------------------------------------------- */
@@ -469,13 +469,12 @@ const jsonLd = [
   .ledger {
     margin: 32px 0 0;
     padding: 8px 24px;
-    border-left: 8px solid var(--pending);
   }
   .ledger-row {
     padding-block: 16px;
   }
   .ledger-row + .ledger-row {
-    border-top: 2px dashed var(--divider);
+    border-top: 1px solid var(--divider);
   }
   dt {
     display: flex;
@@ -486,7 +485,7 @@ const jsonLd = [
     font-size: 1.125rem;
   }
   dd {
-    margin: 2px 0 0 42px;
+    margin: 2px 0 0 46px;
     color: var(--muted);
   }
   .fl-visual {
@@ -494,13 +493,14 @@ const jsonLd = [
     justify-content: center;
   }
 
-  /* Privasi ----------------------------------------------------------- */
+  /* Privasi: pita hijau hutan seperti kartu saldo di aplikasi --------- */
   .privacy {
     background: var(--band);
     color: var(--on-band);
   }
-  .privacy .label {
-    color: #f46b1c;
+  .privacy .label,
+  .privacy .p-link {
+    color: var(--on-band-accent);
   }
   .privacy .lead {
     color: var(--on-band-muted);
@@ -521,17 +521,17 @@ const jsonLd = [
   }
   .p-item {
     padding: 24px;
-    border: 2px solid #8a7d6e;
-    border-radius: var(--radius);
-    background: #231f1b;
+    border: 1px solid rgb(255 255 255 / 0.14);
+    border-radius: var(--radius-card);
+    background: rgb(255 255 255 / 0.08);
   }
   .p-icon {
     display: inline-grid;
     place-items: center;
     width: 52px;
     height: 52px;
-    background: #fff8f5;
-    border-radius: 4px;
+    background: rgb(255 255 255 / 0.92);
+    border-radius: 12px;
     margin-bottom: 18px;
   }
   .p-item h3 {
@@ -549,22 +549,19 @@ const jsonLd = [
     max-width: 68ch;
     padding: 16px 18px;
     margin-bottom: 24px;
-    background: #231f1b;
-    border: 2px dashed #8a7d6e;
-    border-radius: var(--radius);
+    background: rgb(255 255 255 / 0.08);
+    border: 1px solid rgb(255 255 255 / 0.14);
+    border-radius: var(--radius-card);
     color: var(--on-band-muted);
     font-size: 0.975rem;
   }
-  .p-future :global(svg) {
+  .p-future :global(img) {
     flex: none;
-    margin-top: 2px;
   }
   .p-link {
     font-family: var(--font-display);
     font-weight: 700;
-    color: #f46b1c;
     text-underline-offset: 4px;
-    text-decoration-thickness: 2px;
   }
 
   /* Fitur mendatang ----------------------------------------------------- */
@@ -579,8 +576,9 @@ const jsonLd = [
   .u-card {
     padding: 28px;
     background: var(--card);
-    border: 2px dashed var(--pending);
-    border-radius: var(--radius);
+    border: var(--border);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow);
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -591,25 +589,16 @@ const jsonLd = [
     align-items: center;
     margin-bottom: 8px;
   }
-  .u-icon {
-    display: inline-grid;
-    place-items: center;
-    width: 52px;
-    height: 52px;
-    border: var(--border);
-    border-radius: 4px;
-    background: var(--bg-sunk);
-  }
   .u-badge {
     font-family: var(--font-mono);
     font-weight: 700;
     font-size: 0.75rem;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
-    padding: 5px 10px;
-    color: var(--pending-on-tint);
-    background: var(--tint-pending);
-    border-radius: 4px;
+    padding: 5px 12px;
+    color: var(--on-tint-warm);
+    background: var(--tint-warm);
+    border-radius: var(--radius-pill);
   }
   .u-card h3 {
     font-size: 1.1875rem;
@@ -625,22 +614,20 @@ const jsonLd = [
     max-width: 74ch;
     padding: 14px 18px;
     background: var(--tint-pending);
-    border-radius: var(--radius);
-    color: var(--muted);
+    border-radius: var(--radius-card);
+    color: var(--pending-on-tint);
   }
-  .u-note :global(svg) {
+  .u-note :global(img) {
     flex: none;
-    margin-top: 2px;
   }
   .u-note a {
     font-weight: 700;
-    color: var(--text);
+    color: inherit;
     text-decoration: underline;
-    text-decoration-thickness: 2px;
     text-underline-offset: 3px;
   }
 
-  /* Mode gelap -------------------------------------------------------- */
+  /* Tampilan: pratinjau palet terang dan gelap -------------------------- */
   .dm-grid {
     display: grid;
     grid-template-columns: 1fr 1.2fr;
@@ -654,11 +641,63 @@ const jsonLd = [
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
-    justify-items: center;
-    align-items: start;
   }
-  .dm-pair :global(.dm-dark) {
-    margin-top: 56px;
+  .swatch {
+    --sw-bg: #fafaf9;
+    --sw-card: #ffffff;
+    --sw-line: #eaecef;
+    --sw-text: #111827;
+    --sw-accent: #1f4b2c;
+    --sw-on-accent: #ffffff;
+    position: relative;
+    display: grid;
+    gap: 12px;
+    padding: 18px 18px 52px;
+    background: var(--sw-bg);
+    color: var(--sw-text);
+    border: 1px solid var(--sw-line);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
+  }
+  .swatch-dark {
+    --sw-bg: #0f1210;
+    --sw-card: #171b18;
+    --sw-line: #2a302c;
+    --sw-text: #eef1ee;
+    --sw-accent: #a2d2a9;
+    --sw-on-accent: #00210c;
+  }
+  .sw-hero {
+    display: block;
+    height: 96px;
+    border-radius: var(--radius-card);
+    background: #1f4b2c;
+  }
+  .sw-row {
+    display: block;
+    height: 36px;
+    border-radius: var(--radius);
+    background: var(--sw-card);
+    border: 1px solid var(--sw-line);
+  }
+  .sw-row.short {
+    width: 70%;
+  }
+  .sw-btn {
+    display: block;
+    height: 40px;
+    border-radius: var(--radius);
+    background: var(--sw-accent);
+  }
+  .sw-name {
+    position: absolute;
+    left: 18px;
+    bottom: 16px;
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 0.8125rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
   }
 
   /* Langkah ----------------------------------------------------------- */
@@ -682,10 +721,9 @@ const jsonLd = [
     font-family: var(--font-mono);
     font-weight: 700;
     font-size: 1.25rem;
-    background: var(--card);
-    border: var(--border);
-    border-radius: 4px;
-    box-shadow: var(--shadow);
+    background: var(--tint-income);
+    color: var(--income);
+    border-radius: 50%;
     margin-bottom: 20px;
   }
   .s-grid h3 {
@@ -707,10 +745,10 @@ const jsonLd = [
     gap: 14px;
   }
   details {
-    box-shadow: none;
+    transition: border-color 150ms ease-out;
   }
   details[open] {
-    box-shadow: var(--shadow);
+    border-color: var(--accent);
   }
   summary {
     cursor: pointer;
@@ -752,7 +790,8 @@ const jsonLd = [
     align-items: center;
     gap: 32px;
     padding: clamp(28px, 5vw, 56px);
-    background: var(--tint-accent);
+    background: var(--tint-income);
+    border-radius: var(--radius-xl);
     box-shadow: var(--shadow-lg);
   }
   .cta h2 {
@@ -762,9 +801,9 @@ const jsonLd = [
     color: var(--text);
     margin-bottom: 28px;
   }
-  .cta-art {
+  .cta :global(.cta-art) {
     justify-self: center;
-    height: auto;
+    filter: drop-shadow(0 12px 16px rgb(17 24 39 / 0.18));
   }
 
   /* Responsif --------------------------------------------------------- */
@@ -793,8 +832,9 @@ const jsonLd = [
     .hero-visual {
       margin-top: 8px;
     }
-    .cta-art {
-      width: 200px;
+    .cta :global(.cta-art) {
+      width: 150px;
+      height: auto;
     }
   }
   @media (max-width: 560px) {
@@ -802,20 +842,12 @@ const jsonLd = [
     .u-grid {
       grid-template-columns: 1fr;
     }
-    .hero-mascot {
-      width: 130px;
-      left: 0;
-      bottom: -28px;
-      translate: 0 0;
-    }
-    .feature-art {
-      display: none;
+    .hero-orb :global(.float) {
+      width: 15%;
+      height: auto;
     }
     .dm-pair {
       gap: 12px;
-    }
-    .dm-pair :global(.dm-dark) {
-      margin-top: 32px;
     }
   }
 </style>
