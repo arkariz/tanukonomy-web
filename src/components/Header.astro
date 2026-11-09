@@ -1,5 +1,6 @@
 ---
 import Logo from './Logo.astro';
+import { playUrl } from '../config';
 import { type Lang, type PageKey, otherLang, path, t } from '../i18n';
 
 interface Props {
@@ -16,7 +17,7 @@ const anchor = (id: string) => (page === 'home' ? `#${id}` : `${home}#${id}`);
 const links = [
   { href: anchor('fitur'), label: d.nav.features },
   { href: anchor('privasi'), label: d.nav.privacy },
-  { href: anchor('mendatang'), label: d.nav.upcoming },
+  { href: anchor('plus'), label: d.nav.plus },
   { href: anchor('tanya-jawab'), label: d.nav.faq },
   { href: path('blog', lang), label: d.nav.blog },
 ];
@@ -35,7 +36,11 @@ const links = [
         <span aria-hidden="true">{otherLang(lang).toUpperCase()}</span>
         <span class="visually-hidden">{d.nav.langLabel}</span>
       </a>
-      {page !== 'beta' && <a class="btn btn-secondary cta" href={path('beta', lang)}>{d.nav.cta}</a>}
+      {page !== 'download' && (
+        <a class="btn btn-secondary cta" href={playUrl(lang)} target="_blank" rel="noopener">
+          {d.nav.cta}
+        </a>
+      )}
     </div>
   </div>
 </header>

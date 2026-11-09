@@ -110,7 +110,13 @@ import { path } from '../i18n';
     <li>
       <strong>Catat dari notifikasi (Android, opsional).</strong> Bila kamu mengaktifkannya, kamu memberi akses notifikasi
       dan memilih sendiri aplikasi mana yang dibaca. Hanya notifikasi dari aplikasi pilihanmu yang lolos penyaring
-      transaksi yang diproses. Teksnya disimpan di perangkat paling lama 7 hari.
+      transaksi yang diproses. Teksnya disimpan di perangkat paling lama 7 hari. Pemrosesan dapat berjalan di latar lewat
+      layanan pendengar notifikasi, tanpa membuka aplikasi. Hasil tafsirnya disimpan sementara di perangkat (paling lama 7
+      hari) sampai aplikasi dibuka dan menerapkannya. Aplikasi juga mengingat di perangkat: kategori dan dompet untuk tiap
+      pedagang, bentuk notifikasi yang kamu setujui atau tandai "Bukan transaksi", dan aturan dompet dari nomor rekening
+      yang disamarkan. Semua itu ikut berkas cadangan dan tidak dikirim ke server. Kamu juga dapat menyalakan contoh
+      notifikasi (bawaan mati): teks notifikasi dari aplikasi pilihanmu, termasuk yang bukan transaksi, disimpan di
+      perangkat paling lama 7 hari tanpa kode OTP dan tidak dikirim ke mana pun, lalu terhapus saat dimatikan.
     </li>
   </ul>
   <p>
@@ -127,7 +133,11 @@ import { path } from '../i18n';
     <a href={path('deleteAccount', 'id')}>halaman hapus akun</a>.
   </p>
 
-  <h2>6. Cadangan perangkat</h2>
+  <h2>6. Ekspor dan cadangan</h2>
+  <p>
+    Atas permintaanmu, aplikasi dapat membuat berkas ekspor (spreadsheet) dan berkas cadangan (.tkbak) dari catatanmu.
+    Berkas itu disimpan di tempat yang kamu pilih atau kamu bagikan sendiri, dan tidak dikirim ke kami.
+  </p>
   <p>
     Jika fitur cadangan bawaan sistem operasi (misalnya cadangan Google di Android) aktif, sistem dapat menyertakan data
     aplikasi dalam cadanganmu. Cadangan itu dikelola oleh penyedia sistem operasi sesuai kebijakan mereka, bukan oleh kami.
@@ -135,7 +145,7 @@ import { path } from '../i18n';
 
   <h2>7. Uji coba tertutup</h2>
   <p>
-    Untuk ikut uji coba tertutup, kamu bergabung ke Google Group dan program pengujian Google Play memakai akun Google-mu.
+    Jika kamu ikut (atau pernah ikut) uji coba tertutup, kamu bergabung ke Google Group dan program pengujian Google Play memakai akun Google-mu.
     Keduanya dikelola oleh Google. Sebagai pengelola grup, kami dapat melihat alamat email anggota grup; kami hanya
     memakainya untuk memberi akses uji coba dan tidak membagikannya. Masukan yang kamu kirim lewat email atau Google Play
     hanya kami pakai untuk memperbaiki aplikasi.

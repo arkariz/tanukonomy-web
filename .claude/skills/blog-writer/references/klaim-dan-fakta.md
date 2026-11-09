@@ -1,7 +1,7 @@
 # Klaim dan fakta untuk artikel
 
-Dicek terakhir **15 Oktober 2026** terhadap kebijakan privasi situs,
-`.claude/CLAUDE.md` dan `PLAY_DATA_SAFETY.md` di repo aplikasi
+Dicek terakhir **9 November 2026** (rilis produksi 1.0.0) terhadap kebijakan
+privasi situs, `release_notes/`, ADR-041, dan `PLAY_DATA_SAFETY.md` di repo aplikasi
 `arkariz/Saldough`. Aplikasi berubah cepat: kalau sebuah klaim penting bagi
 artikel dan tanggal di atas sudah lama, cek ulang ke sumbernya. Perbarui
 berkas ini bersamaan dengan kebijakan privasi.
@@ -18,8 +18,11 @@ berkas ini bersamaan dengan kebijakan privasi.
 | Anggaran | Anggaran adalah rencana. Membuatnya tidak mengubah saldo dompet. |
 | Transfer | Transfer memindahkan tempat uang, tidak mengubah total saldo, dan tidak dihitung sebagai pemasukan atau pengeluaran. |
 | Freelance | Jam kerja yang dicatat tidak mengubah saldo. Saldo bertambah saat pembayaran yang diterima dicatat. |
-| Mata uang | Bawaan Rupiah; satu mata uang untuk seluruh aplikasi, dipilih di layar Akun. |
-| Platform | Android. Uji coba tertutup lewat Google Play. |
+| Mata uang | Satu mata uang untuk seluruh aplikasi, dipilih di layar Akun. |
+| Platform | Android 6.0 atau lebih baru, tersedia di Google Play (rilis produksi 1.0.0). Belum ada iPhone. |
+| Plus | Langganan opsional (bulanan atau tahunan, lewat Google Play) untuk otomasi dan analisis lanjutan; uji coba gratis bagi yang masuk akun. Berakhirnya Plus tidak menghapus catatan. |
+| Ekspor dan cadangan | Akun › Data kamu: ekspor ke spreadsheet, cadangan berkas `.tkbak`, pulihkan dari cadangan (gratis). |
+| Mata uang (rincian) | Rupiah bawaan, 14 mata uang pilihan. |
 | Mode gelap | Ada. |
 
 ## Boleh ditulis dengan kualifikasi
@@ -29,8 +32,8 @@ berkas ini bersamaan dengan kebijakan privasi.
 | Data teknis | Aplikasi mengirim data teknis terbatas lewat Firebase Analytics dan Crashlytics (statistik pemakaian dasar dan laporan crash), Firebase Remote Config (catatan rilis), dan Shorebird (pembaruan kecil). Tidak ada yang berisi catatan keuangan tersimpan. Rinciannya di kebijakan privasi. |
 | Catat Cerdas (suara, notifikasi) | Fitur opsional. Bila aturan di perangkat ragu, teks yang akan ditafsirkan dikirim ke Gemini (Google); saldo, riwayat, dan ID internal tidak dikirim, dan angka non-nominal pada notifikasi disamarkan. Jangan menulis "semua diproses di perangkat". |
 | Catat dari notifikasi | Android saja, opsional, hanya aplikasi pilihan pengguna, teks disimpan di perangkat paling lama 7 hari. |
-| Gratis | Pakai rumusan yang sudah ada di FAQ situs ("pencatatan inti gratis"). Konfirmasi harga masih menunggu pemilik (P-6). |
-| Uji coba | Tanukonomy sedang uji coba tertutup; belum dirilis publik. Jangan menulis seolah sudah ada di Play Store. |
+| Gratis | "Pencatatan inti gratis"; Plus berbayar dan opsional. Jangan menyebut harga (tampil di Google Play, bisa berubah). |
+| Rilis | Tersedia di Google Play. Jangan menyebut jumlah unduhan, rating, atau negara. |
 
 ## Dilarang
 
@@ -39,7 +42,7 @@ berkas ini bersamaan dengan kebijakan privasi.
 - Aplikasi "membayar", "mentransfer", "menagih", "menyambung ke rekening", atau "mengambil saldo otomatis dari bank".
 - Rating, jumlah unduhan atau pengguna, testimoni, penghargaan, "terbaik", "nomor 1".
 - Perbandingan fitur dengan aplikasi tertentu tanpa sumber yang bisa diperiksa.
-- Tanggal rilis publik, iOS, harga atau langganan premium, sinkronisasi antar perangkat sebagai sesuatu yang pasti. Semuanya masih rencana.
+- iPhone, sinkronisasi antar perangkat, catat dari foto struk, dan catatan bersama sebagai sesuatu yang sudah ada atau pasti. Semuanya masih rencana. Jangan menyebut harga Plus.
 - Menyebut pengguna "dilacak" atau datanya "dijual"; juga klaim hukum (GDPR dan sejenisnya) yang tidak ada di kebijakan privasi.
 - Nasihat keuangan, investasi, atau pajak yang disesuaikan untuk pembaca. Bila artikel perlu menyebut aturan pajak atau angka dari instansi, kutip sumber resminya dan tautkan; kalau tidak bisa diverifikasi, jangan ditulis.
 

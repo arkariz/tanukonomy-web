@@ -17,18 +17,14 @@ export const withBase = (p: string) => BASE_PATH.replace(/\/$/, '') + p;
 export const CONTACT_EMAIL = 'halo@tanukonomy.app';
 
 /**
- * Tautan closed testing, satu per langkah di /beta. Kosongkan kalau belum
- * tersedia: tombolnya tampil nonaktif "segera dibuka", bukan tautan mati.
- * Jangan menyertakan `/u/<n>/` dari URL Google: itu nomor akun di peramban
- * pemilik dan bisa membuka akun yang salah di perangkat penguji.
+ * Halaman Tanukonomy di Google Play (rilis produksi 1.0.0, Nov 2026).
+ * Parameter bahasa `hl` ditambahkan oleh playUrl().
  */
-export const GOOGLE_GROUP_URL: string = 'https://groups.google.com/g/tanukonomy-closed-tester';
-/** Halaman opt-in "Jadi Penguji"; beda dari halaman toko di bawah. */
-export const PLAY_TESTING_URL: string = 'https://play.google.com/apps/testing/com.arkarizdev.tanukonomy';
 export const PLAY_STORE_URL: string = 'https://play.google.com/store/apps/details?id=com.arkarizdev.tanukonomy';
+export const playUrl = (lang: 'id' | 'en') => `${PLAY_STORE_URL}&hl=${lang}`;
 
 /** Tanggal berlaku dokumen hukum (YYYY-MM-DD). */
-export const LEGAL_EFFECTIVE_DATE = '2026-11-06';
+export const LEGAL_EFFECTIVE_DATE = '2026-11-09';
 
 /** Tanggal berlaku Syarat dan Ketentuan (terakhir isinya diubah). */
 export const TERMS_EFFECTIVE_DATE = '2026-11-06';

@@ -2,7 +2,7 @@
 import Base from '../layouts/Base.astro';
 import ClayIcon from './ClayIcon.astro';
 import Shot from './Shot.astro';
-import { APP_NAME, SITE_URL } from '../config';
+import { APP_NAME, PLAY_STORE_URL, SITE_URL, playUrl } from '../config';
 import { type Lang, path, t } from '../i18n';
 
 interface Props {
@@ -21,7 +21,9 @@ const jsonLd = [
     '@context': 'https://schema.org',
     '@type': 'MobileApplication',
     name: APP_NAME,
-    operatingSystem: 'ANDROID',
+    operatingSystem: 'Android 6.0+',
+    installUrl: PLAY_STORE_URL,
+    downloadUrl: PLAY_STORE_URL,
     applicationCategory: 'FinanceApplication',
     description: d.meta.description,
     inLanguage: ['id', 'en'],
@@ -49,7 +51,10 @@ const jsonLd = [
         <h1>{d.hero.title}</h1>
         <p class="lead">{d.hero.body}</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href={path('beta', lang)}>{d.hero.primary}</a>
+          <a class="btn btn-primary" href={playUrl(lang)} target="_blank" rel="noopener">
+            {d.hero.primary}
+            <span class="visually-hidden">{lang === 'id' ? '(tab baru)' : '(new tab)'}</span>
+          </a>
           <a class="link-tertiary" href="#fitur">{d.hero.secondary}</a>
         </div>
         <ul class="chips" role="list">
@@ -148,6 +153,32 @@ const jsonLd = [
     </div>
   </section>
 
+  <!-- Plus -->
+  <section id="plus" class="section plus" aria-labelledby="plus-title">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="label">{d.plus.label}</span>
+        <h2 id="plus-title">{d.plus.title}</h2>
+        <p class="lead">{d.plus.body}</p>
+      </div>
+      <div class="plus-grid">
+        <div class="card plan">
+          <h3><ClayIcon name="check_completed" size={32} />{d.plus.freeLabel}</h3>
+          <ul class="check-list">
+            {d.plus.free.map((f) => <li>{f}</li>)}
+          </ul>
+        </div>
+        <div class="card plan plan-plus">
+          <h3><ClayIcon name="tier_coin" size={32} />{d.plus.plusLabel}</h3>
+          <ul class="check-list">
+            {d.plus.plus.map((f) => <li>{f}</li>)}
+          </ul>
+        </div>
+      </div>
+      <p class="plus-note">{d.plus.note}</p>
+    </div>
+  </section>
+
   <!-- Privasi -->
   <section id="privasi" class="section privacy" aria-labelledby="p-title">
     <div class="wrap">
@@ -170,8 +201,8 @@ const jsonLd = [
         }
       </ul>
       <p class="p-future">
-        <ClayIcon name="hourglass_pending" size={26} />
-        <span>{d.privacy.future}</span>
+        <ClayIcon name="note_pencil" size={26} />
+        <span>{d.privacy.smart}</span>
       </p>
       <a class="p-link" href={path('privacy', lang)}>{d.privacy.link} →</a>
     </div>
@@ -285,7 +316,10 @@ const jsonLd = [
         <div class="cta-copy">
           <h2 id="cta-title">{d.cta.title}</h2>
           <p class="lead">{d.cta.body}</p>
-          <a class="btn btn-primary" href={path('beta', lang)}>{d.cta.primary}</a>
+          <a class="btn btn-primary" href={playUrl(lang)} target="_blank" rel="noopener">
+            {d.cta.primary}
+            <span class="visually-hidden">{lang === 'id' ? '(tab baru)' : '(new tab)'}</span>
+          </a>
         </div>
         <ClayIcon name="tanuki_mascot" size={200} class="cta-art" />
       </div>
@@ -564,10 +598,38 @@ const jsonLd = [
     text-underline-offset: 4px;
   }
 
-  /* Fitur mendatang ----------------------------------------------------- */
+  /* Plus --------------------------------------------------------------- */
+  .plus-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    max-width: 920px;
+  }
+  .plan {
+    padding: 28px;
+    display: grid;
+    gap: 18px;
+    align-content: start;
+  }
+  .plan h3 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .plan-plus {
+    border-color: var(--accent);
+  }
+  .plus-note {
+    margin-top: 24px;
+    max-width: 68ch;
+    color: var(--muted);
+  }
+
+  /* Rencana ------------------------------------------------------------- */
   .u-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    max-width: 920px;
     gap: 24px;
     padding: 0;
     margin: 48px 0 32px;
@@ -819,6 +881,7 @@ const jsonLd = [
     .fl-grid,
     .dm-grid,
     .faq-grid,
+    .plus-grid,
     .cta {
       grid-template-columns: 1fr;
     }

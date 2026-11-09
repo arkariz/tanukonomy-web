@@ -107,6 +107,22 @@ Diperbarui 15 Oktober 2026.
       artikel ke token v2, fitur Rutin ditambahkan ke daftar fitur dan
       "Riwayat" digabung dengan Analisis. Render mentah per layar belum
       mungkin dari sesi agen (tanpa Flutter SDK dan emulator).
+- [x] **W-15** *(9 Nov 2026)* Konten situs diselaraskan dengan Tanukonomy 1.0.0
+      yang sudah rilis produksi di Google Play (sumber: repo aplikasi `main`,
+      `release_notes/`, ADR-041, `PLAY_DATA_SAFETY.md`). Halaman uji coba
+      tertutup `/beta/` diganti halaman pasang `/pasang/` dan `/en/get-the-app/`
+      (`/beta/` dialihkan lewat `redirects`); semua tombol "Ikut uji coba"
+      menjadi "Pasang di Google Play" (`playUrl()`), JSON-LD memuat
+      `installUrl` (S-4 selesai); bagian baru Tanukonomy Plus (Gratis dan
+      Plus); "Fitur mendatang" dipangkas ke yang memang belum ada (foto struk,
+      catatan bersama); judul privasi tidak lagi mengklaim data "tidak pernah
+      meninggalkan ponsel" (Catat Cerdas mengirim teks ke Gemini); FAQ
+      diperbarui (gratis dan Plus, ekspor dan cadangan, 14 mata uang, iPhone
+      belum tersedia, batalkan Plus). Kebijakan privasi: pemrosesan di latar,
+      jurnal sementara, ingatan pedagang dan bentuk yang disetujui, contoh
+      notifikasi, serta ekspor dan cadangan (T-26.27 di repo aplikasi).
+      `LEGAL_EFFECTIVE_DATE` 2026-11-09. Artikel menaut ke halaman pasang. P-6
+      (iOS dan "gratis selama uji coba") selesai lewat teks baru.
 - [x] **P-1** Domain `tanukonomy.app` dibeli pemilik 29 Sep 2026. Cek
       merek dagang "Tanukonomy" (T-8.3 di repo aplikasi) masih terpisah.
 - [ ] **P-1b** DNS `tanukonomy.app` diarahkan ke GitHub Pages (4 record A
@@ -140,13 +156,15 @@ Diperbarui 15 Oktober 2026.
       alamat ikut tampil publik di Google Play; (e) email kontak harus benar-
       benar menerima email (P-2 belum selesai). Syarat belum ditinjau secara
       hukum; bukan nasihat hukum.
-- [ ] **P-12** Tinjau teks pemasaran terhadap fitur yang sudah rilis (selisih
-      terbawa dari sebelum v2, tidak diubah di W-14): bagian "Fitur
-      mendatang" masih memuat Catat otomatis (notifikasi dan suara sudah ada),
-      kotak "Sedang disiapkan" dan FAQ masih menyebut langganan premium
-      sebagai rencana padahal Plus sudah ada, dan chip "Gratis" sudah tidak
-      dipakai di gambar OG. Putuskan juga apakah render mentah per layar
-      (emulator di mesin pemilik) menggantikan slide listing di `Shot`.
+- [ ] **P-12** Tinjau sisa teks pemasaran dan klaim terhadap 1.0.0 (sebagian
+      besar selesai di W-15): (a) ringkasan Plus di beranda (daftar Gratis dan
+      Plus) harus dicocokkan pemilik dengan gerbang fitur yang berlaku saat
+      ini, terutama batas template dan proyek yang sengaja tidak disebut
+      angkanya; (b) bagian "Sedang direncanakan" (foto struk, catatan bersama)
+      perlu dikonfirmasi masih rencana pemilik; (c) putuskan apakah render
+      mentah per layar (emulator di mesin pemilik) menggantikan slide listing
+      di `Shot`; (d) Syarat §8 "Versi uji coba" masih ada dan generik, tinjau
+      bersama peninjauan hukum P-11.
 - [x] **P-4** Google Group penguji dan jalur closed testing sudah dibuat
       pemilik (29 Sep 2026). `GOOGLE_GROUP_URL` (tanpa `/u/1/`),
       `PLAY_TESTING_URL` (halaman opt-in "Jadi Penguji"), dan
@@ -157,7 +175,7 @@ Diperbarui 15 Oktober 2026.
       situs tetap di GitHub Pages dengan domain sendiri (P-1b). Buka lagi
       hanya kalau butuh header HTTP kustom atau repo harus privat tanpa
       GitHub Pro.
-- [ ] **P-6** Konfirmasi dua klaim di tanya jawab: iOS "menyusul" dan
+- [x] **P-6** *(selesai 9 Nov 2026, W-15)* Konfirmasi dua klaim di tanya jawab: iOS "menyusul" dan
       "gratis selama uji coba".
 - [x] **P-8a** *(29 Sep 2026, ADR-023 di repo aplikasi)* Identitas opsional
       (Google Sign-In + email/sandi tester), Firebase Analytics, dan
@@ -202,7 +220,7 @@ Diperbarui 15 Oktober 2026.
       `.claude/skills/blog-writer/`. Belum ada: gambar OG per artikel.
 - [ ] **S-6** Gambar OG per artikel (render dari ilustrasi) dan
       artikel berikutnya dari peta topik di skill `blog-writer`.
-- [ ] **S-4** Setelah rilis publik: tautan Google Play di hero dan JSON-LD
+- [x] **S-4** *(9 Nov 2026, W-15)* Setelah rilis publik: tautan Google Play di hero dan JSON-LD
       (`installUrl`), lencana "Tersedia di Google Play".
 - [ ] **S-5** Backlink awal: direktori aplikasi Indonesia, komunitas
       freelancer, Product Hunt.

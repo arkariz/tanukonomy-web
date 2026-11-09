@@ -1,7 +1,7 @@
 # tanukonomy-web
 
 Landing page, kebijakan privasi, syarat dan ketentuan, dan halaman
-pendaftaran uji coba tertutup untuk **Tanukonomy** (aplikasi Flutter di
+pemasangan dari Google Play untuk **Tanukonomy** (aplikasi Flutter di
 repo `arkariz/Saldough`).
 
 Situs statis Astro, dua bahasa (Indonesia di `/`, Inggris di `/en/`),
@@ -24,7 +24,7 @@ Node 22 atau lebih baru.
 | Indonesia | Inggris | Isi |
 |---|---|---|
 | `/` | `/en/` | Landing |
-| `/beta/` | `/en/beta/` | Langkah ikut uji coba tertutup Google Play |
+| `/pasang/` | `/en/get-the-app/` | Pasang dari Google Play (`/beta/` dialihkan ke sini) |
 | `/privasi/` | `/en/privacy/` | Kebijakan privasi (wajib untuk Play Console) |
 | `/syarat/` | `/en/terms/` | Syarat dan ketentuan |
 
@@ -39,8 +39,8 @@ Semua ada di `src/config.ts`:
   `path()` atau `withBase()`, jangan tulis `/...` mentah.
 - `CONTACT_EMAIL` — alamat kontak di footer, halaman uji coba, dan
   dokumen hukum.
-- `GOOGLE_GROUP_URL`, `PLAY_TESTING_URL`, dan `PLAY_STORE_URL` — selama kosong, tombol di
-  `/beta/` tampil "Segera dibuka", bukan tautan mati.
+- `PLAY_STORE_URL` — halaman Google Play; semua tombol "Pasang di Google Play"
+  dan JSON-LD (`installUrl`) memakainya lewat `playUrl()`.
 - `LEGAL_EFFECTIVE_DATE` — ubah setiap kali isi kebijakan privasi atau
   syarat berubah.
 
@@ -49,11 +49,11 @@ Semua ada di `src/config.ts`:
 ```
 src/
   config.ts            nilai yang bergantung keputusan pemilik
-  i18n/{id,en}.ts      seluruh teks landing dan /beta (en.ts wajib bertipe Dict)
+  i18n/{id,en}.ts      seluruh teks landing dan halaman pasang (en.ts wajib bertipe Dict)
   i18n/index.ts        slug per bahasa, helper bahasa
   layouts/Base.astro   <head> SEO: canonical, hreflang, OG, JSON-LD
   layouts/Legal.astro  kerangka halaman hukum
-  components/          Home, Beta, Shot (tangkapan layar), ClayIcon, ...
+  components/          Home, Download, Shot (tangkapan layar), ClayIcon, ...
   pages/               rute; halaman hukum ditulis langsung per bahasa
   assets/shots/        tangkapan layar listing Play v2 (lihat tools/screenshots)
   assets/clay/         ikon dan maskot clay 3D dari aplikasi
