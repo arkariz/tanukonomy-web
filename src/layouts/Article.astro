@@ -3,7 +3,7 @@ import { getImage } from 'astro:assets';
 import { getCollection, render, type CollectionEntry } from 'astro:content';
 import Base from './Base.astro';
 import ClayIcon from '../components/ClayIcon.astro';
-import { APP_NAME, SITE_URL } from '../config';
+import { APP_NAME, SITE_URL, playUrl } from '../config';
 import { type Lang, articlePath, htmlLang, otherLang, path, t } from '../i18n';
 
 interface Props {
@@ -63,7 +63,7 @@ const jsonLd = [
 <Base
   lang={lang}
   page="blog"
-  title={`${post.title} — ${APP_NAME}`}
+  title={post.title.length + APP_NAME.length + 3 <= 60 ? `${post.title} — ${APP_NAME}` : post.title}
   description={post.description}
   jsonLd={jsonLd}
   canonicalPath={canonicalPath}
@@ -113,6 +113,18 @@ const jsonLd = [
     <div class="prose">
       <Content />
     </div>
+
+    <aside class="install card" aria-labelledby="install-title">
+      <ClayIcon name="tanuki_mascot" size={56} />
+      <div>
+        <h2 id="install-title">{d.blog.installTitle}</h2>
+        <p>{d.blog.installBody}</p>
+      </div>
+      <a class="btn btn-secondary" href={playUrl(lang, `blog-${post.slug}`)} target="_blank" rel="noopener">
+        {d.blog.installAction}
+        <span class="visually-hidden">{lang === 'id' ? '(tab baru)' : '(new tab)'}</span>
+      </a>
+    </aside>
 
     <aside class="author" aria-label={d.blog.by + ' ' + post.author}>
       <ClayIcon name="tanuki_mascot" size={56} />
@@ -277,6 +289,22 @@ const jsonLd = [
     background: var(--tint-accent);
     border-radius: 0 var(--radius) var(--radius) 0;
   }
+  .install {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 18px;
+    align-items: center;
+    margin-top: 48px;
+    padding: 20px 24px;
+  }
+  .install h2 {
+    font-size: 1.125rem;
+    margin-bottom: 4px;
+  }
+  .install p {
+    color: var(--muted);
+    font-size: 0.9375rem;
+  }
   .author {
     display: flex;
     gap: 18px;
@@ -302,6 +330,14 @@ const jsonLd = [
     color: var(--accent);
     font-weight: 700;
     text-decoration: none;
+  }
+  @media (max-width: 640px) {
+    .install {
+      grid-template-columns: auto 1fr;
+    }
+    .install .btn {
+      grid-column: 1 / -1;
+    }
   }
   @media (max-width: 520px) {
     .author {

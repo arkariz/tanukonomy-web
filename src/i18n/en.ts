@@ -2,9 +2,9 @@ import type { Dict } from './id';
 
 export const en: Dict = {
   meta: {
-    title: 'Tanukonomy — Private Budget & Expense Tracker',
+    title: 'Tanukonomy: Budget & Expense Tracker with Freelance Income',
     description:
-      'Record income, expenses, and transfers between wallets in seconds. Plan monthly budgets and track freelance hours. Your data stays on your phone.',
+      'Record income, expenses, and transfers between wallets, plan monthly budgets, and track freelance income. Free on Google Play, with data kept on your phone.',
     ogAlt: 'Tanukonomy: a personal cash book on your phone, kept by a tanuki bookkeeper',
   },
   nav: {
@@ -16,6 +16,7 @@ export const en: Dict = {
     faq: 'FAQ',
     blog: 'Articles',
     cta: 'Get it on Google Play',
+    ctaShort: 'Get',
     langLabel: 'Bahasa Indonesia',
     menu: 'Menu',
   },
@@ -254,6 +255,12 @@ export const en: Dict = {
     breadcrumbHome: 'Home',
     allArticles: 'All articles',
     readMore: 'Read article',
+    latestLabel: 'From the blog',
+    latestTitle: 'Latest money tips.',
+    latestAll: 'See all articles',
+    installTitle: 'Try Tanukonomy',
+    installBody: 'A personal money tracker for Android. Core recording is free, and your records stay on your phone.',
+    installAction: 'Get it on Google Play',
     authorNote: 'The team behind Tanukonomy, a personal money tracker for Android. This is general advice, not financial advice tailored to you.',
   },
   legal: {

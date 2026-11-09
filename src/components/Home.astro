@@ -1,9 +1,12 @@
 ---
+import { getCollection } from 'astro:content';
+import { getImage } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
 import Base from '../layouts/Base.astro';
 import ClayIcon from './ClayIcon.astro';
 import Shot from './Shot.astro';
 import { APP_NAME, PLAY_STORE_URL, SITE_URL, playUrl } from '../config';
-import { type Lang, path, t } from '../i18n';
+import { type Lang, articlePath, path, t } from '../i18n';
 
 interface Props {
   lang: Lang;
@@ -16,6 +19,22 @@ const privacyIcons = ['shield_emergency', 'bank_wallet', 'check_completed', 'wif
 const upcomingIcons = ['scan_camera', 'report_bars', 'family_people'];
 const freelanceIcons = ['clipboard_worklog', 'doc_invoice', 'coin_paid'];
 
+// Artikel terbaru untuk tautan internal dari beranda.
+const latest = (
+  await getCollection('blog', ({ data }) => data.lang === lang && (import.meta.env.DEV || !data.draft))
+)
+  .sort((a, b) => b.data.publishedDate.valueOf() - a.data.publishedDate.valueOf())
+  .slice(0, 3);
+
+// Tangkapan layar asli untuk data terstruktur aplikasi (absolut, dari berkas yang sama dengan yang tampil).
+const shotFiles = import.meta.glob<{ default: ImageMetadata }>('../assets/shots/*/*.jpg', { eager: true });
+const screenshots = await Promise.all(
+  d.features.items.map(async (f) => {
+    const img = await getImage({ src: shotFiles[`../assets/shots/${lang}/${f.shot}.jpg`].default, width: 720, format: 'webp' });
+    return new URL(img.src, SITE_URL).href;
+  }),
+);
+
 const jsonLd = [
   {
     '@context': 'https://schema.org',
@@ -25,10 +44,22 @@ const jsonLd = [
     installUrl: PLAY_STORE_URL,
     downloadUrl: PLAY_STORE_URL,
     applicationCategory: 'FinanceApplication',
+    applicationSubCategory: 'Personal finance',
     description: d.meta.description,
     inLanguage: ['id', 'en'],
     url: new URL(path('home', lang), SITE_URL).href,
+    image: new URL('/icon-512.png', SITE_URL).href,
+    screenshot: screenshots,
+    featureList: d.features.items.map((f) => f.title),
+    isAccessibleForFree: true,
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'IDR' },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: APP_NAME,
+    url: new URL(path('home', 'id'), SITE_URL).href,
+    inLanguage: ['id', 'en'],
   },
   {
     '@context': 'https://schema.org',
@@ -51,7 +82,7 @@ const jsonLd = [
         <h1>{d.hero.title}</h1>
         <p class="lead">{d.hero.body}</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href={playUrl(lang)} target="_blank" rel="noopener">
+          <a class="btn btn-primary" href={playUrl(lang, 'hero')} target="_blank" rel="noopener">
             {d.hero.primary}
             <span class="visually-hidden">{lang === 'id' ? '(tab baru)' : '(new tab)'}</span>
           </a>
@@ -309,6 +340,29 @@ const jsonLd = [
     </div>
   </section>
 
+  <!-- Blog -->
+  {
+    latest.length > 0 && (
+      <section class="section home-blog" aria-labelledby="hb-title">
+        <div class="wrap">
+          <span class="label">{d.blog.latestLabel}</span>
+          <h2 id="hb-title">{d.blog.latestTitle}</h2>
+          <ul class="hb-grid" role="list">
+            {latest.map((p) => (
+              <li class="card hb-card">
+                <h3>
+                  <a href={articlePath(lang, p.data.slug)}>{p.data.title}</a>
+                </h3>
+                <p>{p.data.description}</p>
+              </li>
+            ))}
+          </ul>
+          <a class="link-tertiary" href={path('blog', lang)}>{d.blog.latestAll} →</a>
+        </div>
+      </section>
+    )
+  }
+
   <!-- CTA -->
   <section class="section cta-section" aria-labelledby="cta-title">
     <div class="wrap">
@@ -316,7 +370,7 @@ const jsonLd = [
         <div class="cta-copy">
           <h2 id="cta-title">{d.cta.title}</h2>
           <p class="lead">{d.cta.body}</p>
-          <a class="btn btn-primary" href={playUrl(lang)} target="_blank" rel="noopener">
+          <a class="btn btn-primary" href={playUrl(lang, 'cta')} target="_blank" rel="noopener">
             {d.cta.primary}
             <span class="visually-hidden">{lang === 'id' ? '(tab baru)' : '(new tab)'}</span>
           </a>
@@ -866,6 +920,34 @@ const jsonLd = [
   .cta :global(.cta-art) {
     justify-self: center;
     filter: drop-shadow(0 12px 16px rgb(17 24 39 / 0.18));
+  }
+
+  /* Blog -------------------------------------------------------------- */
+  .hb-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    list-style: none;
+    padding: 0;
+    margin: 40px 0 28px;
+  }
+  .hb-card {
+    padding: 24px 26px;
+    display: grid;
+    gap: 10px;
+    align-content: start;
+  }
+  .hb-card h3 {
+    font-size: 1.1875rem;
+  }
+  .hb-card h3 a {
+    text-decoration: none;
+  }
+  .hb-card h3 a:hover {
+    color: var(--accent);
+  }
+  .hb-card p {
+    color: var(--muted);
   }
 
   /* Responsif --------------------------------------------------------- */

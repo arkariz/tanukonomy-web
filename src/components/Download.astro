@@ -19,7 +19,7 @@ const b = d.download;
         <span class="label">{b.eyebrow}</span>
         <h1>{b.title}</h1>
         <p class="lead">{b.body}</p>
-        <a class="btn btn-primary store" href={playUrl(lang)} target="_blank" rel="noopener">
+        <a class="btn btn-primary store" href={playUrl(lang, 'download')} target="_blank" rel="noopener">
           {b.action}
           <span class="visually-hidden">{lang === 'id' ? '(tab baru)' : '(new tab)'}</span>
         </a>

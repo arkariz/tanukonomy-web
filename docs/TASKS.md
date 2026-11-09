@@ -123,6 +123,16 @@ Diperbarui 15 Oktober 2026.
       notifikasi, serta ekspor dan cadangan (T-26.27 di repo aplikasi).
       `LEGAL_EFFECTIVE_DATE` 2026-11-09. Artikel menaut ke halaman pasang. P-6
       (iOS dan "gratis selama uji coba") selesai lewat teks baru.
+- [x] **W-16** *(9 Nov 2026)* Optimisasi SEO dan konversi install (rencana di
+      `docs/seo/SEO_ASO_PLAN.md`): judul dan deskripsi beranda berkata kunci,
+      judul artikel tidak lagi terpotong, JSON-LD `MobileApplication` memuat
+      tangkapan layar dan fitur (plus `WebSite`, `sameAs`), meta robots
+      `max-image-preview:large`, 404 `noindex`, atribusi install lewat
+      `referrer=utm_*` per penempatan tombol Play, tombol pasang header tetap
+      terlihat di ponsel, tiga artikel terbaru di beranda, kartu "Coba
+      Tanukonomy" di akhir artikel. Lighthouse 99–100 di semua kategori
+      (mobile dan desktop). Teks listing Play siap tempel (id, en) untuk 1.0.0
+      ada di rencana itu.
 - [x] **P-1** Domain `tanukonomy.app` dibeli pemilik 29 Sep 2026. Cek
       merek dagang "Tanukonomy" (T-8.3 di repo aplikasi) masih terpisah.
 - [ ] **P-1b** DNS `tanukonomy.app` diarahkan ke GitHub Pages (4 record A

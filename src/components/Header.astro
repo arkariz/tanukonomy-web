@@ -37,8 +37,9 @@ const links = [
         <span class="visually-hidden">{d.nav.langLabel}</span>
       </a>
       {page !== 'download' && (
-        <a class="btn btn-secondary cta" href={playUrl(lang)} target="_blank" rel="noopener">
-          {d.nav.cta}
+        <a class="btn btn-secondary cta" href={playUrl(lang, 'header')} target="_blank" rel="noopener" aria-label={d.nav.cta}>
+          <span class="long">{d.nav.cta}</span>
+          <span class="short" aria-hidden="true">{d.nav.ctaShort}</span>
         </a>
       )}
     </div>
@@ -112,10 +113,19 @@ const links = [
   .cta {
     white-space: nowrap;
   }
-  /* Di layar sempit tombol utama hero sudah terlihat; tombol kepala disembunyikan. */
+  /* Di layar sempit label diringkas supaya tombol pasang tetap terlihat saat menggulir. */
+  .short {
+    display: none;
+  }
   @media (max-width: 480px) {
-    .cta {
+    .long {
       display: none;
+    }
+    .short {
+      display: inline;
+    }
+    .cta {
+      padding: 0 14px;
     }
   }
 </style>
