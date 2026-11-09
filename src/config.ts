@@ -21,7 +21,13 @@ export const CONTACT_EMAIL = 'halo@tanukonomy.app';
  * Parameter bahasa `hl` ditambahkan oleh playUrl().
  */
 export const PLAY_STORE_URL: string = 'https://play.google.com/store/apps/details?id=com.arkarizdev.tanukonomy';
-export const playUrl = (lang: 'id' | 'en') => `${PLAY_STORE_URL}&hl=${lang}`;
+/**
+ * Tautan Play dengan bahasa dan parameter `referrer` (utm_*) supaya Play Console
+ * mencatat install per penempatan tombol di situs. Tidak ada pelacak di situs
+ * sendiri: parameter ini hanya dibaca Google Play.
+ */
+export const playUrl = (lang: 'id' | 'en', campaign = 'site') =>
+  `${PLAY_STORE_URL}&hl=${lang}&referrer=${encodeURIComponent(`utm_source=tanukonomy.app&utm_medium=website&utm_campaign=${campaign}`)}`;
 
 /** Tanggal berlaku dokumen hukum (YYYY-MM-DD). */
 export const LEGAL_EFFECTIVE_DATE = '2026-11-09';

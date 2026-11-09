@@ -2,7 +2,7 @@
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { APP_NAME, SITE_URL, withBase } from '../config';
+import { APP_NAME, PLAY_STORE_URL, SITE_URL, withBase } from '../config';
 import groteskUrl from '../assets/fonts/SpaceGrotesk-Variable.woff2?url';
 import jakartaUrl from '../assets/fonts/PlusJakartaSans-Variable.woff2?url';
 import { type Lang, type PageKey, htmlLang, ogLocale, otherLang, path, t } from '../i18n';
@@ -18,9 +18,10 @@ interface Props {
   /** Jalur padanan di bahasa lain; null bila tidak ada, kosong = path(page, otherLang). */
   alternatePath?: string | null;
   ogType?: 'website' | 'article';
+  noindex?: boolean;
 }
 
-const { lang, page, title, description, jsonLd = [], canonicalPath, alternatePath, ogType = 'website' } = Astro.props;
+const { lang, page, title, description, jsonLd = [], canonicalPath, alternatePath, ogType = 'website', noindex = false } = Astro.props;
 const d = t(lang);
 const canonical = new URL(canonicalPath ?? path(page, lang), SITE_URL).href;
 const altPath = alternatePath === undefined ? path(page, otherLang(lang)) : alternatePath;
@@ -35,6 +36,7 @@ const org = {
   name: APP_NAME,
   url: new URL(path('home', 'id'), SITE_URL).href,
   logo: new URL(withBase('/icon-512.png'), SITE_URL).href,
+  sameAs: [PLAY_STORE_URL],
 };
 ---
 
@@ -45,6 +47,10 @@ const org = {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta
+      name="robots"
+      content={noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'}
+    />
     <link rel="canonical" href={canonical} />
     <link rel="alternate" hreflang={htmlLang(lang)} href={canonical} />
     {alternate && <link rel="alternate" hreflang={htmlLang(otherLang(lang))} href={alternate} />}

@@ -1,8 +1,8 @@
 export const id = {
   meta: {
-    title: 'Tanukonomy — Aplikasi Catatan Keuangan Pribadi',
+    title: 'Tanukonomy: Aplikasi Catatan Keuangan, Anggaran & Freelance',
     description:
-      'Catat pemasukan, pengeluaran, dan transfer antar dompet dalam hitungan detik. Susun anggaran bulanan dan pantau jam kerja freelance. Data tetap di ponselmu.',
+      'Catat pemasukan, pengeluaran, dan transfer antar dompet, susun anggaran bulanan, pantau pemasukan freelance. Gratis di Google Play, datamu tetap di ponsel.',
     ogAlt: 'Tanukonomy: buku kas pribadi di ponselmu, ditemani tanuki juru catat',
   },
   nav: {
@@ -14,6 +14,7 @@ export const id = {
     faq: 'Tanya jawab',
     blog: 'Artikel',
     cta: 'Pasang di Google Play',
+    ctaShort: 'Pasang',
     langLabel: 'English',
     menu: 'Menu',
   },
@@ -252,6 +253,12 @@ export const id = {
     breadcrumbHome: 'Beranda',
     allArticles: 'Semua artikel',
     readMore: 'Baca artikel',
+    latestLabel: 'Dari blog',
+    latestTitle: 'Tips keuangan terbaru.',
+    latestAll: 'Lihat semua artikel',
+    installTitle: 'Coba Tanukonomy',
+    installBody: 'Aplikasi catatan keuangan pribadi untuk Android. Pencatatan intinya gratis, dan catatanmu tetap di ponselmu.',
+    installAction: 'Pasang di Google Play',
     authorNote: 'Tim di balik Tanukonomy, aplikasi catatan keuangan pribadi untuk Android. Tulisan ini tips umum, bukan nasihat keuangan yang disesuaikan untuk kamu.',
   },
   legal: {
