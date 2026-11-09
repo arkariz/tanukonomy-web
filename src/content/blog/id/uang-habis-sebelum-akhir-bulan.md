@@ -72,7 +72,7 @@ Kesalahan yang sering terjadi: transfer ke e-wallet dihitung sebagai pengeluaran
 
 Kelima langkah tadi bisa dikerjakan sekali sebagai pemeriksaan satu bulan. Bila kamu ingin melihat polanya terus, kuncinya sederhana: simpan catatan di satu tempat yang mudah dibuka, dan pisahkan transfer dari pengeluaran.
 
-Catatan ponsel atau spreadsheet sudah cukup untuk itu. Kalau uangmu tersebar di beberapa rekening dan e-wallet, alat yang memang dibuat untuk mencatat bisa terasa lebih ringan. Salah satunya Tanukonomy, aplikasi catatan keuangan pribadi untuk Android yang sedang dalam [uji coba tertutup](/beta/).
+Catatan ponsel atau spreadsheet sudah cukup untuk itu. Kalau uangmu tersebar di beberapa rekening dan e-wallet, alat yang memang dibuat untuk mencatat bisa terasa lebih ringan. Salah satunya Tanukonomy, aplikasi catatan keuangan pribadi untuk Android yang bisa [dipasang dari Google Play](/pasang/).
 
 Di Tanukonomy, tiap rekening, e-wallet, atau uang tunai menjadi satu dompet. Transfer antar dompet dicatat sebagai transfer, jadi tidak terhitung sebagai pengeluaran. Kamu juga bisa menyusun anggaran sebagai rencana belanja, tanpa memisahkan uangnya. Aplikasi ini hanya mencatat: ia tidak memindahkan atau membayarkan uang. Catatan keuanganmu tersimpan di perangkat, dan pencatatan inti bisa dipakai tanpa internet.
 

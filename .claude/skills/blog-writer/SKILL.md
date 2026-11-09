@@ -112,7 +112,7 @@ Urutan yang dipakai:
    bukan "gunakan". Bagian Tanukonomy: satu bagian pendek (H2) yang
    menunjukkan bagaimana langkah tadi dikerjakan di aplikasi, memakai fitur
    dan istilah yang benar. Paling banyak satu bagian ini plus satu kalimat
-   penutup yang menaut ke `/beta/`. Tidak ada tombol, banner, atau seruan
+   penutup yang menaut ke `/pasang/` (`/en/get-the-app/`). Tidak ada tombol, banner, atau seruan
    di tengah isi.
 5. **Pertanyaan umum (FAQ)** 2–4 butir, hanya bila pertanyaannya memang
    sering ditanyakan dan jawabannya belum ada di isi artikel. Jangan
@@ -131,7 +131,7 @@ untuk panduan menyeluruh. Jangan menambah panjang demi hitungan kata.
   Bahasa Inggris memakai slug sendiri (situs ini memakai slug berbeda per
   bahasa: `/privasi/` dan `/en/privacy/`).
 - Satu H1, H2 berurutan, tidak melompat tingkat.
-- **Tautan internal**: 2–4 ke halaman situs yang relevan (`/`, `/beta/`,
+- **Tautan internal**: 2–4 ke halaman situs yang relevan (`/`, `/pasang/`,
   artikel lain), dengan teks tautan deskriptif. Dilarang "klik di sini".
   Tautan keluar hanya ke sumber resmi dan diberi `rel="noopener"`.
 - **Gambar**: hanya tangkapan layar asli dari `src/assets/shots/` atau
@@ -255,7 +255,7 @@ Topik "Privasi" harus sejalan persis dengan `src/pages/privasi.astro`.
 - [ ] Jangan membandingkan dengan aplikasi atau layanan lain secara bernama tanpa sumber yang bisa diperiksa pembaca; bandingkan jenis alat (catatan ponsel, spreadsheet, aplikasi pencatat)
 - [ ] Jangan menulis artikel tipis demi jumlah halaman atau menduplikasi artikel dengan kata kunci sama
 - [ ] Jangan menambah JavaScript klien, cookie, analitik, atau embed pihak ketiga ke artikel (kebijakan privasi menjanjikannya)
-- [ ] Jangan menyebut harga, tanggal rilis publik, iOS, sinkronisasi, atau langganan premium sebagai sesuatu yang pasti
+- [ ] Jangan menyebut harga Plus, iPhone, sinkronisasi, atau fitur yang baru direncanakan sebagai sesuatu yang sudah ada
 - [ ] Jangan mengubah halaman, tata letak, atau konfigurasi situs yang tidak terkait; jangan deploy
 
 ## Alur git

@@ -72,7 +72,7 @@ A common mistake: the transfer to the e-wallet is counted as spending, and then 
 
 The five steps above can be done once, as a one-month check-up. If you want to keep seeing the pattern, the key is simple: keep your records in one place that is easy to open, and keep transfers separate from spending.
 
-A notes app or a spreadsheet is enough for that. If your money is spread across several bank accounts and e-wallets, a tool built for recording can feel lighter. One of them is Tanukonomy, a personal money tracker for Android that is currently in [closed beta](/en/beta/).
+A notes app or a spreadsheet is enough for that. If your money is spread across several bank accounts and e-wallets, a tool built for recording can feel lighter. One of them is Tanukonomy, a personal money tracker for Android that you can [get on Google Play](/en/get-the-app/).
 
 In Tanukonomy, each bank account, e-wallet, or pile of cash is a wallet. A transfer between wallets is recorded as a transfer, so it is not counted as spending. You can also set up a budget as a spending plan, without setting the money aside. The app only records: it does not move or pay money. Your financial records are stored on your device, and core recording works without internet.
 
