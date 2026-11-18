@@ -1,6 +1,7 @@
 ---
 import Legal from '../../layouts/Legal.astro';
 import { CONTACT_EMAIL } from '../../config';
+import { path } from '../../i18n';
 ---
 
 <Legal
@@ -48,7 +49,8 @@ import { CONTACT_EMAIL } from '../../config';
   <h2>3. Account (optional)</h2>
   <p>
     The app is fully functional without an account. If you choose to sign in, we receive your account’s email address and
-    user ID to manage that account. You can sign in with a Google account or with an email and password. An account does
+    user ID to manage that account. You can sign in with a Google account or with an email and password. To manage Plus
+    subscriptions, your account email and name are also passed to RevenueCat (see section 4). An account does
     not cause your financial data to be sent anywhere.
   </p>
 
@@ -80,6 +82,14 @@ import { CONTACT_EMAIL } from '../../config';
       check is performed by Google Play services on your device. The app sends no data to us or to our servers for this.
     </li>
     <li>
+      <strong>Plus subscription (RevenueCat and Google Play).</strong> The app uses RevenueCat to manage subscriptions.
+      RevenueCat receives a user ID (anonymous, or your account ID if you sign in), your account email address and display
+      name if you sign in, subscription history and status, and the technical data its SDK sends, such as IP address, app
+      version, and platform. Payment is processed by Google Play; the app does not receive your card number. Analytics also
+      records paywall, trial, and purchase events (for example paywall views and the plan type), without prices or the
+      content of your financial records.
+    </li>
+    <li>
       <strong>Voice recording.</strong> This feature asks for microphone permission. Your speech is turned into text by a
       speech recognition service. If the offline language pack is not installed, that service may use Google’s servers. The
       app does not store voice recordings.
@@ -97,7 +107,13 @@ import { CONTACT_EMAIL } from '../../config';
     <li>
       <strong>Record from notifications (Android, optional).</strong> If you turn it on, you grant notification access and
       choose which apps are read. Only notifications from the apps you pick that pass the transaction filter are processed.
-      The text is kept on your device for at most 7 days.
+      The text is kept on your device for at most 7 days. Processing can run in the background through the notification
+      listener service, without opening the app. The interpreted result is kept temporarily on your device (at most 7 days)
+      until the app is opened and applies it. The app also remembers on your device: the category and wallet for each
+      merchant, notification shapes you approve or mark “Not a transaction”, and wallet rules from masked account numbers.
+      All of this is included in backup files and is not sent to any server. You can also turn on sample notifications
+      (off by default): the text of notifications from your chosen apps, including non-transactions, is kept on your device
+      for at most 7 days without one-time codes and is not sent anywhere, and is deleted when you turn it off.
     </li>
   </ul>
   <p>
@@ -111,10 +127,14 @@ import { CONTACT_EMAIL } from '../../config';
     Because your financial data lives only on your device, you are fully in control. Uninstalling the app, or clearing its
     data in Android settings, permanently deletes all records. We keep no copy, so deleted data cannot be recovered by us.
     If you use an account, you can delete it from inside the app or through the
-    <a href="https://tanukonomy.app/en/delete-account" rel="noopener">delete account page</a>.
+    <a href={path('deleteAccount', 'en')}>delete account page</a>.
   </p>
 
-  <h2>6. Device backups</h2>
+  <h2>6. Export and backups</h2>
+  <p>
+    On your request, the app can create an export file (spreadsheet) and a backup file (.tkbak) of your records. These files
+    are saved where you choose or share them yourself, and are not sent to us.
+  </p>
   <p>
     If your operating system’s built-in backup (such as Google backup on Android) is turned on, the system may include app
     data in your backup. Those backups are managed by the operating system provider under their policies, not by us.
@@ -122,7 +142,7 @@ import { CONTACT_EMAIL } from '../../config';
 
   <h2>7. Closed beta</h2>
   <p>
-    To join the closed beta, you join a Google Group and the Google Play testing program with your Google account. Both are
+    If you join (or have joined) the closed beta, you join a Google Group and the Google Play testing program with your Google account. Both are
     run by Google. As the group manager, we can see members’ email addresses; we use them only to grant beta access and do
     not share them. Feedback you send by email or through Google Play is used only to improve the app.
   </p>

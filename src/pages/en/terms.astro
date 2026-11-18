@@ -9,7 +9,7 @@ import { path } from '../../i18n';
   page="terms"
   effectiveDate={TERMS_EFFECTIVE_DATE}
   title="Terms of Use"
-  description="Terms for using the Tanukonomy app, including during the closed beta."
+  description="Terms for using the Tanukonomy app: what the app does, optional accounts, third-party services, updates, and limits of liability."
 >
   <p class="lede">
     By installing or using Tanukonomy, you agree to the terms below. If you don’t agree, please don’t use the app.
@@ -22,58 +22,141 @@ import { path } from '../../i18n';
     service.
   </p>
 
-  <h2>2. Not financial advice</h2>
+  <h2>2. Who provides it</h2>
+  <p>
+    Tanukonomy is developed and provided by the developer of Tanukonomy (“we”). You can reach us by email in section 16.
+    The provider’s contact information may also be shown on Tanukonomy’s page on Google Play.
+  </p>
+
+  <h2>3. Not financial advice</h2>
   <p>
     Figures and summaries in the app are calculated from the data you enter. The app does not provide financial, tax, or
     legal advice. Your financial decisions are your own responsibility.
   </p>
 
-  <h2>3. Responsibility for your data</h2>
+  <h2>4. Account (optional)</h2>
   <p>
-    Because data is stored only on your device (see the <a href={path('privacy', 'en')}>Privacy Policy</a>), you are responsible for
-    keeping your device and its data safe. We cannot recover data lost through a damaged, lost, or reset device, or an
-    uninstalled app.
+    The app is fully functional without an account. If you choose to sign in, you are responsible for keeping access to
+    your account secure and for providing accurate information. The Tanukonomy Plus trial is offered only to users who
+    sign in. You can delete your account at any time from inside the app
+    or through the <a href={path('deleteAccount', 'en')}>delete account page</a>. An account does not cause your financial
+    records to be stored on our servers.
   </p>
 
-  <h2>4. Beta period</h2>
-  <p>During the closed beta:</p>
+  <h2>5. Responsibility for your data</h2>
+  <p>
+    Because your financial records are stored on your device (see the <a href={path('privacy', 'en')}>Privacy Policy</a>),
+    you are responsible for keeping your device and its data safe. We cannot recover data lost through a damaged, lost, or
+    reset device, or an uninstalled app.
+  </p>
+
+  <h2>6. Third-party services and Smart Record</h2>
+  <p>
+    The app uses third-party services: Google Play (including Google Play Billing), Firebase, Shorebird, RevenueCat to
+    manage subscriptions, and, for the Smart Record feature, Gemini (Google). The data sent to each service is described in the <a href={path('privacy', 'en')}>Privacy Policy</a>. These
+    services are run by their providers and are subject to their own terms.
+  </p>
+  <p>
+    Automatic interpretation of voice or notifications can be wrong. Check your records, especially if you turn on
+    automatic recording from notifications.
+  </p>
+
+  <h2>7. Availability and updates</h2>
+  <p>
+    We may update the app through Google Play or through small updates, and may change, add, or remove features. We aim to
+    keep the app running, but we do not guarantee it will always be available or free of interruptions. Core recording is
+    designed to keep working without internet.
+  </p>
+
+  <h2>8. Test versions</h2>
+  <p>While the app is still a test version (for example a closed test on Google Play):</p>
   <ul>
     <li>the app is still in development and may contain errors, including display or calculation errors;</li>
     <li>features may change, be added, or be removed without notice;</li>
-    <li>updates may change or, in the worst case, delete beta data;</li>
-    <li>beta access may end at any time.</li>
+    <li>updates may change or, in the worst case, delete test data;</li>
+    <li>test access may end at any time.</li>
   </ul>
-  <p>Please don’t make the beta app your only record of important finances.</p>
+  <p>Please don’t make a test version your only record of important finances.</p>
 
-  <h2>5. Feedback</h2>
-  <p>Feedback, suggestions, and bug reports you send may be used to improve Tanukonomy without any obligation to you.</p>
-
-  <h2>6. Fair use</h2>
+  <h2>9. Tanukonomy Plus and cost</h2>
   <p>
-    You agree not to reverse engineer, redistribute, or sell the app, except as permitted by applicable law.
+    Core recording is free. Tanukonomy Plus is an optional paid subscription for additional features, such as automation and
+    advanced analysis. The list of Plus features and the limits of the free version are shown in the app and may change from
+    time to time. The app does not show ads.
+  </p>
+  <ul>
+    <li>
+      <strong>Purchases and payment.</strong> Monthly or yearly subscriptions are bought through Google Play. The price and
+      the terms of any offer are shown on the purchase screen before you buy. Google processes the payment; we do not
+      receive your card number. Purchases are also subject to the Google Play Terms of Service.
+    </li>
+    <li>
+      <strong>Trial.</strong> We may give a free Plus trial to users who sign in. Its length is shown in the app. The trial
+      does not ask for card details, and afterwards the app returns to the free version unless you subscribe.
+    </li>
+    <li>
+      <strong>Renewal and cancellation.</strong> A subscription renews automatically until you cancel it in your Google
+      Play subscription settings. Cancelling applies to the next period, and Plus stays active until the end of the period
+      you already paid for.
+    </li>
+    <li>
+      <strong>Refunds.</strong> Governed by Google Play’s policy, without limiting rights that by law cannot be waived,
+      including your consumer rights where you live.
+    </li>
+    <li>
+      <strong>Plus status.</strong> Plus status is worked out from subscription data at Google Play and RevenueCat. You can
+      restore a purchase on another phone from Account. Signing out does not cancel a subscription. If a payment fails and
+      the subscription is put on hold, Plus may be inactive until payment is sorted out. Without internet, Plus stays active
+      for a limited time.
+    </li>
+    <li>
+      <strong>Price and plan changes.</strong> We may change prices or plans. For a running subscription, price changes
+      follow Google Play’s rules and are notified before they take effect.
+    </li>
+    <li>
+      <strong>Your data stays.</strong> When Plus ends, your records are not deleted and core recording is not locked. Some
+      advanced views, such as analysis of older periods, may be locked without Plus.
+    </li>
+  </ul>
+
+  <h2>10. Fair use</h2>
+  <p>
+    You agree not to reverse engineer, redistribute, or sell the app, except as permitted by applicable law. The app is not
+    directed at children under 13.
   </p>
 
-  <h2>7. Intellectual property</h2>
+  <h2>11. Feedback</h2>
+  <p>Feedback, suggestions, and bug reports you send may be used to improve Tanukonomy without any obligation to you.</p>
+
+  <h2>12. Intellectual property</h2>
   <p>
     The Tanukonomy name, logo, tanuki mascot, illustrations, and code belong to its developer. Fonts on the site and in the
     app are used under the SIL Open Font License.
   </p>
 
-  <h2>8. No warranty and limitation of liability</h2>
+  <h2>13. No warranty and limitation of liability</h2>
   <p>
     The app is provided “as is” without warranty of any kind. To the extent permitted by law, we are not liable for any
-    loss arising from using or being unable to use the app, including data loss.
+    loss arising from using or being unable to use the app, including data loss. These terms do not limit rights that by
+    law cannot be waived, including your consumer rights where you live.
   </p>
 
-  <h2>9. Changes to these terms</h2>
+  <h2>14. Ending your use</h2>
+  <p>
+    You can stop using Tanukonomy at any time by uninstalling the app, and delete your account if you have one. We may end
+    access to the app or your account if you breach these terms, or if the service is discontinued.
+  </p>
+
+  <h2>15. Changes to these terms</h2>
   <p>
     We may update these terms. The latest version is always on this page with its effective date. Continuing to use the app
     after a change means you accept the new terms.
   </p>
 
-  <h2>10. Governing law</h2>
-  <p>These terms are governed by the laws of the Republic of Indonesia.</p>
-
-  <h2>11. Contact</h2>
-  <p>Questions about these terms can be sent to <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>
+  <h2>16. Governing law and contact</h2>
+  <p>
+    These terms are governed by the laws of the Republic of Indonesia, without limiting consumer rights that cannot be
+    waived under the law where you live. Questions about these terms can be sent to
+    <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
+  </p>
 </Legal>

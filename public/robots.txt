@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://arkariz.github.io/tanukonomy-web/sitemap-index.xml
+Sitemap: https://tanukonomy.app/sitemap-index.xml

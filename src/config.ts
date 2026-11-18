@@ -2,13 +2,13 @@
  * Satu-satunya tempat untuk nilai yang bergantung pada keputusan pemilik.
  * Ganti di sini, bukan di halaman.
  */
-export const SITE_URL = 'https://arkariz.github.io';
+export const SITE_URL = 'https://tanukonomy.app';
 
 /**
- * Awalan jalur situs. GitHub Pages proyek disajikan di /<nama-repo>/;
- * kosongkan ('/') begitu situs pindah ke domain sendiri.
+ * Awalan jalur situs. '/' karena situs disajikan di domain sendiri
+ * (public/CNAME); kembali ke '/<nama-repo>/' hanya kalau domain dilepas.
  */
-export const BASE_PATH = '/tanukonomy-web/';
+export const BASE_PATH = '/';
 
 /** Jalur absolut di dalam situs, memperhitungkan BASE_PATH. `p` diawali '/'. */
 export const withBase = (p: string) => BASE_PATH.replace(/\/$/, '') + p;
@@ -17,16 +17,22 @@ export const withBase = (p: string) => BASE_PATH.replace(/\/$/, '') + p;
 export const CONTACT_EMAIL = 'halo@tanukonomy.app';
 
 /**
- * Tautan closed testing. Biarkan kosong sampai tersedia: tombolnya tampil
- * nonaktif dengan keterangan "segera dibuka", bukan tautan mati.
+ * Halaman Tanukonomy di Google Play (rilis produksi 1.0.0, Nov 2026).
+ * Parameter bahasa `hl` ditambahkan oleh playUrl().
  */
-export const GOOGLE_GROUP_URL = '';
-export const PLAY_TESTING_URL = '';
+export const PLAY_STORE_URL: string = 'https://play.google.com/store/apps/details?id=com.arkarizdev.tanukonomy';
+/**
+ * Tautan Play dengan bahasa dan parameter `referrer` (utm_*) supaya Play Console
+ * mencatat install per penempatan tombol di situs. Tidak ada pelacak di situs
+ * sendiri: parameter ini hanya dibaca Google Play.
+ */
+export const playUrl = (lang: 'id' | 'en', campaign = 'site') =>
+  `${PLAY_STORE_URL}&hl=${lang}&referrer=${encodeURIComponent(`utm_source=tanukonomy.app&utm_medium=website&utm_campaign=${campaign}`)}`;
 
 /** Tanggal berlaku dokumen hukum (YYYY-MM-DD). */
-export const LEGAL_EFFECTIVE_DATE = '2026-10-15';
+export const LEGAL_EFFECTIVE_DATE = '2026-11-09';
 
 /** Tanggal berlaku Syarat dan Ketentuan (terakhir isinya diubah). */
-export const TERMS_EFFECTIVE_DATE = '2026-09-28';
+export const TERMS_EFFECTIVE_DATE = '2026-11-06';
 
 export const APP_NAME = 'Tanukonomy';

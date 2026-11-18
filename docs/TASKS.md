@@ -18,9 +18,52 @@ Diperbarui 15 Oktober 2026.
 - [x] **W-6** Lighthouse 100/100/100/100 di `/`, `/en/`, `/beta/`,
       `/privasi/`, `/en/terms/`.
 
-- [x] **W-7** Hosting sementara di GitHub Pages
-      (`arkariz.github.io/tanukonomy-web/`) dengan workflow deploy otomatis.
-- [x] **W-8** *(15 Okt 2026, Fase 20 aplikasi, bagian B-4)* Kebijakan privasi
+- [x] **W-7** Hosting di GitHub Pages dengan workflow deploy otomatis.
+      29 Sep 2026: pindah ke domain sendiri `tanukonomy.app`
+      (`public/CNAME`, `SITE_URL`, `BASE_PATH = '/'`, `robots.txt`).
+      Hosting tetap GitHub Pages; Cloudflare Pages tidak dipakai dulu.
+- [x] **W-8** Freelance dihapus dari navigasi header (tetap ada sebagai
+      bagian isi landing dan di footer) karena itu bagian dari fitur
+      CATAT, bukan area terpisah. `/beta` ditulis ulang: 4 langkah yang
+      cocok dengan alur asli Google Play (akun yang sama di tiga tempat,
+      waktu tunggu aktivasi realistis), plus bagian "Masalah yang mungkin
+      muncul" (7 isu umum opt-in closed testing). FAQ dan bagian privasi
+      landing serta kebijakan privasi (id, en) sekarang menyebut rencana
+      sinkronisasi data multi-perangkat sebagai fitur mendatang, opsional,
+      belum tersedia.
+- [x] **W-9** Pemilik mengonfirmasi rencana produk: akan ada akun, analitik
+      pemakaian, dan model freemium (bukan cuma sinkronisasi). Klaim
+      absolut "tanpa akun" dan "tanpa iklan dan pelacak" dilunakkan jadi
+      "saat ini"/"hari ini" di semua tempat: judul `<title>`, chip hero,
+      empat kartu privasi landing, kotak "sedang disiapkan", FAQ (2 item
+      baru: analitik, freemium; 1 diperbarui: lokasi data), meta deskripsi
+      `/beta`, dan gambar Open Graph. Kebijakan privasi (id, en) dapat §6
+      diperluas (akun, sinkronisasi, **dan langganan premium**) dan §7 baru
+      (analitik pemakaian produk, dengan janji: bukan untuk jual data/
+      iklan, tidak mencakup isi catatan keuangan, provider akan disebutkan
+      sebelum aktif); §2 diberi kualifikasi "saat ini". Nomor bagian 7–10
+      lama bergeser jadi 8–11.
+- [x] **W-10** Bagian baru "Fitur mendatang" (`#mendatang`) di landing,
+      antara Privasi dan Mode gelap: tiga rencana (catat otomatis dari
+      notifikasi/struk/suara, dashboard insight keuangan, catatan
+      bersama), masing-masing berkartu bingkai putus-putus amber dan
+      lencana "Segera", plus catatan yang menaut ke kebijakan privasi.
+      Ditautkan dari navigasi header. "Catat otomatis" ditulis sebagai
+      draf yang mengalir ke CATAT untuk dikonfirmasi, bukan jalur
+      pencatatan baru (aturan #8 `CLAUDE.md` aplikasi). Token warna baru
+      `--pending-on-tint` ditambahkan ke `global.css` untuk lencana
+      "Segera" (`--pending` langsung di atas `--tint-pending` hanya
+      4,19:1, di bawah ambang WCAG 4,5:1 untuk teks kecil).
+- [x] **W-11** Halaman hapus akun/data (`/hapus-akun/`, `/en/delete-account/`),
+      untuk kolom "URL hapus akun" di Play Console (App content → Data
+      safety), ditautkan dari footer. Karena aplikasi belum punya sistem
+      akun, isinya jujur soal keadaan sekarang (§1–§2: cara hapus data
+      lokal lewat uninstall/clear data, tanpa masa retensi karena tidak
+      ada server) dan menuliskan janji untuk nanti (§3: penghapusan akun
+      dalam aplikasi dalam 30 hari, begitu akun/sinkronisasi aktif —
+      lihat `PLAY_DATA_SAFETY.md` repo `Saldough`). Perbarui §3 dengan
+      langkah pasti begitu fitur itu sungguhan dibangun.
+- [x] **W-12** *(15 Okt 2026, Fase 20 aplikasi, bagian B-4)* Kebijakan privasi
       (id, en) disesuaikan dengan aplikasi: bagian baru "Akun (opsional)"
       dan "Data teknis dan layanan pihak ketiga" (Analytics dan Crashlytics
       termasuk peristiwa pembaruan, Firebase Remote Config, pembaruan kecil
@@ -38,32 +81,136 @@ Diperbarui 15 Oktober 2026.
 
 ## Menunggu pemilik
 
-- [ ] **P-1** *(ditunda pemilik 28 Sep 2026)* Cek merek dagang "Tanukonomy" dan beli domain (T-8.3 di repo
-      aplikasi). Lalu ganti `SITE_URL` dan baris `Sitemap:` di
-      `public/robots.txt` kalau domainnya bukan `tanukonomy.app`.
+- [x] **W-13** *(6 Nov 2026)* Syarat dan Ketentuan (id, en) ditulis ulang
+      agar bisa jadi tautan Terms of Service untuk Trader Status Declaration
+      Google Play: bagian penyedia, akun opsional, layanan pihak ketiga dan
+      Catat Cerdas (Gemini), ketersediaan dan pembaruan, versi uji coba,
+      biaya, penghentian, dan hak konsumen yang tidak dapat dikesampingkan.
+      `TERMS_EFFECTIVE_DATE` menjadi 2026-11-06. Tautan untuk Play Console:
+      `https://tanukonomy.app/syarat/` dan `https://tanukonomy.app/en/terms/`.
+      Nama hukum dan alamat penyedia sengaja tidak ditulis; lihat P-11.
+      Revisi 2 (sama hari): bagian "Tanukonomy Plus dan biaya" (langganan
+      bulanan/tahunan lewat Google Play, uji coba hanya bagi yang masuk akun,
+      perpanjangan dan pembatalan, pengembalian dana mengikuti Google Play
+      tanpa mengurangi hak konsumen, status Plus, perubahan harga) dan
+      RevenueCat di daftar layanan pihak ketiga; kebijakan privasi ikut
+      menyebut RevenueCat (email, nama, ID, riwayat langganan). Sumber:
+      repo aplikasi `main` 0.12.2+21 (ADR-041, `PLAY_DATA_SAFETY.md`,
+      `release_notes/21-0.json`). Branch `claude/rombak-design-system-theming-5747b4`
+      tidak ada di remote `arkariz/Saldough`, jadi tidak dibaca.
+- [x] **W-14** *(7 Nov 2026)* Gaya visual situs disesuaikan ke design system v2
+      "Tanukonomy Matcha" (ADR-002 situs): token terang dan gelap v2, huruf
+      Plus Jakarta Sans (Space Grotesk dihapus), ikon dan maskot clay,
+      tangkapan layar listing Play v2 (id, en) untuk fitur, freelance, dan
+      artikel, komponen `ClayIcon` dan `Shot` menggantikan `PixelIcon` dan
+      `Phone`, ikon situs, manifest, dan gambar OG dibuat ulang, ilustrasi
+      artikel ke token v2, fitur Rutin ditambahkan ke daftar fitur dan
+      "Riwayat" digabung dengan Analisis. Render mentah per layar belum
+      mungkin dari sesi agen (tanpa Flutter SDK dan emulator).
+- [x] **W-15** *(9 Nov 2026)* Konten situs diselaraskan dengan Tanukonomy 1.0.0
+      yang sudah rilis produksi di Google Play (sumber: repo aplikasi `main`,
+      `release_notes/`, ADR-041, `PLAY_DATA_SAFETY.md`). Halaman uji coba
+      tertutup `/beta/` diganti halaman pasang `/pasang/` dan `/en/get-the-app/`
+      (`/beta/` dialihkan lewat `redirects`); semua tombol "Ikut uji coba"
+      menjadi "Pasang di Google Play" (`playUrl()`), JSON-LD memuat
+      `installUrl` (S-4 selesai); bagian baru Tanukonomy Plus (Gratis dan
+      Plus); "Fitur mendatang" dipangkas ke yang memang belum ada (foto struk,
+      catatan bersama); judul privasi tidak lagi mengklaim data "tidak pernah
+      meninggalkan ponsel" (Catat Cerdas mengirim teks ke Gemini); FAQ
+      diperbarui (gratis dan Plus, ekspor dan cadangan, 14 mata uang, iPhone
+      belum tersedia, batalkan Plus). Kebijakan privasi: pemrosesan di latar,
+      jurnal sementara, ingatan pedagang dan bentuk yang disetujui, contoh
+      notifikasi, serta ekspor dan cadangan (T-26.27 di repo aplikasi).
+      `LEGAL_EFFECTIVE_DATE` 2026-11-09. Artikel menaut ke halaman pasang. P-6
+      (iOS dan "gratis selama uji coba") selesai lewat teks baru.
+- [x] **W-16** *(9 Nov 2026)* Optimisasi SEO dan konversi install (rencana di
+      `docs/seo/SEO_ASO_PLAN.md`): judul dan deskripsi beranda berkata kunci,
+      judul artikel tidak lagi terpotong, JSON-LD `MobileApplication` memuat
+      tangkapan layar dan fitur (plus `WebSite`, `sameAs`), meta robots
+      `max-image-preview:large`, 404 `noindex`, atribusi install lewat
+      `referrer=utm_*` per penempatan tombol Play, tombol pasang header tetap
+      terlihat di ponsel, tiga artikel terbaru di beranda, kartu "Coba
+      Tanukonomy" di akhir artikel. Lighthouse 99–100 di semua kategori
+      (mobile dan desktop). Teks listing Play siap tempel (id, en) untuk 1.0.0
+      ada di rencana itu.
+- [x] **P-1** Domain `tanukonomy.app` dibeli pemilik 29 Sep 2026. Cek
+      merek dagang "Tanukonomy" (T-8.3 di repo aplikasi) masih terpisah.
+- [ ] **P-1b** DNS `tanukonomy.app` diarahkan ke GitHub Pages (4 record A
+      `185.199.108–111.153`, 4 record AAAA `2606:50c0:8000–8003::153`,
+      CNAME `www` → `arkariz.github.io`), lalu Settings → Pages → Custom
+      domain `tanukonomy.app` dan centang "Enforce HTTPS" setelah
+      sertifikat terbit. Opsional: verifikasi domain di Settings akun →
+      Pages supaya domain tidak bisa diklaim repo lain.
 - [ ] **P-2** *(ditunda pemilik 28 Sep 2026; `halo@tanukonomy.app` belum menerima email)* Alamat kontak: aktifkan Email Routing Cloudflare untuk
       `halo@<domain>` (atau ganti `CONTACT_EMAIL`).
 - [ ] **P-3** Tinjau dan setujui isi kebijakan privasi dan syarat. Draf
       awal ditulis per 28 Sep 2026; kebijakan privasi diperbarui 15 Okt 2026
-      (W-8) mengikuti perilaku aplikasi Fase 20; bukan nasihat hukum.
-- [ ] **P-8** *(sisa W-8)* (a) Cocokkan formulir Data safety Play Console
+      (W-12) mengikuti perilaku aplikasi Fase 20; bukan nasihat hukum.
+- [ ] **P-10** *(sisa W-12)* (a) Cocokkan formulir Data safety Play Console
       dengan bagian 3 dan 4 kebijakan baru: tambah "ID perangkat atau ID
       lain", dan pertimbangkan kategori teks/audio untuk Catat Cerdas
       (Gemini) dan suara; (b) Gemini: ADR-027 menyebut tier gratis hanya
       untuk closed testing dan pindah ke berbayar sebelum rilis publik;
       kebijakan hanya menulis "tunduk pada ketentuan Gemini API", periksa
-      lagi sebelum rilis publik; (c) halaman hapus akun sudah ada di
-      `https://tanukonomy.app/en/delete-account` (di luar repo ini, tidak
-      saya verifikasi dari sandbox); pastikan versi Indonesia dan kebijakan
-      menaut ke URL yang benar.
-- [ ] **P-4** Buat Google Group penguji dan jalur closed testing di Play
-      Console, lalu isi `GOOGLE_GROUP_URL` dan `PLAY_TESTING_URL`.
+      lagi sebelum rilis publik; (c) halaman hapus akun (W-11) sudah
+      diselaraskan dengan nomor bagian kebijakan baru; Gemini belum
+      disebut di halaman itu, tambahkan bila perlu.
+- [ ] **P-11** Trader Status Declaration (Play Console). Pemilik sudah
+      memutuskan **trader** (6 Nov 2026). Tersisa, menurut teks halaman
+      bantuan Google yang ditempel pemilik: (a) batas akun lama 1 Feb 2027;
+      (b) Manage account › Account details › About you, lalu per aplikasi di
+      Policy and programs › App content, konfirmasi status trader; (c) self-
+      certify penawaran sesuai hukum dan isi tautan ToS per aplikasi:
+      `https://tanukonomy.app/syarat/` (id) dan `https://tanukonomy.app/en/terms/`
+      (en); (d) akun pengembang pribadi wajib memberi nomor telepon, dan
+      alamat ikut tampil publik di Google Play; (e) email kontak harus benar-
+      benar menerima email (P-2 belum selesai). Syarat belum ditinjau secara
+      hukum; bukan nasihat hukum.
+- [ ] **P-12** Tinjau sisa teks pemasaran dan klaim terhadap 1.0.0 (sebagian
+      besar selesai di W-15): (a) ringkasan Plus di beranda (daftar Gratis dan
+      Plus) harus dicocokkan pemilik dengan gerbang fitur yang berlaku saat
+      ini, terutama batas template dan proyek yang sengaja tidak disebut
+      angkanya; (b) bagian "Sedang direncanakan" (foto struk, catatan bersama)
+      perlu dikonfirmasi masih rencana pemilik; (c) putuskan apakah render
+      mentah per layar (emulator di mesin pemilik) menggantikan slide listing
+      di `Shot`; (d) Syarat §8 "Versi uji coba" masih ada dan generik, tinjau
+      bersama peninjauan hukum P-11.
+- [x] **P-4** Google Group penguji dan jalur closed testing sudah dibuat
+      pemilik (29 Sep 2026). `GOOGLE_GROUP_URL` (tanpa `/u/1/`),
+      `PLAY_TESTING_URL` (halaman opt-in "Jadi Penguji"), dan
+      `PLAY_STORE_URL` (tombol baru di langkah 3 `/beta`) sudah diisi.
 - [ ] **P-7** Aktifkan GitHub Pages: Settings → Pages → Source: GitHub
       Actions, dan jadikan repo publik (atau pakai GitHub Pro).
-- [ ] **P-5** *(setelah P-1)* Hubungkan repo ke Cloudflare Pages (build `npm run build`,
-      keluaran `dist`, `NODE_VERSION=22`) dan pasang domain.
-- [ ] **P-6** Konfirmasi dua klaim di tanya jawab: iOS "menyusul" dan
+- [-] **P-5** *(dibatalkan 29 Sep 2026)* Cloudflare Pages tidak dipakai;
+      situs tetap di GitHub Pages dengan domain sendiri (P-1b). Buka lagi
+      hanya kalau butuh header HTTP kustom atau repo harus privat tanpa
+      GitHub Pro.
+- [x] **P-6** *(selesai 9 Nov 2026, W-15)* Konfirmasi dua klaim di tanya jawab: iOS "menyusul" dan
       "gratis selama uji coba".
+- [x] **P-8a** *(29 Sep 2026, ADR-023 di repo aplikasi)* Identitas opsional
+      (Google Sign-In + email/sandi tester), Firebase Analytics, dan
+      Firebase Crashlytics sudah masuk kode aplikasi. Kebijakan privasi
+      diperbarui: §6 "Akun (opsional)" dan §7 "Analitik pemakaian dan
+      laporan error" menyebut Firebase Authentication/Analytics/Crashlytics
+      secara eksplisit (`privasi.astro`, `en/privacy.astro`); §3 halaman
+      hapus akun (`hapus-akun.astro`, `en/delete-account.astro`) ditulis
+      ulang jadi langkah pasti (ikon Akun di Beranda → Hapus Akun), bukan
+      lagi "belum tersedia". `LEGAL_EFFECTIVE_DATE` diperbarui ke
+      2026-09-29.
+- [ ] **P-8b** Sinkronisasi data dompet/transaksi/anggaran ke server dan
+      langganan premium **masih belum digarap** — bagian itu di kebijakan
+      privasi (sekarang §8) dan §3 halaman hapus akun tetap berupa rencana.
+      Begitu digarap: sebutkan penyedia backend/pembayaran secara eksplisit,
+      tulis ulang bagian itu dengan langkah pasti dan tenggat penghapusan
+      data tersinkron, lalu perbarui `LEGAL_EFFECTIVE_DATE`. Jangan
+      aktifkan fiturnya di aplikasi sebelum keduanya diperbarui.
+- [ ] **P-9** Setelah domain sendiri aktif (P-1): tempel URL halaman hapus
+      akun (`/hapus-akun/`, W-11) ke kolom "URL hapus akun" di Play
+      Console (App content → Data safety) begitu fitur akun benar-benar
+      dibangun. Untuk uji coba tertutup sekarang, kolom ini biasanya tidak
+      wajib diisi kalau jawaban "metode pembuatan akun" dipilih "Aplikasi
+      saya tidak mengizinkan pengguna membuat akun" (lihat
+      `PLAY_DATA_SAFETY.md` repo `Saldough`).
 
 ## Berikutnya (SEO)
 
@@ -73,9 +220,17 @@ Diperbarui 15 Oktober 2026.
       catatan keuangan", "aplikasi pencatat keuangan pribadi", "cara
       mencatat keuangan freelancer". Data toko aplikasi ada di
       `docs/01-product/ASO_NAME_RESEARCH.md` repo aplikasi.
-- [ ] **S-3** Koleksi artikel panduan (Astro content collection) untuk
-      kata kunci informasional; satu artikel = satu niat pencarian.
-- [ ] **S-4** Setelah rilis publik: tautan Google Play di hero dan JSON-LD
+- [x] **S-3** *(18 Okt 2026)* Koleksi artikel Astro: `src/content.config.ts`
+      (koleksi `blog`, skema frontmatter), rute `/blog/`, `/blog/<slug>/`,
+      `/en/blog/`, `/en/blog/<slug>/`, tata letak `Article.astro` (daftar isi,
+      waktu baca, JSON-LD `BlogPosting` dan `BreadcrumbList`, hreflang ke
+      padanan bahasa bila ada), tautan "Artikel" di header dan footer,
+      masuk sitemap. Artikel `draft: true` tidak dibangun. Satu artikel
+      terbit (id dan en): "Uang habis sebelum akhir bulan". Skill penulis:
+      `.claude/skills/blog-writer/`. Belum ada: gambar OG per artikel.
+- [ ] **S-6** Gambar OG per artikel (render dari ilustrasi) dan
+      artikel berikutnya dari peta topik di skill `blog-writer`.
+- [x] **S-4** *(9 Nov 2026, W-15)* Setelah rilis publik: tautan Google Play di hero dan JSON-LD
       (`installUrl`), lencana "Tersedia di Google Play".
 - [ ] **S-5** Backlink awal: direktori aplikasi Indonesia, komunitas
       freelancer, Product Hunt.
