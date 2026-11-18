@@ -1,6 +1,5 @@
 ---
-import { Image } from 'astro:assets';
-import mascot from '../assets/illustration/mascot_head.png';
+import ClayIcon from './ClayIcon.astro';
 import { APP_NAME } from '../config';
 
 interface Props {
@@ -10,7 +9,7 @@ const { href } = Astro.props;
 ---
 
 <a class="logo" href={href}>
-  <Image src={mascot} alt="" width={44} height={35} class="pixel" loading="eager" />
+  <ClayIcon name="tanuki_mascot" size={40} />
   <span>{APP_NAME}</span>
 </a>
 

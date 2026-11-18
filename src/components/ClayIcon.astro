@@ -1,0 +1,20 @@
+---
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+  /** Nama berkas di src/assets/clay/ tanpa .svg, mis. "bank_wallet". */
+  name: string;
+  size?: number;
+  class?: string;
+  /** Kosong = dekoratif (disembunyikan dari pembaca layar). */
+  alt?: string;
+  /** Muat segera (di atas lipatan); bawaan lazy. */
+  eager?: boolean;
+}
+const { name, size = 32, class: cls, alt = '', eager = false } = Astro.props;
+const files = import.meta.glob<{ default: ImageMetadata }>('../assets/clay/*.svg', { eager: true });
+const icon = files[`../assets/clay/${name}.svg`]?.default;
+if (!icon) throw new Error(`Ikon clay tidak ditemukan: ${name}`);
+---
+
+<img class:list={['clay', cls]} src={icon.src} width={size} height={size} alt={alt} loading={eager ? 'eager' : 'lazy'} fetchpriority={eager ? 'high' : 'auto'} decoding="async" />

@@ -2,7 +2,7 @@ name: Deploy ke GitHub Pages
 
 on:
   push:
-    branches: [main, claude/saldough-project-progress-au5w8q]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
