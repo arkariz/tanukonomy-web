@@ -171,6 +171,23 @@ export const en: Dict = {
     feedbackPlay: 'or through the tester feedback box on the Play Store page.',
     privacyNote: 'Joining the beta doesn’t send your financial data to us. Your records stay on your phone as always.',
   },
+  tutorialSaving: {
+    metaTitle: 'Tutorial: Saving to Several Goals in Tanukonomy',
+    metaDescription: 'A short video on splitting one deposit across several savings goals by percentage in Tanukonomy.',
+    eyebrow: 'Tutorial · Savings goals',
+    title: 'Save to several goals at once',
+    body: 'Split one deposit across goals by percentage. Each goal is recorded as its own transfer, so its progress shows right away.',
+    videoLabel: 'Tutorial video on saving to several goals',
+    fallback: 'Your browser cannot play this video.',
+    download: 'Download the video',
+    stepsLabel: 'Quick steps',
+    steps: [
+      'Open the Wallet tab, then the Savings segment.',
+      'Tap Add savings. With two or more goals, split mode turns on.',
+      'Enter the amount, then set each goal’s percentage until they add up to 100%.',
+      'Tap Record transfer. Each goal grows by its share.',
+    ],
+  },
   legal: {
     effective: 'Effective',
     back: 'Back to home',

@@ -169,6 +169,23 @@ export const id = {
     feedbackPlay: 'atau lewat kolom masukan penguji di halaman Play Store.',
     privacyNote: 'Ikut uji coba tidak mengirim data keuanganmu ke kami. Catatanmu tetap di ponselmu seperti biasa.',
   },
+  tutorialSaving: {
+    metaTitle: 'Tutorial: Menabung ke Beberapa Tujuan di Tanukonomy',
+    metaDescription: 'Video singkat cara membagi satu setoran ke beberapa tujuan tabungan dengan persen di Tanukonomy.',
+    eyebrow: 'Tutorial · Tujuan tabungan',
+    title: 'Menabung ke beberapa tujuan sekaligus',
+    body: 'Bagi satu setoran ke beberapa tujuan dengan persen. Tiap tujuan tercatat sebagai transfer sendiri, jadi kemajuannya langsung terlihat.',
+    videoLabel: 'Video tutorial menabung ke beberapa tujuan',
+    fallback: 'Browsermu tidak bisa memutar video ini.',
+    download: 'Unduh videonya',
+    stepsLabel: 'Langkah singkat',
+    steps: [
+      'Buka tab Dompet, lalu segmen Tabungan.',
+      'Ketuk Menabung. Dengan dua tujuan atau lebih, mode bagi langsung aktif.',
+      'Isi nominal, lalu atur persen tiap tujuan sampai jumlahnya 100%.',
+      'Ketuk Catat transfer. Tiap tujuan bertambah sesuai bagiannya.',
+    ],
+  },
   legal: {
     effective: 'Berlaku sejak',
     back: 'Kembali ke beranda',

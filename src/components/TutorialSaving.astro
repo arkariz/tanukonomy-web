@@ -1,0 +1,65 @@
+---
+import Base from '../layouts/Base.astro';
+import { withBase } from '../config';
+import { type Lang, t } from '../i18n';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const d = t(lang).tutorialSaving;
+// Video dirender dari tools/tutorial-video (Remotion), tanpa JavaScript klien.
+const name = lang === 'id' ? 'menabung' : 'saving-en';
+const src = withBase(`/tutorial/${name}.mp4`);
+const poster = withBase(`/tutorial/${name}-poster.jpg`);
+---
+
+<Base lang={lang} page="tutorialSaving" title={d.metaTitle} description={d.metaDescription}>
+  <section class="intro">
+    <div class="wrap tutorial-grid">
+      <div>
+        <span class="label">{d.eyebrow}</span>
+        <h1>{d.title}</h1>
+        <p class="lead">{d.body}</p>
+        <h2 class="label steps-label">{d.stepsLabel}</h2>
+        <ol class="check-list">
+          {d.steps.map((s) => <li>{s}</li>)}
+        </ol>
+        <p><a href={src} download>{d.download}</a></p>
+      </div>
+      <video class="card tutorial-video" controls playsinline preload="metadata" poster={poster} width="1080" height="1920" aria-label={d.videoLabel}>
+        <source src={src} type="video/mp4" />
+        {d.fallback}
+      </video>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .tutorial-grid {
+    display: grid;
+    gap: 32px;
+    align-items: start;
+  }
+  .steps-label {
+    margin-top: 24px;
+  }
+  .tutorial-video {
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+    aspect-ratio: 9 / 16;
+    padding: 0;
+    justify-self: center;
+  }
+  @media (max-width: 899px) {
+    .tutorial-video {
+      order: -1;
+    }
+  }
+  @media (min-width: 900px) {
+    .tutorial-grid {
+      grid-template-columns: 1fr 420px;
+    }
+  }
+</style>
