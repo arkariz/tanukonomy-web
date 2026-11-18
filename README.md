@@ -67,10 +67,19 @@ docs/                  ADR dan daftar tugas situs
 
 ## Deploy
 
-Sementara di **GitHub Pages**: setiap push ke `main` atau branch kerja
-menjalankan `.github/workflows/deploy.yml` (check, build, deploy).
-Syarat sekali atur di GitHub: Settings → Pages → Source: **GitHub
-Actions**, dan repo publik (Pages untuk repo privat butuh GitHub Pro).
+Sementara di **GitHub Pages**, disajikan di `tanukonomy.app` lewat
+`public/CNAME`. Setiap push ke `main` menjalankan
+`.github/workflows/deploy.yml` (check, build, deploy); branch lain tidak
+men-deploy. Syarat sekali atur di GitHub: Settings → Pages → Source:
+**GitHub Actions**, dan repo publik (Pages untuk repo privat butuh GitHub
+Pro).
+
+## Branch
+
+Hanya satu branch jangka panjang: **`main`**, dan itu satu-satunya sumber
+deploy. Perubahan dikerjakan di branch pendek (`claude/...`, `fitur/...`),
+digabung ke `main` lewat PR, lalu branch-nya dihapus. Jangan membuat
+branch deploy terpisah.
 
 Tujuan akhirnya tetap Cloudflare Pages di domain sendiri (lihat
 [ADR-001](docs/adr/0001-astro-statis-di-cloudflare-pages.md)).

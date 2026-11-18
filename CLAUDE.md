@@ -32,6 +32,10 @@ yang menunggu pemilik), `docs/adr/` (keputusan).
 - **Tanpa JavaScript klien, cookie, atau analitik** kecuali lewat ADR
   baru — kebijakan privasi menjanjikan itu.
 - Ubah dokumen hukum → perbarui `LEGAL_EFFECTIVE_DATE` di `src/config.ts`.
+- **Satu branch utama: `main`**, satu-satunya yang men-deploy ke GitHub
+  Pages. Kerja di branch pendek lalu PR ke `main`; hapus branch setelah
+  digabung. Jangan membuat branch deploy terpisah atau menambah branch ke
+  `on.push.branches` di `deploy.yml`.
 
 ## Sebelum commit
 

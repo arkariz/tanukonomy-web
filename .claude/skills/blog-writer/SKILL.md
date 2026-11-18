@@ -263,9 +263,8 @@ Topik "Privasi" harus sejalan persis dengan `src/pages/privasi.astro`.
 Ikuti `CLAUDE.md` repo ini. Sebelum commit: `npm run check` (0 error) dan
 `npm run build`. Buat branch baru, satu commit per perubahan logis, dan buka
 PR draf. Jangan menandai siap, jangan menggabungkan, jangan memicu deploy.
-Branch `claude/saldough-project-progress-au5w8q` dan `main` sama-sama
-memicu deploy, jadi cek `.github/workflows/deploy.yml` sebelum mendorong ke
-branch mana pun yang bukan milikmu.
+Hanya `main` yang memicu deploy (`.github/workflows/deploy.yml`), jadi
+jangan mendorong langsung ke `main`; kerjakan di branch barumu dan buka PR.
 
 ## Contoh pemicu
 
