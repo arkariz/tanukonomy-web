@@ -1,6 +1,7 @@
 import React from 'react';
 import {AbsoluteFill, Easing, Img, interpolate, staticFile, useCurrentFrame} from 'remotion';
 import {Background} from '../components/Background';
+import {Mascot} from '../components/Mascot';
 import {C, FONT, MONO} from '../theme';
 import {useStrings} from '../i18n';
 
@@ -18,16 +19,7 @@ export const Outro: React.FC = () => {
     <AbsoluteFill style={{fontFamily: FONT}}>
       <Background dark />
       <AbsoluteFill style={{alignItems: 'center', justifyContent: 'center', padding: '0 90px', gap: 40}}>
-        <Img
-          src={staticFile('mascot_head.png')}
-          style={{
-            width: 260,
-            height: 260,
-            objectFit: 'contain',
-            scale: interpolate(frame, [0, 18], [0, 1], {extrapolateRight: 'clamp', easing: Easing.spring({damping: 12}), output: 'perceptual-scale'}),
-            translate: `0px ${Math.abs(Math.sin(frame / 8)) * -16}px`,
-          }}
-        />
+        <Mascot size={260} bob />
         <div style={{...rise(6), fontSize: 104, fontWeight: 800, color: C.white, textAlign: 'center', letterSpacing: -2}}>{t.outroTitle}</div>
         <div style={{...rise(14), fontSize: 48, color: C.green100, textAlign: 'center', lineHeight: 1.3}}>
           {t.outroBody}

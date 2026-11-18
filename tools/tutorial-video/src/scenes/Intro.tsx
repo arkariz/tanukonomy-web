@@ -1,6 +1,7 @@
 import React from 'react';
 import {AbsoluteFill, Easing, Img, interpolate, staticFile, useCurrentFrame} from 'remotion';
 import {Background} from '../components/Background';
+import {Mascot} from '../components/Mascot';
 import {C, FONT, MONO} from '../theme';
 import {useStrings} from '../i18n';
 
@@ -21,16 +22,7 @@ export const Intro: React.FC = () => {
     <AbsoluteFill style={{fontFamily: FONT}}>
       <Background dark />
       <AbsoluteFill style={{alignItems: 'center', justifyContent: 'center', padding: '0 80px', gap: 36}}>
-        <Img
-          src={staticFile('mascot_head.png')}
-          style={{
-            width: 300,
-            height: 300,
-            objectFit: 'contain',
-            scale: interpolate(frame, [0, 18], [0, 1], {extrapolateRight: 'clamp', easing: Easing.spring({damping: 12}), output: 'perceptual-scale'}),
-            rotate: `${Math.sin(frame / 10) * 4}deg`,
-          }}
-        />
+        <Mascot size={300} />
         <div style={{...rise(8), fontFamily: MONO, fontSize: 34, letterSpacing: 3, color: C.green900, background: C.green200, padding: '8px 24px', borderRadius: 999}}>
           {t.introPill}
         </div>
