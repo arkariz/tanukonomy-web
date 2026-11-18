@@ -1,0 +1,120 @@
+[
+ {
+  "t": 0.0,
+  "type": "mark",
+  "label": "start"
+ },
+ {
+  "t": 1.5,
+  "type": "tap",
+  "x": 773,
+  "y": 904,
+  "label": "segmen-tabungan"
+ },
+ {
+  "t": 4.094,
+  "type": "tap",
+  "x": 533,
+  "y": 1571,
+  "label": "menabung"
+ },
+ {
+  "t": 7.2,
+  "type": "tap",
+  "x": 160,
+  "y": 1776,
+  "label": "key-1"
+ },
+ {
+  "t": 8.173,
+  "type": "tap",
+  "x": 160,
+  "y": 2123,
+  "label": "key-000"
+ },
+ {
+  "t": 8.892,
+  "type": "tap",
+  "x": 160,
+  "y": 2123,
+  "label": "key-000"
+ },
+ {
+  "t": 10.928,
+  "type": "tap",
+  "x": 800,
+  "y": 1456,
+  "label": "persen-dana"
+ },
+ {
+  "t": 11.953,
+  "type": "tap",
+  "x": 664,
+  "y": 2123,
+  "label": "key-bksp"
+ },
+ {
+  "t": 12.691,
+  "type": "tap",
+  "x": 664,
+  "y": 2123,
+  "label": "key-bksp"
+ },
+ {
+  "t": 13.409,
+  "type": "tap",
+  "x": 664,
+  "y": 1891,
+  "label": "key-6"
+ },
+ {
+  "t": 14.231,
+  "type": "tap",
+  "x": 413,
+  "y": 2123,
+  "label": "key-0"
+ },
+ {
+  "t": 16.738,
+  "type": "swipe",
+  "x": 400,
+  "y": 1120,
+  "x2": 400,
+  "y2": 400,
+  "ms": 1500,
+  "label": "gulir"
+ },
+ {
+  "t": 19.676,
+  "type": "tap",
+  "x": 800,
+  "y": 1507,
+  "label": "persen-darurat"
+ },
+ {
+  "t": 20.734,
+  "type": "tap",
+  "x": 933,
+  "y": 1013,
+  "label": "isi-sisa"
+ },
+ {
+  "t": 23.232,
+  "type": "tap",
+  "x": 533,
+  "y": 2253,
+  "label": "catat"
+ },
+ {
+  "t": 27.815,
+  "type": "tap",
+  "x": 323,
+  "y": 2267,
+  "label": "riwayat"
+ },
+ {
+  "t": 32.239,
+  "type": "mark",
+  "label": "end"
+ }
+]

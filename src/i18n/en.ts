@@ -263,6 +263,23 @@ export const en: Dict = {
     installAction: 'Get it on Google Play',
     authorNote: 'The team behind Tanukonomy, a personal money tracker for Android. This is general advice, not financial advice tailored to you.',
   },
+  tutorialSaving: {
+    metaTitle: 'Tutorial: Saving to Several Goals in Tanukonomy',
+    metaDescription: 'A short video on splitting one deposit across several savings goals by percentage in Tanukonomy.',
+    eyebrow: 'Tutorial · Savings goals',
+    title: 'Save to several goals at once',
+    body: 'Split one deposit across goals by percentage. Each goal is recorded as its own transfer, so its progress shows right away.',
+    videoLabel: 'Tutorial video on saving to several goals',
+    fallback: 'Your browser cannot play this video.',
+    download: 'Download the video',
+    stepsLabel: 'Quick steps',
+    steps: [
+      'Open the Wallet tab, then the Savings segment.',
+      'Tap Add savings. With two or more goals, split mode turns on.',
+      'Enter the amount, then set each goal’s percentage until they add up to 100%.',
+      'Tap Record transfer. Each goal grows by its share.',
+    ],
+  },
   legal: {
     effective: 'Effective',
     back: 'Back to home',
