@@ -278,6 +278,23 @@ export const id = {
       'Ketuk Catat transfer. Tiap tujuan bertambah sesuai bagiannya.',
     ],
   },
+  tutorialInvesting: {
+    metaTitle: 'Tutorial: Mencatat Investasi di Tanukonomy',
+    metaDescription: 'Video singkat cara mencatat pembelian saham, memperbarui nilainya, dan melihat untung/rugi di Tanukonomy.',
+    eyebrow: 'Tutorial · Investasi',
+    title: 'Catat investasimu',
+    body: 'Saham, reksa dana, emas, dan obligasi dalam satu tempat. Jual beli tetap di aplikasi sekuritasmu, Tanukonomy mencatatnya dan menghitung untung/ruginya.',
+    videoLabel: 'Video tutorial mencatat investasi',
+    fallback: 'Browsermu tidak bisa memutar video ini.',
+    download: 'Unduh videonya',
+    stepsLabel: 'Langkah singkat',
+    steps: [
+      'Buka tab Dompet, lalu segmen Investasi, dan ketuk Catat pembelian.',
+      'Pilih instrumen atau buat yang baru, lalu isi jumlah dan total yang kamu bayar.',
+      'Buka rinciannya dan ketuk Perbarui nilai untuk mengisi harga terbaru.',
+      'Nilai pasar dan untung/rugi dihitung otomatis dan masuk ke Total aset.',
+    ],
+  },
   legal: {
     effective: 'Berlaku sejak',
     back: 'Kembali ke beranda',

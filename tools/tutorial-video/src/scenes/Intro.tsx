@@ -9,9 +9,18 @@ export const INTRO_SECONDS = 3.4;
 
 const chipIcons = ['shield_emergency', 'star_bonus', 'report_bars'];
 
-export const Intro: React.FC = () => {
-  const t = useStrings();
-  const chips = chipIcons.map((icon, i) => ({icon, text: t.chips[i]}));
+/** Isi kartu pembuka; tanpa isi = tutorial menabung. */
+export type IntroContent = {pill: string; title: string; body: string; chips: {icon: string; text: string}[]};
+
+export const Intro: React.FC<{content?: IntroContent}> = ({content}) => {
+  const s = useStrings();
+  const t = content ?? {
+    pill: s.introPill,
+    title: s.introTitle,
+    body: s.introBody,
+    chips: chipIcons.map((icon, i) => ({icon, text: s.chips[i]})),
+  };
+  const chips = t.chips;
   const frame = useCurrentFrame();
   const ease = Easing.bezier(0.16, 1, 0.3, 1);
   const rise = (start: number) => ({
@@ -24,13 +33,13 @@ export const Intro: React.FC = () => {
       <AbsoluteFill style={{alignItems: 'center', justifyContent: 'center', padding: '0 80px', gap: 36}}>
         <Mascot size={300} />
         <div style={{...rise(8), fontFamily: MONO, fontSize: 34, letterSpacing: 3, color: C.green900, background: C.green200, padding: '8px 24px', borderRadius: 999}}>
-          {t.introPill}
+          {t.pill}
         </div>
         <div style={{...rise(14), fontSize: 100, fontWeight: 800, color: C.white, textAlign: 'center', lineHeight: 1.02, letterSpacing: -2}}>
-          {t.introTitle}
+          {t.title}
         </div>
         <div style={{...rise(22), fontSize: 48, color: C.green100, textAlign: 'center', lineHeight: 1.25}}>
-          {t.introBody}
+          {t.body}
         </div>
         <div style={{display: 'flex', gap: 20, marginTop: 12}}>
           {chips.map((c, i) => (

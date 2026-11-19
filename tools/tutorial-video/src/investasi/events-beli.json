@@ -1,0 +1,110 @@
+[
+ {
+  "t": 2.006,
+  "type": "tap",
+  "x": 283,
+  "y": 1835,
+  "label": "catat-pembelian"
+ },
+ {
+  "t": 5.189,
+  "type": "tap",
+  "x": 533,
+  "y": 1005,
+  "label": "instrumen"
+ },
+ {
+  "t": 7.052,
+  "type": "tap",
+  "x": 533,
+  "y": 2208,
+  "label": "instrumen-baru"
+ },
+ {
+  "t": 9.318,
+  "type": "tap",
+  "x": 533,
+  "y": 1096,
+  "label": "nama"
+ },
+ {
+  "t": 12.537,
+  "type": "tap",
+  "x": 112,
+  "y": 2328,
+  "label": "tutup-keyboard"
+ },
+ {
+  "t": 14.089,
+  "type": "tap",
+  "x": 163,
+  "y": 1291,
+  "label": "saham"
+ },
+ {
+  "t": 16.068,
+  "type": "tap",
+  "x": 413,
+  "y": 1891,
+  "label": "key-5"
+ },
+ {
+  "t": 17.896,
+  "type": "tap",
+  "x": 533,
+  "y": 560,
+  "label": "nominal"
+ },
+ {
+  "t": 18.783,
+  "type": "tap",
+  "x": 160,
+  "y": 1776,
+  "label": "key-1"
+ },
+ {
+  "t": 19.55,
+  "type": "tap",
+  "x": 664,
+  "y": 2005,
+  "label": "key-9"
+ },
+ {
+  "t": 20.437,
+  "type": "tap",
+  "x": 413,
+  "y": 2123,
+  "label": "key-0"
+ },
+ {
+  "t": 21.048,
+  "type": "tap",
+  "x": 413,
+  "y": 2123,
+  "label": "key-0"
+ },
+ {
+  "t": 21.611,
+  "type": "tap",
+  "x": 160,
+  "y": 2123,
+  "label": "key-000"
+ },
+ {
+  "t": 24.272,
+  "type": "tap",
+  "x": 533,
+  "y": 2253,
+  "label": "simpan"
+ },
+ {
+  "t": 27.927,
+  "type": "swipe",
+  "x": 533,
+  "y": 1867,
+  "x2": 533,
+  "y2": 800,
+  "ms": 1500,
+  "label": "gulir"
+ }
+]

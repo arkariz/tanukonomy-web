@@ -1,0 +1,37 @@
+[
+ {
+  "t": 1.506,
+  "type": "tap",
+  "x": 533,
+  "y": 1440,
+  "label": "tlkm"
+ },
+ {
+  "t": 4.768,
+  "type": "tap",
+  "x": 835,
+  "y": 925,
+  "label": "perbarui-nilai"
+ },
+ {
+  "t": 7.474,
+  "type": "tap",
+  "x": 533,
+  "y": 1088,
+  "label": "harga"
+ },
+ {
+  "t": 10.265,
+  "type": "tap",
+  "x": 112,
+  "y": 2328,
+  "label": "tutup-keyboard"
+ },
+ {
+  "t": 11.532,
+  "type": "tap",
+  "x": 533,
+  "y": 2237,
+  "label": "simpan-nilai"
+ }
+]
