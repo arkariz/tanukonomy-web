@@ -7,8 +7,12 @@ import {useStrings} from '../i18n';
 
 export const OUTRO_SECONDS = 4;
 
-export const Outro: React.FC = () => {
-  const t = useStrings();
+/** Isi kartu penutup; tanpa isi = tutorial menabung. */
+export type OutroContent = {title: string; body: string; path: string; icon: string};
+
+export const Outro: React.FC<{content?: OutroContent}> = ({content}) => {
+  const s = useStrings();
+  const t = content ?? {title: s.outroTitle, body: s.outroBody, path: s.outroPath, icon: 'piggy_savings'};
   const frame = useCurrentFrame();
   const ease = Easing.bezier(0.16, 1, 0.3, 1);
   const rise = (start: number) => ({
@@ -20,9 +24,9 @@ export const Outro: React.FC = () => {
       <Background dark />
       <AbsoluteFill style={{alignItems: 'center', justifyContent: 'center', padding: '0 90px', gap: 40}}>
         <Mascot size={260} bob />
-        <div style={{...rise(6), fontSize: 104, fontWeight: 800, color: C.white, textAlign: 'center', letterSpacing: -2}}>{t.outroTitle}</div>
+        <div style={{...rise(6), fontSize: 104, fontWeight: 800, color: C.white, textAlign: 'center', letterSpacing: -2}}>{t.title}</div>
         <div style={{...rise(14), fontSize: 48, color: C.green100, textAlign: 'center', lineHeight: 1.3}}>
-          {t.outroBody}
+          {t.body}
         </div>
         <div
           style={{
@@ -39,8 +43,8 @@ export const Outro: React.FC = () => {
             border: `4px solid ${C.white}`,
           }}
         >
-          <Img src={staticFile('icons/piggy_savings.svg')} style={{width: 56, height: 56}} />
-          {t.outroPath}
+          <Img src={staticFile(`icons/${t.icon}.svg`)} style={{width: 56, height: 56}} />
+          {t.path}
         </div>
       </AbsoluteFill>
     </AbsoluteFill>

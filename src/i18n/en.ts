@@ -280,6 +280,23 @@ export const en: Dict = {
       'Tap Record transfer. Each goal grows by its share.',
     ],
   },
+  tutorialInvesting: {
+    metaTitle: 'Tutorial: Tracking Investments in Tanukonomy',
+    metaDescription: 'A short video on recording a stock purchase, updating its value, and seeing the gain or loss in Tanukonomy.',
+    eyebrow: 'Tutorial · Investments',
+    title: 'Track your investments',
+    body: 'Stocks, mutual funds, gold, and bonds in one place. You trade in your broker app, Tanukonomy records it and works out the gain or loss.',
+    videoLabel: 'Tutorial video on tracking investments',
+    fallback: 'Your browser cannot play this video.',
+    download: 'Download the video',
+    stepsLabel: 'Quick steps',
+    steps: [
+      'Open the Wallet tab, then the Investments segment, and tap Record purchase.',
+      'Pick an instrument or create a new one, then enter the quantity and the total you paid.',
+      'Open its details and tap Update value to enter the latest price.',
+      'Market value and gain/loss are worked out and added to Total assets.',
+    ],
+  },
   legal: {
     effective: 'Effective',
     back: 'Back to home',

@@ -3,7 +3,7 @@ import { en } from './en';
 import { withBase } from '../config';
 
 export type Lang = 'id' | 'en';
-export type PageKey = 'home' | 'beta' | 'privacy' | 'terms' | 'tutorialSaving' | 'deleteAccount' | 'blog' | 'download';
+export type PageKey = 'home' | 'beta' | 'privacy' | 'terms' | 'tutorialSaving' | 'tutorialInvesting' | 'deleteAccount' | 'blog' | 'download';
 
 const dicts = { id, en };
 
@@ -16,6 +16,7 @@ const routes: Record<PageKey, Record<Lang, string>> = {
   privacy: { id: '/privasi/', en: '/en/privacy/' },
   terms: { id: '/syarat/', en: '/en/terms/' },
   tutorialSaving: { id: '/tutorial/menabung/', en: '/en/tutorial/saving/' },
+  tutorialInvesting: { id: '/tutorial/investasi/', en: '/en/tutorial/investing/' },
   deleteAccount: { id: '/hapus-akun/', en: '/en/delete-account/' },
   blog: { id: '/blog/', en: '/en/blog/' },
   download: { id: '/pasang/', en: '/en/get-the-app/' },

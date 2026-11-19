@@ -1,20 +1,23 @@
 ---
 import Base from '../layouts/Base.astro';
 import { withBase } from '../config';
-import { type Lang, t } from '../i18n';
+import { type Lang, type PageKey, t } from '../i18n';
 
 interface Props {
   lang: Lang;
+  /** Halaman tutorial dan berkas videonya per bahasa (public/tutorial/<nama>.mp4). */
+  page: Extract<PageKey, 'tutorialSaving' | 'tutorialInvesting'>;
+  video: Record<Lang, string>;
 }
-const { lang } = Astro.props;
-const d = t(lang).tutorialSaving;
+const { lang, page, video } = Astro.props;
+const d = t(lang)[page];
 // Video dirender dari tools/tutorial-video (Remotion), tanpa JavaScript klien.
-const name = lang === 'id' ? 'menabung' : 'saving-en';
+const name = video[lang];
 const src = withBase(`/tutorial/${name}.mp4`);
 const poster = withBase(`/tutorial/${name}-poster.jpg`);
 ---
 
-<Base lang={lang} page="tutorialSaving" title={d.metaTitle} description={d.metaDescription}>
+<Base lang={lang} page={page} title={d.metaTitle} description={d.metaDescription}>
   <section class="intro">
     <div class="wrap tutorial-grid">
       <div>
